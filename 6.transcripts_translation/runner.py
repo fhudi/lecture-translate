@@ -25,5 +25,5 @@ if __name__ == "__main__":
         case _:
             raise NotImplementedError
     
-    model.evaluate(output_suffix=f"{args.model}_pred")
+    model.evaluate(output_suffix=args.model)
 

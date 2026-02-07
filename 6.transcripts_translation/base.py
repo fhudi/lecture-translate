@@ -40,10 +40,8 @@ class BaseModel:
 
     def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None):
         raise NotImplementedError
-    
-    def evaluate(self, output_suffix=None, lang_src="en"):
-        _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
 
+    def evaluate(self, output_suffix=None, lang_src="en"):
         with open(fp_test_transl_slide, "r") as f:
             datas_slide_text = json.load(f)
 
@@ -58,7 +56,13 @@ class BaseModel:
             k: v for k, v in LANGUAGES.items() if k != lang_src
         }
 
-        outdir = Path("preds")
+
+        # ========== #
+        # No Context
+        # ========== #
+
+        _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
+        outdir = Path(f"preds_{output_suffix}_{_cur_time_}")
         outdir.mkdir(parents=True, exist_ok=True)
 
         for k, v in datas_transcript_text.items():
@@ -67,13 +71,37 @@ class BaseModel:
             for ts, texts in tqdm(v.items(), desc=f"{sbj}/{lec_id}"):
                 cur_preds = {}
                 for lang_tgt, lang_target in target_languages.items():
-                    cur_preds[lang_tgt] = model.eval_instance(lang_source, lang_target, texts[lang_src])
+                    cur_preds[lang_tgt] = self.eval_instance(lang_source, lang_target, texts[lang_src])
                 preds_one_lecture[ts] = cur_preds
-                break
-            
-            with open(outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.{_cur_time_}.json", "w", encoding="utf8") as f:
+            with open(outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.json", "w", encoding="utf8") as f:
                 json.dump(preds_one_lecture, f, ensure_ascii=False, indent=2)
-            break
+
+
+        # ========== #
+        # Text Context
+        # ========== #
+        _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
+        outdir = Path(f"preds_{output_suffix}_slidetxt_{_cur_time_}")
+        outdir.mkdir(parents=True, exist_ok=True)
+
+        for k, v in datas_transcript_text.items():
+            context_text = []
+            for slide_idx, slide_bbs in enumerate(datas_slide_text[k].values()):
+                context_text.append("\n".join([t for ts in slide_bbs[lang_src].values() for t in ts]))
+            context_text = "\n\n\n".join(context_text)
+
+            sbj, lec_id = k.split('/',1)
+            preds_one_lecture = {}
+            for ts, texts in tqdm(v.items(), desc=f"{sbj}/{lec_id}"):
+                cur_preds = {}
+                for lang_tgt, lang_target in target_languages.items():
+                    cur_preds[lang_tgt] = self.eval_instance(lang_source, lang_target, texts[lang_src], context_text=context_text)
+                preds_one_lecture[ts] = cur_preds
+
+            with open(outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.json", "w", encoding="utf8") as f:
+                json.dump(preds_one_lecture, f, ensure_ascii=False, indent=2)
+
+
 
 
 
