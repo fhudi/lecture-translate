@@ -212,6 +212,14 @@ def prepare_timestamp(timestamp):
 
     return None
 
+def get_last_paths(cell):
+    if pd.isna(cell):
+        return pd.NA
+    paths = [path.strip() for path in cell.split(",") if path.strip()]
+    if not paths:
+        return pd.NA
+    return sorted(paths)[-1]
+
 def align_info(subject_name, paths, output_dir):
     print(f"Processing: {subject_name}")
     image_dir = os.path.join(slide_dir, subject_name, subjects[subject_name]["video_id"])
@@ -237,7 +245,7 @@ def align_info(subject_name, paths, output_dir):
 
     results = []
 
-    for _, row in transcript_df.iterrows():
+    for i, row in transcript_df.iterrows():
         # from transcript file (xlsx)
         start_sec = row["Start_sec"]
         end_sec = row["End_sec"]
@@ -246,6 +254,11 @@ def align_info(subject_name, paths, output_dir):
             (scene_df["img_timestamp"] >= start_sec) &
             (scene_df["img_timestamp"] < end_sec)
         ]
+
+        # add image and json for the first segment
+        if i == 0 and matched_val.empty:
+            matched_val = scene_df.iloc[[0]]
+
         matched_images = matched_val["img_name"].tolist()
         matched_jsons = matched_val["json_name"].tolist()
 
@@ -280,8 +293,20 @@ def align_info(subject_name, paths, output_dir):
     
     # if images = NaN, assume that the slide displayed on the screen has not changed
     # -> use the slide images from the previous transcript segment
-    result_df["images"] = result_df["images"].replace("", pd.NA).ffill()
-    result_df["ocrs"] = result_df["ocrs"].replace("", pd.NA).ffill()
+    result_df["images"] = result_df["images"].replace("", pd.NA)
+    result_df["ocrs"] = result_df["ocrs"].replace("", pd.NA)
+    # keep only the last path
+    for column in ["images", "ocrs"]:
+        last_val = None
+        new_vals = []
+        for val in result_df[column]:
+            if pd.isna(val):
+                new_vals.append(last_val)
+            else:
+                last_val = get_last_paths(val)
+                new_vals.append(last_val)
+        result_df[column] = new_vals
+
     os.makedirs(output_dir, exist_ok=True)
 
     output_path = os.path.join(
@@ -460,7 +485,7 @@ def slidetext(model):
 
                     The context is as follows:
 
-                    {slides_text}
+                    {slide_text}
 
                     {lang_src} transcript:
                     "{transcript_en}"
@@ -510,8 +535,8 @@ def slidetext(model):
         print("File created")
 
 # nocontext("gpt-5-2025-08-07")
-# slideimage("gpt-5-2025-08-07")
-# slidetext("gpt-5-2025-08-07")
+slideimage("gpt-5-2025-08-07")
+slidetext("gpt-5-2025-08-07")
 
 # model = "o4-mini-2025-04-16"
 # model = "gpt-4.1-2025-04-14"
