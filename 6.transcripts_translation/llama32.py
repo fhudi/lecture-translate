@@ -22,11 +22,14 @@ class Llama32Model(BaseModel):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        self.model_id = kwargs.get("model_id", "meta-llama/Llama-3.2-11B-Vision-Instruct")
         self.sys_prompt = _SYS_PROMPT_
         self.user_prompt = _USER_PROMPT_
 
     def load_model(self, *args, **kwargs):
+        if self.model is not None:
+            return self.model
+        
         self.model = MllamaForConditionalGeneration.from_pretrained(
             self.model_id,
             torch_dtype=torch.bfloat16,
@@ -34,6 +37,8 @@ class Llama32Model(BaseModel):
         )
         self.processor = AutoProcessor.from_pretrained(self.model_id)
         # self.tokenizer = AutoTokenizer.from_pretrained(self.model_id)
+        
+        return self.model
 
     def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None):
         messages = [
@@ -53,7 +58,8 @@ class Llama32Model(BaseModel):
         ).to(self.model.device)
 
         outputs = self.model.generate(**inputs.to(self.model.device), max_new_tokens=1024)
-        outputs_decoded = tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
+        outputs_decoded = self.processor.decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
+        # outputs_decoded = self.tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)[0]
 
-        return outputs_decoded[0]
+        return outputs_decoded
 
