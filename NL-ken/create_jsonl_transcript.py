@@ -1,6 +1,5 @@
 import os
 import json
-import glob
 import pandas as pd
 from pathlib import Path
 import base64
@@ -14,90 +13,84 @@ target_languages = {
     "id": "Indonesian",
     "th": "Thai",
     "zh": "Chinese",
-    "de": "German"
+    "de": "German",
 }
 
 subjects = {
     "anat-1": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/anat-1_-_LQ7IXyQSXBk_-_transcripts.xlsx",
-        "video_id": "LQ7IXyQSXBk"
-        },
+        "video_id": "LQ7IXyQSXBk",
+    },
     "anat-2": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/anat-2_-_IvK-UGOI5ZQ_-_transcripts.xlsx",
-        "video_id": "IvK-UGOI5ZQ"
-        },
+        "video_id": "IvK-UGOI5ZQ",
+    },
     "bio-1": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/bio-1_-_pUH2_SGnm9g_-_transcripts.xlsx",
-        "video_id": "pUH2_SGnm9g"
-        },
+        "video_id": "pUH2_SGnm9g",
+    },
     "bio-2": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/bio-2_-_dEh_Zk9d0sE_-_transcripts.xlsx",
-        "video_id": "dEh_Zk9d0sE"
-        },
+        "video_id": "dEh_Zk9d0sE",
+    },
     "bio-3": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/bio-3_-_u7AnKjGOEgI_-_transcripts.xlsx",
-        "video_id": "u7AnKjGOEgI"
-        },
+        "video_id": "u7AnKjGOEgI",
+    },
     "bio-4": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/bio-4_-_gb0arNyiLCI_-_transcripts.xlsx",
-        "video_id": "gb0arNyiLCI"
-        },
+        "video_id": "gb0arNyiLCI",
+    },
     "dental": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/dental_-_uLz-Ur_Drk4_-_transcripts.xlsx",
-        "video_id": "uLz-Ur_Drk4"
-        },
+        "video_id": "uLz-Ur_Drk4",
+    },
     "intmd_microeconomics": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/intmd_microeconomics_-_rhOpABGewYA_-_transcripts.xlsx",
-        "video_id": "rhOpABGewYA"
-        },
+        "video_id": "rhOpABGewYA",
+    },
     "intro_to_cs_programming_python": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/intro_to_cs_programming_python_-_tsMrUdynbQQ_-_transcripts.xlsx",
-        "video_id": "tsMrUdynbQQ"
-        },
+        "video_id": "tsMrUdynbQQ",
+    },
     "intro_to_neural_computation": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/intro_to_neural_computation_-_K1pxJVdqlxw_-_transcripts.xlsx",
-        "video_id": "K1pxJVdqlxw"
-        },
+        "video_id": "K1pxJVdqlxw",
+    },
     "intro_to_physics_20century": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/intro_to_physics_20century_-_Fce9xf_kjyc_-_transcripts.xlsx",
-        "video_id": "Fce9xf_kjyc"
-        },
+        "video_id": "Fce9xf_kjyc",
+    },
     "ml-1": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/ml-1_-_L1TiP9P55-8_-_transcripts.xlsx",
-        "video_id": "L1TiP9P55-8"
-        },
+        "video_id": "L1TiP9P55-8",
+    },
     "psy-1": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/psy-1_-_j2-9yymHfeU_-_transcripts.xlsx",
-        "video_id": "j2-9yymHfeU"
-        },
+        "video_id": "j2-9yymHfeU",
+    },
     "psy-2": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/psy-2_-_uNrB2uG_9gs_-_transcripts.xlsx",
-        "video_id": "uNrB2uG_9gs"
-        },
+        "video_id": "uNrB2uG_9gs",
+    },
     "speaking": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/speaking_-_KL_I9eE2aGk_-_transcripts.xlsx",
-        "video_id": "KL_I9eE2aGk"
-        },
+        "video_id": "KL_I9eE2aGk",
+    },
     "theory_of_computation": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/theory_of_computation_-_aVv9WXwW95w_-_transcripts.xlsx",
-        "video_id": "aVv9WXwW95w"
-        },
+        "video_id": "aVv9WXwW95w",
+    },
     "urban_energy_systems_and_policy": {
         "transcript_xlsx": "/large/datas/nina-n/testset/testdata_original/urban_energy_systems_and_policy_-_3WXWESx6jWY_-_transcripts.xlsx",
-        "video_id": "3WXWESx6jWY"
-        }
+        "video_id": "3WXWESx6jWY",
+    },
 }
 
-gpt_4x = [
-    "gpt-4.1-2025-04-14",
-    "o4-mini-2025-04-16"
-]
+gpt_4x = ["gpt-4.1-2025-04-14", "o4-mini-2025-04-16"]
 
-gpt_5x = [
-    "gpt-5-2025-08-07",
-    "gpt-5-mini-2025-08-07",
-    "gpt-5-nano-2025-08-07"
-]
+gpt_5x = ["gpt-5-2025-08-07", "gpt-5-mini-2025-08-07", "gpt-5-nano-2025-08-07"]
+
 
 def nocontext(model):
     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_nocontext"
@@ -108,7 +101,7 @@ def nocontext(model):
     for subject, paths in subjects.items():
         output_file = f"{output_dir}/{model}/{subject}_nocontext_{model}.jsonl"
         print(f"Creating {output_file}")
-        
+
         # testset = pd.read_excel(input_file, engine="openpyxl")
         testset = pd.read_excel(paths["transcript_xlsx"], engine="openpyxl")
         request_count = 0
@@ -137,13 +130,8 @@ def nocontext(model):
 
                     {language_name}:
                     """
-                    
-                    content_list = [
-                        {
-                            "type": "text",
-                            "text": prompt_user
-                        }
-                    ]
+
+                    content_list = [{"type": "text", "text": prompt_user}]
 
                     if model in gpt_4x:
                         request_json = {
@@ -152,13 +140,10 @@ def nocontext(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 "temperature": 0,
                                 # "max_tokens": 2048
-                            }
+                            },
                         }
                     if model in gpt_5x:
                         request_json = {
@@ -167,21 +152,22 @@ def nocontext(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 # "max_completion_tokens": 2048
-                            }
+                            },
                         }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
         print("File created")
 
+
 slide_dir = "/large/datas/frederikus-h/lectrans-testset/25.11.slides_annot/slide_translation_251214"
-image_timestamp = "/large/datas/frederikus-h/lectrans-testset/25.11.slides_annot/annot_by_sbj"
+image_timestamp = (
+    "/large/datas/frederikus-h/lectrans-testset/25.11.slides_annot/annot_by_sbj"
+)
 # /large/datas/frederikus-h/lectrans-testset/25.11.slides_annot/annot_by_sbj/anat-1/LQ7IXyQSXBk_-_scene_id_to_timestamp.csv
+
 
 def prepare_timestamp(timestamp):
     if pd.isna(timestamp):
@@ -212,6 +198,7 @@ def prepare_timestamp(timestamp):
 
     return None
 
+
 def get_last_paths(cell):
     if pd.isna(cell):
         return pd.NA
@@ -220,20 +207,33 @@ def get_last_paths(cell):
         return pd.NA
     return sorted(paths)[-1]
 
+
 def align_info(subject_name, paths, output_dir):
     print(f"Processing: {subject_name}")
-    image_dir = os.path.join(slide_dir, subject_name, subjects[subject_name]["video_id"])
+    image_dir = os.path.join(
+        slide_dir, subject_name, subjects[subject_name]["video_id"]
+    )
 
     # scene_df = scene json (extracted text), slide images
-    scene_img_csv_path = os.path.join(image_timestamp, subject_name, f'{subjects[subject_name]["video_id"]}_-_scene_id_to_timestamp.csv')
+    scene_img_csv_path = os.path.join(
+        image_timestamp,
+        subject_name,
+        f"{subjects[subject_name]['video_id']}_-_scene_id_to_timestamp.csv",
+    )
     scene_df = pd.read_csv(scene_img_csv_path)
     # get timestamps from scene_timestamp
-    scene_df["img_timestamp"] = (scene_df["scene_timestamp"].str.split("-", expand=True)[0].apply(prepare_timestamp))
-    
+    scene_df["img_timestamp"] = (
+        scene_df["scene_timestamp"]
+        .str.split("-", expand=True)[0]
+        .apply(prepare_timestamp)
+    )
+
     # save the json path
     scene_df["json_name"] = scene_df["scene_id"]
     # prepare img_name (.jpg)
-    scene_df["img_name"] = scene_df["scene_id"].str.replace(".json", ".jpg", regex=False)
+    scene_df["img_name"] = scene_df["scene_id"].str.replace(
+        ".json", ".jpg", regex=False
+    )
 
     transcript_df = pd.read_excel(paths["transcript_xlsx"])
     transcript_df["Start_sec"] = transcript_df["timestamp"].apply(prepare_timestamp)
@@ -241,7 +241,9 @@ def align_info(subject_name, paths, output_dir):
     # print(transcript_df[["timestamp", "Start_sec", "End_sec"]].head(10))
 
     # assume that the last row ends 30 seconds after its start time
-    transcript_df.loc[transcript_df.index[-1], "End_sec"] = transcript_df.loc[transcript_df.index[-1], "Start_sec"] + 30.0
+    transcript_df.loc[transcript_df.index[-1], "End_sec"] = (
+        transcript_df.loc[transcript_df.index[-1], "Start_sec"] + 30.0
+    )
 
     results = []
 
@@ -251,8 +253,8 @@ def align_info(subject_name, paths, output_dir):
         end_sec = row["End_sec"]
 
         matched_val = scene_df[
-            (scene_df["img_timestamp"] >= start_sec) &
-            (scene_df["img_timestamp"] < end_sec)
+            (scene_df["img_timestamp"] >= start_sec)
+            & (scene_df["img_timestamp"] < end_sec)
         ]
 
         # add image and json for the first segment
@@ -273,24 +275,26 @@ def align_info(subject_name, paths, output_dir):
             if os.path.exists(os.path.join(image_dir, json))
         ]
 
-        results.append({
-            "subject": subject_name,
-            "start_sec": row["Start_sec"],
-            "end_sec": row["End_sec"],
-            "transcript": row.get("transcript", ""),
-            "ja": row.get("ja", ""),
-            "zh": row.get("zh", ""),
-            "th": row.get("th", ""),
-            "id": row.get("id", ""),
-            "es": row.get("es", ""),
-            "fr": row.get("fr", ""),
-            "de": row.get("de", ""),
-            "images": ", ".join(sorted(image_paths)),
-            "ocrs": ", ".join(sorted(set(json_paths)))
-        })
+        results.append(
+            {
+                "subject": subject_name,
+                "start_sec": row["Start_sec"],
+                "end_sec": row["End_sec"],
+                "transcript": row.get("transcript", ""),
+                "ja": row.get("ja", ""),
+                "zh": row.get("zh", ""),
+                "th": row.get("th", ""),
+                "id": row.get("id", ""),
+                "es": row.get("es", ""),
+                "fr": row.get("fr", ""),
+                "de": row.get("de", ""),
+                "images": ", ".join(sorted(image_paths)),
+                "ocrs": ", ".join(sorted(set(json_paths))),
+            }
+        )
 
     result_df = pd.DataFrame(results)
-    
+
     # if images = NaN, assume that the slide displayed on the screen has not changed
     # -> use the slide images from the previous transcript segment
     result_df["images"] = result_df["images"].replace("", pd.NA)
@@ -309,24 +313,21 @@ def align_info(subject_name, paths, output_dir):
 
     os.makedirs(output_dir, exist_ok=True)
 
-    output_path = os.path.join(
-        output_dir, f"{subject_name}_transcript_slide.csv"
-    )
+    output_path = os.path.join(output_dir, f"{subject_name}_transcript_slide.csv")
     result_df.to_csv(output_path, index=False)
     print(f"Saved: {output_path}")
+
 
 aligned_img_base_dir = "/large/datas/nina-n/NL-ken/transcript_img_combined"
 
 for subject_name, paths in subjects.items():
-    align_info(
-        subject_name,
-        paths,
-        output_dir=aligned_img_base_dir
-    )
+    align_info(subject_name, paths, output_dir=aligned_img_base_dir)
+
 
 def encode_image_to_base64(image_path: Path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
+
 
 def slideimage(model):
     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_slideimage"
@@ -334,10 +335,10 @@ def slideimage(model):
     os.makedirs(output_model_dir, exist_ok=True)
 
     combined_csv_dir = "/large/datas/nina-n/NL-ken/transcript_img_combined"
-    
+
     for subject, paths in subjects.items():
-        # get slide paths 
-        combined_csv_path = f'{combined_csv_dir}/{subject}_transcript_slide.csv'
+        # get slide paths
+        combined_csv_path = f"{combined_csv_dir}/{subject}_transcript_slide.csv"
         if not os.path.exists(combined_csv_path):
             print(f"Creating {combined_csv_path}")
             align_info(subject, paths, output_dir=combined_csv_dir)
@@ -345,7 +346,7 @@ def slideimage(model):
 
         output_file = f"{output_dir}/{model}/{subject}_slideimage_{model}.jsonl"
         print(f"Creating {output_file}")
-        
+
         testset = pd.read_excel(paths["transcript_xlsx"], engine="openpyxl")
         request_count = 0
 
@@ -353,12 +354,12 @@ def slideimage(model):
             for transcript_i, row in testset.iterrows():
                 transcript_en = row["transcript"]
                 valid_image_count = 0
-                    
+
                 images_raw = []
                 if transcript_i < len(image_df):
                     images_str = image_df.loc[transcript_i, "images"]
                     if isinstance(images_str, str) and images_str.strip():
-                        images_raw = images_str.split(", ")               
+                        images_raw = images_str.split(", ")
                 img_files = [Path(img.strip()) for img in images_raw if img.strip()]
 
                 for language_code, language_name in target_languages.items():
@@ -375,23 +376,20 @@ def slideimage(model):
 
                     {language_name}:
                     """
-                    
-                    content_list = [
-                        {
-                            "type": "text",
-                            "text": prompt_user
-                        }
-                    ]
+
+                    content_list = [{"type": "text", "text": prompt_user}]
 
                     for img_path in img_files:
                         if img_path.exists():
                             image_base64 = encode_image_to_base64(img_path)
-                            content_list.append({
-                                "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:image/jpeg;base64,{image_base64}"
+                            content_list.append(
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{image_base64}"
+                                    },
                                 }
-                            })
+                            )
                             valid_image_count += 1
                         else:
                             print(f"Not found: {img_path}")
@@ -403,13 +401,10 @@ def slideimage(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 "temperature": 0,
                                 # "max_tokens": 2048
-                            }
+                            },
                         }
                     if model in gpt_5x:
                         request_json = {
@@ -418,19 +413,18 @@ def slideimage(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 # "max_completion_tokens": 2048
-                            }
+                            },
                         }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
         print("File created")
 
+
 slideimage("gpt-5-2025-08-07")
+
 
 def slidetext(model):
     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_slidetext"
@@ -438,10 +432,10 @@ def slidetext(model):
     os.makedirs(output_model_dir, exist_ok=True)
 
     combined_csv_dir = "/large/datas/nina-n/NL-ken/transcript_img_combined"
-    
+
     for subject, input_file in subjects.items():
-        # get json paths 
-        combined_csv_path = f'{combined_csv_dir}/{subject}_transcript_slide.csv'
+        # get json paths
+        combined_csv_path = f"{combined_csv_dir}/{subject}_transcript_slide.csv"
         if not os.path.exists(combined_csv_path):
             print(f"Creating {combined_csv_path}")
             align_info(subject, paths, output_dir=combined_csv_dir)
@@ -449,7 +443,7 @@ def slidetext(model):
 
         output_file = f"{output_dir}/{model}/{subject}_slidetext_{model}.jsonl"
         print(f"Creating {output_file}")
-        
+
         testset = pd.read_excel(paths["transcript_xlsx"], engine="openpyxl")
         request_count = 0
 
@@ -463,7 +457,8 @@ def slidetext(model):
                     if isinstance(json_file_str, str):
                         json_files = [
                             Path(j.strip())
-                            for j in json_file_str.split(", ") if j.strip()
+                            for j in json_file_str.split(", ")
+                            if j.strip()
                         ]
 
                         for json_file in json_files:
@@ -492,13 +487,8 @@ def slidetext(model):
 
                     {language_name}:
                     """
-                    
-                    content_list = [
-                        {
-                            "type": "text",
-                            "text": prompt_user
-                        }
-                    ]
+
+                    content_list = [{"type": "text", "text": prompt_user}]
 
                     if model in gpt_4x:
                         request_json = {
@@ -507,13 +497,10 @@ def slidetext(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 "temperature": 0,
                                 # "max_tokens": 2048
-                            }
+                            },
                         }
                     if model in gpt_5x:
                         request_json = {
@@ -522,17 +509,15 @@ def slidetext(model):
                             "url": "/v1/chat/completions",
                             "body": {
                                 "model": model,
-                                "messages": [
-                                    {"role": "user",
-                                    "content": content_list} 
-                                ],
+                                "messages": [{"role": "user", "content": content_list}],
                                 # "max_completion_tokens": 2048
-                            }
+                            },
                         }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
         print("File created")
+
 
 # nocontext("gpt-5-2025-08-07")
 slideimage("gpt-5-2025-08-07")

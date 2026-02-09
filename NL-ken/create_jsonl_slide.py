@@ -14,11 +14,11 @@ target_languages = {
     "id": "Indonesian",
     "th": "Thai",
     "zh": "Chinese",
-    "de": "German"
+    "de": "German",
 }
 
 subjects = {
-    "anat-1": "LQ7IXyQSXBk", 
+    "anat-1": "LQ7IXyQSXBk",
     "anat-2": "IvK-UGOI5ZQ",
     "bio-1": "pUH2_SGnm9g",
     "bio-2": "dEh_Zk9d0sE",
@@ -34,13 +34,10 @@ subjects = {
     "psy-2": "uNrB2uG_9gs",
     "speaking": "KL_I9eE2aGk",
     "theory_of_computation": "aVv9WXwW95w",
-    "urban_energy_systems_and_policy": "3WXWESx6jWY"
-    }
+    "urban_energy_systems_and_policy": "3WXWESx6jWY",
+}
 
-gpt_4x = [
-    "gpt-4.1-2025-04-14",
-    "o4-mini-2025-04-16"
-]
+gpt_4x = ["gpt-4.1-2025-04-14", "o4-mini-2025-04-16"]
 
 gpt_5x = [
     # "gpt-5-2025-08-07",
@@ -48,9 +45,11 @@ gpt_5x = [
     # "gpt-5-nano-2025-08-07"
 ]
 
+
 def encode_image_to_base64(image_path: Path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
+
 
 def translate_image(model):
     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_imageonly"
@@ -60,7 +59,7 @@ def translate_image(model):
     for subject, video_id in subjects.items():
         image_dir = Path(slide_base_path) / subject / video_id
         if not image_dir.exists():
-            print(f"Not found")
+            print("Not found")
         output_file = f"{output_dir}/{model}/{subject}_imageonly_{model}.jsonl"
         print(f"Creating {output_file}")
 
@@ -79,7 +78,7 @@ def translate_image(model):
                     scene_number = "N"
 
                 for language_code, language_name in target_languages.items():
-                    system_prompt = f"""\
+                    system_prompt = """\
                     You are a translation system for lecture slide images.
                     Translate the text on the image into the specified target language.
                     """
@@ -90,28 +89,25 @@ def translate_image(model):
 
                     {language_name}:
                     """
-                    
+
                     content_list = [
-                        {
-                            "role": "system",
-                            "content": system_prompt
-                        },
-                        {
-                            "role": "user",
-                            "content": user_prompt
-                        }
-                        
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
                     ]
 
-                    content_list.append({
-                        "role": "user",
-                        "content":
-                        [{
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{image_base64}"
-                        }}]
-                    })
+                    content_list.append(
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{image_base64}"
+                                    },
+                                }
+                            ],
+                        }
+                    )
 
                     request_json = {
                         "custom_id": f"{subject}_imageonly_{model}_{scene_number}_{language_code}",
@@ -122,12 +118,13 @@ def translate_image(model):
                             "messages": content_list,
                             # "max_tokens": 2048
                             # "max_completion_tokens": 2048
-                        }
+                        },
                     }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
             print("File created")
+
 
 def translate_slide_text(model):
     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_slidetextonly"
@@ -137,7 +134,7 @@ def translate_slide_text(model):
     for subject, video_id in subjects.items():
         json_dir = Path(slide_base_path) / subject / video_id
         if not json_dir.exists():
-            print(f"Not found")
+            print("Not found")
         output_file = f"{output_dir}/{model}/{subject}_slidetextonly_{model}.jsonl"
         print(f"Creating {output_file}")
 
@@ -156,14 +153,14 @@ def translate_slide_text(model):
                 else:
                     scene_number = "N"
 
-                slides_text = ""                       
+                slides_text = ""
                 for item in ocr_data:
                     if "value" in item and "text" in item["value"]:
                         for ocr_text in item["value"]["text"]:
                             slides_text += ocr_text + "\n"
 
                 for language_code, language_name in target_languages.items():
-                    system_prompt = f"""\
+                    system_prompt = """\
                     You are a translation system for lecture slide texts.
                     Translate the slide text into the specified target language.
                     """
@@ -177,17 +174,10 @@ def translate_slide_text(model):
 
                     {language_name}:
                     """
-                    
+
                     content_list = [
-                        {
-                            "role": "system",
-                            "content": system_prompt
-                        },
-                        {
-                            "role": "user",
-                            "content": user_prompt
-                        }
-                        
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
                     ]
 
                     request_json = {
@@ -199,17 +189,18 @@ def translate_slide_text(model):
                             "messages": content_list,
                             # "max_tokens": 2048
                             # "max_completion_tokens": 2048
-                        }
+                        },
                     }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
             print("File created")
 
+
 translate_image("gpt-4.1-2025-04-14")
 translate_image("o4-mini-2025-04-16")
 translate_image("gpt-5-mini-2025-08-07")
 
-'''translate_slide_text("gpt-4.1-2025-04-14")
+"""translate_slide_text("gpt-4.1-2025-04-14")
 translate_slide_text("o4-mini-2025-04-16")
-translate_slide_text("gpt-5-mini-2025-08-07")'''
+translate_slide_text("gpt-5-mini-2025-08-07")"""

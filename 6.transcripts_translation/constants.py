@@ -6,7 +6,7 @@ LANGUAGES = {
     "zh": "Chinese",
     "es": "Spanish",
     "fr": "French",
-    "de": "German"
+    "de": "German",
 }
 
 
