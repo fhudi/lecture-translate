@@ -75,7 +75,7 @@ class Gemma3Model(BaseModel):
         inputs = self.processor.apply_chat_template(
             messages, add_generation_prompt=True, tokenize=True,
             return_dict=True, return_tensors="pt",
-        ).to(_device, dtype=model.dtype)
+        ).to(_device, dtype=self.model.dtype)
         if images is not None:
             for i in images:
                 i.close()
