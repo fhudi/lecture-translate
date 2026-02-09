@@ -26,12 +26,13 @@ class Llama32Model(BaseModel):
             device_map="auto",
         )
         self.processor = AutoProcessor.from_pretrained(self.model_id)
-        # self.tokenizer = AutoTokenizer.from_pretrained(self.model_id)
+        self.device = self.model.device
 
         return self.model
 
     def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None,
                       is_check_input_only=False):
+        _device = self.model.device if self.model else self.device
         _user_prompt = {"type": "text", "text": self.user_prompt.format(
             lang_src=lang_src, lang_tgt=lang_tgt, transcript_src=transcript_src,
         )}
@@ -72,7 +73,7 @@ class Llama32Model(BaseModel):
         )
         inputs = self.processor(
             images or None, inputs_text, return_tensors="pt"
-        ).to(self.model.device)
+        ).to(_device)
         if images is not None:
             for i in images:
                 i.close()
