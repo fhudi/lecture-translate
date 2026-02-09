@@ -101,37 +101,27 @@ def translate_image(model):
                         
                     ]
 
-                
                     content_list.append({
+                        "role": "user",
+                        "content":
+                        [{
                         "type": "image_url",
                         "image_url": {
                             "url": f"data:image/jpeg;base64,{image_base64}"
-                        }
+                        }}]
                     })
 
-                    if model in gpt_4x and model != "o4-mini-2025-04-16":
-                        request_json = {
-                            "custom_id": f"{subject}_imageonly_{model}_{scene_number}_{language_code}",
-                            "method": "POST",
-                            "url": "/v1/chat/completions",
-                            "body": {
-                                "model": model,
-                                "messages": content_list,
-                                "temperature": 0,
-                                # "max_tokens": 2048
-                            }
+                    request_json = {
+                        "custom_id": f"{subject}_imageonly_{model}_{scene_number}_{language_code}",
+                        "method": "POST",
+                        "url": "/v1/chat/completions",
+                        "body": {
+                            "model": model,
+                            "messages": content_list,
+                            # "max_tokens": 2048
+                            # "max_completion_tokens": 2048
                         }
-                    if model in gpt_5x or model == "o4-mini-2025-04-16":
-                        request_json = {
-                            "custom_id": f"{subject}_imageonly_{model}_{scene_number}_{language_code}",
-                            "method": "POST",
-                            "url": "/v1/chat/completions",
-                            "body": {
-                                "model": model,
-                                "messages": content_list,
-                                # "max_completion_tokens": 2048
-                            }
-                        }
+                    }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
@@ -198,38 +188,26 @@ def translate_slide_text(model):
                         
                     ]
 
-                    if model in gpt_4x and model != "o4-mini-2025-04-16":
-                        request_json = {
-                            "custom_id": f"{subject}_slidetextonly_{model}_{scene_number}_{language_code}",
-                            "method": "POST",
-                            "url": "/v1/chat/completions",
-                            "body": {
-                                "model": model,
-                                "messages": content_list,
-                                "temperature": 0,
-                                # "max_tokens": 2048
-                            }
+                    request_json = {
+                        "custom_id": f"{subject}_slidetextonly_{model}_{scene_number}_{language_code}",
+                        "method": "POST",
+                        "url": "/v1/chat/completions",
+                        "body": {
+                            "model": model,
+                            "messages": content_list,
+                            # "max_tokens": 2048
+                            # "max_completion_tokens": 2048
                         }
-                    if model in gpt_5x or model == "o4-mini-2025-04-16":
-                        request_json = {
-                            "custom_id": f"{subject}_slidetextonly_{model}_{scene_number}_{language_code}",
-                            "method": "POST",
-                            "url": "/v1/chat/completions",
-                            "body": {
-                                "model": model,
-                                "messages": content_list,
-                                # "max_completion_tokens": 2048
-                            }
-                        }
+                    }
 
                     f.write(json.dumps(request_json) + "\n")
                     request_count += 1
             print("File created")
 
-'''translate_image("gpt-4.1-2025-04-14")
+translate_image("gpt-4.1-2025-04-14")
 translate_image("o4-mini-2025-04-16")
-translate_image("gpt-5-mini-2025-08-07")'''
+translate_image("gpt-5-mini-2025-08-07")
 
-translate_slide_text("gpt-4.1-2025-04-14")
+'''translate_slide_text("gpt-4.1-2025-04-14")
 translate_slide_text("o4-mini-2025-04-16")
-translate_slide_text("gpt-5-mini-2025-08-07")
+translate_slide_text("gpt-5-mini-2025-08-07")'''
