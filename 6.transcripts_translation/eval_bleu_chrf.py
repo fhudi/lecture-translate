@@ -2,6 +2,7 @@ from sacrebleu.metrics import BLEU, CHRF
 import json
 from pathlib import Path
 from pythainlp.tokenize import word_tokenize
+from constants import LANGUAGES
 
 reference_json = Path("/large/datas/frederikus-h/lectrans-testset/25.11.transcript_translate/transcript_translate_annotated_by_sbj_all_text.json")
 output_base_path = Path("/large/datas/nina-n/NL-ken/output_json")
@@ -43,7 +44,7 @@ subjects = {
     "urban_energy_systems_and_policy": "3WXWESx6jWY"
     }
 
-languages = ["ja", "zh", "th", "id", "es", "fr", "de"]
+languages = list(LANGUAGES.keys())
 
 with open(reference_json, "r", encoding="utf-8") as json_path:
     reference_all = json.load(json_path)
