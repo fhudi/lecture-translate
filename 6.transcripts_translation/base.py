@@ -3,17 +3,7 @@ import json
 from pathlib import Path
 from tqdm import tqdm
 from datetime import datetime
-
-LANGUAGES = {
-    "en": "English",
-    "ja": "Japanese",
-    "id": "Indonesian",
-    "th": "Thai",
-    "zh": "Chinese",
-    "es": "Spanish",
-    "fr": "French",
-    "de": "German"
-}
+from constants import LANGUAGES
 
 
 def _get_basedir_path():

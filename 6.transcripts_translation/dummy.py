@@ -1,6 +1,6 @@
 from base import BaseModel
 from PIL import Image
-from llama32 import _SYS_PROMPT_, _SYS_PROMPT_SLIDE_TXT_, _SYS_PROMPT_SLIDE_IMG_, _USER_PROMPT_
+from constants import *
 
 class DummyInputCheckModel(BaseModel):
 

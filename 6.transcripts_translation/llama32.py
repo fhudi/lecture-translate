@@ -1,54 +1,17 @@
 from base import BaseModel
 from PIL import Image
-
-_SYS_PROMPT_ = """\
-You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
-
-"""
-
-_SYS_PROMPT_SLIDE_TXT_ = """\
-You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
-
-In addition to the transcript, you are given auxiliary textual context extracted from the corresponding presentation slides.
-This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
-
-The context is as follows, encapsulated with triple ticks:
-
-```
-{slide_txt}
-```
-
-
-"""
-
-_SYS_PROMPT_SLIDE_IMG_ = """\
-You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
-
-In addition to the transcript, you are given auxiliary image context from the corresponding presentation slides.
-This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
-
-"""
-
-_USER_PROMPT_ = """\
-Translate the following from {lang_src} to {lang_tgt}.
-Please return only the translation.
-
-{lang_src}:
-"{transcript_src}"
-
-{lang_tgt}:
-"""
+from constants import *
 
 class Llama32Model(BaseModel):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.model_id = kwargs.get("model_id", "meta-llama/Llama-3.2-11B-Vision-Instruct")
-        self.sys_prompt = {"base": _SYS_PROMPT_, "slide_txt": _SYS_PROMPT_SLIDE_TXT_, "slide_img": None}
-        self.user_prompt = _USER_PROMPT_
+        self.sys_prompt = {"base": SYS_PROMPT, "slide_txt": SYS_PROMPT_SLIDE_TXT, "slide_img": None}
+        self.user_prompt = USER_PROMPT
+        self.model = None
+        self.processor = None
+        self.device = None
 
     def load_model(self, *args, **kwargs):
         if self.model is not None:
