@@ -63,10 +63,10 @@ def tokenize_thai(text):
 chrf = CHRF()
 
 def evaluate(model, exp_type, language):
-    sys = []
-    refs = []
-
+    results = {}
     for subject, video_id in subjects.items():
+        sys = []
+        refs = []
         # mt_path = (output_base_path / exp_type / model / f"{subject}_{exp_type}_{model}.json")
         # mt_path = (output_base_path / exp_type / model / f"{subject}_{video_id}.en2any.{model}.json")
         
@@ -101,18 +101,20 @@ def evaluate(model, exp_type, language):
             sys.append(hyp_text)
             refs.append(ref_text)
     
-    if len(sys) == 0:
-        return None, None, 0, 0
-
-    if language == "th":
-        bleu = BLEU(tokenize="none")
-    else:
-        bleu = select_tokenizer(language)
+        if len(sys) == 0:
+            return None, None, 0, 0
     
-    bleu_score = bleu.corpus_score(sys, [refs])
-    chrf_score = chrf.corpus_score(sys, [refs])
+        if language == "th":
+            bleu = BLEU(tokenize="none")
+        else:
+            bleu = select_tokenizer(language)
+        
+        bleu_score = bleu.corpus_score(sys, [refs])
+        chrf_score = chrf.corpus_score(sys, [refs])
+    
+        results[f"{subject}/{video_id}"] = (bleu_score, chrf_score, len(sys), len(refs))
 
-    return bleu_score, chrf_score, len(sys), len(refs)
+    return results
 
 for model in models:
     for exp_type in exp_types:
@@ -134,9 +136,16 @@ for model in models:
         }
 
         for language in languages:
-            bleu_result, chrf_result, hyp_num, ref_num = evaluate(model, exp_type, language)
-            if bleu_result is None:
+            # bleu_result, chrf_result, hyp_num, ref_num = evaluate(model, exp_type, language)
+            # if bleu_result is None:
+            #     continue
+
+            results_per_subject = evaluate(model, exp_type, language)
+            if not results_per_subject:
                 continue
+
+            bleu_result = sum(_[0].score for _ in results_per_subject.values()) / len(results_per_subject)
+            chrf_result = sum(_[1].score for _ in results_per_subject.values()) / len(results_per_subject)
 
             result_dict["results"][language] = {
                 "BLEU": str(bleu_result),
