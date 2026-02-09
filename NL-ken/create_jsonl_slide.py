@@ -85,8 +85,10 @@ def translate_image(model):
                     """
 
                     user_prompt = f"""\
-                    Translate the text on the image from {lang_src} to {language_name}.
+                    Translate the following from {lang_src} to {language_name}.
                     Please return only the translation.
+
+                    {language_name}:
                     """
                     
                     content_list = [
