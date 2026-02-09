@@ -102,7 +102,8 @@ def evaluate(model, exp_type, language):
             refs.append(ref_text)
     
         if len(sys) == 0:
-            return None, None, 0, 0
+            results[f"{subject}/{video_id}"] = None, None, 0, 0
+            continue
     
         if language == "th":
             bleu = BLEU(tokenize="none")
