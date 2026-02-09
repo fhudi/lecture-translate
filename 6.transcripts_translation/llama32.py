@@ -1,11 +1,10 @@
 from base import BaseModel
-import torch
 from PIL import Image
-from transformers import MllamaForConditionalGeneration, AutoProcessor, AutoTokenizer
 
 _SYS_PROMPT_ = """\
 You are a translation system for lecture video transcripts.
 Translate the spoken transcript into the specified target language.
+
 """
 
 _SYS_PROMPT_SLIDE_TXT_ = """\
@@ -15,9 +14,22 @@ Translate the spoken transcript into the specified target language.
 In addition to the transcript, you are given auxiliary textual context extracted from the corresponding presentation slides.
 This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
 
-The context is as follows:
+The context is as follows, encapsulated with triple ticks:
 
+```
 {slide_txt}
+```
+
+
+"""
+
+_SYS_PROMPT_SLIDE_IMG_ = """\
+You are a translation system for lecture video transcripts.
+Translate the spoken transcript into the specified target language.
+
+In addition to the transcript, you are given auxiliary image context from the corresponding presentation slides.
+This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
+
 """
 
 _USER_PROMPT_ = """\
@@ -42,6 +54,9 @@ class Llama32Model(BaseModel):
         if self.model is not None:
             return self.model
 
+        import torch
+        from transformers import MllamaForConditionalGeneration, AutoProcessor, AutoTokenizer
+        
         self.model = MllamaForConditionalGeneration.from_pretrained(
             self.model_id,
             torch_dtype=torch.bfloat16,
@@ -53,30 +68,52 @@ class Llama32Model(BaseModel):
         return self.model
 
     def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None):
+        _user_prompt = {"type": "text", "text": self.user_prompt.format(
+            lang_src=lang_src, lang_tgt=lang_tgt, transcript_src=transcript_src,
+        )}
+        images = None
+
         if context_img is not None:
-            _sys_prompt = self.sys_prompt["slide_img"].format(slide_img=context_img)
+            # _sys_prompt = self.sys_prompt["slide_img"].format(slide_img=context_img)
+            messages = [
+                {"role": "user", "content": [
+                    {"type": "text", "text": self.sys_prompt["slide_img"]},
+                    *[{"type": "image"} for _ in range(len(context_img))],
+                    _user_prompt,
+                ]},
+            ]
+            images = [Image.open(fp) for fp in context_img]
+        
         elif context_text is not None:
-            _sys_prompt = self.sys_prompt["slide_txt"].format(slide_txt=context_text)
+            messages = [
+                # {"role": "system", "content": [
+                #     {"type": "text", "text": _sys_prompt},
+                # ]},
+                {"role": "user", "content": [
+                    {"type": "text", "text": self.sys_prompt["slide_txt"].format(slide_txt=context_text)},
+                    _user_prompt,
+                ]},
+            ]
+        
         else:
-            _sys_prompt = self.sys_prompt["base"]
+            messages = [
+                {"role": "user", "content": [
+                    {"type": "text", "text": self.sys_prompt["base"]},
+                    _user_prompt,
+                ]},
+            ]
 
-        messages = [
-            {"role": "system", "content": [
-                {"type": "text", "text": [_sys_prompt]},
-            ]},
-            {"role": "user", "content": [
-                {"type": "text", "text": self.user_prompt.format(
-                    lang_src=lang_src, lang_tgt=lang_tgt, transcript_src=transcript_src,
-                )},
-            ]},
-        ]
-
-        inputs = self.processor.apply_chat_template(
-            messages, add_generation_prompt=True, tokenize=True, 
-            return_dict=True, return_tensors="pt"
+        inputs_text = self.processor.apply_chat_template(
+            messages, add_generation_prompt=True,
+        )
+        inputs = self.processor(
+            images or None, inputs_text, return_tensors="pt"
         ).to(self.model.device)
+        if images is not None:
+            for i in images:
+                i.close()
 
-        outputs = self.model.generate(**inputs.to(self.model.device), max_new_tokens=1024)
+        outputs = self.model.generate(**inputs.to(self.model.device), max_new_tokens=2048)
         outputs_decoded = self.processor.decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
         # outputs_decoded = self.tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)[0]
 
