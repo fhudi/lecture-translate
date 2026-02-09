@@ -30,7 +30,8 @@ class BaseModel:
     def load_model(self, *args, **kwargs):
         raise NotImplementedError
 
-    def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None):
+    def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None,
+                      is_check_input_only=False):
         raise NotImplementedError
 
     def evaluate(self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None):
@@ -64,7 +65,9 @@ class BaseModel:
         for idx, (k, v) in enumerate(datas_transcript_text.items()):
             if (idx < st) or (idx >= ed):
                 continue
-            kwargs = {}
+            kwargs = {
+                "is_check_input_only": dummy,
+            }
 
             if context == "slidetxt":
                 context_text = []
@@ -90,6 +93,8 @@ class BaseModel:
                 json.dump(preds_one_lecture, f, ensure_ascii=False, indent=2)
             if dummy:
                 break
+
+        # print(kwargs)
 
 
 

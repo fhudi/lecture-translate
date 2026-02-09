@@ -7,6 +7,8 @@
 #SBATCH --output=slurm_out/slurm-%x.%A_%a.%j.out
 #SBATCH --error=slurm_out/slurm-%x.%A_%a.%j.err
 
+#python runner.py --model "gemma3it12b" --dummy
+
 
 if [ "$SLURM_ARRAY_TASK_ID" -eq 666 ]; then
     exit 1
@@ -24,13 +26,13 @@ elif [ "$SLURM_ARRAY_TASK_ID" -eq 3 ]; then
 # python runner.py --model "llama4scout"
 
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 11 ]; then
-    python runner.py --model "gemma3it"
+    python runner.py --model "gemma3it12b"
 
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 12 ]; then
-    python runner.py --model "gemma3it" --context "slidetxt"
+    python runner.py --model "gemma3it12b" --context "slidetxt"
 
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 13 ]; then
-    python runner.py --model "gemma3it" --context "slideimg"
+    python runner.py --model "gemma3it12b" --context "slideimg"
 
 
 fi

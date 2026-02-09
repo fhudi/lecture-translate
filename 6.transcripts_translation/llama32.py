@@ -19,7 +19,7 @@ class Llama32Model(BaseModel):
 
         import torch
         from transformers import MllamaForConditionalGeneration, AutoProcessor, AutoTokenizer
-        
+
         self.model = MllamaForConditionalGeneration.from_pretrained(
             self.model_id,
             torch_dtype=torch.bfloat16,
@@ -30,12 +30,13 @@ class Llama32Model(BaseModel):
 
         return self.model
 
-    def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None):
+    def eval_instance(self, lang_src, lang_tgt, transcript_src, context_img=None, context_text=None,
+                      is_check_input_only=False):
         _user_prompt = {"type": "text", "text": self.user_prompt.format(
             lang_src=lang_src, lang_tgt=lang_tgt, transcript_src=transcript_src,
         )}
-        images = None
 
+        images = None
         if context_img is not None:
             # _sys_prompt = self.sys_prompt["slide_img"].format(slide_img=context_img)
             messages = [
@@ -46,7 +47,7 @@ class Llama32Model(BaseModel):
                 ]},
             ]
             images = [Image.open(fp) for fp in context_img]
-        
+
         elif context_text is not None:
             messages = [
                 # {"role": "system", "content": [
@@ -57,7 +58,7 @@ class Llama32Model(BaseModel):
                     _user_prompt,
                 ]},
             ]
-        
+
         else:
             messages = [
                 {"role": "user", "content": [
@@ -76,9 +77,11 @@ class Llama32Model(BaseModel):
             for i in images:
                 i.close()
 
-        outputs = self.model.generate(**inputs.to(self.model.device), max_new_tokens=2048)
+        if is_check_input_only:   # outputs = inputs
+            return self.processor.decode(inputs["input_ids"], skip_special_tokens=False)
+
+        outputs = self.model.generate(**inputs, max_new_tokens=2048)
         outputs_decoded = self.processor.decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
-        # outputs_decoded = self.tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)[0]
 
         return outputs_decoded
 
