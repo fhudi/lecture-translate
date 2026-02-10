@@ -20,7 +20,7 @@ class Llama32Model(BaseModel):
         self.sys_prompt = {
             "base": SYS_PROMPT,
             "slide_txt": SYS_PROMPT_SLIDE_TXT,
-            "slide_img": None,
+            "slide_img": SYS_PROMPT_SLIDE_IMG,
         }
         self.user_prompt = USER_PROMPT
         self.model = None
@@ -55,8 +55,8 @@ class Llama32Model(BaseModel):
         lang_src,
         lang_tgt,
         transcript_src,
-        context_img=None,
-        context_text=None,
+        context_img=None,  # transcript translation context
+        context_text=None,  # transcript translation context
         is_check_input_only=False,
     ):
         _device = self.model.device if self.model else self.device
