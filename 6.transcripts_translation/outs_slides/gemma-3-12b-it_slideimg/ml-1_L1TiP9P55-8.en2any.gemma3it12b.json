@@ -1,0 +1,2992 @@
+{
+  "L1TiP9P55-8-Scene-339-03": {
+    "ja": {
+      "BB_7": [
+        "生成モデル: ナイーブベイズ分類器\n\ny  ラベル: {0: 支配的, 1: 非支配的} (結果)\n\nX  観測ベクトル: [視線、発話転換、音声エネルギー] (証拠)\n\nスコア関数: P(y = a|x)\n\n尤度、事前確率、連鎖律\nベイズの定理: P(y|x) = P(x|y)P(y) / P(x) = P(x,y)\n\n事後確率、周辺尤度 P(x) = Σ P(x|y)P(y) (規格化)"
+      ],
+      "7ZPKW4zdTx": [
+        "ベイズの定理：$P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "生成モデル：ナイーブベイズ分類器"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "ラベル: {0: 優勢, 1: 非優勢} (結果)"
+      ],
+      "409ZvEUiJm": [
+        "観測ベクトル: [視線、発話交代、音声エネルギー] (証拠)"
+      ],
+      "Za3bqkHPBh": [
+        "スコア関数:"
+      ],
+      "mcRBuwA6ed": [
+        "言語技術研究所"
+      ],
+      "U-EBAACwtX": [
+        "カーネギーメロン大学"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "ベイズの定理:"
+      ],
+      "dtsZV7684w": [
+        "尤度"
+      ],
+      "Z4xdqP7DrF": [
+        "事前確率"
+      ],
+      "kuy_5XTLjO": [
+        "連鎖律"
+      ],
+      "qOI01FyujK": [
+        "事後確率"
+      ],
+      "13KqYpOW6F": [
+        "周辺尤度 (分割関数)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = Σy P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "id": {
+      "BB_7": [
+        "Model Generatif: Klasifikasi Naive Bayes"
+      ],
+      "7ZPKW4zdTx": [
+        "Teorema Bayes: $P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "Model Generatif: Pengklasifikasi Naïve Bayes"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "Label: {0:Dominan, 1:Tidak-dominan} (hasil)"
+      ],
+      "409ZvEUiJm": [
+        "Vektor observasi: [tatapan, bergantian bicara, energi-ucapan] (bukti)"
+      ],
+      "Za3bqkHPBh": [
+        "Fungsi skor:"
+      ],
+      "mcRBuwA6ed": [
+        "Institut Teknologi Bahasa"
+      ],
+      "U-EBAACwtX": [
+        "Universitas Carnegie Mellon"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "Teorema Bayes:"
+      ],
+      "dtsZV7684w": [
+        "Kemungkinan"
+      ],
+      "Z4xdqP7DrF": [
+        "Prior"
+      ],
+      "kuy_5XTLjO": [
+        "Aturan rantai"
+      ],
+      "qOI01FyujK": [
+        "Posterior"
+      ],
+      "13KqYpOW6F": [
+        "Likelihood marginal (partisi)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = Σy P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "th": {
+      "BB_7": [
+        "แบบจำลองสร้างสรรค์: ตัวจัดประเภท Naive Bayes\n\ny ป้ายกำกับ: {0: เด่น, 1: ไม่เด่น} (ผลลัพธ์)\n\nX เวกเตอร์สังเกต: [การมองตา, การเปลี่ยนท่า, พลังงานเสียง] (หลักฐาน)\n\nฟังก์ชันคะแนน: P(y = a|x; )\n\nความน่าจะเป็น:  P(x|y)P(y) = P(x|y)P(y) = P(x,y)\n\nทฤษฎีบทของเบย์: P(y|x) = \n\nความน่าจะเป็นขอบ (การแบ่งส่วน)  Marginal likelihood P(x) = Σ P(x|y)P(y)\ny"
+      ],
+      "7ZPKW4zdTx": [
+        "ทฤษฎีบทของเบย์: $P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "รูปแบบสร้างสรรค์: ตัวจำแนกแบบ Naïve Bayes"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "ป้ายกำกับ: {0: เด่นชัด, 1: ไม่โดดเด่น} (ผลลัพธ์)"
+      ],
+      "409ZvEUiJm": [
+        "เวกเตอร์สังเกต: [การมอง, การผลัดกันพูด, พลังงานเสียง] (หลักฐาน)"
+      ],
+      "Za3bqkHPBh": [
+        "ฟังก์ชันคะแนน:"
+      ],
+      "mcRBuwA6ed": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "U-EBAACwtX": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "ทฤษฎีบทของเบย์:"
+      ],
+      "dtsZV7684w": [
+        "ความน่าจะเป็น"
+      ],
+      "Z4xdqP7DrF": [
+        "ก่อนหน้า"
+      ],
+      "kuy_5XTLjO": [
+        "กฎลูกโซ่"
+      ],
+      "qOI01FyujK": [
+        "Posterior"
+      ],
+      "13KqYpOW6F": [
+        "ความน่าจะเป็นขอบ (การแบ่งส่วน)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = Σ P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "zh": {
+      "BB_7": [
+        "生成模型：朴素贝叶斯分类器\n\ny 标签：{0: 支配型, 1: 非支配型} (结果)\n\nX 观测向量：[凝视, 交替说话, 语音能量] (证据)\n\n评分函数：P(y = a|x)\n\n似然度 Prior 链式法则\nBayes 定理: P(y|x) = P(x|y)P(y) / P(x) = P(x,y)\n\n后验 Marginal likelihood P(x) = Σ P(x|y)P(y)\n(分区)"
+      ],
+      "7ZPKW4zdTx": [
+        "贝叶斯定理：$P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "生成模型：朴素贝叶斯分类器"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "标签：{0: 显性, 1: 非显性} (结果)"
+      ],
+      "409ZvEUiJm": [
+        "观测向量：[凝视，轮流交替，语音能量] (证据)"
+      ],
+      "Za3bqkHPBh": [
+        "评分函数："
+      ],
+      "mcRBuwA6ed": [
+        "语言科技研究所"
+      ],
+      "U-EBAACwtX": [
+        "卡内基梅隆大学"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P(y = a | \\mathbf{x}_i)$"
+      ],
+      "rJnQguh-HV": [
+        "贝叶斯定理："
+      ],
+      "dtsZV7684w": [
+        "似然度"
+      ],
+      "Z4xdqP7DrF": [
+        "先验"
+      ],
+      "kuy_5XTLjO": [
+        "链式法则"
+      ],
+      "qOI01FyujK": [
+        "后验概率"
+      ],
+      "13KqYpOW6F": [
+        "边际似然（归一化因子）"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = Σy P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "es": {
+      "BB_7": [
+        "Modelo generativo: Clasificador Naive Bayes"
+      ],
+      "7ZPKW4zdTx": [
+        "Teorema de Bayes: $P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "Modelo Generativo: Clasificador Naive Bayes"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "Etiqueta: {0:Dominante, 1:No dominante} (resultado)"
+      ],
+      "409ZvEUiJm": [
+        "Vector de observación: [mirada, cambio de turno, energía del habla] (evidencia)"
+      ],
+      "Za3bqkHPBh": [
+        "Función de puntuación:"
+      ],
+      "mcRBuwA6ed": [
+        "\"\"\"\nInstituto de Tecnologías del Lenguaje\n\"\"\""
+      ],
+      "U-EBAACwtX": [
+        "Universidad Carnegie Mellon"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "Teorema de Bayes:"
+      ],
+      "dtsZV7684w": [
+        "Verosimilitud"
+      ],
+      "Z4xdqP7DrF": [
+        "Prior"
+      ],
+      "kuy_5XTLjO": [
+        "Regla de la cadena"
+      ],
+      "qOI01FyujK": [
+        "Posterior"
+      ],
+      "13KqYpOW6F": [
+        "Verosimilitud marginal (partición)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x)=∑yP(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "fr": {
+      "BB_7": [
+        "Modèle génératif : Classificateur Naïf Bayes\n\ny : Étiquette {0 : Dominant, 1 : Non-dominant} (résultat)\n\nX : Vecteur d'observation : [regard, prise de parole, énergie vocale] (données probantes)\n\nFonction de score : P(y = a | x)\n\nVraisemblance Prior Règle de chaîne\n\nThéorème de Bayes : P(y|x) = P(x|y)P(y) / P(x) = P(x,y) / P(x)\n\nPostérieur Probabilité marginale P(x) = Σ P(x|y)P(y)\ny"
+      ],
+      "7ZPKW4zdTx": [
+        "Théorème de Bayes : $P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$"
+      ],
+      "kHiX2SXoC4": [
+        "Modèle génératif : Classificateur Naïf Bayes"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "Étiquette : {0 : Dominant, 1 : Non dominant} (résultat)"
+      ],
+      "409ZvEUiJm": [
+        "Vecteur d'observation : [regard, prise de parole, énergie vocale] (preuve)"
+      ],
+      "Za3bqkHPBh": [
+        "Fonction de score :"
+      ],
+      "mcRBuwA6ed": [
+        "Institut des technologies du langage"
+      ],
+      "U-EBAACwtX": [
+        "Université Carnegie Mellon"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "Théorème de Bayes :"
+      ],
+      "dtsZV7684w": [
+        "Vraisemblance"
+      ],
+      "Z4xdqP7DrF": [
+        "A priori"
+      ],
+      "kuy_5XTLjO": [
+        "Règle de chaîne"
+      ],
+      "qOI01FyujK": [
+        "A posteriori"
+      ],
+      "13KqYpOW6F": [
+        "Vraisemblance marginale (partition)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = ∑y P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    },
+    "de": {
+      "BB_7": [
+        "Generatives Modell: Naive Bayes Klassifikator"
+      ],
+      "7ZPKW4zdTx": [
+        "\"\"\"\nBayes' Theorem: $P ( y | x ) = { \\frac { P ( x | y ) P ( y ) } { P ( x ) } }$\n\"\"\""
+      ],
+      "kHiX2SXoC4": [
+        "Generatives Modell: Naive Bayes Klassifikator"
+      ],
+      "TBugrzlY6i": [
+        "Y"
+      ],
+      "TLxONigQe2": [
+        "Label: {0:Dominant, 1:Nicht-dominant} (Ergebnis)"
+      ],
+      "409ZvEUiJm": [
+        "Beobachtungsvektor: [Blickrichtung, Gesprächsführung, Sprachenergie] (Evidenz)"
+      ],
+      "Za3bqkHPBh": [
+        "Funktionswert:"
+      ],
+      "mcRBuwA6ed": [
+        "Institut für Sprachtechnologie"
+      ],
+      "U-EBAACwtX": [
+        "Carnegie Mellon Universität"
+      ],
+      "N1x8pUowDH": [
+        "x"
+      ],
+      "2l-KRn_ZZK": [
+        "$P ( y = a | \\mathbf { x } _ { i } )$"
+      ],
+      "rJnQguh-HV": [
+        "Bayes' Theorem:"
+      ],
+      "dtsZV7684w": [
+        "Likelihood"
+      ],
+      "Z4xdqP7DrF": [
+        "Prior"
+      ],
+      "kuy_5XTLjO": [
+        "Kettenregel"
+      ],
+      "qOI01FyujK": [
+        "Posteriori"
+      ],
+      "13KqYpOW6F": [
+        "Randwahrscheinlichkeit (Partition)"
+      ],
+      "0bs7E3mB-t": [
+        "P(x) = Σ y P(x|y)P(y)"
+      ],
+      "yKzJ5Tg_7K": [
+        "≈ P(x|y)P(y) = P(x,y)"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-340-02": {
+    "ja": {
+      "BB_1": [
+        "動的ベイズネットワーク"
+      ],
+      "BB_2": [
+        "動的ベイズネットワーク"
+      ],
+      "9m3f-6V0Np": [
+        "言語技術研究所"
+      ],
+      "tTMteK5tuC": [
+        "カーネギーメロン大学"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Jaringan Bayesian Dinamis"
+      ],
+      "BB_2": [
+        "Jaringan Bayesian Dinamis"
+      ],
+      "9m3f-6V0Np": [
+        "Institut Teknologi Bahasa"
+      ],
+      "tTMteK5tuC": [
+        "Universitas Carnegie Mellon"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "โครงข่ายเบย์เซียนแบบไดนามิก"
+      ],
+      "BB_2": [
+        "เครือข่ายเบย์เซียนแบบไดนามิก"
+      ],
+      "9m3f-6V0Np": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "tTMteK5tuC": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "动态贝叶斯网络"
+      ],
+      "BB_2": [
+        "动态贝叶斯网络"
+      ],
+      "9m3f-6V0Np": [
+        "语言科技研究所"
+      ],
+      "tTMteK5tuC": [
+        "卡内基梅隆大学"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "Red Bayesiana Dinámica"
+      ],
+      "BB_2": [
+        "Red Bayesiana Dinámica"
+      ],
+      "9m3f-6V0Np": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "tTMteK5tuC": [
+        "Universidad Carnegie Mellon"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Réseau bayésien dynamique"
+      ],
+      "BB_2": [
+        "Réseau bayésien dynamique"
+      ],
+      "9m3f-6V0Np": [
+        "Institut des technologies du langage"
+      ],
+      "tTMteK5tuC": [
+        "Université Carnegie Mellon"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Dynamische Bayes'sche Netzwerke"
+      ],
+      "BB_2": [
+        "Dynamisches Bayesianisches Netzwerk"
+      ],
+      "9m3f-6V0Np": [
+        "Institut für Sprachtechnologien"
+      ],
+      "tTMteK5tuC": [
+        "Carnegie Mellon Universität"
+      ],
+      "Kr4dq0G6D4": [
+        "39"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-346-01": {
+    "ja": {
+      "BB_1": [
+        "動的ベイズネットワーク (DBN)"
+      ],
+      "BB_2": [
+        "ベイジアンネットワークは、逐次的な依存関係を表現することを可能にする。"
+      ],
+      "BB_3": [
+        "時間とともに動的に変化または進化する。"
+      ],
+      "BB_4": [
+        "確率的プロセスの有向グラフモデル"
+      ],
+      "BB_5": [
+        "特に時系列モデリングを目標としています。"
+      ],
+      "BB_6": [
+        "マルコフ条件を満たす："
+      ],
+      "BB_7": [
+        "システムの時刻tの状態は、時刻t-1の直前の状態にのみ依存します。"
+      ],
+      "BB_8": [
+        "動的ベイズネットワーク (DBN)\n\n* ベイズネットワークは、逐次的な依存関係を表すことができます。\n* 時間とともに変化または進化します。\n* 確率過程の有向グラフモデル。\n* 特に時系列モデリングを目的としています。\n\n* マルコフ条件を満たす：\n  時刻 t におけるシステムの状態は、時刻 t-1 における直前の状態にのみ依存します。"
+      ],
+      "2FC_8gDVFT": [
+        "言語技術研究所"
+      ],
+      "F4egn4m3em": [
+        "カーネギーメロン大学"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Jaringan Bayesian Dinamis (DBN)"
+      ],
+      "BB_2": [
+        "Jaringan Bayesian memungkinkan untuk merepresentasikan ketergantungan sekuensial."
+      ],
+      "BB_3": [
+        "Berubah secara dinamis atau berkembang seiring waktu."
+      ],
+      "BB_4": [
+        "Model grafis terarah dari proses stokastik."
+      ],
+      "BB_5": [
+        "Terutama ditujukan untuk pemodelan deret waktu."
+      ],
+      "BB_6": [
+        "Memenuhi kondisi Markovian:"
+      ],
+      "BB_7": [
+        "Keadaan suatu sistem pada waktu t hanya bergantung pada keadaan sebelumnya pada waktu t-1."
+      ],
+      "BB_8": [
+        "Jaringan Bayesian Dinamis (DBN)\n\n* Jaringan Bayesian memungkinkan representasi ketergantungan sekuensial.\n* Berubah secara dinamis atau berkembang seiring waktu.\n* Model grafis terarah dari proses stokastik.\n* Terutama ditujukan untuk pemodelan deret waktu.\n* Memenuhi kondisi Markovian:\n  Keadaan suatu sistem pada waktu t hanya bergantung pada keadaan langsung sebelumnya pada waktu t-1."
+      ],
+      "2FC_8gDVFT": [
+        "Institut Teknologi Bahasa"
+      ],
+      "F4egn4m3em": [
+        "Universitas Carnegie Mellon"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "เครือข่ายเบย์เซียนแบบไดนามิก (DBN)"
+      ],
+      "BB_2": [
+        "เครือข่าย Bayesian ช่วยให้สามารถแสดงความสัมพันธ์ตามลำดับได้"
+      ],
+      "BB_3": [
+        "เปลี่ยนแปลงหรือวิวัฒนาการตามเวลา"
+      ],
+      "BB_4": [
+        "แบบจำลองกราฟเชิงทิศทางของกระบวนการสุ่ม"
+      ],
+      "BB_5": [
+        "โดยเฉพาะอย่างยิ่งมุ่งเน้นไปที่การสร้างแบบจำลองอนุกรมเวลา"
+      ],
+      "BB_6": [
+        "เป็นไปตามเงื่อนไขมาร์คอฟ:"
+      ],
+      "BB_7": [
+        "สถานะของระบบ ณ เวลา t ขึ้นอยู่กับสถานะก่อนหน้าทันที ณ เวลา t-1"
+      ],
+      "BB_8": [
+        "เครือข่ายเบย์เซียนแบบไดนามิก (DBN)\n\n* เครือข่ายเบย์เซียนช่วยให้สามารถแสดงความสัมพันธ์ต่อเนื่องได้\n* เปลี่ยนแปลงหรือวิวัฒนาการไปตามเวลา\n* แบบจำลองกราฟแบบมีทิศทางสำหรับกระบวนการสุ่ม\n* โดยเฉพาะอย่างยิ่งมุ่งเน้นไปที่การสร้างแบบจำลองอนุกรมเวลา\n\n* สอดคล้องกับเงื่อนไขมาร์คอฟ:\nสถานะของระบบ ณ เวลา t ขึ้นอยู่กับสถานะก่อนหน้า ณ เวลา t-1 เท่านั้น"
+      ],
+      "2FC_8gDVFT": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "F4egn4m3em": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "动态贝叶斯网络 (DBN)"
+      ],
+      "BB_2": [
+        "贝叶斯网络允许表示序列依赖关系。"
+      ],
+      "BB_3": [
+        "随着时间推移而动态变化或演变。"
+      ],
+      "BB_4": [
+        "随机过程的有向图模型。"
+      ],
+      "BB_5": [
+        "尤其致力于时间序列建模。"
+      ],
+      "BB_6": [
+        "满足马尔可夫条件："
+      ],
+      "BB_7": [
+        "系统的状态在时间 t 仅取决于其在时间 t-1 的即时过去状态。"
+      ],
+      "BB_8": [
+        "动态贝叶斯网络 (DBN)\n\n* 贝叶斯网络允许表示序列依赖关系。\n* 动态变化或随时间演变。\n* 有向图模型，用于描述随机过程。\n* 特别针对时间序列建模。\n* 满足马尔可夫条件：\n  系统在时间 t 的状态仅取决于其在时间 t-1 的即时过去状态。"
+      ],
+      "2FC_8gDVFT": [
+        "语言技术研究所"
+      ],
+      "F4egn4m3em": [
+        "卡内基梅隆大学"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "Red Bayesiana Dinámica (RBD)"
+      ],
+      "BB_2": [
+        "La red Bayesiana permite representar dependencias secuenciales."
+      ],
+      "BB_3": [
+        "Cambiando dinámicamente o evolucionando con el tiempo."
+      ],
+      "BB_4": [
+        "Modelo gráfico dirigido de procesos estocásticos."
+      ],
+      "BB_5": [
+        "Especialmente enfocado en el modelado de series de tiempo."
+      ],
+      "BB_6": [
+        "Cumpliendo con la condición de Markov:"
+      ],
+      "BB_7": [
+        "El estado de un sistema en el tiempo t depende solo de su estado previo inmediato en el tiempo t-1."
+      ],
+      "BB_8": [
+        "Red Bayesiana Dinámica (DBN)\n\n*   La red Bayesiana permite representar dependencias secuenciales.\n*   Cambiando dinámicamente o evolucionando con el tiempo.\n*   Modelo gráfico dirigido de procesos estocásticos.\n*   Especialmente apuntando al modelado de series temporales.\n\n*   Satisface la condición de Markov:\n    El estado de un sistema en el tiempo t depende solo de su estado inmediato anterior en el tiempo t-1."
+      ],
+      "2FC_8gDVFT": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "F4egn4m3em": [
+        "Universidad Carnegie Mellon"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Réseau bayésien dynamique (DBN)"
+      ],
+      "BB_2": [
+        "Un réseau bayésien permet de représenter les dépendances séquentielles."
+      ],
+      "BB_3": [
+        "Évoluant dynamiquement ou changeant au fil du temps."
+      ],
+      "BB_4": [
+        "Modèle graphique dirigé de processus stochastiques."
+      ],
+      "BB_5": [
+        "Visant particulièrement la modélisation de séries temporelles."
+      ],
+      "BB_6": [
+        "Satisfaire la condition de Markov :"
+      ],
+      "BB_7": [
+        "L'état d'un système au temps t ne dépend que de son état précédent immédiat au temps t-1."
+      ],
+      "BB_8": [
+        "Réseau bayésien dynamique (DBN)\n\n• Un réseau bayésien permet de représenter les dépendances séquentielles.\n\n• En constante évolution ou changeant au fil du temps.\n\n• Modèle graphique dirigé de processus stochastiques.\n\n• Vise particulièrement la modélisation de séries chronologiques.\n\n• Satisfait la condition de Markov :\nL’état d’un système au temps t ne dépend que de son état immédiat précédent au temps t-1.\n\"\"\""
+      ],
+      "2FC_8gDVFT": [
+        "Institut des Technologies du Langage"
+      ],
+      "F4egn4m3em": [
+        "Université Carnegie Mellon"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Dynamisches Bayes-Netzwerk (DBN)"
+      ],
+      "BB_2": [
+        "Bayes-Netzwerk ermöglicht die Darstellung sequentieller Abhängigkeiten."
+      ],
+      "BB_3": [
+        "Dynamisch veränderlich oder im Laufe der Zeit entwickelnd."
+      ],
+      "BB_4": [
+        "Gerichtetes graphisches Modell stochastischer Prozesse."
+      ],
+      "BB_5": [
+        "Speziell auf die Modellierung von Zeitreihen ausgerichtet."
+      ],
+      "BB_6": [
+        "Erfüllung der Markov-Bedingung:"
+      ],
+      "BB_7": [
+        "Der Zustand eines Systems zum Zeitpunkt t hängt nur von seinem unmittelbaren Vorzustand zum Zeitpunkt t-1 ab."
+      ],
+      "BB_8": [
+        "Dynamisches Bayes-Netzwerk (DBN)\n\n• Bayes-Netzwerk ermöglicht die Darstellung sequentieller Abhängigkeiten.\n• Dynamisch veränderlich oder im Laufe der Zeit fortschreitend.\n• Gerichtetes grafisches Modell stochastischer Prozesse.\n• Insbesondere auf die Zeitreihenmodellierung ausgerichtet.\n\n• Erfüllung der Markov-Bedingung:\nDer Zustand eines Systems zum Zeitpunkt t hängt nur von seinem unmittelbaren vorherigen Zustand zum Zeitpunkt t-1 ab."
+      ],
+      "2FC_8gDVFT": [
+        "Institut für Sprachtechnologie"
+      ],
+      "F4egn4m3em": [
+        "Carnegie Mellon University"
+      ],
+      "rN2bQGBAyd": [
+        "40"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-356-01": {
+    "ja": {
+      "BB_1": [
+        "動的ベイズネットワーク (DBN)"
+      ],
+      "BB_2": [
+        "動的ベイズネットワーク (DBN)"
+      ],
+      "BB_3": [
+        "動的ベイズネットワーク (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "言語技術研究所"
+      ],
+      "ojvtO1UHBK": [
+        "カーネギーメロン大学"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Jaringan Bayesian Dinamis (DBN)"
+      ],
+      "BB_2": [
+        "Jaringan Bayesian Dinamis (DBN)"
+      ],
+      "BB_3": [
+        "Jaringan Bayesian Dinamis (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "Institut Teknologi Bahasa"
+      ],
+      "ojvtO1UHBK": [
+        "Universitas Carnegie Mellon"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "เครือข่ายเบย์เซียนแบบไดนามิก (DBN)"
+      ],
+      "BB_2": [
+        "เครือข่ายเบย์ซิยานแบบไดนามิก (DBN)"
+      ],
+      "BB_3": [
+        "เครือข่ายเบย์เยเซียนแบบไดนามิก (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "ojvtO1UHBK": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "动态贝叶斯网络 (DBN)"
+      ],
+      "BB_2": [
+        "动态贝叶斯网络 (DBN)"
+      ],
+      "BB_3": [
+        "动态贝叶斯网络 (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "语言科技研究所"
+      ],
+      "ojvtO1UHBK": [
+        "卡内基梅隆大学"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "Red Bayesiana Dinámica (DBN)"
+      ],
+      "BB_2": [
+        "Red Bayesiana Dinámica (DBN)"
+      ],
+      "BB_3": [
+        "Red Bayesiana Dinámica (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "\"\"\"\nInstituto de Tecnologías del Lenguaje\n\"\"\""
+      ],
+      "ojvtO1UHBK": [
+        "Universidad Carnegie Mellon"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Réseau bayésien dynamique (DBN)"
+      ],
+      "BB_2": [
+        "Réseau bayésien dynamique (DBN)"
+      ],
+      "BB_3": [
+        "Réseau bayésien dynamique (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "Institut des technologies du langage"
+      ],
+      "ojvtO1UHBK": [
+        "Université Carnegie Mellon"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Dynamisches Bayes-Netzwerk (DBN)"
+      ],
+      "BB_2": [
+        "Dynamisches Bayes-Netzwerk (DBN)"
+      ],
+      "BB_3": [
+        "Dynamisches Bayes-Netzwerk (DBN)"
+      ],
+      "Ntvao_oWlx": [
+        "Institut für Sprachtechnologien"
+      ],
+      "ojvtO1UHBK": [
+        "Carnegie Mellon Universität"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-366-01": {
+    "ja": {
+      "BB_1": [
+        "隠れマルコフモデル"
+      ],
+      "BB_2": [
+        "隠れマルコフモデル"
+      ],
+      "BB_3": [
+        "隠れマルコフモデル"
+      ],
+      "kS7b-ssQ9R": [
+        "言語技術研究所"
+      ],
+      "iHb-z3ABke": [
+        "カーネギーメロン大学"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "隠れ状態"
+      ],
+      "GGUKdk5-A9": [
+        "観測"
+      ],
+      "_n2S0MFalV": [
+        "時間"
+      ],
+      "csKhHu-Wwe": [
+        "x1"
+      ],
+      "CFIUmde_9o": [
+        "x₂"
+      ],
+      "CWfUMasMMW": [
+        "x3"
+      ],
+      "6ci56_QNv4": [
+        "x4"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Model Markov Tersembunyi"
+      ],
+      "BB_2": [
+        "Model Markov Tersembunyi"
+      ],
+      "BB_3": [
+        "Model Markov Tersembunyi"
+      ],
+      "kS7b-ssQ9R": [
+        "Institut Teknologi Bahasa"
+      ],
+      "iHb-z3ABke": [
+        "Universitas Carnegie Mellon"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "keadaan tersembunyi"
+      ],
+      "GGUKdk5-A9": [
+        "observasi"
+      ],
+      "_n2S0MFalV": [
+        "Waktu"
+      ],
+      "csKhHu-Wwe": [
+        "x1"
+      ],
+      "CFIUmde_9o": [
+        "x2"
+      ],
+      "CWfUMasMMW": [
+        "x3"
+      ],
+      "6ci56_QNv4": [
+        "x4"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "BB_2": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "BB_3": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "kS7b-ssQ9R": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "iHb-z3ABke": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h₂"
+      ],
+      "p-momFhPT7": [
+        "h₃"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "สถานะซ่อน"
+      ],
+      "GGUKdk5-A9": [
+        "การสังเกต"
+      ],
+      "_n2S0MFalV": [
+        "เวลา"
+      ],
+      "csKhHu-Wwe": [
+        "x₁"
+      ],
+      "CFIUmde_9o": [
+        "x₂"
+      ],
+      "CWfUMasMMW": [
+        "x₃"
+      ],
+      "6ci56_QNv4": [
+        "x₄"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "隐马尔可夫模型"
+      ],
+      "BB_2": [
+        "隐马尔可夫模型"
+      ],
+      "BB_3": [
+        "隐藏马尔可夫模型"
+      ],
+      "kS7b-ssQ9R": [
+        "语言科技研究所"
+      ],
+      "iHb-z3ABke": [
+        "卡内基梅隆大学"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "隐藏状态"
+      ],
+      "GGUKdk5-A9": [
+        "观测值"
+      ],
+      "_n2S0MFalV": [
+        "时间"
+      ],
+      "csKhHu-Wwe": [
+        "x₁"
+      ],
+      "CFIUmde_9o": [
+        "x₂"
+      ],
+      "CWfUMasMMW": [
+        "x₃"
+      ],
+      "6ci56_QNv4": [
+        "x₄"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "Modelos de Markov Ocultos"
+      ],
+      "BB_2": [
+        "Modelos de Markov Ocultos"
+      ],
+      "BB_3": [
+        "Modelos de Markov Ocultos"
+      ],
+      "kS7b-ssQ9R": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "iHb-z3ABke": [
+        "Universidad Carnegie Mellon"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "estados ocultos"
+      ],
+      "GGUKdk5-A9": [
+        "observaciones"
+      ],
+      "_n2S0MFalV": [
+        "Tiempo"
+      ],
+      "csKhHu-Wwe": [
+        "x1"
+      ],
+      "CFIUmde_9o": [
+        "x2"
+      ],
+      "CWfUMasMMW": [
+        "x3"
+      ],
+      "6ci56_QNv4": [
+        "x4"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Modèles de Markov cachés"
+      ],
+      "BB_2": [
+        "Modèles de Markov cachés"
+      ],
+      "BB_3": [
+        "Modèles de Markov cachés"
+      ],
+      "kS7b-ssQ9R": [
+        "Institut des technologies du langage"
+      ],
+      "iHb-z3ABke": [
+        "Université Carnegie Mellon"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "états cachés"
+      ],
+      "GGUKdk5-A9": [
+        "observations"
+      ],
+      "_n2S0MFalV": [
+        "Temps"
+      ],
+      "csKhHu-Wwe": [
+        "x₁"
+      ],
+      "CFIUmde_9o": [
+        "x₂"
+      ],
+      "CWfUMasMMW": [
+        "x3"
+      ],
+      "6ci56_QNv4": [
+        "x4"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Versteckte Markov-Modelle"
+      ],
+      "BB_2": [
+        "Versteckte Markov-Modelle"
+      ],
+      "BB_3": [
+        "Versteckte Markov-Modelle"
+      ],
+      "kS7b-ssQ9R": [
+        "Institut für Sprachtechnologie"
+      ],
+      "iHb-z3ABke": [
+        "Carnegie Mellon Universität"
+      ],
+      "enQrnLD-QH": [
+        "h0"
+      ],
+      "a2U7eWdwSJ": [
+        "h1"
+      ],
+      "V5wrdoaRYH": [
+        "h2"
+      ],
+      "p-momFhPT7": [
+        "h3"
+      ],
+      "r5EKViOMKJ": [
+        "h4"
+      ],
+      "j5apL8hrHq": [
+        "versteckte Zustände"
+      ],
+      "GGUKdk5-A9": [
+        "Beobachtungen"
+      ],
+      "_n2S0MFalV": [
+        "Zeit"
+      ],
+      "csKhHu-Wwe": [
+        "x1"
+      ],
+      "CFIUmde_9o": [
+        "x₂"
+      ],
+      "CWfUMasMMW": [
+        "x3"
+      ],
+      "6ci56_QNv4": [
+        "x4"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-375-02": {
+    "ja": {
+      "BB_3": [
+        "隠れマルコフモデル"
+      ],
+      "xiKiK7eqDz": [
+        "隠れマルコフモデル"
+      ],
+      "jU5ptzHe9Q": [
+        "隠れマルコフモデル"
+      ],
+      "P-vrCpIptV": [
+        "言語技術研究所"
+      ],
+      "W5OzoLS0jn": [
+        "カーネギーメロン大学"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h2"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "隠れ状態"
+      ],
+      "oNx0ShxsrG": [
+        "観測"
+      ],
+      "laCsA-Aq7n": [
+        "時間"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x2"
+      ],
+      "gCYxBqA1pa": [
+        "x3"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "「the」"
+      ],
+      "yJPJFOld85": [
+        "黄色"
+      ],
+      "8NGt1JpRyB": [
+        "家"
+      ],
+      "ayK-K4LO0T": [
+        "\"閉じた\""
+      ]
+    },
+    "id": {
+      "BB_3": [
+        "Model Markov Tersembunyi"
+      ],
+      "xiKiK7eqDz": [
+        "Model Markov Tersembunyi"
+      ],
+      "jU5ptzHe9Q": [
+        "Model Markov Tersembunyi"
+      ],
+      "P-vrCpIptV": [
+        "Institut Teknologi Bahasa"
+      ],
+      "W5OzoLS0jn": [
+        "Universitas Carnegie Mellon"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h2"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "keadaan tersembunyi"
+      ],
+      "oNx0ShxsrG": [
+        "observasi"
+      ],
+      "laCsA-Aq7n": [
+        "Waktu"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x2"
+      ],
+      "gCYxBqA1pa": [
+        "x3"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "\"the\""
+      ],
+      "yJPJFOld85": [
+        "\"kuning\""
+      ],
+      "8NGt1JpRyB": [
+        "\"rumah\""
+      ],
+      "ayK-K4LO0T": [
+        "\"tertutup\""
+      ]
+    },
+    "th": {
+      "BB_3": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "xiKiK7eqDz": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "jU5ptzHe9Q": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "P-vrCpIptV": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "W5OzoLS0jn": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h₂"
+      ],
+      "LC2JPKss6n": [
+        "h₃"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "สถานะแฝง"
+      ],
+      "oNx0ShxsrG": [
+        "การสังเกต"
+      ],
+      "laCsA-Aq7n": [
+        "เวลา"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x₂"
+      ],
+      "gCYxBqA1pa": [
+        "x₃"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "\"the\""
+      ],
+      "yJPJFOld85": [
+        "สีเหลือง"
+      ],
+      "8NGt1JpRyB": [
+        "บ้าน"
+      ],
+      "ayK-K4LO0T": [
+        "ปิด"
+      ]
+    },
+    "zh": {
+      "BB_3": [
+        "隐藏马尔可夫模型"
+      ],
+      "xiKiK7eqDz": [
+        "隐马尔可夫模型"
+      ],
+      "jU5ptzHe9Q": [
+        "隐藏马尔可夫模型"
+      ],
+      "P-vrCpIptV": [
+        "语言技术研究所"
+      ],
+      "W5OzoLS0jn": [
+        "卡内基梅隆大学"
+      ],
+      "d5T9yr9qkm": [
+        "h₀"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h₂"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "隐藏状态"
+      ],
+      "oNx0ShxsrG": [
+        "观测"
+      ],
+      "laCsA-Aq7n": [
+        "时间"
+      ],
+      "XAbgiDFfH5": [
+        "x₁"
+      ],
+      "i_-0fPwK7g": [
+        "x₂"
+      ],
+      "gCYxBqA1pa": [
+        "x₃"
+      ],
+      "aMDh5tk-dO": [
+        "x₄"
+      ],
+      "Y_f5dgqybs": [
+        "“the”"
+      ],
+      "yJPJFOld85": [
+        "黄色"
+      ],
+      "8NGt1JpRyB": [
+        "房子"
+      ],
+      "ayK-K4LO0T": [
+        "“关闭”"
+      ]
+    },
+    "es": {
+      "BB_3": [
+        "Modelos de Markov Ocultos"
+      ],
+      "xiKiK7eqDz": [
+        "Modelos de Markov Ocultos"
+      ],
+      "jU5ptzHe9Q": [
+        "\"\"\""
+      ],
+      "P-vrCpIptV": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "W5OzoLS0jn": [
+        "Universidad Carnegie Mellon"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h2"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "estados ocultos"
+      ],
+      "oNx0ShxsrG": [
+        "observaciones"
+      ],
+      "laCsA-Aq7n": [
+        "Tiempo"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x₂"
+      ],
+      "gCYxBqA1pa": [
+        "x3"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "\"el\""
+      ],
+      "yJPJFOld85": [
+        "\"amarillo\""
+      ],
+      "8NGt1JpRyB": [
+        "\"casa\""
+      ],
+      "ayK-K4LO0T": [
+        "\"cerrado\""
+      ]
+    },
+    "fr": {
+      "BB_3": [
+        "Modèles de Markov cachés"
+      ],
+      "xiKiK7eqDz": [
+        "Modèles de Markov cachés"
+      ],
+      "jU5ptzHe9Q": [
+        "Modèles de Markov cachés"
+      ],
+      "P-vrCpIptV": [
+        "Institut des technologies du langage"
+      ],
+      "W5OzoLS0jn": [
+        "Université Carnegie Mellon"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h2"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "états cachés"
+      ],
+      "oNx0ShxsrG": [
+        "observations"
+      ],
+      "laCsA-Aq7n": [
+        "Temps"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x₂"
+      ],
+      "gCYxBqA1pa": [
+        "x3"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "\"le\""
+      ],
+      "yJPJFOld85": [
+        "\"jaune\""
+      ],
+      "8NGt1JpRyB": [
+        "\"maison\""
+      ],
+      "ayK-K4LO0T": [
+        "\"fermé\""
+      ]
+    },
+    "de": {
+      "BB_3": [
+        "\"\"\""
+      ],
+      "xiKiK7eqDz": [
+        "Versteckte Markov-Modelle"
+      ],
+      "jU5ptzHe9Q": [
+        "\"\"\""
+      ],
+      "P-vrCpIptV": [
+        "Institut für Sprachtechnologien"
+      ],
+      "W5OzoLS0jn": [
+        "Carnegie Mellon Universität"
+      ],
+      "d5T9yr9qkm": [
+        "h0"
+      ],
+      "8X-isF81nm": [
+        "h1"
+      ],
+      "0acM7eZ5S3": [
+        "h2"
+      ],
+      "LC2JPKss6n": [
+        "h3"
+      ],
+      "DU4wJaNX7E": [
+        "h4"
+      ],
+      "KHK-jeO1uL": [
+        "versteckte Zustände"
+      ],
+      "oNx0ShxsrG": [
+        "Beobachtungen"
+      ],
+      "laCsA-Aq7n": [
+        "Zeit"
+      ],
+      "XAbgiDFfH5": [
+        "x1"
+      ],
+      "i_-0fPwK7g": [
+        "x₂"
+      ],
+      "gCYxBqA1pa": [
+        "x3"
+      ],
+      "aMDh5tk-dO": [
+        "x4"
+      ],
+      "Y_f5dgqybs": [
+        "\"der\""
+      ],
+      "yJPJFOld85": [
+        "\"gelb\""
+      ],
+      "8NGt1JpRyB": [
+        "\"Haus\""
+      ],
+      "ayK-K4LO0T": [
+        "\"geschlossen\""
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-410-03": {
+    "ja": {
+      "BB_3": [
+        "マルチモーダルデータ、複数のデータストリームをどのようにモデル化するか？"
+      ],
+      "BB_4": [
+        "隠れマルコフモデル"
+      ],
+      "YHWrT3bU1h": [
+        "隠れマルコフモデル"
+      ],
+      "QICw6PLFky": [
+        "隠れマルコフモデル"
+      ],
+      "dNg9oHGe2x": [
+        "言語技術研究所"
+      ],
+      "lxN7toq8pw": [
+        "カーネギーメロン大学"
+      ],
+      "7K059nIWQL": [
+        "h0"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "隠れ状態"
+      ],
+      "md5a-6Fo8E": [
+        "観測"
+      ],
+      "ANhrev72gT": [
+        "時間"
+      ],
+      "mxd9SxS4jm": [
+        "x1"
+      ],
+      "zAf21bTIO5": [
+        "x2"
+      ],
+      "Wt3bYz-WYB": [
+        "x3"
+      ],
+      "oblNaLENpO": [
+        "x4"
+      ]
+    },
+    "id": {
+      "BB_3": [
+        "Bagaimana cara memodelkan data multimodal, beberapa aliran data?"
+      ],
+      "BB_4": [
+        "Model Markov Tersembunyi"
+      ],
+      "YHWrT3bU1h": [
+        "Model Markov Tersembunyi"
+      ],
+      "QICw6PLFky": [
+        "Model Markov Tersembunyi"
+      ],
+      "dNg9oHGe2x": [
+        "Institut Teknologi Bahasa"
+      ],
+      "lxN7toq8pw": [
+        "Universitas Carnegie Mellon"
+      ],
+      "7K059nIWQL": [
+        "h0"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "keadaan tersembunyi"
+      ],
+      "md5a-6Fo8E": [
+        "observasi"
+      ],
+      "ANhrev72gT": [
+        "Waktu"
+      ],
+      "mxd9SxS4jm": [
+        "x1"
+      ],
+      "zAf21bTIO5": [
+        "x₂"
+      ],
+      "Wt3bYz-WYB": [
+        "x3"
+      ],
+      "oblNaLENpO": [
+        "x4"
+      ]
+    },
+    "th": {
+      "BB_3": [
+        "จะสร้างแบบจำลองข้อมูลหลายรูปแบบ, ข้อมูลหลายสตรีมได้อย่างไร?"
+      ],
+      "BB_4": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "YHWrT3bU1h": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "QICw6PLFky": [
+        "แบบจำลองมาร์คอฟแบบซ่อน"
+      ],
+      "dNg9oHGe2x": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "lxN7toq8pw": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ],
+      "7K059nIWQL": [
+        "h₀"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h₂"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "สถานะที่ซ่อน"
+      ],
+      "md5a-6Fo8E": [
+        "การสังเกต"
+      ],
+      "ANhrev72gT": [
+        "เวลา"
+      ],
+      "mxd9SxS4jm": [
+        "x1"
+      ],
+      "zAf21bTIO5": [
+        "x₂"
+      ],
+      "Wt3bYz-WYB": [
+        "x₃"
+      ],
+      "oblNaLENpO": [
+        "x₄"
+      ]
+    },
+    "zh": {
+      "BB_3": [
+        "如何对多模态数据、多个数据流进行建模？"
+      ],
+      "BB_4": [
+        "隐藏马尔可夫模型"
+      ],
+      "YHWrT3bU1h": [
+        "隐马尔可夫模型"
+      ],
+      "QICw6PLFky": [
+        "隐藏马尔可夫模型"
+      ],
+      "dNg9oHGe2x": [
+        "语言科技研究所"
+      ],
+      "lxN7toq8pw": [
+        "卡内基梅隆大学"
+      ],
+      "7K059nIWQL": [
+        "h₀"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "隐藏状态"
+      ],
+      "md5a-6Fo8E": [
+        "观测值"
+      ],
+      "ANhrev72gT": [
+        "时间"
+      ],
+      "mxd9SxS4jm": [
+        "x₁"
+      ],
+      "zAf21bTIO5": [
+        "x₂"
+      ],
+      "Wt3bYz-WYB": [
+        "x₃"
+      ],
+      "oblNaLENpO": [
+        "x₄"
+      ]
+    },
+    "es": {
+      "BB_3": [
+        "¿Cómo modelar datos multimodales, múltiples flujos de datos?"
+      ],
+      "BB_4": [
+        "Modelos de Markov Ocultos"
+      ],
+      "YHWrT3bU1h": [
+        "Modelos de Markov Ocultos"
+      ],
+      "QICw6PLFky": [
+        "Modelos de Markov Ocultos"
+      ],
+      "dNg9oHGe2x": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "lxN7toq8pw": [
+        "Universidad Carnegie Mellon"
+      ],
+      "7K059nIWQL": [
+        "h0"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "estados ocultos"
+      ],
+      "md5a-6Fo8E": [
+        "observaciones"
+      ],
+      "ANhrev72gT": [
+        "Tiempo"
+      ],
+      "mxd9SxS4jm": [
+        "x1"
+      ],
+      "zAf21bTIO5": [
+        "x2"
+      ],
+      "Wt3bYz-WYB": [
+        "x3"
+      ],
+      "oblNaLENpO": [
+        "x4"
+      ]
+    },
+    "fr": {
+      "BB_3": [
+        "Comment modéliser des données multimodales, plusieurs flux de données ?"
+      ],
+      "BB_4": [
+        "Modèles de Markov cachés"
+      ],
+      "YHWrT3bU1h": [
+        "Modèles de Markov cachés"
+      ],
+      "QICw6PLFky": [
+        "Modèles markoviens cachés"
+      ],
+      "dNg9oHGe2x": [
+        "Institut des technologies du langage"
+      ],
+      "lxN7toq8pw": [
+        "Université Carnegie Mellon"
+      ],
+      "7K059nIWQL": [
+        "h0"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "états cachés"
+      ],
+      "md5a-6Fo8E": [
+        "observations"
+      ],
+      "ANhrev72gT": [
+        "Temps"
+      ],
+      "mxd9SxS4jm": [
+        "x1"
+      ],
+      "zAf21bTIO5": [
+        "x₂"
+      ],
+      "Wt3bYz-WYB": [
+        "x3"
+      ],
+      "oblNaLENpO": [
+        "x4"
+      ]
+    },
+    "de": {
+      "BB_3": [
+        "Wie modelliert man multimodale Daten, mehrere Datenströme?"
+      ],
+      "BB_4": [
+        "Verborgene Markov-Modelle"
+      ],
+      "YHWrT3bU1h": [
+        "Versteckte Markov-Modelle"
+      ],
+      "QICw6PLFky": [
+        "Versteckte Markov-Modelle"
+      ],
+      "dNg9oHGe2x": [
+        "Institut für Sprachtechnologie"
+      ],
+      "lxN7toq8pw": [
+        "Carnegie Mellon University"
+      ],
+      "7K059nIWQL": [
+        "h0"
+      ],
+      "urAEx5MqEi": [
+        "h1"
+      ],
+      "oh_d8nhax8": [
+        "h2"
+      ],
+      "-tYVXdJWT3": [
+        "h3"
+      ],
+      "cc6L4-J_bj": [
+        "h4"
+      ],
+      "1Myub_d7I2": [
+        "versteckte Zustände"
+      ],
+      "md5a-6Fo8E": [
+        "Beobachtungen"
+      ],
+      "ANhrev72gT": [
+        "Zeit"
+      ],
+      "mxd9SxS4jm": [
+        "x₁"
+      ],
+      "zAf21bTIO5": [
+        "x₂"
+      ],
+      "Wt3bYz-WYB": [
+        "x3"
+      ],
+      "oblNaLENpO": [
+        "x4"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-414-01": {
+    "ja": {
+      "BB_1": [
+        "因子HMM"
+      ],
+      "BB_2": [
+        "ファクタリアルHMM：\n- hᵢ と vᵢ は、それぞれ異なる種類の背景情報、それぞれの履歴を持ちます。\n- 観測値 xᵢ は、両方の隠れ状態に依存します。\n- モデルパラメータ：\np(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)\n"
+      ],
+      "BB_3": [
+        "因子HMM:"
+      ],
+      "BB_4": [
+        "- $h_t$ と $v_t$ は、それぞれ独自の履歴を持つ2種類の背景情報を表します。\n- 観測値 $x_t$ は、両方の隠れ状態プロセスに依存します。"
+      ],
+      "BB_5": [
+        "モデルパラメータ：\n-  $ \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "因子HMM：\nhᵢとvᵢはそれぞれ異なる種類の背景情報で、それぞれ独自の履歴を持ちます。\n— 観測値xᵢは、両方の隠れプロセスに依存します。\n• モデルパラメータ：\np(vᵢ₊₁|vᵢ)、p(hᵢ₊₁|hᵢ)、p(xᵢ|hᵢ,vᵢ)\n"
+      ],
+      "e90um-ayY4": [
+        "言語技術研究所"
+      ],
+      "yrHHLuyalY": [
+        "カーネギーメロン大学"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "HMM Faktorial"
+      ],
+      "BB_2": [
+        "HMM Faktorial:\n\n*   hᵢ dan vᵢ mewakili dua jenis informasi latar belakang yang berbeda, masing-masing dengan sejarahnya sendiri.\n*   Observasi xᵢ bergantung pada kedua proses tersembunyi.\n*   Parameter model: p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "BB_3": [
+        "HMM Faktorial:"
+      ],
+      "BB_4": [
+        "- $h _ { t }$ dan $\\mathsf { v } _ { \\mathrm { t } }$ mewakili dua jenis informasi latar belakang yang berbeda, masing-masing dengan riwayatnya sendiri\n- Observasi $x _ { t }$ bergantung pada kedua proses tersembunyi"
+      ],
+      "BB_5": [
+        "Parameter model:\n- $\\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "HMM Faktor:\n\n- h₁ dan v₁ mewakili dua tipe informasi latar belakang yang berbeda, masing-masing dengan riwayatnya sendiri.\n- Observasi xᵢ bergantung pada kedua proses tersembunyi.\n- Parameter Model:\n p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "e90um-ayY4": [
+        "Institut Teknologi Bahasa"
+      ],
+      "yrHHLuyalY": [
+        "Universitas Carnegie Mellon"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "เอชเอ็มเอ็มแบบแฟกทอเรียล"
+      ],
+      "BB_2": [
+        "แบบจำลอง HMM เชิงประกอบ:\n\n- hᵢ และ vᵢ แสดงถึงข้อมูลพื้นหลังสองประเภท แต่ละประเภทมีประวัติความเป็นมาของตัวเอง\n\n- ค่าสังเกต xᵢ ขึ้นอยู่กับกระบวนการที่ซ่อนอยู่ทั้งสอง\n\n- พารามิเตอร์ของแบบจำลอง: p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ,vᵢ)"
+      ],
+      "BB_3": [
+        "เอชเอ็มเอ็มแบบแฟกทอเรียล"
+      ],
+      "BB_4": [
+        "- $h _ { t }$ และ $\\mathsf { v } _ { \\mathrm { t } }$ แสดงถึงข้อมูลพื้นหลังสองประเภทที่แตกต่างกัน โดยแต่ละประเภทมีประวัติความเป็นมาของตนเอง\n- การสังเกต $x _ { t }$ ขึ้นอยู่กับกระบวนการที่ซ่อนอยู่ทั้งสอง"
+      ],
+      "BB_5": [
+        "พารามิเตอร์ของแบบจำลอง: \n- $ \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "แบบจำลอง HMM เชิงประกอบ:\n\n*   hᵢ และ vᵢ แสดงถึงข้อมูลพื้นหลังสองประเภท แต่ละประเภทมีประวัติศาสตร์ของตัวเอง\n*   การสังเกต xᵢ ขึ้นอยู่กับกระบวนการที่ซ่อนอยู่ทั้งสอง\n*   พารามิเตอร์ของแบบจำลอง: p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ,vᵢ)"
+      ],
+      "e90um-ayY4": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "yrHHLuyalY": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "因子 HMM"
+      ],
+      "BB_2": [
+        "因子 HMM：\n- h₁ 和 v₁ 代表两种不同类型的背景信息，每种信息都有其自身的历史。\n- 观测值 xᵢ 取决于这两个隐藏过程。\n- 模型参数：\n p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)\n"
+      ],
+      "BB_3": [
+        "因子 HMM："
+      ],
+      "BB_4": [
+        "- $h_t$ 和 $\\mathsf{v}_t$ 代表两种不同类型的背景信息，每种信息都有其自身的历史。\n- 观测值 $x_t$ 取决于这两个隐藏过程。"
+      ],
+      "BB_5": [
+        "模型参数：\n- $p(v_{t+1} | v_t) , p(h_{t+1} | h_t) , p(x_t | h_t, v_t)$"
+      ],
+      "BB_6": [
+        "因子 HMM：\n- h₁ 和 v₁ 代表两种不同类型的背景信息，每种信息都有其自己的历史。\n- 观测值 xᵢ 取决于这两个隐藏过程。\n- 模型参数：\np(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "e90um-ayY4": [
+        "语言科技研究所"
+      ],
+      "yrHHLuyalY": [
+        "卡内基梅隆大学"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "HMM factorial"
+      ],
+      "BB_2": [
+        "HMM factorial:\nh₁ y v₁ representan dos tipos diferentes de información de fondo, cada uno con su propia historia.\n— Las observaciones xᵢ dependen de ambos procesos ocultos.\n• Parámetros del modelo:\np(vᵢ+₁|vᵢ), p(hᵢ+₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "BB_3": [
+        "HMM Factorial:"
+      ],
+      "BB_4": [
+        "- $h _ { t }$ y $\\mathsf { v } _ { \\mathrm { t } }$ representan dos tipos diferentes de información de fondo, cada uno con su propia historia.\n- Las observaciones $x _ { t }$ dependen de ambos procesos ocultos."
+      ],
+      "BB_5": [
+        "Parámetros del modelo: \n- $\\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "HMM factorial:\nh₁ y v₁ representan dos tipos diferentes de información de fondo, cada uno con su propia historia.\n— Las observaciones xᵢ dependen de ambos procesos ocultos.\n• Parámetros del modelo:\np(vᵢ+₁|vᵢ), p(hᵢ+₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "e90um-ayY4": [
+        "\"\"\"\nInstituto de Tecnologías del Lenguaje\n\"\"\""
+      ],
+      "yrHHLuyalY": [
+        "Universidad Carnegie Mellon"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "HMM factoriel"
+      ],
+      "BB_2": [
+        "HMM Factoriel :\n- hᵢ et vᵢ représentent deux types différents d'informations de contexte, chacun ayant son propre historique.\n- Les observations xᵢ dépendent des deux processus cachés.\n- Paramètres du modèle :\n p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ,vᵢ)\n"
+      ],
+      "BB_3": [
+        "HMM factoriel :"
+      ],
+      "BB_4": [
+        "- $h _ { t }$ et $\\mathsf { v } _ { \\mathrm { t } }$ représentent deux types d'informations de contexte différents, chacun ayant son propre historique.\n- Les observations $x _ { t }$ dépendent des deux processus cachés."
+      ],
+      "BB_5": [
+        "Paramètres du modèle :\n- $\\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "HMM factoriel :\n- h_i et v_i représentent deux types d’informations de contexte différents, chacun ayant son propre historique.\n- Les observations x_i dépendent des deux processus cachés.\n- Paramètres du modèle :\n  p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t, v_t)\n"
+      ],
+      "e90um-ayY4": [
+        "Institut des technologies du langage"
+      ],
+      "yrHHLuyalY": [
+        "Université Carnegie Mellon"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Faktorielles HMM"
+      ],
+      "BB_2": [
+        "Faktorielles HMM:\n\n- hᵢ und vᵢ repräsentieren zwei verschiedene Arten von Hintergrundinformationen, jeweils mit eigener Historie.\n- Beobachtungen xᵢ hängen von beiden versteckten Prozessen ab.\n- Modellparameter:\n p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "BB_3": [
+        "Faktorisierbares HMM:"
+      ],
+      "BB_4": [
+        "- $h_t$ und $\\mathsf{v}_t$ stellen zwei verschiedene Arten von Hintergrundinformationen dar, jede mit ihrer eigenen Historie\n- Beobachtungen $x_t$ hängen von beiden versteckten Prozessen ab"
+      ],
+      "BB_5": [
+        "Modellparameter:\n- $\\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t + 1 } } | \\mathsf { v } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t + 1 } } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } , \\mathsf { v } _ { \\mathrm { t } } )$"
+      ],
+      "BB_6": [
+        "Faktorielles HMM:\n\n- h₁ und v₁ repräsentieren zwei verschiedene Arten von Hintergrundinformationen, jede mit ihrer eigenen Historie.\n- Beobachtungen xᵢ hängen von beiden verborgenen Prozessen ab.\n- Modellparameter:\n  p(vᵢ₊₁|vᵢ), p(hᵢ₊₁|hᵢ), p(xᵢ|hᵢ, vᵢ)"
+      ],
+      "e90um-ayY4": [
+        "Sprachtechnologie-Institut"
+      ],
+      "yrHHLuyalY": [
+        "Carnegie Mellon University"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-418-01": {
+    "ja": {
+      "BB_1": [
+        "ボルツマンジッパー"
+      ],
+      "BB_2": [
+        "ボルツマンジッパー\n\nyₜ  ビデオ観察\nvₜ  ヴィーゼム状態\nhₜ  音声音素状態\nxₜ  音声スペクトル観察\n\n• 両ストリームには「メモリ」(hₜ と vₜ) がある\n• モデルパラメータ:\n    – p(vₜₛ|hₜ) , p(xₜ|hₜ)\n    – p(vₜ₊₁|yₜ, hₜ, xₜ) , p(yₜ|hₜ)\n"
+      ],
+      "BB_3": [
+        "両方のストリームに「メモリ」（$h_t$ と $v_t$）があります。"
+      ],
+      "BB_4": [
+        "モデルパラメータ：\n- p(h_{t+1} | h_t), p(x_t | h_t)\n- p(v_{t+1} | v_t, h_{t+1}), p(y_t | h_t)"
+      ],
+      "BB_5": [
+        "ビデオの観測"
+      ],
+      "BB_6": [
+        "ヴィーゼム状態"
+      ],
+      "BB_7": [
+        "音声フォネーム状態"
+      ],
+      "BB_8": [
+        "音声スペクトル観測"
+      ],
+      "BB_9": [
+        "ボルトマンジッパー\n\ny<sub>t</sub>  ビデオ観察\nv<sub>t</sub>  ヴィセーム状態\nh<sub>t</sub>  音声の音素状態\nx<sub>t</sub>  音声スペクトル観察\n\n• 両ストリームは「メモリ」（h<sub>t</sub> と v<sub>t</sub>）を持つ\n• モデルパラメータ:\n - p(v<sub>t-1</sub>|h<sub>t-1</sub>), p(x<sub>t</sub>|h<sub>t</sub>)\n - p(v<sub>t+1</sub>|V<sub>t</sub>, h<sub>t</sub>, x<sub>t+1</sub>), p(y<sub>t</sub>|h<sub>t</sub>)\n"
+      ],
+      "MZQqckUQre": [
+        "言語技術研究所"
+      ],
+      "iOffbXKGtu": [
+        "カーネギーメロン大学"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Resleting Boltzmann"
+      ],
+      "BB_2": [
+        "The Boltzmann Zipper\n\ny_t Video observations\nv_t Viseme states\nh_t Audio phoneme states\nx_t Audio spectral observations\n\n• Both streams have a \"memory\" (h_t and v_t)\n• Model parameters:\n   - p(v_{t+1}|h_t), p(x_t|h_t)\n   - p(v_{t+1}|V_t, h_{t+1}), p(y_t|h_t)\n"
+      ],
+      "BB_3": [
+        "Kedua aliran memiliki \"memori\" $(h_t$ dan $v_t)$."
+      ],
+      "BB_4": [
+        "Parameter model: $\\begin{array} { r l } & { - \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t } + 1 } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\\\ & { - \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t } + 1 } | \\mathsf { v } _ { \\mathrm { t } } , \\mathsf { h } _ { \\mathrm { t } + 1 } ) , \\mathsf { p } ( \\mathsf { y } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\end{array}$"
+      ],
+      "BB_5": [
+        "Pengamatan video"
+      ],
+      "BB_6": [
+        "Keadaan visem"
+      ],
+      "BB_7": [
+        "keadaan fonem audio"
+      ],
+      "BB_8": [
+        "Pengamatan spektral audio"
+      ],
+      "BB_9": [
+        "\"\"\""
+      ],
+      "MZQqckUQre": [
+        "Institut Teknologi Bahasa"
+      ],
+      "iOffbXKGtu": [
+        "Universitas Carnegie Mellon"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "บ็อลทซมันน์ ซิปเปอร์"
+      ],
+      "BB_2": [
+        "The Boltzmann Zipper\n\ny<sub>t</sub>  Video observations\n\nv<sub>t</sub>  Viseme states\n\nh<sub>t</sub>  Audio phoneme states\n\nx<sub>t</sub>  Audio spectral observations\n\nทั้งสองสตรีมมี \"หน่วยความจำ\" (h<sub>t</sub> และ v<sub>t</sub>)\n\nพารามิเตอร์ของแบบจำลอง:\n\n- p(v<sub>t-1</sub>|h<sub>t</sub>), p(x<sub>t</sub>|h<sub>t</sub>)\n\n- p(v<sub>t+1</sub>|y<sub>t</sub>, h<sub>t</sub>), p(y<sub>t</sub>|h<sub>t</sub>)"
+      ],
+      "BB_3": [
+        "ทั้งสองสตรีมมี \"หน่วยความจำ\" ($h_t$ และ $v_t$)"
+      ],
+      "BB_4": [
+        "พารามิเตอร์ของโมเดล: $\\begin{array} { r l } & { - \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t } + 1 } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\\\ & { - \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t } + 1 } | \\mathsf { v } _ { \\mathrm { t } } , \\mathsf { h } _ { \\mathrm { t } + 1 } ) , \\mathsf { p } ( \\mathsf { y } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\end{array}$"
+      ],
+      "BB_5": [
+        "การสังเกตการณ์วิดีโอ"
+      ],
+      "BB_6": [
+        "สถานะของไวมีม"
+      ],
+      "BB_7": [
+        "สถานะโฟนีมเสียง"
+      ],
+      "BB_8": [
+        "การสังเกตการณ์สเปกตรัมเสียง"
+      ],
+      "BB_9": [
+        "The Boltzmann Zipper\n\ny<sub>t</sub>  Video observations\nv<sub>t</sub>  Viseme states\nh<sub>t</sub>  Audio phoneme states\nx<sub>t</sub>  Audio spectral observations\n\n• ทั้งสองสตรีมมี \"หน่วยความจำ\" (h<sub>t</sub> และ v<sub>t</sub>)\n• พารามิเตอร์ของโมเดล:\n  – p(v<sub>t-1</sub>|h<sub>t</sub>), p(x<sub>t</sub>|h<sub>t</sub>)\n  – p(v<sub>t+1</sub>|y<sub>t</sub>, h<sub>t</sub>), p(y<sub>t</sub>|h<sub>t</sub>)"
+      ],
+      "MZQqckUQre": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "iOffbXKGtu": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "玻尔兹曼拉链"
+      ],
+      "BB_2": [
+        "玻尔兹曼压缩器"
+      ],
+      "BB_3": [
+        "两个流都具有“记忆”（$h_t$ 和 $v_t$）"
+      ],
+      "BB_4": [
+        "模型参数：\n- p(ht+1 | ht), p(xt | ht)\n- p(vt+1 | vt, ht+1), p(yt | ht)"
+      ],
+      "BB_5": [
+        "视频观测"
+      ],
+      "BB_6": [
+        "视觉单元状态"
+      ],
+      "BB_7": [
+        "音频音素状态"
+      ],
+      "BB_8": [
+        "音频频谱观测"
+      ],
+      "BB_9": [
+        "玻尔兹曼压舱器\n\nVideo observations 视频观测\nViseme states 视音素状态\nAudio phoneme states 音素状态\nAudio spectral observations 音谱观测\n\n两条流都有“记忆”（h₁ 和 v₁)\n\n模型参数：\np(vₜ₋₁|hₜ) , p(xₜ|hₜ)\np(vₜ₊₁|vₜ, hₜ, xₜ) , p(yₜ|hₜ)\n"
+      ],
+      "MZQqckUQre": [
+        "语言技术研究所"
+      ],
+      "iOffbXKGtu": [
+        "卡内基梅隆大学"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "La cremallera de Boltzmann"
+      ],
+      "BB_2": [
+        "La cremallera de Boltzmann"
+      ],
+      "BB_3": [
+        "Ambas corrientes tienen una \"memoria\" $(h_t$ y $v_t)$."
+      ],
+      "BB_4": [
+        "\"\"\"\nParámetros del modelo: $\\begin{array} { r l } & { - \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t } + 1 } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\\\ & { - \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t } + 1 } | \\mathsf { v } _ { \\mathrm { t } } , \\mathsf { h } _ { \\mathrm { t } + 1 } ) , \\mathsf { p } ( \\mathsf { y } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\end{array}$\n\"\"\""
+      ],
+      "BB_5": [
+        "Observaciones de video"
+      ],
+      "BB_6": [
+        "Estados de visema"
+      ],
+      "BB_7": [
+        "estados de fonemas de audio"
+      ],
+      "BB_8": [
+        "Observaciones espectrales de audio"
+      ],
+      "BB_9": [
+        "La cremallera de Boltzmann"
+      ],
+      "MZQqckUQre": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "iOffbXKGtu": [
+        "Universidad Carnegie Mellon"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "La fermeture de Boltzmann"
+      ],
+      "BB_2": [
+        "\"\"\""
+      ],
+      "BB_3": [
+        "Les deux flux ont une \"mémoire\" $(h_t$ et $v_t)$."
+      ],
+      "BB_4": [
+        "\"\"\"\nParamètres du modèle : $\\begin{array} { r l } & { - \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t } + 1 } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\\\ & { - \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t } + 1 } | \\mathsf { v } _ { \\mathrm { t } } , \\mathsf { h } _ { \\mathrm { t } + 1 } ) , \\mathsf { p } ( \\mathsf { y } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\end{array}$ \n\"\"\""
+      ],
+      "BB_5": [
+        "Observations vidéo"
+      ],
+      "BB_6": [
+        "États des visèmes"
+      ],
+      "BB_7": [
+        "États de phonèmes audio"
+      ],
+      "BB_8": [
+        "Observations spectrales audio"
+      ],
+      "BB_9": [
+        "\"\"\""
+      ],
+      "MZQqckUQre": [
+        "Institut des technologies du langage"
+      ],
+      "iOffbXKGtu": [
+        "Université Carnegie Mellon"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Der Boltzmann-Zipper"
+      ],
+      "BB_2": [
+        "Der Boltzmann-Reißverschluss"
+      ],
+      "BB_3": [
+        "Beide Ströme haben ein \"Gedächtnis\" $( h _ { t }$ und $v _ { \\mathrm { t } }$"
+      ],
+      "BB_4": [
+        "Modellparameter: $\\begin{array} { r l } & { - \\mathsf { p } ( \\mathsf { h } _ { \\mathrm { t } + 1 } | \\mathsf { h } _ { \\mathrm { t } } ) , \\mathsf { p } ( \\mathsf { x } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\\\ & { - \\mathsf { p } ( \\mathsf { v } _ { \\mathrm { t } + 1 } | \\mathsf { v } _ { \\mathrm { t } } , \\mathsf { h } _ { \\mathrm { t } + 1 } ) , \\mathsf { p } ( \\mathsf { y } _ { \\mathrm { t } } | \\mathsf { h } _ { \\mathrm { t } } ) } \\end{array}$"
+      ],
+      "BB_5": [
+        "Video-Beobachtungen"
+      ],
+      "BB_6": [
+        "Visem-Zustände"
+      ],
+      "BB_7": [
+        "Audio-Phonem-Zustände"
+      ],
+      "BB_8": [
+        "Audio-spektrale Beobachtungen"
+      ],
+      "BB_9": [
+        "Der Boltzmann-Reißverschluss"
+      ],
+      "MZQqckUQre": [
+        "Sprachtechnologie-Institut"
+      ],
+      "iOffbXKGtu": [
+        "Carnegie Mellon Universität"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-429-02": {
+    "ja": {
+      "BB_1": [
+        "結合HMM"
+      ],
+      "BB_2": [
+        "---"
+      ],
+      "BB_3": [
+        "ビデオの観測"
+      ],
+      "BB_4": [
+        "ヴィーゼム状態"
+      ],
+      "BB_5": [
+        "音声フォネーム状態"
+      ],
+      "BB_6": [
+        "音声スペクトル観測"
+      ],
+      "BB_7": [
+        "ボルツマンジッパーよりも柔軟である。なぜなら、視覚と聴覚のどちらも他方よりも「特権的」ではないからである。"
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht)\n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "カップルドHMM\n\nビデオ観察値\n\nビセム状態\n\n音声音素状態\n\n音声スペクトル観察値\n\nボルツマンジッパーよりも優れている点: ビジョンとサウンドのどちらも他の方を「優先」しないため、より柔軟です。\n\np(h_{t+1}|v_t, h_t), p(x|h_t)\n\np(v_{t+1}|y_t, h_t), p(y|h_t)"
+      ],
+      "z_cqHOpte8": [
+        "言語技術研究所"
+      ],
+      "lI_98wda_Z": [
+        "カーネギーメロン大学"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "HMM yang Digabungkan"
+      ],
+      "BB_2": [
+        "Keunggulan dibandingkan Zipper Boltzmann: Lebih fleksibel, karena tidak ada penglihatan maupun suara yang \"diutamakan\" dibandingkan yang lain."
+      ],
+      "BB_3": [
+        "Pengamatan video"
+      ],
+      "BB_4": [
+        "Keadaan visem"
+      ],
+      "BB_5": [
+        "Keadaan fonem audio"
+      ],
+      "BB_6": [
+        "Pengamatan spektral audio"
+      ],
+      "BB_7": [
+        "Keunggulan dibandingkan Boltzmann Zipper: Lebih fleksibel, karena tidak ada penglihatan maupun suara yang \"diutamakan\" daripada yang lain."
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht)\n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "Keunggulan dibandingkan Zip Boltzmann: Lebih fleksibel, karena tidak ada penglihatan maupun suara yang \"diistimewakan\" lebih dari yang lain."
+      ],
+      "z_cqHOpte8": [
+        "Institut Teknologi Bahasa"
+      ],
+      "lI_98wda_Z": [
+        "Universitas Carnegie Mellon"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "เอชเอ็มเอ็มแบบเชื่อมโยง"
+      ],
+      "BB_2": [
+        "ข้อดีเหนือกว่า Boltzmann Zipper: มีความยืดหยุ่นมากกว่า เนื่องจากทั้งภาพและเสียงไม่ได้ถูก \"ให้ความสำคัญ\" เหนือกัน"
+      ],
+      "BB_3": [
+        "การสังเกตการณ์วิดีโอ"
+      ],
+      "BB_4": [
+        "สถานะไวเซม"
+      ],
+      "BB_5": [
+        "สถานะโทรศัพท์เสียง"
+      ],
+      "BB_6": [
+        "การสังเกตสเปกตรัมเสียง"
+      ],
+      "BB_7": [
+        "ข้อดีเหนือ Boltzmann Zipper: มีความยืดหยุ่นมากกว่า เนื่องจากทั้งภาพและเสียงไม่ได้มีความสำคัญเหนือกัน"
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht) \n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "ข้อดีเหนือกว่า Boltzmann Zipper: มีความยืดหยุ่นมากกว่า เนื่องจากทั้งภาพและเสียงไม่ได้ถูก “ยกสถานะ” เหนือกัน"
+      ],
+      "z_cqHOpte8": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "lI_98wda_Z": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "耦合 HMM"
+      ],
+      "BB_2": [
+        "耦合隐马尔可夫模型 (The Coupled HMM)"
+      ],
+      "BB_3": [
+        "视频观测"
+      ],
+      "BB_4": [
+        "语素状态"
+      ],
+      "BB_5": [
+        "音频音素状态"
+      ],
+      "BB_6": [
+        "音频频谱观测"
+      ],
+      "BB_7": [
+        "相较于玻尔兹曼拉链的优势：更加灵活，因为视觉和听觉都没有被“优待”。"
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht)\n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "优势超过波尔兹曼压缩器：更加灵活，因为视觉和声音都不能被“特殊对待”。"
+      ],
+      "z_cqHOpte8": [
+        "语言技术研究所"
+      ],
+      "lI_98wda_Z": [
+        "卡内基梅隆大学"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "El HMM Acoplado"
+      ],
+      "BB_2": [
+        "Ventaja sobre el Boltzmann Zipper: Más flexible, porque ni la visión ni el sonido son \"privilegiados\" el uno sobre el otro."
+      ],
+      "BB_3": [
+        "Observaciones de video"
+      ],
+      "BB_4": [
+        "Estados visema"
+      ],
+      "BB_5": [
+        "Estados de fonemas de audio"
+      ],
+      "BB_6": [
+        "Observaciones espectrales de audio"
+      ],
+      "BB_7": [
+        "Ventaja sobre el Zipper de Boltzmann: Más flexible, porque ni la visión ni el sonido están \"privilegiados\" el uno sobre el otro."
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht) \n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "Ventaja sobre el Boltzmann Zipper: Más flexible, porque ni la visión ni el sonido están \"privilegiados\" el uno sobre el otro."
+      ],
+      "z_cqHOpte8": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "lI_98wda_Z": [
+        "Universidad Carnegie Mellon"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Le HMM couplé"
+      ],
+      "BB_2": [
+        "Avantage par rapport au Boltzmann Zipper : Plus flexible, car ni la vision ni le son ne sont \"privilégiés\" l'un par rapport à l'autre."
+      ],
+      "BB_3": [
+        "Observations vidéo"
+      ],
+      "BB_4": [
+        "États visème"
+      ],
+      "BB_5": [
+        "États de phonèmes audio"
+      ],
+      "BB_6": [
+        "Observations spectrales audio"
+      ],
+      "BB_7": [
+        "Avantage par rapport au Zip Boltzmann : Plus flexible, car ni la vision ni le son ne sont \"privilégiés\" l'un par rapport à l'autre."
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht) \n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "Avantage par rapport au Boltzmann Zipper : plus flexible, car ni la vision ni le son ne sont « privilégiés » l'un par rapport à l'autre."
+      ],
+      "z_cqHOpte8": [
+        "Institut des technologies du langage"
+      ],
+      "lI_98wda_Z": [
+        "Université Carnegie Mellon"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Das gekoppelte HMM"
+      ],
+      "BB_2": [
+        "Das gekoppelte HMM"
+      ],
+      "BB_3": [
+        "Video-Beobachtungen"
+      ],
+      "BB_4": [
+        "Visem-Zustände"
+      ],
+      "BB_5": [
+        "Audio-Phonem-Zustände"
+      ],
+      "BB_6": [
+        "Audiospektrale Beobachtungen"
+      ],
+      "BB_7": [
+        "Vorteil gegenüber dem Boltzmann Zipper: Flexibler, da weder Sehen noch Hören gegenüber dem jeweils anderen \"bevorzugt\" wird."
+      ],
+      "BB_8": [
+        "- p(ht+1|vt,ht), p(x|ht)\n- p(Vt+1|vt,ht), p(yt|ht)"
+      ],
+      "BB_9": [
+        "Das gekoppelte HMM"
+      ],
+      "z_cqHOpte8": [
+        "Institut für Sprachtechnologien"
+      ],
+      "lI_98wda_Z": [
+        "Carnegie Mellon University"
+      ]
+    }
+  },
+  "L1TiP9P55-8-Scene-441-01": {
+    "ja": {
+      "BB_1": [
+        "（動的）ベイズネットワークの学習"
+      ],
+      "BB_2": [
+        "データに基づいてモデルのパラメータを学習するための複数の手法が存在します。"
+      ],
+      "BB_3": [
+        "最尤推定法\nベイズ推定法（事前情報を組み込むことができる）"
+      ],
+      "BB_4": [
+        "Pythonライブラリ："
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "動的ベイジアンネットワークの学習\n\n* データに基づいてモデルパラメータを学習させるための手法が複数存在します。\n    * 最大尤度推定器\n    * 事前情報を含めることができるベイズ推定器\n* Pythonライブラリ：\n    * http://pgmpy.org/\n    * http://www.bayespy.org\n    * https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "言語技術研究所"
+      ],
+      "NmYOxPwOzT": [
+        "カーネギーメロン大学"
+      ]
+    },
+    "id": {
+      "BB_1": [
+        "Pembelajaran (Jaringan Bayesian) Dinamis"
+      ],
+      "BB_2": [
+        "Beberapa teknik yang ada untuk mempelajari parameter model berdasarkan data"
+      ],
+      "BB_3": [
+        "Estimator likelihood maksimum\nEstimator Bayesian, yang memungkinkan untuk memasukkan informasi prior"
+      ],
+      "BB_4": [
+        "Pustaka Python:"
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "Pembelajaran (Jaringan Bayesian) Dinamis\n\n*   Terdapat beberapa teknik untuk mempelajari parameter model berdasarkan data.\n    *   Estimator likelihood maksimum\n    *   Estimator Bayesian, yang memungkinkan untuk memasukkan informasi prior\n*   Pustaka Python:\n    *   http://pgmpy.org/\n    *   http://www.bayespy.org\n    *   https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "Lembaga Teknologi Bahasa"
+      ],
+      "NmYOxPwOzT": [
+        "Universitas Carnegie Mellon"
+      ]
+    },
+    "th": {
+      "BB_1": [
+        "การเรียนรู้ (เครือข่ายแบบเบย์ไดนามิก)"
+      ],
+      "BB_2": [
+        "มีเทคนิคหลายอย่างที่ใช้ในการเรียนรู้พารามิเตอร์ของแบบจำลองโดยอิงจากข้อมูล"
+      ],
+      "BB_3": [
+        "ตัวประมาณค่าความน่าจะเป็นสูงสุด\nตัวประมาณค่าแบบเบย์เซียน ซึ่งช่วยให้สามารถรวมข้อมูลก่อนหน้าได้"
+      ],
+      "BB_4": [
+        "ไลบรารี Python:"
+      ],
+      "BB_5": [
+        "http://pgmpy.org/   \nhttp://www.bayespy.org   \nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "การเรียนรู้ (Dynamic) Bayesian Networks\n\n* มีเทคนิคหลายอย่างในการเรียนรู้พารามิเตอร์ของแบบจำลองจากข้อมูล\n    * Maximum likelihood estimator\n    * Bayesian estimator ซึ่งช่วยให้สามารถรวมข้อมูล prior ได้\n* Python libraries:\n    * http://pgmpy.org/\n    * http://www.bayespy.org\n    * https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "สถาบันเทคโนโลยีภาษา"
+      ],
+      "NmYOxPwOzT": [
+        "มหาวิทยาลัยคาร์เนกีเมลลอน"
+      ]
+    },
+    "zh": {
+      "BB_1": [
+        "学习 (动态) 贝叶斯网络"
+      ],
+      "BB_2": [
+        "存在多种技术可以根据数据学习模型参数。"
+      ],
+      "BB_3": [
+        "最大似然估计法\n贝叶斯估计法，允许包含先验信息"
+      ],
+      "BB_4": [
+        "Python 库："
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "学习 (动态) 贝叶斯网络\n\n*   存在多种技术可以基于数据学习模型参数\n    *   最大似然估计器\n    *   贝叶斯估计器，允许包含先验信息\n*   Python 库：\n    *   http://pgmpy.org/\n    *   http://www.bayespy.org\n    *   https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "语言科技研究所"
+      ],
+      "NmYOxPwOzT": [
+        "卡内基梅隆大学"
+      ]
+    },
+    "es": {
+      "BB_1": [
+        "Aprendizaje (Redes Bayesianas) Dinámicas"
+      ],
+      "BB_2": [
+        "Existen múltiples técnicas para aprender los parámetros del modelo basándose en los datos."
+      ],
+      "BB_3": [
+        "Estimador de máxima verosimilitud\nEstimador Bayesiano, que permite incluir información previa"
+      ],
+      "BB_4": [
+        "Bibliotecas de Python:"
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "Aprendizaje (Redes Bayesianas) Dinámicas\n\n*   Existen múltiples técnicas para aprender los parámetros del modelo a partir de datos.\n    *   Estimador de máxima verosimilitud\n    *   Estimador Bayesiano, que permite incluir información previa.\n\n*   Bibliotecas de Python:\n    *   http://pgmpy.org/\n    *   http://www.bayespy.org\n    *   https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "Instituto de Tecnologías del Lenguaje"
+      ],
+      "NmYOxPwOzT": [
+        "Universidad Carnegie Mellon"
+      ]
+    },
+    "fr": {
+      "BB_1": [
+        "Apprentissage des réseaux bayésiens (dynamiques)"
+      ],
+      "BB_2": [
+        "Plusieurs techniques existent pour apprendre les paramètres du modèle à partir des données."
+      ],
+      "BB_3": [
+        "Estimateur du maximum de vraisemblance\nEstimateur bayésien, qui permet d'inclure des informations préalables"
+      ],
+      "BB_4": [
+        "Bibliothèques Python :"
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "Apprentissage (des) réseaux bayésiens dynamiques\n\nPlusieurs techniques existent pour apprendre les paramètres du modèle à partir des données :\n\n*   Estimateur du maximum de vraisemblance\n*   Estimateur bayésien, qui permet d'inclure des informations antérieures\n\n*   Bibliothèques Python :\n    *   http://pgmpy.org/\n    *   http://www.bayespy.org\n    *   https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "Institut des technologies du langage"
+      ],
+      "NmYOxPwOzT": [
+        "Université Carnegie Mellon"
+      ]
+    },
+    "de": {
+      "BB_1": [
+        "Lernen (dynamischer) Bayes'scher Netze"
+      ],
+      "BB_2": [
+        "Es gibt mehrere Techniken, um die Modellparameter anhand von Daten zu lernen."
+      ],
+      "BB_3": [
+        "Maximum-Likelihood-Schätzer\nBayesscher Schätzer, der es ermöglicht, Vorinformationen einzubeziehen"
+      ],
+      "BB_4": [
+        "Python-Bibliotheken:"
+      ],
+      "BB_5": [
+        "http://pgmpy.org/\nhttp://www.bayespy.org\nhttps://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "BB_6": [
+        "Lernen (Dynamischer) Bayesianischer Netze\n\n*   Es gibt mehrere Techniken, um die Modellparameter anhand von Daten zu lernen.\n    *   Maximum-Likelihood-Schätzer\n    *   Bayesscher Schätzer, der es ermöglicht, Vorinformationen einzubeziehen\n*   Python-Bibliotheken:\n    *   http://pgmpy.org/\n    *   http://www.bayespy.org\n    *   https://pomegranate.readthedocs.io/en/latest/"
+      ],
+      "Nosz5IikpG": [
+        "Sprachtechnologie-Institut"
+      ],
+      "NmYOxPwOzT": [
+        "Carnegie Mellon Universität"
+      ]
+    }
+  }
+}
