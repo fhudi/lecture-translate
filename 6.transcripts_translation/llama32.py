@@ -1,6 +1,14 @@
 from base import BaseModel
 from PIL import Image
-from constants import *
+from constants import (
+    SYS_PROMPT,
+    SYS_PROMPT_SLIDE_TXT,
+    SYS_PROMPT_SLIDE_IMG,
+    USER_PROMPT,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
+    USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+)
 
 
 class Llama32Model(BaseModel):

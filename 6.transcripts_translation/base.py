@@ -7,7 +7,6 @@ from constants import LANGUAGES
 
 
 def _get_basedir_path():
-    fd = None
     match os.uname()[1]:
         case "lectrans":
             return Path("/large/datas/frederikus-h/lectrans-testset")

@@ -1,7 +1,6 @@
 from llama32 import Llama32Model
 from llama4 import Llama4Model
 from gemma3it import Gemma3Model
-# from dummy import DummyInputCheckModel
 
 import argparse
 from enum import StrEnum
@@ -73,6 +72,8 @@ if __name__ == "__main__":
             model = Gemma3Model(model_id="google/gemma-3-12b-it")
 
         case Model.DummyInputCheck:
+            from dummy import DummyInputCheckModel
+
             model = DummyInputCheckModel(
                 model_id="meta-llama/Llama-3.2-11B-Vision-Instruct"
             )

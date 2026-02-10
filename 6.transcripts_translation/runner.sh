@@ -13,6 +13,7 @@
 if [ "$SLURM_ARRAY_TASK_ID" -eq 666 ]; then
     exit 1
 
+
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 1 ]; then
 #    uv run runner.py --model "llama32"
     python runner.py --model "llama32"

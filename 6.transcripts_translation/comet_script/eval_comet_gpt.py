@@ -3,9 +3,10 @@ import json
 from pathlib import Path
 import torch
 import os
-import numpy
 
-reference_json_path = Path("/lab_path/NL-ken/transcript_translate_annotated_by_sbj_all_text.json")
+reference_json_path = Path(
+    "/lab_path/NL-ken/transcript_translate_annotated_by_sbj_all_text.json"
+)
 with open(reference_json_path, "r", encoding="utf-8") as ref_file:
     ref_json = json.load(ref_file)
 
@@ -33,7 +34,7 @@ models = [
 ]
 
 subjects = {
-    "anat-1": "LQ7IXyQSXBk", 
+    "anat-1": "LQ7IXyQSXBk",
     "anat-2": "IvK-UGOI5ZQ",
     "bio-1": "pUH2_SGnm9g",
     "bio-2": "dEh_Zk9d0sE",
@@ -49,21 +50,22 @@ subjects = {
     "psy-2": "uNrB2uG_9gs",
     "speaking": "KL_I9eE2aGk",
     "theory_of_computation": "aVv9WXwW95w",
-    "urban_energy_systems_and_policy": "3WXWESx6jWY"
-    }
+    "urban_energy_systems_and_policy": "3WXWESx6jWY",
+}
 
 languages = ["ja", "zh", "th", "id", "es", "fr", "de"]
 
 model_path = download_model("Unbabel/wmt22-comet-da")
 comet_model = load_from_checkpoint(model_path)
 
+
 def input_data(model, exp_type, language):
     data = []
 
     for subject, video_id in subjects.items():
-        mt_path = (mt_base_path / exp_type / model / f"{subject}_{exp_type}_{model}.json")
+        mt_path = mt_base_path / exp_type / model / f"{subject}_{exp_type}_{model}.json"
         if not mt_path.exists():
-            continue        
+            continue
 
         with open(mt_path, "r", encoding="utf-8") as mt_file:
             mt_json = json.load(mt_file)
@@ -89,13 +91,10 @@ def input_data(model, exp_type, language):
             mt_text = mt_list[0]
             mt_text = mt_text.strip('"')
 
-            data.append({
-                "src": src_text,
-                "mt": mt_text,
-                "ref": ref_text
-            })
-    
+            data.append({"src": src_text, "mt": mt_text, "ref": ref_text})
+
     return data
+
 
 for model in models:
     for exp_type in exp_types:
@@ -115,9 +114,9 @@ for model in models:
             # result_scores[language] = comet_score
             result_scores[language] = {
                 "system_score": float(comet_output.system_score),
-                "scores": comet_output.scores
+                "scores": comet_output.scores,
             }
-            
+
             score_path = comet_base_path / f"{model}_{exp_type}_scores.json"
             with open(score_path, "w", encoding="utf-8") as score_file:
                 json.dump(result_scores, score_file, ensure_ascii=False, indent=2)

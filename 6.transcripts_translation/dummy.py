@@ -1,6 +1,11 @@
 from base import BaseModel
 from PIL import Image
-from constants import *
+from constants import (
+    SYS_PROMPT,
+    SYS_PROMPT_SLIDE_TXT,
+    SYS_PROMPT_SLIDE_IMG,
+    USER_PROMPT,
+)
 
 
 class DummyInputCheckModel(BaseModel):
@@ -10,16 +15,17 @@ class DummyInputCheckModel(BaseModel):
             "model_id", "meta-llama/Llama-3.2-11B-Vision-Instruct"
         )
         self.sys_prompt = {
-            "base": _SYS_PROMPT_,
-            "slide_txt": _SYS_PROMPT_SLIDE_TXT_,
-            "slide_img": _SYS_PROMPT_SLIDE_IMG_,
+            "base": SYS_PROMPT,
+            "slide_txt": SYS_PROMPT_SLIDE_TXT,
+            "slide_img": SYS_PROMPT_SLIDE_IMG,
         }
-        self.user_prompt = _USER_PROMPT_
+        self.user_prompt = (USER_PROMPT,)
 
     def load_model(self, *args, **kwargs):
         if self.model is not None:
             return self.model
 
+        import torch
         from transformers import AutoProcessor
 
         class _:

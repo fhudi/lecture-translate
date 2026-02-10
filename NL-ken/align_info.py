@@ -152,8 +152,6 @@ def align_info(subject_name, paths, output_dir):
         transcript_df.loc[transcript_df.index[-1], "Start_sec"] + 30.0
     )
 
-    results = []
-
     # json
     video_key = f"{subject_name}/{subjects[subject_name]['video_id']}"
     results_json = {video_key: {}}

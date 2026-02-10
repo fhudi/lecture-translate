@@ -1,9 +1,13 @@
 from base import BaseModel
-from PIL import Image
-from constants import *
+from constants import (
+    SYS_PROMPT,
+    SYS_PROMPT_SLIDE_TXT,
+    SYS_PROMPT_SLIDE_IMG,
+    USER_PROMPT,
+)
+
 
 class Llama4Model(BaseModel):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.model_id = kwargs.get(
@@ -19,13 +23,15 @@ class Llama4Model(BaseModel):
         self.processor = None
         self.device = None
 
-
     def load_model(self, *args, **kwargs):
         if self.model is not None:
             return self.model
 
-        import torch
-        from transformers import Llama4ForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
+        from transformers import (
+            Llama4ForConditionalGeneration,
+            AutoProcessor,
+            BitsAndBytesConfig,
+        )
 
         quant_config = BitsAndBytesConfig(
             load_in_4bit=True,
@@ -63,24 +69,39 @@ class Llama4Model(BaseModel):
             _sys_prompt = self.sys_prompt["base"]
 
         messages = [
-            {"role": "system", "content": [
-                {"type": "text", "text": [_sys_prompt]},
-            ]},
-            {"role": "user", "content": [
-                {"type": "text", "text": self.user_prompt.format(
-                    lang_src=lang_src, lang_tgt=lang_tgt, transcript_src=transcript_src,
-                )},
-            ]},
+            {
+                "role": "system",
+                "content": [
+                    {"type": "text", "text": [_sys_prompt]},
+                ],
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": self.user_prompt.format(
+                            lang_src=lang_src,
+                            lang_tgt=lang_tgt,
+                            transcript_src=transcript_src,
+                        ),
+                    },
+                ],
+            },
         ]
 
         inputs = self.processor.apply_chat_template(
-            messages, add_generation_prompt=True, tokenize=True, 
-            return_dict=True, return_tensors="pt"
+            messages,
+            add_generation_prompt=True,
+            tokenize=True,
+            return_dict=True,
+            return_tensors="pt",
         ).to(self.model.device)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
-        outputs_decoded = self.processor.decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)
+        outputs_decoded = self.processor.decode(
+            outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
+        )
         # outputs_decoded = self.tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:], skip_special_tokens=True)[0]
 
         return outputs_decoded
-
