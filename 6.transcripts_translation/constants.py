@@ -52,12 +52,74 @@ Please return only the translation.
 {lang_tgt}:
 """
 
+########
+
 SYS_PROMPT_TRANSL_SLIDE_TXT = """\
+You are a translation system for academic lecture slides.
+Translate the text extracted from each slides into the specified target language.
+Each item includes a bounding box ID followed by its text.
+Translate only the text and preserve every bounding box ID exactly as given.
+
+"""
+
+SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG = """\
 You are a translation system for lecture presentation slides.
 Translate the text extracted from slides into the specified target language.
+
+In addition to the transcript, you are given auxiliary presentation slide image, from which the text was extracted from.
+This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
+
 """
+
+USER_PROMPT_TRANSL_SLIDE_TXT = """\
+Translate the following text from {lang_src} to {lang_tgt}.
+Please return only the translation.
+Return only the translated JSON object, preserving all bounding box IDs exactly as given.
+Do not add, remove, or reorder any keys.
+
+Input ({lang_src}):
+{input_src}
+
+Output ({lang_tgt}):
+{output_template}
+"""
+
+
+SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB = """\
+You are a translation system for academic lecture slides.
+Translate the text contained in each bounding box into the specified target language.
+Each item to be translated is enclosed between triple double-quotes(\"\"\").
+Translate only the enclosed text.
+
+"""
+
+USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB = """\
+Translate the following text from {lang_src} to {lang_tgt}.
+Please return only the translation.
+
+{lang_src}:
+\"\"\"
+{input_src}
+\"\"\"
+
+{lang_tgt}:
+{output_template}
+"""
+
+
+########
 
 SYS_PROMPT_TRANSL_SLIDE_IMG = """\
 You are a translation system for lecture presentation slides.
 Translate the text in the attached slides into the specified target language.
+"""
+
+USER_PROMPT_TRANSL_SLIDE_IMG = """\
+Translate the following from {lang_src} to {lang_tgt}.
+Please return only the translation.
+
+{lang_src}:
+"{transcript_src}"
+
+{lang_tgt}:
 """

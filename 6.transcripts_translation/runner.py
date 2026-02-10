@@ -20,6 +20,11 @@ class Context(StrEnum):
     SlideImage = "slideimg"
 
 
+class Task(StrEnum):
+    TranscriptTranslate = "transcript"
+    SlideTranslate = "slide"
+
+
 parser = argparse.ArgumentParser(
     description="Runner script to evaluate LecTrans annotated testset"
 )
@@ -38,6 +43,13 @@ parser.add_argument(
     choices=list(Context),
     default=Context.Vanilla,
     help="Context to provide (default: %(default)s)",
+)
+parser.add_argument(
+    "--task",
+    type=Task,
+    choices=list(Task),
+    default=Task.TranscriptTranslate,
+    help="Task to evaluate (default: %(default)s)",
 )
 parser.add_argument(
     "--range",
@@ -82,4 +94,8 @@ if __name__ == "__main__":
         case _:
             raise NotImplementedError
 
-    model.evaluate(**kwargs)
+    match args.task:
+        case Task.TranscriptTranslate:
+            model.evaluate(**kwargs)
+        case Task.SlideTranslate:
+            model.evaluate_slide_translate(**kwargs)
