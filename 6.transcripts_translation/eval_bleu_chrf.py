@@ -149,10 +149,17 @@ for model in models:
             chrf_result = sum(_[1].score for _ in results_per_subject.values()) / len(results_per_subject)
 
             result_dict["results"][language] = {
-                "BLEU": str(bleu_result),
-                "BLEU_score": bleu_result.score,
-                "ChrF": str(chrf_result),
-                "ChrF_score": chrf_result.score
+                "BLEU_score": bleu_result,
+                "ChrF_score": chrf_result
+                "per_subjects": {
+                    sbj_vidid: {
+                        "BLEU_score": _bleu.score,
+                        "ChrF_score": _chrf.score,
+                        "BLEU": str(_bleu),
+                        "ChrF": str(_chrf),
+                    }
+                    for sbj_vidid, (_bleu, _chrf, _, _) in results_per_subject.items()
+                }
             }
 
         output_json_path = result_base_path / f"{model}_{exp_type}.json"
