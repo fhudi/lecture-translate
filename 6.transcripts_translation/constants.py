@@ -54,13 +54,13 @@ Please return only the translation.
 
 ########
 
-SYS_PROMPT_TRANSL_SLIDE_TXT = """\
-You are a translation system for academic lecture slides.
-Translate the text extracted from each slides into the specified target language.
-Each item includes a bounding box ID followed by its text.
-Translate only the text and preserve every bounding box ID exactly as given.
-
-"""
+# SYS_PROMPT_TRANSL_SLIDE_TXT = """\
+# You are a translation system for academic lecture slides.
+# Translate the text extracted from each slides into the specified target language.
+# Each item includes a bounding box ID followed by its text.
+# Translate only the text and preserve every bounding box ID exactly as given.
+#
+# """
 
 SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG = """\
 You are a translation system for lecture presentation slides.
@@ -71,18 +71,18 @@ This context is provided to supplement semantic understanding and disambiguate t
 
 """
 
-USER_PROMPT_TRANSL_SLIDE_TXT = """\
-Translate the following text from {lang_src} to {lang_tgt}.
-Please return only the translation.
-Return only the translated JSON object, preserving all bounding box IDs exactly as given.
-Do not add, remove, or reorder any keys.
-
-Input ({lang_src}):
-{input_src}
-
-Output ({lang_tgt}):
-{output_template}
-"""
+# USER_PROMPT_TRANSL_SLIDE_TXT = """\
+# Translate the following text from {lang_src} to {lang_tgt}.
+# Please return only the translation.
+# Return only the translated JSON object, preserving all bounding box IDs exactly as given.
+# Do not add, remove, or reorder any keys.
+#
+# Input ({lang_src}):
+# {input_src}
+#
+# Output ({lang_tgt}):
+# {output_template}
+# """
 
 
 SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB = """\
@@ -104,6 +104,36 @@ Please return only the translation.
 
 {lang_tgt}:
 {output_template}
+"""
+
+
+SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT = """\
+You are a translation system for academic lecture slides.
+Translate only the text contained in each bounding box into the specified target language.
+You will be given the slide image from which the bounding boxes were extracted, when available.
+
+The input will always be a structured JSON object.
+Each key is a bounding-box ID (a string in double-quotes).
+Each value is the text to translate, enclosed in triple double-quotes (\"\"\").
+
+Your task:
+Translate only the text inside the triple-quoted strings into the specified target language.
+
+Rules:
+1. Keep the JSON structure exactly the same.
+2. Keep all keys (bounding-box IDs) exactly as given.
+3. Replace only the text inside each triple-quoted value with its translation.
+4. Do not output any commentary, explanations, or extra text. Return only the translated JSON object.
+
+"""
+
+USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT = """\
+{{
+"target_language": "{lang_tgt}",
+"bounding_boxes": {{
+{input_src}
+}}
+}}
 """
 
 
