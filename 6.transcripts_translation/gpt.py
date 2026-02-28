@@ -1,7 +1,7 @@
 import json
 import base64
 from pathlib import Path
-import tiktoken
+# import tiktoken
 
 from base import fd_basedir_slides, fp_test_transl_slide
 from constants import (
@@ -54,95 +54,13 @@ def encode_image(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
 
-# def image_to_base64(fp_img):
-#     data = Path(fp_img).read_bytes()
-#     return "data:image/jpeg;base64," + base64.b64encode(data).decode()
-
-
-# def translate_image(model):
-#     output_dir = "/large/datas/nina-n/NL-ken/input_jsonl_imageonly"
-#     output_model_dir = os.path.join(output_dir, model)
-#     os.makedirs(output_model_dir, exist_ok=True)
-#
-#     for subject, video_id in subjects.items():
-#         image_dir = fd_basedir_slides / subject / video_id
-#         if not image_dir.exists():
-#             print(f"Not found")
-#         output_file = f"{output_dir}/{model}/{subject}_imageonly_{model}.jsonl"
-#         print(f"Creating {output_file}")
-#
-#         image_files = sorted(image_dir.glob("*.jpg"))
-#
-#         with open(output_file, "w", encoding="utf-8") as f:
-#             for image in image_files:
-#                 image_base64 = encode_image_to_base64(image)
-#
-#                 # get scene number
-#                 file_name = image.stem
-#                 if "Scene" in file_name:
-#                     scene_number = file_name.split("Scene-")[1]
-#                 else:
-#                     scene_number = "N"
-#
-#                 for language_code, language_name in target_languages.items():
-#                     system_prompt = f"""\
-#                     You are a translation system for lecture presentation slides.
-#                     Translate the text extracted from slides into the specified target language.
-#                     """
-#
-#                     user_prompt = f"""\
-#                     Translate the following from {lang_source} to {language_name}.
-#                     Please return only the translation.
-#
-#
-#                     {language_name}:
-#                     """
-#
-#                     content_list = [
-#                         {
-#                             "role": "system",
-#                             "content": system_prompt
-#                         },
-#                         {
-#                             "role": "user",
-#                             "content": user_prompt
-#                         }
-#
-#                     ]
-#
-#                     content_list.append({
-#                         "role": "user",
-#                         "content":
-#                             [{
-#                                 "type": "image_url",
-#                                 "image_url": {
-#                                     "url": f"data:image/jpeg;base64,{image_base64}"
-#                                 }}]
-#                     })
-#
-#                     request_json = {
-#                         "custom_id": f"{subject}_imageonly_{model}_{scene_number}_{language_code}",
-#                         "method": "POST",
-#                         "url": "/v1/chat/completions",
-#                         "body": {
-#                             "model": model,
-#                             "messages": content_list,
-#                             # "max_tokens": 2048
-#                             # "max_completion_tokens": 2048
-#                         }
-#                     }
-#
-#                     f.write(json.dumps(request_json) + "\n")
-#             print("File created")
-
-
 
 def translate_slide_text_json(model, include_slide_img=False):
     print("Model:", model)
-    encoding = tiktoken.encoding_for_model(model)
-    total_tokens_all = 0
+    # encoding = tiktoken.encoding_for_model(model)
+    # total_tokens_all = 0
 
-    subtask = "withslideimg" if include_slide_img else "textonly"
+    subtask = "withslideimg" if include_slide_img else "nocontext"
     output_dir = Path(f"ins_slides/{model}_{subtask}")
     output_dir.mkdir(exist_ok=True, parents=True)
 
@@ -150,7 +68,7 @@ def translate_slide_text_json(model, include_slide_img=False):
         all_data = json.load(f)
 
     for subject_video, scenes in all_data.items():
-        total_tokens = 0
+        # total_tokens = 0
         subject, video_id = subject_video.split("/", 1)
         output_file = output_dir / f"slidetransl_{subtask}_{subject}_{model}.jsonl"
 
@@ -236,7 +154,7 @@ def translate_slide_text_json(model, include_slide_img=False):
                 #         total_tokens += len(encoding.encode(message["content"]))
 
         # print(f"Token count:  {total_tokens:12,}  ({subject})")
-        total_tokens_all += total_tokens
+        # total_tokens_all += total_tokens
 
     # print(f">>> {model} Token count:  {total_tokens_all:12,}")
 
@@ -244,10 +162,7 @@ def translate_slide_text_json(model, include_slide_img=False):
 
 
 if __name__ == "__main__":
-    # for model in gpt_4x + gpt_5x:
-    #     translate_slide_text_json(model)
-    #     # translate_slide_text_json("gpt-4.1-2025-04-14")
-    #     # translate_slide_text_json("o4-mini-2025-04-16")
-    #     # translate_slide_text_json("gpt-5-mini-2025-08-07")
-    for model in gpt_5x + gpt_4x:
-        translate_slide_text_json(model, include_slide_img=True)
+    for cur_model in gpt_4x + gpt_5x:
+        translate_slide_text_json(cur_model, include_slide_img=False)
+    # for cur_model in gpt_5x + gpt_4x:
+    #     translate_slide_text_json(cur_model, include_slide_img=True)
