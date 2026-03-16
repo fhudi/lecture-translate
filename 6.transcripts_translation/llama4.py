@@ -1,15 +1,22 @@
 from base import BaseModel
+from PIL import Image
 from constants import (
     SYS_PROMPT,
     SYS_PROMPT_SLIDE_TXT,
     SYS_PROMPT_SLIDE_IMG,
     USER_PROMPT,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
+    USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
 )
+from llama32 import Llama32Model
 
 
-class Llama4Model(BaseModel):
+class Llama4Model(Llama32Model):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # BaseModel.__init__(*args, **kwargs)
+        # Llama32Model.__init__(*args, **kwargs)
+
         self.model_id = kwargs.get(
             "model_id", "meta-llama/Llama-4-Scout-17B-16E-Instruct"
         )
@@ -23,50 +30,68 @@ class Llama4Model(BaseModel):
         self.processor = None
         self.device = None
 
+        self.sys_prompt_slide_transl = {
+            # "base": SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+            # "slide_img": SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
+            "base": SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
+            "slide_img": SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
+        }
+        self.user_prompt_slide_transl = USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT
+
     def load_model(self, *args, **kwargs):
         if self.model is not None:
             return self.model
 
+        import torch
         from transformers import (
             Llama4ForConditionalGeneration,
             AutoProcessor,
             BitsAndBytesConfig,
         )
 
-        quant_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            # bnb_4bit_compute_dtype=torch.bfloat16,
-            # bnb_4bit_use_double_quant=True,
-            # bnb_4bit_quant_type="nf4"
-        )
+        # quant_config = BitsAndBytesConfig(
+        #     load_in_4bit=True,
+        #     # bnb_4bit_compute_dtype=torch.bfloat16,
+        #     # bnb_4bit_use_double_quant=True,
+        #     # bnb_4bit_quant_type="nf4"
+        # )
 
         self.model = Llama4ForConditionalGeneration.from_pretrained(
             self.model_id,
-            # torch_dtype=torch.bfloat16,
-            quantization_config=quant_config,
+            # quantization_config=quant_config,
+            torch_dtype=torch.bfloat16,
             device_map="auto",
         )
         self.processor = AutoProcessor.from_pretrained(self.model_id)
+        self.device = self.model.device
 
         return self.model
 
-    def eval_instance(
+    # def eval_instance(
+    #     self,
+    #     lang_src,
+    #     lang_tgt,
+    #     transcript_src,
+    #     context_img=None,
+    #     context_text=None,
+    #     is_check_input_only=False,
+    # ):
+    #     return Llama32Model.eval_instance(
+    #         self, lang_src, lang_tgt, transcript_src, context_img, context_text, is_check_input_only,
+    #     )
+
+
+
+    def eval_instance_slide_translate(
         self,
         lang_src,
         lang_tgt,
-        transcript_src,
-        context_img=None,
-        context_text=None,
+        input_src,
+        output_template,
+        slide_img_paths=None,  # should only be a single image
         is_check_input_only=False,
     ):
         raise NotImplementedError
-
-        if context_img is not None:
-            _sys_prompt = self.sys_prompt["slide_img"].format(slide_img=context_img)
-        elif context_text is not None:
-            _sys_prompt = self.sys_prompt["slide_txt"].format(slide_txt=context_text)
-        else:
-            _sys_prompt = self.sys_prompt["base"]
 
         messages = [
             {
