@@ -5,9 +5,9 @@ from pathlib import Path
 
 from base import fd_basedir_slides, fp_test_transl_slide
 from constants import (
-    SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
     # SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
-    USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT,
+    USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
 )
 from constants import LANGUAGES
 
@@ -89,9 +89,9 @@ def translate_slide_text_json(model, include_slide_img=False):
                 input_sources.append(f"\"{bb_id}\": \"\"\"{slides_text}\"\"\"")
             input_src = ',\n'.join(input_sources)
 
-            system_prompt = SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT
+            system_prompt = SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT
             for lang_tgt, lang_target in target_languages.items():
-                user_prompt = USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT.format(
+                user_prompt = USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT.format(
                     # lang_src=lang_source,
                     lang_tgt=lang_target,
                     input_src=input_src,

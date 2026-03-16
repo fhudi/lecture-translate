@@ -60,6 +60,7 @@ parser.add_argument(
     help="Provide start and end indices",
 )
 parser.add_argument("--dummy", action="store_true", help="Dummy input check")
+parser.add_argument("--use-non-corrected-asr", action="store_true", help="Input text source is the output from the ASR, used as is without human correction.")
 
 
 if __name__ == "__main__":
@@ -69,6 +70,7 @@ if __name__ == "__main__":
         "context": args.context,
         "rg_idx": args.range,
         "dummy": args.dummy,
+        "use_non_corrected_asr_output": args.use_non_corrected_asr,
     }
     match args.model:
         case Model.Llama32:

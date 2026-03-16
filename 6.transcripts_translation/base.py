@@ -26,6 +26,10 @@ fp_test_transl_transcript = (
     _get_basedir_path()
     / "25.11.transcript_translate/transcript_translate_annotated_by_sbj_all_text.json"
 )
+fp_test_asr_transcript = (
+    _get_basedir_path()
+    / "25.11.transcript_translate/transcript_asr_output_by_sbj_all_text.json"
+)
 fp_test_transcript_slide_align = (
     _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.json"
 )
@@ -62,13 +66,17 @@ class BaseModel:
         raise NotImplementedError
 
     def evaluate(
-        self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None
+        self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None,
+        use_non_corrected_asr_output=False,
     ):
         with open(fp_test_transl_slide, "r") as f:
             datas_slide_text = json.load(f)
 
         with open(fp_test_transl_transcript, "r") as f:
             datas_transcript_text = json.load(f)
+
+        with open(fp_test_asr_transcript, "r") as f:
+            datas_transcript_asr = json.load(f)
 
         with open(fp_test_transcript_slide_align, "r") as f:
             datas_alignment = json.load(f)
@@ -78,6 +86,9 @@ class BaseModel:
 
         lang_source = LANGUAGES[lang_src]  # "English"
         target_languages = {k: v for k, v in LANGUAGES.items() if k != lang_src}
+
+        lang_asr = "asr"
+        _lang_src = lang_asr if use_non_corrected_asr_output else lang_src
 
         # ===================== #
         # Do Preds (Transcipts) #
@@ -119,14 +130,18 @@ class BaseModel:
                     ]
                 cur_preds = {}
                 for lang_tgt, lang_target in target_languages.items():
+                    if use_non_corrected_asr_output:
+                        input_text = datas_transcript_asr[k][ts][_lang_src]
+                    else:
+                        input_text = texts[lang_src]
                     cur_preds[lang_tgt] = self.eval_instance(
-                        lang_source, lang_target, texts[lang_src], **kwargs
+                        lang_source, lang_target, input_text, **kwargs
                     )
                 preds_one_lecture[ts] = cur_preds
                 if dummy:
                     break
             with open(
-                outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.json",
+                outdir / f"{sbj}_{lec_id}.{_lang_src}2any.{output_suffix}.json",
                 "w",
                 encoding="utf8",
             ) as f:

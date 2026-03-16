@@ -12,13 +12,17 @@ LANGUAGES = {
 
 SYS_PROMPT = """\
 You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
+Translate the English spoken transcript into the specified target language.
+The transcript may contain ASR errors caused by technical terminology, accents, disfluencies, or recognition mistakes.
+Translate the intended meaning, not a word-for-word rendering.
 
 """
 
 SYS_PROMPT_SLIDE_TXT = """\
 You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
+Translate the English spoken transcript into the specified target language.
+The transcript may contain ASR errors caused by technical terminology, accents, disfluencies, or recognition mistakes.
+Translate the intended meaning, not a word-for-word rendering.
 
 In addition to the transcript, you are given auxiliary textual context extracted from the corresponding presentation slides.
 This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
@@ -29,28 +33,37 @@ The context is as follows, encapsulated with triple ticks:
 {slide_txt}
 ```
 
-
 """
 
 SYS_PROMPT_SLIDE_IMG = """\
 You are a translation system for lecture video transcripts.
-Translate the spoken transcript into the specified target language.
+Translate the English spoken transcript into the specified target language.
+The transcript may contain ASR errors caused by technical terminology, accents, disfluencies, or recognition mistakes.
+Translate the intended meaning, not a word-for-word rendering.
 
 In addition to the transcript, you are given auxiliary image context from the corresponding presentation slides.
 This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
 
-
 """
+
+# USER_PROMPT = """\
+# Translate the following from {lang_src} to {lang_tgt}.
+# Please return only the translation.
+#
+# {lang_src}:
+# "{transcript_src}"
+#
+# {lang_tgt}:
+# """
 
 USER_PROMPT = """\
-Translate the following from {lang_src} to {lang_tgt}.
-Please return only the translation.
-
-{lang_src}:
-"{transcript_src}"
-
-{lang_tgt}:
+{{
+"target_language": "{lang_tgt}",
+"transcript_source": "{transcript_src}"
+}}
 """
+
+
 
 ########
 
@@ -107,7 +120,7 @@ Please return only the translation.
 """
 
 
-SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT = """\
+SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT = """\
 You are a translation system for academic lecture slides.
 Translate only the text contained in each bounding box into the specified target language.
 You will be given the slide image from which the bounding boxes were extracted, when available.
@@ -127,7 +140,7 @@ Rules:
 
 """
 
-USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB_STRUCTURED_OUTPUT = """\
+USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT = """\
 {{
 "target_language": "{lang_tgt}",
 "bounding_boxes": {{

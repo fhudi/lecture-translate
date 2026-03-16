@@ -8,6 +8,8 @@ from constants import (
     SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
     SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
     USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
+    USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
 )
 
 
@@ -28,10 +30,12 @@ class Llama32Model(BaseModel):
         self.device = None
 
         self.sys_prompt_slide_transl = {
-            "base": SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
-            "slide_img": SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
+            # "base": SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+            # "slide_img": SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
+            "base": SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
+            "slide_img": SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
         }
-        self.user_prompt_slide_transl = USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB
+        self.user_prompt_slide_transl = USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT
 
     def load_model(self, *args, **kwargs):
         if self.model is not None:
@@ -133,7 +137,10 @@ class Llama32Model(BaseModel):
             outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
         )
 
-        return outputs_decoded
+        ret = outputs_decoded
+        if self.model_id == "meta-llama/Llama-4-Scout-17B-16E-Instruct":
+            ret = [ret]
+        return ret
 
     def eval_instance_slide_translate(
         self,
@@ -148,10 +155,10 @@ class Llama32Model(BaseModel):
         _user_prompt = {
             "type": "text",
             "text": self.user_prompt_slide_transl.format(
-                lang_src=lang_src,
+                # lang_src=lang_src,
                 lang_tgt=lang_tgt,
                 input_src=input_src,
-                output_template=output_template,
+                # output_template=output_template,
             ),
         }
 
