@@ -130,11 +130,13 @@ class Llama32Model(BaseModel):
                 i.close()
 
         if is_check_input_only:  # outputs = inputs
-            return self.processor.decode(inputs["input_ids"], skip_special_tokens=False)
+            _i = inputs["input_ids"].squeeze()
+            return self.processor.decode(_i, skip_special_tokens=False)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
+        _o = outputs[:, inputs["input_ids"].shape[-1] :].squeeze()
         outputs_decoded = self.processor.decode(
-            outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
+            _o, skip_special_tokens=True
         )
 
         ret = outputs_decoded
@@ -202,11 +204,11 @@ class Llama32Model(BaseModel):
                 i.close()
 
         if is_check_input_only:  # outputs = inputs
-            return self.processor.decode(inputs["input_ids"], skip_special_tokens=False)
+            return self.processor.decode(inputs["input_ids"].squeeze(), skip_special_tokens=False)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
         outputs_decoded = self.processor.decode(
-            outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
+            outputs[:, inputs["input_ids"].shape[-1] :].squeeze(), skip_special_tokens=True
         )
 
         return outputs_decoded

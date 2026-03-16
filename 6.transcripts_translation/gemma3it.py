@@ -139,11 +139,11 @@ class Gemma3Model(BaseModel):
                 i.close()
 
         if is_check_input_only:  # outputs = inputs
-            return self.processor.decode(inputs["input_ids"], skip_special_tokens=False)
+            return self.processor.decode(inputs["input_ids"].squeeze(), skip_special_tokens=False)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
         outputs_decoded = self.processor.decode(
-            outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
+            outputs[:, inputs["input_ids"].shape[-1] :].squeeze(), skip_special_tokens=True
         )
 
         return outputs_decoded
@@ -219,11 +219,11 @@ class Gemma3Model(BaseModel):
                 i.close()
 
         if is_check_input_only:  # outputs = inputs
-            return self.processor.decode(inputs["input_ids"], skip_special_tokens=False)
+            return self.processor.decode(inputs["input_ids"].squeeze(), skip_special_tokens=False)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
         outputs_decoded = self.processor.decode(
-            outputs[:, inputs["input_ids"].shape[-1] :], skip_special_tokens=True
+            outputs[:, inputs["input_ids"].shape[-1] :].squeeze(), skip_special_tokens=True
         )
 
         return outputs_decoded
