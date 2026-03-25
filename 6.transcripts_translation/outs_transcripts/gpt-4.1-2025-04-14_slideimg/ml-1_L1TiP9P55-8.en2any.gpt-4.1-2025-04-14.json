@@ -1,0 +1,263 @@
+{
+  "0:37:06.216": {
+    "ja": "本当に話したかったのはダイナミック・ベイズについてです。",
+    "zh": "我真正想讲的是动态贝叶斯方法。",
+    "th": "สิ่งที่ผมอยากพูดจริง ๆ คือเรื่องไดนามิกเบย์เซียน",
+    "id": "Hal yang sebenarnya ingin saya bicarakan adalah Bayesian dinamis.",
+    "es": "Lo que realmente quiero hablar es sobre el bayesiano dinámico.",
+    "fr": "Ce dont je veux vraiment parler, c'est du bayésien dynamique.",
+    "de": "Worüber ich eigentlich sprechen möchte, ist das dynamische Bayes-Verfahren."
+  },
+  "0:37:11.900": {
+    "ja": "さらに一歩進んで、このテーマにおけるマルチモーダル拡張についても見ていきます。これはとても興味深い分野です。最近では多くの人がニューラルアーキテクチャを使っていますが、グラフィカルモデルはあまり使われなくなってきました。しかし、マルチモーダルニューラルアーキテクチャに見られる多くの概念は、もともとグラフィカルモデルの構造からインスピレーションを受けています。ダイナミックベイジアンネットワークはベイジアンネットワークを基盤としつつ、シーケンスの依存関係や時系列データを表現することができます。典型的なダイナミックベイジアンネットワークは一次マルコフ仮定を持ちます。一次マルコフ仮定は、「ファインディング・ニモ」の短期記憶の魚のように現在の状態だけを覚えていて、以前の観測は忘れてしまう、というジョークをよく言います。つまり、現在の状態だけがすべての観測された情報を要約しなければなりません。二次マルコフであれば、もう1つ前まで参照できます。この仕組みの動的な側面は、LSTMのように時間とともに進化し、「左から右へのフィードフォワード」として見ることもできます。 \n\n例えば、各タイムステップごとに同じベイジアンネットワークを使い、再帰構造、つまりRNNのような繰り返しを加える点が特徴です。また、どの変数同士が依存関係を持つかという知識を活用して設計が可能です。変数間に何もなければ、独立または条件付き独立とみなします。ダイナミックベイジアンネットワークで最も有名なものは何でしょうか？音声分野の人なら答えがわかるでしょう。ここで、観測値と証拠があり、これはナイーブベイズに似ていますが、違うのは隠れマルコフモデルの場合、多くはHが潜在変数で観測されません。この部分だけ見るとクラスタリングのようにも考えられます。Xは全ての単語、Hはランダム変数で、通常0から20などの数値を取ります。Hがこの単語を生成した状態、と考えても良いでしょう。\n\n潜在変数Hをクラスタリングマシンと考え、例えばHが1のときどの単語が生成されやすいか、Hが2のときどの単語が生成されやすいか、など分析ができます。これによって高次元な情報をHという離散的な変数に集約しています。隠れマルコフモデルや今後出てくる条件付き確率場（CRF）でも、潜在変数や観測変数がクラスタリングや情報要約に使えます。\n\nたとえば、「黄色い家が閉じている」などの単語列を生成するとき、最もらしい状態列を推定するのが隠れマルコフモデルです。次回、最適化の話をより詳しくやりますが、一部は今回も触れます。\n\n私は5つの非観測変数と4つの観測変数を持っているとします。このジョイント確率が推定できれば、例えばp(h1|x1, x2, x3, x4)なども計算でき、それはh1の周辺化という見方もできますし、全てのh0～h4の条件付確率も定義できます。それを知れば様々な質問に答えられます。\n\nもしマルチモーダルなデータがあればどうでしょう？複数のストリームがある場合にファクトライズの戦略として、「ファクトリアルHMM」などがあります。これは厳密にはマルチモーダルではありませんが、1本の観測系列に対し、複数の生成過程（ファクター）が働いているという拡張です。\n\nさらに進んで、たとえば口元の映像と音声という2つの観測セットがある場合、どちらも何かの潜在表現によって生成されています。音声は例えば音素、映像はヴィズィームなどが潜在状態として設計され、それぞれが生成に関係します。音素がヴィズィームを生成すると設計することもできます。\n\nこの場合、「ボルツマンジッパー」というモデルもあり、ボルツマンマシンの拡張版です。さらにカップルドHMMはお互いの情報が依存しあう（より柔軟で、視覚・音声の両方に特権性を与えない）点が特徴です。どれだけ依存関係を作るか（カップリング度合い）もパラメータ（αやβ）で調整できます。\n\nまた、Pythonのライブラリも多く登場しており、実装や最適化が容易になっています。最適化の話はまた次回。\n\n講義後半では、データ生成の話をします。この仕組みを用いて、シードがあればデータの生成や、センテンスの続きを作ったりできるかもしれません。また、ニューラルネットワークには生成専用のモデルファミリーもあります。これらはジョイント分布をモデル化する「生成モデル」で、必ずしも明示的にジョイントを持たなくてもコミュニティでは「生成モデル」と呼ばれています。用語的には人によって使い分けがあります。\n\nでは、今まで学んだ内容を元に、文を生成するモデルを学ぼうとした場合、多くの人がTransformerやBERTなど最新のものをイメージするかもしれませんが、それより前にはオートエンコーダ（autoencoder）があります。オートエンコーダは画像を潜在空間（通常は入力より小さい次元）に写像し、デコーダで元の画像を再生成しようとします。\n\n例えば猫の画像をエンコードしてzを取り出し、犬の画像に対するzも得たとして、その2つのzを線形補間することで猫から犬へモーフィングすることも理論上は可能です。しかし実際には、潜在空間がクラスタに分かれがちで、訓練データで表現されない部分が多く、2点間の補間が現実的でないことがあります。\n\nこれを解決するため、「z空間を分布に従わせる」工夫があり、多くは正規分布（ガウス分布）を使います。z自体をガウス分布にパラメータ化し、KL損失などで学習サンプルの投影が分布に従うように強制します。この「変分オートエンコーダ（VAE）」の詳細は今後の講義で扱いますが、これによりz空間内のどこに移動しても妥当な生成ができるという特徴が得られます。\n\nただしこのままだと画像はリアルには見えません。これに対して実際の画像を時々使ってリアルに見せるようなアプローチ（例えばGAN：敵対的生成ネットワーク）が提案されました。GANでは任意のランダムベクトルからリアルな画像が生成できることを目指し、生成器と識別器が競い合いながら学習します。識別器が本物と偽物を区別しようとするのに対し、生成器は本物に見える偽物を作ろうとします。\n\n最適化は、片方を固定して一方を最大・最小化する繰り返しで実現します。さらに「条件付きGAN（Conditional GAN）」では、猫画像などカテゴリを条件として任意の画像生成が可能になります。条件をきちんと使って生成できているかを確かめるには、識別器にもクラス情報を与えて判定させる損失や、サイクリックロスを導入する方法などがあります。\n\nまた、xからzへのエンコードも学習したい場合や、InfoGANのように音声からシーンを生成したり、マルチタスクの識別器で本物/偽物判定とクラス推定を同時に行うモデルなどもあります。\n\n最近の研究例として、入力画像と顔ランドマーク（特徴点）の両方を条件に、例えば他人の顔画像に同じ表情を届けたりすることを目指す「トーキングヘッド」もあります。これは元画像に対して、顔の表情だけを移す例です。\n\nさらに「双方向GAN（BiGAN）」のような、生成だけでなくエンコーダも同時に学習して画像からzベクトル、zから画像の両方向を扱うものもあります。\n\nまた、オートエンコーダを取り入れた新しい生成モデル、ペアデータに依存しないで拡張できる構造（CycleGANやBicycleGANなど）も発表されています。CycleGANは異なるモダリティ間でペアが分からなくても、サイクル一貫性損失を用いて生成の一貫性を保つ手法で、例えばスケッチから多様なサンプル画像を生成できます。\n\nこれで生成モデルや確率的グラフィカルモデルについての議論を始めたいと思います。ありがとうございました。",
+    "zh": "进一步来看这个话题，我们还要探讨它在多模态上的一些扩展，这其实非常有意思。虽然现在很多人都用神经网络架构，最近几年图模型在多模态神经网络中用得少了，但其实很多在多模态神经架构里看到的概念，最初就是借鉴了早期的图模型结构。动态贝叶斯网络的核心其实是贝叶斯网络，但它允许表达序列依赖关系，也就是数据的时序性。标准的动态贝叶斯网络通常采用一阶马尔可夫假设。一阶马尔可夫假设有点类似动画片《海底总动员》里那个短期记忆的鱼——它只记得当前的状态，不记得之前的观测结果。所以只保留当前状态作为总结过去所有观测的表示。二阶马尔可夫假设可以往前追溯两步，依此类推可以继续扩展。动态贝叶斯网络的有趣之处在于，就像LSTM一样，它可以随时间变化，并且它是有向的，相当于是从左到右的“前馈”结构，用神经表达来讲就是这样。\n\n例如，每个时间步都是同一个贝叶斯网络，变量也是一样的，只是增加了递归结构，有点像循环神经网络。这是特意设计的，因为你知道哪些变量之间可能有依赖关系，需要去建模它们的联合关系。如果两个变量之间没有关系，就认为它们是独立的，或者条件独立。\n\n这些动态贝叶斯网络里最著名的是什么？做语音的人肯定知道答案。比如观测到的证据部分，如果只看这一部分会很像naive Bayes，但是在隐马尔可夫模型里，H通常是一个潜在变量，不被观测。可以近似看作聚类，这里的H通常是一个随机变量，比如取0~20之间的数（或1~20）。\n\n你可以把H看成是聚类器，通常配合高斯模型实现，如果数据是连续的，你可以用高斯模型（条件分布）。比如H为1时，哪些词可能被生成；H为2时生成哪些词；H为3时又是什么，这就是隐变量的“聚类”解释。\n\n这样做的意义就是把高维信息压缩为易于处理的离散变量。在其它图模型如条件随机场等也有类似的变量（隐变量或可观测变量），它们经常被用于聚类、信息总结。\n\n比如，如果我要生成“黄色房子关上了”这样一个奇怪的句子，隐马尔可夫模型就会尝试推断最可能生成这些词的状态序列，这正是它们用于推断时的主要任务。我们之后还会更详细地讨论如何优化这些模型，下一周讲优化会再展开。\n\n比如有5个随机变量，其中4个观测得到，5个是未观测的。如果能推断出联合概率，比如p(h1 | x1, x2, x3, x4)就是h1的边缘概率；或者p(h0, h1, h2, h3, h4 | x1, x2, x3, x4)，只要掌握联合概率，这样的典型查询都可以回答。\n\n如果是多模态数据，多数据流怎么办？有一些分解策略，比如Factorial HMM，这本身不是多模态，但可以理解为一个观测流由多个生成过程或因子共同生成。这本身就是有趣的扩展。\n\n进一步说，多模态场景下，比如我的嘴型和音频各为一组数据流，分别都有潜在变量生成它，如音素状态、嘴型状态等。这能根据需求设计，比如认为音素状态决定嘴型，这样发音要调整嘴型。\n\n这里有一个叫Boltzmann zipper的模型，是在Boltzmann机器上的扩展。还有Coupled HMM，比zipper灵活，视觉和声音都不占主导，彼此影响，相互依赖，而不是单向依赖。具体耦合程度可以通过参数alpha、beta来控制。多模态LSTM的部分灵感也来自这些设计。\n\n现在有很多Python库，可以实现并优化这些模型。下周我们还会再讲优化相关内容。\n\n讲座的最后我想谈谈如何生成数据。用这些模型，可以在有随机种子的情况下生成数据，也能让模型生成句子的后续。这类神经网络架构下有专门为生成而设计的模型。例如有些模型会直接学习联合分布，属于“生成模型”，也有的不会明确建模联合分布，但社区现在一般也称之为生成神经模型。术语有时有不同，但普遍大家都这么叫。\n\n以已学内容为例，如果我要训练一个能生成句子的生成模型，很多人肯定会想到transformer、BERT，但其实在它们之前还有另一种思路，就是训练一个decoder——比如autoencoder。autoencoder是先把图像编码进一个较低维的潜在空间，再用解码器尽量还原输入。你可以只用decoder部分，甚至可以随便操作编码z，比如把猫图编码成z，把狗图编码成z，两个z插值后，用decoder可以做“猫变狗”的合成。\n\n理论上可以插值，但实际上你用普通神经网络训练时，latent空间会是高度聚类的，很多空间区域训练样本很稀疏，这就导致从一个z插值到另一个z时，中间区域没有有效数据生成物，效果很差。\n\n怎么解决？有一类研究——比如变分自编码器(VAE)，就是强制所有训练样本的z表示都服从高斯分布。你投影后所有样本的z分布是多元正态，利用KL损失等方法逼近标准高斯。这样，latent空间中的点无论怎么插值、移动，只要落在高斯分布支撑范围内都能生成合理的结果。\n\n不过，实际生成的图像看起来还是不太真实。为此，有了进一步的方法，就是生成式对抗网络GAN。GAN训练时生成器需要把任何随机向量映射为真实图像，判别器要区分真假。两者形成对抗过程，交替优化。判别器尽量判断准确，生成器致力于“欺骗”判别器。\n\n你可以先固定生成器优化判别器，再固定判别器优化生成器，如此迭代。GAN本身已经相当有用了。但还有一种条件GAN（Conditional GAN），不仅可以生成“任意一只猫”，还可以通过外部条件或随机变量生成指定类别的图像。挑战是生成器可能忽略条件，因此要强化判别器的条件信息识别能力，比如让判别器判断真假同时判断类别（cat/dog等），甚至用循环损失保证类别的预测一致性。\n\n如果还想从X编码到Z，就像biGAN（双向GAN）等新模型那样，判别器要同时区分真假图像和真假编码。还有InfoGAN这类可以用音频条件生成场景，其判别器既判断真假也负责输出相关条件信息。\n\n最新进展比如talking head合成，用人脸特征点和一张静止图片合成动态帧，输入图像可以不是同一个人，而是用同样的表情动作生成新图像。\n\n还可以用“自编码器+GAN”混合结构，既做生成也可做编码，这种方法（如CycleGAN, BicycleGAN等）甚至可以处理无配对数据，只要同类数据组之间存在某种弱配对关系。CycleGAN就是在不知哪一对图像配对时，依靠“循环一致性损失”来保证映射的稳定性。具体例子比如用素描生成多样真实图像等。\n\n下周更多细节会介绍这些方法。本次我们就以生成模型和概率图模型的话题来作为讨论的开始，谢谢大家。",
+    "th": "ต่อไปเราจะมาดูการขยายผลในเชิงมัลติโมดัล ซึ่งเป็นประเด็นที่น่าสนใจ แม้ว่าทุกวันนี้คนจำนวนมากจะใช้สถาปัตยกรรมแบบนิวรัลเน็ตเวิร์ก แต่งานวิจัยช่วงหลังๆ คนก็ใช้กราฟิคัลโมเดลในมัลติโมดัลน้อยลง อย่างไรก็ตาม หลายแนวคิดในสถาปัตยกรรมมัลติโมดัลแบบนิวรัลมีต้นกำเนิดมาจากโครงสร้างในกราฟิคัลโมเดลดั้งเดิม\n\nเครือข่าย Bayesian แบบไดนามิก (Dynamic Bayesian Network) เป็นเครือข่าย Bayesian ที่เน้นการแทนความสัมพันธ์แบบลำดับหรือแบบเวลา เช่น ข้อมูลของคุณมีลักษณะต่อเนื่องตามเวลา โดยทั่วไปจะอิงสมมุติฐาน Markov อันดับหนึ่ง หมายถึง สถานะปัจจุบันสรุปข้อมูลทุกอย่างที่สังเกตได้มาก่อนหน้านี้ การจำแบบปลาใน Finding Nemo ที่จำได้แต่สถานะปัจจุบันล้วนเป็นการเปรียบเปรยถึงคุณสมบัตินี้ ถ้าเป็น Markov อันดับสอง จะย้อนไปได้สองช่วงเวลา และสามารถมีการขยายต่อได้\n\nสิ่งที่น่าสนใจในไดนามิกนี้คือ เหมือนกับ LSTM ที่สถานะสามารถเปลี่ยนแปลงและพัฒนาไปตามเวลาในลักษณะฟีดฟอร์เวิร์ดซ้ายไปขวา ตัวอย่างเช่น ทุกๆ เวลาจะมีเครือข่าย Bayesian แบบเดียวกัน ตัวแปรสุ่มเดียวกัน เพียงแต่เพิ่มโครงสร้างแบบวนซ้ำแบบ recurrent คล้ายกับ Recurrent Neural Network และคุณจะออกแบบ dependency ได้ตามความเหมาะสม ถ้าระหว่างตัวแปรใดไม่มีความเกี่ยวข้อง ก็ถือว่าอิสระ หรืออิสระแบบมีเงื่อนไข\n\nกราฟิกัลโมเดลที่โด่งดังที่สุดในพวกนี้คืออะไร? ในสาย speech ก็น่าจะรู้กันดี โดย Hidden Markov Model (HMM) มักจะใช้ H (ตัวแปรแฝง) ที่ไม่ถูกสังเกต ซึ่งใกล้เคียงกับการทำ clustering เช่น X อาจแทนพูดทุกคำบนโลก และ H จะเป็นตัวแปรสุ่มอิงจริงเช่น 1 ถึง 20 โดย H จะเป็นกระบวนการกำเนิด เช่น H=1 จะมีกลุ่มคำที่มีแนวโน้มเกิดขึ้นเมื่อ H=1 หรือเมื่อ H=2 ก็จะมีอีกกลุ่มเป็นต้น H แบบนี้ก็บังคับให้ข้อมูลที่มีมิติสูงย้อนลงมาอยู่ในรูปแบบ discrete random variable\n\nนอกจากนั้นโมเดลสายกราฟิกัลอย่าง CRF ก็สามารถนำแนวคิดนี้ไปประยุกต์ การวิเคราะห์ค่า joint probability เช่น p(h1|x1,x2,x3,x4) หรือ p(h0,h1,h2,h3,h4|x1,x2,x3,x4) ก็ทำได้ หากฝึกโมเดลได้ดี\n\nถ้าเป็นมัลติโมดัล (หลายช่องสัญญาณ) strategies การ factorize ก็จะมีเช่น Factorial HMM ซึ่งแม้จะไม่ได้เป็นมัลติโมดัลแท้ แต่ช่วยให้มองว่าแต่ละโครงสร้างข้อมูลถูกสร้างขึ้นมาจากหลายปัจจัยและหลายกระบวนการ\n\nหรือถ้าต้องใช้มัลติโมดัล เช่น ดูปากและเสียง ข้อมูลทั้งสองชุดก็ถูกกำเนิดจาก latent representation ของแต่ละ modality เช่น phoneme กับ viseme ซึ่งสามารถออกแบบ dependency ของกันและกันได้ เช่น phoneme ขับเคลื่อน viseme หรือใช้โมเดลอย่าง Boltzmann zipper ซึ่งเป็นส่วนขยายของ Boltzmann machine หรือ Coupled HMM ที่ทั้งสอง stream ขึ้นอยู่กับกันและกัน\n\nPython library ตอนนี้ก็มีเครื่องมือ optimize/implement โมเดลพวกนี้มากมาย สัปดาห์หน้าจะคุยเรื่อง optimization เพิ่มเติม\n\nหัวข้อถัดไปคือการสังเคราะห์ข้อมูล โดยเอาโมเดลไปใช้สร้างข้อมูลต่อหรือเติมประโยคให้สมบูรณ์ โมเดลในสาย neural network ก็มีสายผลิตข้อมูล (generative models) เช่น autoencoder ที่ฝึกให้ encoder ย่อข้อมูลเข้า latent space แล้ว decoder สร้างข้อมูลกลับ ถ้าเราทำ interpolation ใน latent space ให้ smooth เช่น ฝึก VAE บังคับ latent จาก Gaussian distribution (ผ่าน KL loss) จะได้ latent space ที่ใช้สร้างข้อมูลได้จริงระหว่างจุด\n\nแต่ถ้าใช้แค่ autoencoder ปกติ latent space จะกระจุกตัว (clustered) กลางทาง latent ที่ไม่ได้ฝึกจะไม่ตรงกับ distribution ส่งผลให้ generate อะไรที่เนียนไม่ได้ วิธีแก้คือบังคับ latent ให้เป็น Gaussian (ปกติใช้ VAE) แต่ภาพที่ reconstruct ได้จาก VAE ก็มักยังดูไม่ real วิจัยหนึ่งเสนอเอาแนวคิด GAN มาเสริม ให้ generator สร้างภาพที่สมจริงและ discriminator แยกของจริงกับของปลอม พร้อมทั้ง optimize แบบ min-max\n\nGAN ใช้ min-max loss โดยที่ generator พยายามหลอก discriminator ให้รู้สึกว่า generated image เป็นของจริง ส่วน discriminator ก็พยายามบอกให้ได้ว่าอันไหนจริง/ปลอม GAN ธรรมดาสามารถ generate อะไรก็ได้ แต่ Conditional GAN จะ generate ของตามเงื่อนไขที่กำหนด (เช่น class/image attribute ต่างๆ) ความท้าทายคือต้องแน่ใจว่า model รับรู้ condition จริง อาจใช้ cyclic/auxiliary loss หรือสอน discriminator ให้รู้จัก class ด้วยก็ได้\n\nนอกจากนี้ model รุ่นใหม่อย่าง Infogan ก็ encode จาก X ไปยัง Z ได้, ใช้เสียงสังเคราะห์ภาพได้, หรือเอาข้อมูล landmark บนใบหน้าผสมกับภาพ input เพื่อสังเคราะห์ภาพใหม่ได้\n\nอีกแนวทางคือ bidirectional GAN จะฝึกทั้ง encoder และ generator พร้อมกัน ให้ mapping ไปมาได้ทั้งจาก X->Z และ Z->X หรือเอา autoencoder มา mix กับ GAN ฝึกกับ unpaired data ได้ (CycleGAN/BicycleGAN) เช่น แม้ไม่รู้คู่ของภาพในต่าง modality ก็ใช้ cycle consistency loss ฝึกให้แปลงกลับไปเท่าเดิม แล้วยังสังเคราะห์ข้อมูลข้าม modality ได้ดีมาก\n\nสัปดาห์หน้าเราจะเรียนรายละเอียดของโมเดลเหล่านี้เพิ่มเติม วันนี้ขอเริ่มต้นการพูดคุยโมเดล generative และกราฟิกัลโมเดลแบบเบย์ส์ไว้เท่านี้ ขอบคุณครับ",
+    "id": "Selanjutnya, kita akan melangkah lebih jauh dan juga mulai melihat perluasan multimodal dalam topik ini karena sangat menarik untuk melihat pendekatan multimodal. Saat ini, banyak orang lebih memilih arsitektur neural network. Dalam beberapa tahun terakhir, model grafis tidak terlalu banyak digunakan untuk neural multimodal, tetapi menariknya banyak konsep yang dijumpai pada arsitektur neural multimodal justru terinspirasi dari arsitektur awal di model grafis.\n\nDynamic Bayesian Network (DBN) pada dasarnya adalah Bayesian network tetapi memungkinkan kita memodelkan ketergantungan sekuensial atau temporal jika data bersifat sekuen/temporal. Biasanya DBN menggunakan asumsi Markov orde pertama, yang dapat diibaratkan seperti ikan di Finding Nemo yang hanya mengingat kondisi saat ini tanpa mengingat observasi sebelumnya, hanya keadaan yang tersimpan. Artinya, state saat ini harus dapat merangkum seluruh observasi sebelumnya, itulah Markov orde pertama. Markov orde kedua berarti boleh melihat dua langkah ke belakang, dan asumsi ini bisa diperluas. Ada kemiripan dengan LSTM, yakni network-nya bisa berubah seiring waktu dan bersifat directed, layaknya feedforward left-to-right pada representasi neural.\n\nContohnya, di setiap time step biasanya DBN yang sama digunakan dengan variabel acak yang sama, hanya saja ditambahkan semacam recurrence (seperti RNN). Penambahan ini juga didasarkan pada pengetahuan tentang variabel mana yang punya hubungan dependensi, yang perlu dimodelkan. Jika tidak ada hubungan antar dua variabel, dianggap independen secara kondisi.\n\nModel dynamic Bayesian yang paling dikenal adalah apa? Dalam bidang speech, orang pasti tahu. Jika kita perhatikan, ini mirip dengan naive Bayes untuk bagian evidence-nya, namun perbedaannya H pada Hidden Markov Model (HMM) adalah variabel laten/tidak teramati, sering disamakan dengan clustering—H adalah variabel acak yang umumnya mengambil nilai 0–20, dan proses generasinya didasari oleh H.\n\nKita bisa memandang H sebagai mesin clustering; misal H=1, kata apa yang kemungkinan besar dihasilkan? H=2, kata apa? Dan seterusnya. Hal ini memaksa himpunan data berdimensi besar diringkas ke satu variabel acak diskret, seperti sering dilakukan pada HMM dan juga pada model grafis lain seperti Conditional Random Field (CRF). Variabel laten atau variabel observasi bisa digunakan untuk clustering/merangkum informasi.\n\nMisal jika ingin menghasilkan urutan kata (seperti: rumah kuning dekat, meski kalimatnya aneh), HMM akan mencoba menginfer state sequence yang paling mungkin menghasilkan kata-kata itu. Nanti, kita juga akan lihat optimasi serta detail optimisasi minggu depan.\n\nMisalkan saya punya 5 variabel acak, 4 di antaranya teramati dan 5 tidak teramati. Jika bisa menghitung joint probability, seperti p(h1|x1,x2,x3,x4), itu sama seperti marginalisasi h1—atau bisa juga ditulis sebagai p(h0,h1,h2,h3,h4|x1,x2,x3,x4). Kalau sudah belajar probabilitas gabungan seperti ini, banyak pertanyaan dapat dijawab.\n\nTapi, bagaimana jika saya punya data multimodal, ada beberapa stream data? Ada strategi seperti factorial HMM—ini bukan multimodal sesungguhnya tapi menarik: satu stream observasi ternyata dihasilkan dari beberapa faktor/proses. Untuk sudut pandang multimodal lebih lanjut, misal satu set observasi (gerak mulut), dan satu lagi audio; bisa dipandang kedua set ini dihasilkan dari latent representation berbeda, seperti state fonem dan state visem. Bisa didesain, misal fonem menghasilkan visem—misal ingin mengucapkan fonem tertentu maka bentuk mulutnya tertentu.\n\nDi sini ada model bernama Boltzmann zipper (merupakan ekstensi dari Boltzmann machine), lalu ada coupled HMM yang lebih fleksibel karena visi dan suara sama-sama bergantung urutan sebelumnya. Seberapa besar pengaruh H ke V dan sebaliknya dapat diatur dengan parameter seperti alpha dan beta.\n\nAda banyak library Python yang kini tersedia untuk implementasi dan optimasi berbagai model ini—optimalisasi akan lebih panjang dibahas lagi minggu depan.\n\nPada bagian akhir perkuliahan hari ini, saya ingin bicara tentang generating data, karena menarik bila kita bisa generate data atau melanjutkan kalimat tertentu. Ada juga keluarga model neural untuk keperluan generating. Beberapa model mencoba memodelkan joint distribution (generative models), walaupun tidak semua jelas-jelas memodelkan joint tapi tetap disebut generative neural model.\n\nBerdasarkan yang telah kita pelajari, jika ingin menghasilkan kalimat (sebelum era transformer dan BERT), salah satu pendekatan menarik adalah autoencoder. Intinya, ambil gambar, encode ke latent space berdimensi lebih kecil, lalu decode untuk merekonstruksi gambar. Setelah model dilatih, encode gambar (misal gambar kucing ke z, gambar anjing ke z), interpolasi two z, lalu decode; secara teori kita dapat melakukan morph gambar kucing ke anjing.\n\nNamun, dalam kenyataan, latent space hasil autoencoder sering sangat terklaster sehingga ruang antar klaster jarang diwakili data, sehingga interpolasi di latent space sering gagal. Solusinya: paksa latent space mengikuti distribusi tertentu, biasanya distribusi normal. Inilah ide dasar variational autoencoder (VAE), seluruh z di-proyeksikan agar mengikuti multivariate normal (misal dengan KL loss)—topik ini nanti akan dibahas lebih detail minggu depan.\n\nKeuntungan: latent space jadi smooth—bisa bergerak antar dua z dan selalu dapat menghasilkan data valid sepanjang masih di dalam support distribusi Gauss. Tapi kadang hasil gambar tetap tidak terlalu realistik.\n\nSalah satu solusi: gabungkan dengan pendekatan lain, misal memberi generator random vector dan latih supaya gambar hasil generator tampak nyata, lalu latih discriminator membedakan gambar asli dan sintetik seperti pada GAN (Generative Adversarial Network).\n\nOptimisasi pada GAN berupa min-max loss, di mana generator meminimalkan loss dan discriminator memaksimalkannya, dengan versi conditional GAN (cGAN) memungkinkan conditioning pada class—tidak hanya menghasilkan gambar kucing sembarang tapi bisa class control. Tantangannya adalah pastikan generator memanfaatkan conditioning variabel/label class.\n\nSelain itu, ada model-model seperti InfoGAN, yang conditioning-nya bisa suara, lalu generator mengubahnya ke scene. Discriminator bisa multitasking—deteksi gambar sintetis/asli dan prediksi class.\n\nBeberapa contoh lain: Talking-head—input landmark wajah dan gambar, output-nya gambar synth berdasar landmark tersebut, jadi bisa menciptakan mimik ekspresi antar identitas berbeda.\n\nAda juga pendekatan bi-directional GAN: encoder dan generator digabung, discriminator menilai baik gambar maupun encoding adalah asli/sintetik.\n\nTerakhir, family yang ingin diangkat adalah menggabungkan autoencoder dengan GAN; dengan demikian, encoding dan decoding bisa diajarkan bersamaan, dan arsitektur ini dapat diperluas untuk data yang tidak berpasangan (unpaired data) seperti pada CycleGAN/BicycleGAN. Prinsip cycle consistency loss dipakai—jika data dimodifikasi bolak-balik antar dua domain, hasilnya harus tetap mirip data asal.\n\nMinggu depan akan dibahas lebih detail lagi. Kali ini sebagai awal, kita bedah model generatif dan probabilistic graphical model. Terima kasih.",
+    "es": "Daremos un paso más e investigaremos las extensiones multimodales de este tema, ya que es muy interesante explorar los enfoques multimodales. Aunque hoy en día muchas personas utilizan arquitecturas neuronales, en los últimos años se han dejado de usar tanto los modelos gráficos para multimodalidad basada en redes neuronales. Sin embargo, lo curioso es que muchos de los conceptos que se ven en las arquitecturas neuronales multimodales se inspiraron en los primeros modelos gráficos. La red bayesiana dinámica (Dynamic Bayesian Network, DBN) es en esencia una red bayesiana, pero permite representar dependencias secuenciales o temporales si tus datos tienen ese carácter. Suelen usar la hipótesis de Markov de primer orden, que suelo bromear diciendo que es como el pez de Buscando a Nemo, que solo recuerda su estado actual y olvida las observaciones previas: solo se recuerda el estado, no lo observado antes. Así, el estado actual debe resumir todo lo observado hasta ese punto. Un modelo de segundo orden te permite ir dos pasos atrás, y se pueden hacer extensiones. Lo interesante del modelo dinámico es que, como una LSTM, puede evolucionar con el tiempo y es dirigido, es decir, avanza de izquierda a derecha, como una red neuronal feedforward.\n\nPor ejemplo, en cada paso de tiempo se suele usar la misma red bayesiana, los mismos variables aleatorias, pero se les añade esta recurrencia, como una red neuronal recurrente. También en el diseño puedes definir qué variables dependen entre sí. Si entre dos variables no hay relación, se consideran (condicionalmente) independientes. ¿Cuál es el modelo más famoso de este tipo? La gente del habla seguro lo sabe: el modelo oculto de Markov (Hidden Markov Model, HMM). Aquí, la evidencia observada se parece a naive Bayes, pero en el HMM la variable H es latente (no observable), y puede verse como una variable de agrupamiento. X pueden ser todas las palabras habladas del mundo, H una variable aleatoria de valores (por ejemplo, del 1 al 20), que se asocia a la generación de palabras.\n\nH puede verse como un “máquina de clustering”: ¿qué palabras se generan cuando H=1, cuando H=2, etc.? Así, algo de alta dimensión se reduce a una sola variable aleatoria discreta. Esto se extiende a otros modelos gráficos como los campos aleatorios condicionales (CRF), donde las variables latentes o las variables observadas pueden usarse para agrupar o resumir la información.\n\nPor ejemplo, si quiero generar una secuencia extraña como “la casa amarilla cerrada”, el HMM intentará inferir la secuencia más probable de estados que permita generar todas esas palabras. A continuación, exploraremos más sobre cómo optimizar estos modelos, pero eso lo veremos más la próxima semana.\n\nSupón que tienes cinco variables aleatorias, cuatro observadas y cinco no observadas. Si puedes inferir la probabilidad conjunta, calculas cosas como p(h1|x1,x2,x3,x4), es decir, marginalizar h1, o bien p(h0,h1,h2,h3,h4|x1,x2,x3,x4). Si has aprendido esta conjunta, puedes responder consultas típicas como esas.\n\n¿Y si tienes datos multimodales, más de un flujo de información? Hay estrategias para factorizar esto, como el factorial HMM, que no es estrictamente multimodal, pero te permite ver cómo una sola secuencia observada puede generarse a partir de varios procesos. Y si mezclas aún más, puedes tener por ejemplo la visualización de mis labios junto con el audio. Cada uno generado por representaciones latentes distintas (como fonemas para el audio, visemas para la imagen), e incluso puedes diseñar cuál depende de cuál. Así surge el Boltzmann zipper, una extensión de las máquinas de Boltzmann, o el coupled HMM, más flexible, donde ninguna modalidad tiene privilegio, y ambos dependen de los estados previos del otro.\n\nLa inspiración para LSTM multimodal parte de aquí: puedes controlar el grado de acoplamiento entre los estados, con parámetros como alfa y beta. Lo bueno hoy es que hay muchas librerías en Python que te permiten implementar y optimizar estos modelos fácilmente; la optimización la trataremos más la próxima semana.\n\nEn la última parte de la clase de hoy, quiero hablar sobre la generación de datos. Lo interesante es que usando esto, dados algunos valores iniciales, puedes generar datos, continuar oraciones, etc. Hay familias de arquitecturas neuronales diseñadas para generar, algunas modelando la distribución conjunta (modelos generativos). Incluso aunque no modelen explícitamente la conjunta, suelen llamarse modelos neuronales generativos. Así es el uso del término hoy en día.\n\nCon lo aprendido hasta ahora, si quiero aprender un modelo generativo de oraciones, antes de transformers y BERT, una idea sería entrenar un decodificador. Un autoencoder toma una imagen, la comprime en un espacio latente de menor dimensión que la entrada y el decodificador intenta recrear la imagen original. Una vez entrenado, puedes usar solo el decodificador, o por ejemplo convertir la imagen de un gato a z, la de un perro a otro z y luego interpolar entre ambos para ‘morfearlos’. En la práctica, el espacio latente aprendido de manera tradicional suele estar muy agrupado y subrepresentado en ciertas zonas, así que la interpolación entre dos puntos puede no funcionar.\n\nEl enfoque para resolver esto es imponer restricciones en el espacio z, típicamente forzándolo a seguir una distribución normal. Así, los ejemplos de entrenamiento proyectados siguen una distribución gaussiana multivariante. Técnicamente, con regularización tipo KL loss en VAEs (variational autoencoders), logras esto. Así, puedes moverte libremente entre dos puntos del espacio siempre y cuando estén dentro de la gaussiana y generar datos plausibles. Veremos más de esto cuando hablemos de enfoques variacionales.\n\nPero, con autoencoders tradicionales o incluso VAEs, las imágenes generadas pueden no parecer muy realistas. Para eso, se propone el GAN (red generativa antagónica), que entrena dos redes rivales: un generador que transforma cualquier vector aleatorio en una imagen realista, y un discriminador que distingue entre imágenes reales y sintéticas. La idea es optimizarlos en sentido contrario: el generador intenta engañar al discriminador produciendo imágenes realistas; el discriminador intenta no dejarse engañar.\n\nEsto se logra alternando la optimización de cada parte. Los GANs por sí solos ya son útiles, pero los GANs condicionales permiten condicionar la generación por una clase (por ejemplo, imágenes de gatos, perros, etc). El desafío es garantizar que el generador efectivamente use la condición, así que el discriminador también debe ser capaz de distinguir por clase, y a veces se recurre a pérdidas cíclicas o tareas auxiliares para asegurarse de esto.\n\nAdemás puedes querer codificar de X a Z: modelos como el BiGAN lo permiten y su discriminador debe distinguir tanto real/falso de imágenes como de codificaciones. Otros ejemplos incluyen InfoGAN (condicionamiento multimodal, por ejemplo, de audio a escena), o tareas multitarea en el discriminador (fake/real y predicción de clase simultáneamente).\n\nUn ejemplo reciente en nuestra investigación es talking head: el generador produce una imagen basada en landmarks faciales y una imagen fuente, para lograr una determinada expresión facial, incluso sobre identidad diferente. El discriminador evalúa si la imagen es real o generada.\n\nPor último, están los enfoques que combinan autoencoders y GANs (por ejemplo, CycleGAN, BicycleGAN), que permiten entrenar incluso con datos no emparejados, usando pérdidas de consistencia cíclica: cualquier muestra traducida de un dominio a otro, al regresar debería parecerse a la original.\n\nVeremos más detalles de esto la próxima semana. Así iniciamos la discusión sobre modelos generativos y modelos gráficos probabilistas. Muchas gracias.",
+    "fr": "Nous allons aller un peu plus loin et examiner également les extensions multimodales de ce sujet, car il est très intéressant d’étudier la multimodalité. Aujourd’hui, beaucoup de personnes se tournent vers des architectures neuronales, et ces dernières années, on a moins utilisé les modèles graphiques pour le multimodal neural. Ce qui est intéressant, c’est que beaucoup des concepts que l’on retrouve dans les architectures neurales multimodales s’inspirent en fait dès le début de ce que l’on faisait avec les modèles graphiques.\n\nLe réseau bayésien dynamique (Dynamic Bayesian Network ou DBN) est un réseau bayésien fondamentalement, mais il permet de représenter des dépendances séquentielles ou temporelles. Le DBN typique fait l’hypothèse de Markov d’ordre 1 : c’est comme le poisson dans « Le Monde de Nemo » qui n’a qu’une mémoire à court terme — il ne se souvient que de son état actuel et oublie tout le reste. Ainsi, seul l’état courant récapitule toutes les observations passées. Pour un ordre 2, on remonte de deux étapes, etc.\n\nL’intérêt du DBN dynamique, comme les LSTM, est qu’il évolue dans le temps, et il est dirigé — en quelque sorte un feedforward de gauche à droite si on fait l’analogie neuronale. Typiquement, à chaque pas de temps, on a le même réseau bayésien, les mêmes variables aléatoires, avec une forme de récurrence qui rappelle le fonctionnement d’un réseau de neurones récurrent.\n\nCeci se conçoit par la connaissance préalable des dépendances probables entre variables. S’il n’y a rien entre deux variables, elles sont supposées indépendantes (ou conditionnellement indépendantes). Le plus célèbre de ces modèles dynamiques, lequel est-ce ? Ceux qui travaillent en reconnaissance de la parole connaissent la réponse : le hidden Markov model (HMM).\n\nDans le HMM, on n’observe pas la variable cachée H, qui fonctionne un peu comme un cluster : X, ce sont par exemple tous les mots parlés, et H peut prendre des valeurs discrètes, de 1 à 20. Ce sont des états génératifs. Par exemple H=1 génère un certain groupe de mots, H=2 un autre groupe, etc. On assimile ainsi une information très dimensionnelle à une variable aléatoire discrète. Dans d’autres modèles graphiques comme le champ aléatoire conditionnel (CRF), ces variables (latentes ou observées) servent aussi à résumer l’information, faire du clustering, etc.\n\nPar exemple, générer la séquence de mots « la maison jaune fermée » consistera pour le HMM à inférer la séquence d’états la plus probable, pour produire tous ces mots. Nous verrons plus précisément l’optimisation la semaine prochaine.\n\nSi on observe 5 variables non observées pour 4 observées, une fois le modèle appris, on peut calculer des probabilités comme p(h1|x1,x2,x3,x4), c’est-à-dire marginaliser h1, ou p(h0,h1,h2,h3,h4|x1,x2,x3,x4). Si on connaît la probabilité jointe, on peut répondre à ce genre de questions.\n\nEt si j’ai des données multimodales, plusieurs flux de données ? Il existe des stratégies comme le factorial HMM — ce n’est pas strictement multimodal, mais il permet d’exprimer qu’une séquence observée vient de plusieurs processus/facteurs générateurs. Plus loin, on pourrait avoir par exemple la forme des lèvres et l’audio, chaque modalité étant générée par une variable latente (phonème pour l’audio, visème pour le visage, etc.), avec la possibilité de spécifier leur relation.\n\nDans certains modèles comme Boltzmann zipper (et ses extensions), ou les HMM couplés, vision et son sont traités de façon plus flexible et peuvent dépendre l’un de l’autre selon des paramètres (alpha et beta) qui contrôlent le couplage.\n\nDe nos jours, beaucoup de bibliothèques Python permettent d’implémenter et d’optimiser facilement ces modèles ; nous en reparlerons la semaine prochaine.\n\nEn dernière partie de cours aujourd’hui, je voudrais parler de la génération de données. Ce qui est intéressant, c’est qu’avec un seed, on pourrait éventuellement générer la suite d’une phrase. Il existe des modèles neuronaux spécifiquement conçus pour la génération ; certains modélisent la distribution conjointe (ce sont des modèles génératifs), même si toutes les variantes ne modélisent pas explicitement la conjointe. On parle couramment de modèle neuronal génératif, même si, techniquement, ce n’est pas toujours précis.\n\nSi, à partir de ce que l’on a vu jusqu’à maintenant, je veux entraîner un modèle génératif de phrases — pour ne pas parler tout de suite du transformer ou de BERT, mais de techniques plus anciennes — alors une bonne piste est d’entraîner un décodeur : l’autoencodeur. On encode une image dans un espace latent plus petit, puis le décodeur tente de reconstituer l’image. On peut ensuite n’utiliser que le décodeur, par exemple encoder une image de chat, une de chien, interpoler entre les deux z et re-synthétiser pour morphing (théoriquement).\n\nMais en pratique, l’espace latent est souvent très clusterisé, de sorte que l’interpolation entre deux points n’est pas réaliste. Pour résoudre cela, il existe des méthodes qui forcent l’espace z à suivre une certaine distribution, typiquement une loi normale, par exemple grâce à la perte KL dans les autoencodeurs variationnels (VAE). On verra le détail la semaine prochaine.\n\nCela rend l’espace plus « lisse » : on peut se déplacer entre deux z et générer à chaque étape un résultat plausible, tant qu’on reste dans le support gaussien de la distribution. Mais il reste souvent un problème de réalisme des images générées.\n\nPour pallier cela, il existe la famille GAN (Generative Adversarial Network) : le générateur apprend à associer tout vecteur aléatoire à une image réaliste, tandis que le discriminateur apprend à distinguer les vraies images synthétiques. Les deux sont entraînés de façon adversariale, le but étant que le générateur trompe le discriminateur.\n\nOn optimise tour à tour, en fixant un modèle pendant que l’autre progresse. Les GAN classiques sont déjà utiles, mais les conditional GAN permettent de conditionner la génération à une classe, par exemple générer des images de chats ou de chiens en fonction de la classe. Il faut s’assurer que la condition est bien utilisée par le générateur, et pour cela le discriminateur doit aussi vérifier la classe ; il existe des pertes cycliques pour renforcer cela.\n\nOn peut aussi vouloir encoder X vers Z — par exemple avec le BiGAN, où le discriminateur doit juger la réalité des images mais aussi des codes latents. D’autres architectures existent comme InfoGAN (conditionnement audio vers scène), où le discriminateur a plusieurs tâches : vrai/faux et prédiction de la classe, entre autres.\n\nParmi nos travaux récents, il y a le talking head synthétique : le générateur prend une image et des points de repère faciaux, et génère une nouvelle image avec une expression particulière, éventuellement sur un autre visage. Le discriminateur vérifie si l’image générée est réaliste.\n\nEnfin, en combinant autoencodeur et GAN (ex : CycleGAN, BicycleGAN), on peut s’affranchir de données appariées, en imposant une contrainte de consistance cyclique entre modalités : ce qui est généré à partir d’une modalité doit pouvoir y être ramené en conservant la structure.\n\nNous verrons plus de détails la semaine prochaine. Aujourd’hui, je voulais introduire cette discussion sur les modèles génératifs et les modèles graphiques probabilistes. Merci beaucoup.",
+    "de": "Wir gehen noch einen Schritt weiter und betrachten auch multimodale Erweiterungen in diesem Bereich, da es sehr interessant ist, sich multimodale Modelle anzuschauen. Heutzutage arbeiten viele mit neuronalen Architekturen; in den letzten Jahren werden Grafische Modelle für multimodale neuronale Systeme aber nicht mehr so häufig verwendet. Das Interessante daran ist, dass viele Konzepte aus den heutigen multimodalen neuronalen Architekturen ursprünglich aus frühen grafischen Modellen stammen.\n\nDas dynamische Bayes'sche Netzwerk („Dynamic Bayesian Network“, DBN) ist im Kern ein Bayes'sches Netzwerk, das jedoch ermöglicht, sequenzielle oder temporale Abhängigkeiten darzustellen, falls Ihre Daten zeitlich sind. Typische DBNs verwenden die sogenannte Markov-Annahme erster Ordnung. Ich sage manchmal scherzhaft: Das ist wie der Fisch in „Findet Nemo“, der sich nur an den aktuellen Zustand erinnert und nicht, was vorher geschah. Das bedeutet: Der aktuelle Zustand muss alles zusammenfassen, was bisher beobachtet wurde. Markov zweiter Ordnung erlaubt den Rückgriff auf zwei Zeitpunkte davor – und so weiter.\n\nDas Dynamische an diesem Modell – ähnlich wie bei einem LSTM – ist, dass sich der Zustand über die Zeit entwickeln kann. Die Struktur ist gerichtet, also gewissermaßen eine Vorwärtskette von links nach rechts, ähnlich einer Feedforward-Struktur in neuronalen Netzen. \n\nEin Beispiel: Zu jedem Zeitpunkt verwenden wir dasselbe Bayes'sche Netzwerk, die gleichen Zufallsvariablen, aber wir fügen eine rekurrente Struktur hinzu – ähnlich wie ein rekurrentes neuronales Netzwerk. Aufgrund unseres Wissens legen wir fest, welche Variablen voneinander abhängen. Gibt es keine Verbindung, dann gehen wir von (konditionaler) Unabhängigkeit aus.\n\nDas bekannteste Beispiel für ein dynamisches Bayes'sches Netzwerk? In der Spracherkennung weiß man: Das sind Hidden-Markov-Modelle (HMMs). Hier ist H meistens eine latente, unbeobachtete Variable; das ist sozusagen eine Cluster-Zuordnung. H ist eine Zufallsvariable, nimmt oft Werte von 0 bis 20 an, und jede H-„Klasse“ generiert eine bestimmte Gruppe aus den Eingabewörtern X. Man kann H als Cluster-Maschine verstehen: H=1 generiert wahrscheinliche Wörter aus einer speziellen Gruppe, H=2 aus einer anderen usw. So werden hochdimensionale Zustände auf eine diskrete Variable reduziert.\n\nDas gilt auch für andere grafische Modelle wie z. B. Conditional Random Fields (CRFs), wo latente oder beobachtete Variablen oft zur Clusterbildung oder Informationsreduktion genutzt werden.\n\nZum Beispiel: Wenn ich eine Folge wie “das gelbe Haus schließt” generieren will, versucht das Modell, genau die wahrscheinlichste Zustandsfolge zu bestimmen, um diese Wörter zu generieren.\n\nGehen wir weiter: Angenommen, ich habe fünf Zufallsvariablen, vier davon beobachtet, fünf nicht. Habe ich das gemeinsame Wahrscheinlichkeitsmodell gelernt, kann ich Fragen wie p(h1|x1,x2,x3,x4) beantworten, also marginalisieren, oder p(h0,h1,h2,h3,h4|x1,x2,x3,x4). Sobald ich die gemeinsame Verteilung kenne, lassen sich viele solche typischen Anfragen stellen.\n\nWas aber bei multimodalen Daten, also mehreren Datenströmen? Es gibt Strategien wie das sogenannte Factorial HMM, das nicht direkt multimodal ist, aber mehrere unabhängige Prozesse hinter demselben Beobachtungsstrom modelliert.\n\nDarüber hinaus: Betrachten wir zum Beispiel Lippenbewegung und den Audiosprachstrom. Für beide gibt es latente Zustände – beispielsweise Phoneme für Audio, Viseme für Bild. Die Abhängigkeit kann man so designen, dass etwa die Phoneme die Viseme erzeugen – und damit die Lippenform steuern.\n\nModelle wie der Boltzmann Zipper (eine Erweiterung der Boltzmann-Maschine) oder das Coupled HMM geben hierbei mehr Flexibilität, indem beide Modalitäten gleichwertig gekoppelt werden. Parameter wie Alpha und Beta steuern die Stärke dieser Kopplung. Multimodale LSTMs sind von solchen Designs inspiriert.\n\nEs gibt viele gute Python-Module, die die Implementierung und Optimierung all dieser Modelle erleichtern – Details zur Optimierung folgen nächste Woche.\n\nIm letzten Teil der heutigen Vorlesung geht es um generative Datenmodelle: Können wir damit Daten aus einem Seed erzeugen, oder Sätze weiterführen? Es gibt neuronale Architekturen, die gezielt zur Generierung entwickelt wurden. Manche modellieren die gemeinsame Verteilung explizit („generative model“), andere nicht so direkt, die Gemeinschaft nennt sie dennoch generative neuronale Modelle.\n\nAusgehend von dem bisher Gelernten: Wie kann ich einen generativen Modellsatz erzeugen? Viele denken sofort an Transformer und Bert, aber davor gab es beispielsweise Autoencoder. Beim Autoencoder wird ein Eingabebild auf einen deutlich kleineren latenten Raum abgebildet, der Decoder versucht dann, das Bild zu rekonstruieren. Hat man ihn trainiert, kann man den Encoder z. B. weglassen, verschiedene Z-Vektoren interpolieren (z. B. von Katze zu Hund) und so ein Morphing realisieren – zumindest in der Theorie.\n\nIn der Praxis liegen die latenten Räume aber oft in Clustern; viele Regionen des latenten Raums werden im Training nicht ausreichend repräsentiert, sodass Interpolationen zu Mischungen führen, die von den Trainingsdaten abweichen.\n\nUm das zu lösen, gibt es Ansätze wie den Variational Autoencoder (VAE), der ein Constraint auf Z erzwingt, typischerweise eine Normalverteilung. Mit einer KL-Verlustfunktion wird das erlernte Z so an eine multivariable Normalverteilung angepasst, dass man im Raum zwischen den Trainingspunkten generieren kann. Darauf werden wir nächste Woche genauer eingehen.\n\nEin großes Problem bleibt aber, dass diese generierten Bilder selten realistisch aussehen. Dafür wurde die GAN-Architektur (Generative Adversarial Network) entwickelt. Dort wird ein Generator trainiert, der jedem zufälligen Vektor ein realistisches Bild abbilden soll, und ein Diskriminator, der Fakes von echten Bildern unterscheiden soll. Beide Netze werden gegeneinander (minmax) trainiert, der Generator versucht den Diskriminator auszutricksen.\n\nEin klassisches GAN ist schon nützlich, aber das Conditional GAN ist noch interessanter: Hier kann man gezielt auf eine Klasse (z. B. Katze/Hund) konditionieren. Ein Problem dabei ist sicherzustellen, dass der Generator diese bedingende Variable auch wirklich nutzt – das lässt sich über zusätzliche Klassenverluste oder zyklische Verluste überprüfen.\n\nEs gibt auch Modelle wie InfoGAN, das auf Audio konditioniert und Szenen generiert. Der Diskriminator erfüllt dabei mehrere Aufgaben: Fake-vs-Echt sowie Klassenprädiktion. Weitere Beispiele sind Sprechkopf-Synthese („talking head“), wo Landmarkdaten und eigene Bilder kombiniert werden, um neue Bilder zu erzeugen, etwa für Mimikübertragung auf andere Personen.\n\nDann gibt es bidirektionale GANs (BiGAN), die ein Mapping in beide Richtungen – X→Z und Z→X – lernen. Oder Autoencoder-Varianten, die z. B. mit unpaarigen Daten (unpaired data) arbeiten, wie CycleGAN/BicycleGAN. CycleGAN nutzt dabei einen Zykluskonsistenzverlust, damit ein Bild, das vom einen in das andere Modalitätsdomäne übertragen wird, möglichst wieder exakt rückübersetzt werden kann.\n\nNächste Woche dazu mehr im Detail. Für heute dient das als Einstieg in generative Modelle und probabilistische graphische Modelle. Vielen Dank!"
+  },
+  "": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:39:58.420": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:07.840": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:18.620": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:25.308": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:44.888": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:03.116": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:19.316": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:39.516": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:43:42.732": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:02.472": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:07.412": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:16.552": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:30.112": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:42.992": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:58.632": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:04.012": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:08.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:11.492": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:17.832": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:23.292": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:41.792": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:57.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:06.172": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:47.208": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:51.028": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:55.848": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  }
+}

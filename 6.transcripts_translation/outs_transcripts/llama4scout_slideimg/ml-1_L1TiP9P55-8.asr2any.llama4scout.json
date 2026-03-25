@@ -1,0 +1,669 @@
+{
+  "0:37:06.216": {
+    "ja": [
+      "「実際に私が話したいのは、動的ベイズについてです。」"
+    ],
+    "id": [
+      "\"Sebenarnya, hal yang ingin saya bahas adalah Bayesian dinamis.\""
+    ],
+    "th": [
+      "\"สิ่งที่ผมอยากพูดถึงจริงๆ คือ ไดนามิกเบย์เซียน\""
+    ],
+    "zh": [
+      "我真正想讨论的是动态贝叶斯。"
+    ],
+    "es": [
+      "\"Lo que realmente quiero hablar es de la red Bayesiana dinámica.\""
+    ],
+    "fr": [
+      "\"La vraie chose dont je veux parler concerne le bayésien dynamique.\""
+    ],
+    "de": [
+      "\"Das eigentliche Thema, über das ich sprechen möchte, ist das dynamische Bayes-Netzwerk.\""
+    ]
+  },
+  "0:37:11.900": {
+    "ja": [
+      "動的ベイズネットワーク（DBN）は、ベイズネットワークを基礎としており、時系列データや連続的な依存関係を表現できるように拡張されたモデルである。DBNは、システムの状態が時間経過とともに変化する過程をモデル化するのに適しており、特に時系列モデリングに有用である。\n\nDBNの基本的な考え方は、マルコフ条件に基づいている。つまり、システムの状態は、現在の状態と直前の状態のみに依存し、それ以前の状態には依存しない。DBNは、有向グラフモデルとして表現され、ノードは確率変数を表し、エッジは変数間の依存関係を表す。\n\nDBNの重要な特徴は、時間経過とともに変化するシステムをモデル化できることである。たとえば、隠れマルコフモデル（HMM）は、DBNの一種であり、観測可能なデータと潜在的な状態の間の関係をモデル化するのに使用される。\n\nマルチモーダルデータに対応するために、DBNを拡張する方法がいくつか提案されている。たとえば、マルチモーダルHMMや、潜在的な状態が複数のモダリティに依存するモデルなどである。また、Boltzmannマシンや、Boltzmannジッパーと呼ばれるモデルもある。\n\nジェネレーティブモデルは、データの確率分布を学習し、新しいデータを生成するために使用される。オートエンコーダは、データの潜在的な表現を学習し、それを再構成するために使用される。変分オートエンコーダ（VAE）は、潜在的な空間をガウシアン分布としてモデル化し、データを生成するために使用される。\n\nGAN（Generative Adversarial Network）は、ジェネレータとディスクリミネータの2つのネットワークを競合させることで、データを生成する。条件付きGANは、クラス条件付きでデータを生成する。CycleGANは、2つのモダリティ間の循環的な一貫性を保ちながら、データを生成する。\n\nこれらのモデルは、画像や音声などのデータを生成するために使用され、多くの応用分野で有望な結果を示している。"
+    ],
+    "id": [
+      "\"adalah satu langkah lebih jauh dan juga mulai melihat pada ekstensi multimodal dari itu karena itu sangat menarik untuk melihat pada multimodal meskipun sekarang ini orang banyak menggunakan arsitektur neural dan beberapa tahun terakhir orang tidak menggunakan model grafis sebanyak untuk neural untuk multimodal tetapi apa yang sangat menarik adalah banyak konsep yang dilihat dalam arsitektur neural multimodal sebenarnya terinspirasi dari awal dari beberapa arsitektur yang kita miliki dalam model grafis jadi Dynamic Bayesian Network pada intinya adalah Bayesian Network tetapi memungkinkan untuk mewakili dependensi sekuensial atau temporal jika data Anda temporal atau hanya dependensi sekuensial dependensi biasanya, Dynamic Bayesian Network yang tipikal akan memiliki apa yang disebut asumsi Markov orde pertama asumsi Markov orde pertama kadang-kadang saya membuat lelucon itu sedikit seperti mencari Nemo seperti ada ikan yang memiliki memori jangka pendek yang sangat singkat dia hanya ingat keadaan saat ini dan mungkin tidak semua pengamatan yang dia miliki sebelumnya jadi mereka akan memiliki keadaan saat ini pengetahuan mereka sampai sekarang tetapi pengamatan sebelumnya akan terlupakan hanya keadaan yang diingat jadi itu berarti keadaan saat ini harus dapat meringkas segala sesuatu yang telah diamati sampai masa lalu itu asumsi orde pertama orde kedua berarti bahwa Anda diizinkan untuk pergi dua kali sebelumnya dan kemudian Anda dapat membayangkan ada perpanjangan ke itu aspek yang menarik dari dinamika adalah seperti di LSTM itu dapat berubah dan berkembang dari waktu ke waktu dan diarahkan jadi itu dalam satu arti adalah umpan maju dari kiri ke kanan jika Anda ingin jika Anda meletakkannya dalam kata-kata representasi neural contoh di sini adalah bahwa pada setiap langkah waktu itu Bayesian Network yang sama biasanya itu Bayesian Network yang sama variabel acak yang sama hanya saja saya menambahkan ini seperti perulangan seperti terasa seperti perulangan sedikit seperti jaringan neural berulang dan jadi Anda akan menambahkan ini dan ini juga dirancang karena pengetahuan Anda akan tahu variabel mana yang cenderung memiliki ketergantungan antara mereka Dan jadi itu yang ingin Anda modelkan jika tidak ada sesuatu di antara dua variabel maka Anda berpikir mereka independen atau setidaknya independen bersyarat independen Dan jadi yang paling terkenal dari Dynamic Bayesian Network apa itu orang-orang dalam pidato akan tahu jawabannya idenya di sini adalah saya memiliki pengamatan saya bukti dan jika Anda melihat hanya bagian ini ini terlihat banyak seperti Naive Bayes tetapi perbedaannya di sini seringkali model Hidden Markov akan dilakukan sedemikian rupa sehingga tidak diamati seperti H akan menjadi variabel laten sesuatu yang kita cari Dan jika Anda bertanya saya berpikir tentang itu hampir seperti pengelompokan seperti bagian ini hampir pengelompokan jadi X mungkin semua kata yang diucapkan di dunia katakan dan H ini H adalah variabel acak dapat mengambil nilai numerik biasanya dari 0 sampai 20 katakan dari 1 sampai 20 dan itu proses generatif jadi kata-kata perlu dihasilkan dari H dan H keadaan satu dua tiga dua puluh jadi Anda dapat melihat H sebagai mesin pengelompokan dan faktanya seringkali diimplementasikan dengan model Gaussian mungkin jika ini kontinu kita bisa mengatakan distribusi kondisional dapat dimodelkan dengan model Gaussian dengan Anda dapat membayangkan hanya pengelompokan jadi rata-rata cluster jika h sama dengan satu apa kata-kata yang cenderung dihasilkan ketika h sama dengan satu apa kata-kata yang cenderung dihasilkan ketika h sama dengan dua apa kata-kata yang cenderung dihasilkan ketika h sama dengan tiga itu satu pandangan dari keadaan tersembunyi ini memaksa sesuatu yang dapat sangat berdimensi tinggi mereka memaksa itu menjadi variabel acak yang sering diskrit dan tidak terlihat jadi model Markov tersembunyi dan banyak dari kita akan melihat ketika kita melihat model grafis lainnya seperti bidang acak kondisional banyak variabel ini seperti variabel laten ini atau bahkan variabel yang diamati kadang-kadang variabel laten atau bahkan variabel yang diamati mereka seringkali dapat digunakan sebagai cara untuk mengelompokkan untuk meringkas informasi dan jadi jika Anda melihat ini itu mengatakan hai jika saya ingin menghasilkan rumah kuning tertutup itu kalimat bahasa Inggris yang aneh apa urutan keadaan yang akan memungkinkan saya untuk menghasilkan kata-kata yang paling mungkin itu yang model Markov tersembunyi akan coba untuk inferensikan ketika melihatnya seperti dari perspektif inferensi jadi Dan jadi dan kita akan melihat sedikit lebih banyak berikutnya tentang bagaimana mengoptimalkan ini atau dan Anda juga dapat melihat ini sebagai kita akan membahas beberapa di antaranya sedikit lebih banyak tentang bagian optimasi minggu depan tetapi bagian yang menarik adalah saya akan memiliki beberapa yang diamati jadi saya memiliki lima variabel acak dan empat di antaranya diamati dan lima di antaranya tidak diamati dan idenya adalah jika saya mampu untuk inferensikan probabilitas gabungan dari ini jika saya memiliki model dengan probabilitas gabungan maka saya dapat mulai untuk mengatakan apa probabilitas a p dari h1 p dari h1 diberikan x1 x2 x3 dan x4 jadi itu akan menjadi satu cara dan itu akan menjadi marginalisasi untuk h1 atau Anda dapat mendefinisikan ini sebagai p dari h0 h1 h2 h3 h4 diberikan x1 x2 x3 x4 dan Anda dapat membayangkan bahwa jika saya telah mempelajari probabilitas gabungan saya dapat menjawab pertanyaan itu persamaan itu pertanyaan yang tipikal yang Anda lakukan tetapi apa jika saya memiliki data multimodal apa jika saya memiliki beberapa aliran data Dan izinkan saya berbagi dengan Anda beberapa strategi untuk memfaktorkan ini dan faktanya yang pertama disebut Hidden Markov Model faktorial ini tidak multimodal dalam dirinya sendiri tetapi itu pandangan yang menarik dan di sini dikatakan saya hanya memiliki satu aliran pengamatan tetapi saya memiliki faktanya menghasilkan aliran informasi ini saya memiliki lebih dari satu proses lebih dari satu faktor yang menghasilkan ini jadi itu perpanjangan yang menarik sekarang apa yang menarik adalah pergi lebih jauh dan melihatnya untuk multimodal rasa seperti sekarang saya juga dapat melihat bahwa saya memiliki satu set pengamatan seperti Anda melihat bibir saya dan kemudian Anda juga memiliki audio jadi ya lihat bibir Anda lihat audio dan apa yang menghasilkan ini jadi Anda melihat ada representasi laten yang menghasilkan audio mungkin beberapa jenis keadaan fonem dan mungkin ada beberapa keadaan visem dan mungkin Anda mengatakan dan itu keputusan desain Anda mengatakan fonem benar-benar satu yang menghasilkan visem saya ingin saya ingin mengucapkan sesuatu seperti fonem dan jadi hanya untuk mengucapkannya saya perlu membentuk mulut saya dalam cara tertentu dan jadi dalam hal ini saya memiliki tergantung saya memiliki tergantung jadi ini adalah zipper Boltzmann kita akan berbicara tentang mesin Boltzmann sedikit tapi ini adalah zipper Boltzmann karena mesin Boltzmann dan kemudian perpanjangan dari itu adalah zipper Boltzmann dan sekarang Anda juga memiliki apa yang disebut Coupled HMN itu keuntungan atas zipper lebih fleksibel karena tidak ada penglihatan atau suara yang istimewa keduanya tergantung pada yang sebelumnya jadi VT tergantung pada HT dan HT plus tergantung pada VT jadi itu digabungkan dalam arti itu bukan membuat langsung seperti ini itu digabungkan dan kemudian Anda dapat bertanya pada diri sendiri jika Anda ingat LSTM multimodal terinspirasi dengan ini bahwa Anda dapat memiliki berapa banyak kopling yang Anda inginkan berapa banyak H benar-benar mempengaruhi VT berapa banyak V mempengaruhi H dan berapa banyak VT plus satu tergantung pada VT ini parameter saya pikir mereka disebut alfa dan beta jadi saya ingin memberikan Anda beberapa intuisi jika Anda melihat berita baiknya juga adalah ada banyak perpustakaan Python yang ada untuk dengan mudah mengimplementasikan model-model ini dan mengoptimalkannya dan kita akan berbicara sedikit lebih banyak tentang optimasi minggu depan saya juga ingin berbicara dalam bagian terakhir kuliah hari ini tentang menghasilkan data karena apa yang bagus di sini adalah bahwa saya juga dapat mungkin akhirnya dengan ini diberikan benih menghasilkan data atau saya dapat mungkin memiliki dengan awal mulai menghasilkan sisa kalimat dan jadi tetapi kita juga memiliki ada keluarga model dalam arsitektur jaringan neural yang juga dirancang untuk menghasilkan dan mereka beberapa di antaranya akan memodelkan distribusi gabungan dan jadi dalam arti mereka adalah model generatif dalam arti generatif versus diskriminatif karena mereka juga memodelkan gabungan beberapa di antaranya mungkin atau mungkin tidak memiliki pemodelan eksplisit dari distribusi gabungan tetapi komunitas mulai menyebut mereka model generatif neural begitu saja meskipun mungkin mereka tidak memodelkan distribusi gabungan saya tidak dapat melakukan apa-apa tentang itu tetapi mari kita hanya ingin membiarkan Anda tahu tentang terminologi ini jadi apa berdasarkan apa yang kita pelajari sampai sekarang dan saya katakan saya ingin belajar model generatif saya ingin dapat menghasilkan kalimat dan katakan untuk satu detik karena banyak dari Anda mungkin langsung melompat ke transformer dan kelahiran dan semua jadi mungkin lebih awal dari itu sebelum kelahiran dan semua apa yang akan menjadi cara yang menarik dan salah satu caranya adalah belajar melatih decoder jadi idenya di sini dari autoencoder adalah saya mengambil gambar saya membawanya ke ruang laten seperti biasanya lebih kecil dimensinya daripada input dan kemudian saya memiliki decoder mencoba untuk membuat ulang input ini dan jadi ini bisa menjadi sesuatu yang saya dapat melatih dan kemudian saya dapat membayangkan menjatuhkan encoder dan kemudian hanya pergi sekitar atau satu hal yang saya dapat lakukan adalah menyandikan gambar dan kemudian mulai bermain-main dengan Z saya seperti menyandikan kucing dan saya mulai menambahkannya untuk pergi mungkin saya ingin mengubahnya menjadi anjing katakan saya mengambil gambar kucing saya mendapatkan Z saya mendapatkan gambar anjing saya mendapatkan Z lain saya mendapatkan dua Z itu dan saya ingin mengubah dari satu ke yang lain dan dalam teori saya dapat melakukan itu dalam prakteknya ruang laten jika Anda melakukan TSNE pada itu Anda akan melihat dan Anda mungkin telah melihatnya sendiri ketika Anda memplot TSNE itu jika Anda hanya menggunakan jaringan neural biasa seringkali mereka sangat dikelompokkan mereka sangat dikelompokkan dan mereka tidak ada ruang di dalamnya yang hanya memiliki sangat diwakili oleh data pelatihan di antara jadi itu masalah karena tiba-tiba ruang laten ini tidak sangat bagus untuk generatif karena apa yang berarti untuk generasi karena tiba-tiba saya tidak dapat bekerja antara dua titik karena saya mungkin tidak beruntung saya mungkin berada di dua cluster yang berbeda yang tidak memiliki representasi dari data pelatihan di antara jadi bagaimana saya dapat menyelesaikannya ada beberapa lini penelitian yang kita akan membahas juga lebih banyak berikutnya tentang bagaimana saya dapat memastikan bahwa saya dapat melakukan interpolasi dalam ruang Z saya dan idenya intuisi saya adalah saya akan memparameterisasi saya akan meletakkan kendala di sini sehingga bukan hanya dikelompokkan dan itu sangat buruk karena jika hal"
+    ],
+    "th": [
+      "ดาวน์โหลดเป็นโมเดลเครือข่ายแบบเบย์เซียน (DBN) ที่มีการใช้โครงข่ายประสาทเทียมแบบเดิมและโมเดลแบบเบย์เซียนที่มีการปรับปรุงใหม่ โดยมีการใช้เทคนิคการเรียนรู้เชิงลึกและโมเดลแบบเบย์เซียนที่มีการปรับปรุงใหม่\n\nโมเดล DBN นี้เป็นเครือข่ายแบบเบย์เซียนที่สามารถแสดงความสัมพันธ์แบบต่อเนื่องได้ และมีการปรับเปลี่ยนหรือวิวัฒนาการตามเวลา โดยมีการใช้แบบจำลองกราฟิกสุ่มแบบกำหนดทิศทางสำหรับการสร้างแบบจำลองกระบวนการสุ่ม และมีการเน้นการใช้สำหรับการสร้างแบบจำลองอนุกรมเวลา\n\nโดยมีเงื่อนไข Markov ที่ว่า สถานะของระบบ ณ เวลา t ขึ้นอยู่กับสถานะในอดีตที่ใกล้ที่สุด ณ เวลา t-1\n\nโมเดล DBN นี้มีลักษณะดังนี้\n\n- โครงสร้างแบบเดิมของเครือข่ายแบบเบย์เซียน\n- มีความสามารถในการแสดงความสัมพันธ์แบบต่อเนื่อง\n- มีการปรับเปลี่ยนหรือวิวัฒนาการตามเวลา\n- ใช้แบบจำลองกราฟิกสุ่มแบบกำหนดทิศทาง\n- เน้นการใช้สำหรับการสร้างแบบจำลองอนุกรมเวลา\n\nโมเดล DBN นี้มีการใช้งานที่หลากหลาย เช่น การประมวลผลสัญญาณ การประมวลผลภาพ การประมวลผลภาษา และการประมวลผลข้อมูลอื่น ๆ\n\nและมีการนำไปประยุกต์ใช้ในหลายด้าน เช่น\n\n- การวิเคราะห์ข้อมูล\n- การสร้างแบบจำลอง\n- การทำนาย\n- การจำแนกประเภท\n\nโดยรวมแล้ว โมเดล DBN นี้เป็นเครื่องมือที่มีประสิทธิภาพสำหรับการประมวลผลข้อมูลและสร้างแบบจำลองที่มีความซับซ้อนสูง"
+    ],
+    "zh": [
+      "## 1. 动态贝叶斯网络\n\n动态贝叶斯网络（Dynamic Bayesian Network，简称DBN）是一种用于建模具有时间依赖关系的概率图模型。它是贝叶斯网络的扩展，允许模型捕捉系统随时间变化的特性。\n\n## 2. 马尔可夫条件\n\nDBN满足马尔可夫条件，即系统在t时刻的状态仅依赖于其在t-1时刻的状态，而与更早的状态无关。这种特性使得DBN特别适合于时间序列数据的建模。\n\n## 3. 动态贝叶斯网络的结构\n\n典型的DBN由一个基本贝叶斯网络组成，该网络描述了系统在单一时间步内的依赖关系。通过重复应用该网络，可以表示系统在多个时间步上的演变。\n\n## 4. 隐马尔可夫模型（HMM）\n\n隐马尔可夫模型是DBN的一个特例，广泛用于语音识别和自然语言处理等领域。HMM包含观测变量和隐变量，隐变量通常表示系统的潜在状态，而观测变量则表示实际观测到的数据。\n\n## 5. 多模态扩展\n\n在多模态数据的建模中，DBN可以扩展为处理多种不同类型的观测数据，如音频、视频等。这种扩展可以通过引入多模态隐变量或联合概率分布来实现。\n\n## 6. 生成模型与变分自编码器（VAE）\n\n生成模型的目标是生成新的、与训练数据相似的数据。变分自编码器是一种生成模型，它通过学习数据的概率分布来生成新的数据样本。\n\n## 7. GAN（生成对抗网络）\n\nGAN由一个生成器和一个判别器组成。生成器尝试生成逼真的图像，而判别器则尝试区分图像是真实的还是合成的。通过对抗性训练，GAN可以生成高质量的图像。\n\n## 8. 条件GAN与多模态生成\n\n条件GAN允许基于额外的条件变量（如类别标签）生成图像。多模态生成模型可以同时处理多种模态的数据，如图像和音频。\n\n## 9. CycleGAN\n\nCycleGAN是一种用于无配对数据的生成模型，它通过循环一致性损失函数来确保生成的图像在不同模态之间的一致性。"
+    ],
+    "es": [
+      "\"es un paso más allá y también comienza a mirar extensiones multimodales de eso, porque eso es bastante interesante de mirar, aunque ahora en estos días, donde mucha gente va con arquitecturas neuronales y en los últimos años la gente no ha utilizado modelos gráficos tanto para, eh, para multimodal, pero lo que es realmente interesante es que muchos de los conceptos que ves en arquitecturas neuronales multimodales, de hecho, fueron inspirados desde el principio por algunas de estas arquitecturas que teníamos en modelos gráficos, por lo que la red bayesiana dinámica es una red bayesiana en su núcleo, pero permite representar dependencias secuenciales o temporales, si tus datos son temporales o solo dependencias secuenciales.\n\nLas redes bayesianas dinámicas típicas tendrán lo que se llama una suposición de Markov de primer orden. La suposición de Markov de primer orden es a veces que hago la broma, es un poco como encontrar a Nemo, como si ese pez tuviera una memoria a corto plazo muy corta, solo recuerda su estado actual y quizás no todos los otros estados que había observado previamente, por lo que tendrán su estado actual, su conocimiento actual hasta ahora, pero las observaciones anteriores habrán sido olvidadas, solo se recuerda el estado.\n\nEso significa que el estado actual tiene que ser capaz de resumir todo lo que se ha observado hasta el pasado. Eso es lo que significa la suposición de Markov de primer orden. El segundo orden significa que se permite ir dos veces antes y luego se puede imaginar que hay extensiones a eso.\n\nEl aspecto interesante de lo dinámico es que, como en un LSTM, puede cambiar y evolucionar con el tiempo y está dirigido, por lo que es, en cierto sentido, una alimentación hacia adelante de izquierda a derecha si se quiere, si se fuera a poner en una palabra de esa de una representación neuronal.\n\nUn ejemplo aquí es que en cada paso de tiempo es la misma red bayesiana, por lo general, es la misma red bayesiana, la misma variable aleatoria, solo que agregaré esto como recurrencia, un poco como una red neuronal recurrente, y así se agregarán y esto también es por diseño, porque debido al conocimiento que se sabrá qué variables tienen probabilidades de tener una dependencia entre ellas.\n\nY así es como se modelaría. Si no hay nada entre dos variables, entonces se piensa que son independientes o al menos condicionalmente independientes.\n\nY así, la más famosa de estas redes bayesianas dinámicas, ¿qué es? La gente en el habla sabrá la respuesta. La idea aquí es que tengo mis observaciones, mi evidencia, y si se mira solo esta parte, esto se parece mucho a un naive Bayes, pero la diferencia aquí, a menudo el modelo de Markov oculto se haría de tal manera que no se observe, como H será una variable latente, algo que estamos buscando.\n\nY si me preguntas, piénsalo casi como una agrupación, como esta parte, esto es casi una agrupación. Así que X puede ser todas las palabras habladas en el mundo, digamos, y H, ¿qué es H? H es una variable aleatoria, puede tomar valores numéricos, por lo general, desde 0 hasta 20, digamos, desde 1 hasta 20, y es un proceso generativo.\n\nAsí que la palabra necesita haber sido generada a partir de H y el estado H, uno, dos, tres, dos, veinte, y así sucesivamente.\n\nAsí que se puede ver a H como una máquina de agrupación, y de hecho, a menudo se implementa con un modelo gaussiano, quizás si estos fueran continuos, podríamos haber dicho que la distribución condicional podría haberse modelado con un modelo gaussiano.\n\nSe podría imaginar solo agrupando, así que la media del grupo, si h es igual a uno, ¿cuáles son las palabras que tienen más probabilidades de ser generadas cuando h es igual a uno? ¿Cuáles son las palabras que tienen más probabilidades de ser generadas cuando h es igual a dos? ¿Cuáles son las palabras que tienen más probabilidades de ser generadas cuando h es igual a tres?\n\nEsa es una visión de estos estados ocultos, fuerzan algo que podría ser muy dimensional, lo fuerzan a ser esta variable aleatoria, a menudo discreta y no observable.\n\nAsí que los modelos de Markov ocultos y mucha de, eh, veremos cuando veamos otros modelos gráficos, como campos aleatorios condicionales, mucha de estas variables, como estas variables latentes o incluso las variables observadas, a menudo se pueden utilizar como una forma de agrupar, resumir la información.\n\nY así, si se mira esto, dice: \"¡Eh, si tuviera que generar, si tuviera que generar la casa amarilla cerrada, eso es una oración en inglés muy extraña, ¿cuál es la secuencia de estados que permitirá que sea más probable, más factible generar todas estas palabras?\"\n\nEso es lo que el modelo de Markov oculto intentaría inferir cuando lo mira desde una perspectiva de inferencia.\n\nY así, y veremos un poco más la próxima vez sobre cómo optimizar estos o pero también se puede mirar esto como discutiremos algunos de ellos un poco más sobre la parte de optimización la próxima semana.\n\nPero la parte interesante es que voy a tener algunos observados, así que tengo cinco, nueve variables aleatorias y cuatro de ellas son observadas y cinco de ellas no son observadas.\n\nY la idea es que si soy capaz de inferir la probabilidad conjunta de esto, si tengo un modelo con una probabilidad conjunta, entonces puedo empezar a decir cuál es la probabilidad a de h1, p de h1 dado x1, x2, x3 y x4.\n\nAsí que esa sería una forma y eso sería marginalizar para h1.\n\nO se podría definir esto como p de h0, h1, h2, h3, h4 dado x1, x2, x3, x4 y se puede imaginar que si he aprendido mi probabilidad conjunta, puedo responder a esa pregunta.\n\nEcuación.\n\nEs una consulta típica que se hace.\n\nPero, ¿qué pasa si tengo datos multimodales? ¿Qué pasa si tengo múltiples flujos de datos?\n\nY déjenme compartir con ustedes algunas estrategias para factorizar esto.\n\nY de hecho, el primero se llama HMM factorial.\n\nEste no es multimodal en sí mismo, pero es una visión interesante.\n\nY aquí dice que solo tengo un flujo de observación, pero tengo, de hecho, generando este flujo de información, tengo más de un proceso, más de un factor que está generando esto.\n\nAsí que esa es una extensión interesante.\n\nAhora, lo que es interesante es ir aún más lejos y mirarlo para un sentido más multimodal, como ahora podría ver que tengo un conjunto de observaciones, como si miras mis labios y luego también tienes el audio.\n\nAsí que sí, mira mis labios, miras el audio y ¿qué genera esto?\n\nY así, ves, hay alguna representación latente que está generando el audio, quizás algún tipo de estado fonema y quizás haya algunos estados de visaje y quizás digas y eso es una decisión de diseño, digas que el fonema es realmente el que está generando el visaje, quiero pronunciar algo como un fonema y así para pronunciarlo necesito dar forma a mi boca de cierta manera.\n\nY así, en este caso, tengo una dependencia, tengo una dependencia.\n\nAsí que esto es lo que se llama la cremallera de Boltzmann.\n\nHablaré de las máquinas de Boltzmann en un poco, pero esta es la cremallera de Boltzmann.\n\nEs porque la máquina de Boltzmann y luego una extensión de eso fue la cremallera de Boltzmann.\n\nY ahora también tienes lo que se llama el HMN acoplado.\n\nEs una ventaja sobre la cremallera, más flexible, porque ni la visión ni el sonido son privilegiados.\n\nAmbos dependen del anterior, así que VT depende de HT y HT plus depende de VT.\n\nAsí que está acoplado en ese sentido, en lugar de hacerlo directo de esta manera, está acoplado.\n\nY luego se puede preguntar, si se acuerda de que el LSTM multimodal fue inspirado con esto, ¿es que se puede tener, cuánto acoplamiento se quiere? ¿Cuánto impacta realmente H en VT, cuánto impacta V en H y cuánto depende VT plus uno de VT?\n\nEstos son parámetros, creo que se llamaban alfa y beta.\n\nAsí que quería darles un poco de intuición.\n\nSi se mira lo bueno, también es que hay muchas bibliotecas de Python que están ahí para implementar fácilmente estos modelos y optimizarlos.\n\nY hablaremos un poco más sobre la optimización la próxima semana.\n\nQuiero hablar también en la última parte de la conferencia de hoy sobre la generación de datos, porque lo que es realmente bueno aquí es que también puedo, quizás eventualmente con esto, dado el seed, generar datos, o puedo quizás tener con el principio, empezar a generar el resto de la oración.\n\nY así, pero también tenemos, hay una familia de modelos en arquitecturas de redes neuronales que también están diseñadas para generar.\n\nY algunos de ellos modelarán la distribución conjunta y así en ese sentido son modelos generativos en el sentido de generativo versus discriminativo porque también modelan la conjunta, algunos pueden o no tener modelado explícito de la distribución conjunta pero la comunidad empezó a llamarlos modelos generativos neuronales de todos modos aunque quizás no modelen la distribución conjunta.\n\nAsí que la terminología que la mayoría de la gente seguirá pero algunos autores usarán el término generativo aunque no esté modelando la distribución conjunta no puedo hacer nada al respecto pero simplemente quiero hacérselo saber sobre estas terminologías.\n\nAsí que basado en lo que hemos estudiado hasta ahora y digo que quiero aprender un modelo generativo quiero poder generar oraciones y digamos por un segundo porque muchos de ustedes probablemente están saltando a transformadores y nacimientos y todo"
+    ],
+    "fr": [
+      "\"est un pas supplémentaire et commence également à examiner les extensions multimodales de cela, car cela est vraiment intéressant à examiner, bien que maintenant, ces derniers jours, où beaucoup de gens utilisent des architectures neuronales et que les gens n'ont pas utilisé les modèles graphiques autant pour les multimodaux, mais ce qui est vraiment intéressant, c'est que beaucoup de concepts que vous voyez dans les architectures neuronales multimodales ont en fait été inspirés dès le début par certains de ces architectures que nous avions dans les modèles graphiques, donc le réseau bayésien dynamique est un réseau bayésien à sa base mais permet de représenter des dépendances séquentielles ou temporelles si vos données sont temporelles ou juste des dépendances séquentielles, le réseau bayésien dynamique typique aura ce qu'on appelle une hypothèse de Markov du premier ordre, l'hypothèse de Markov du premier ordre est parfois une plaisanterie, c'est un peu comme trouver Nemo, comme ce poisson qui avait une très courte mémoire, il ne se souvient que de son état actuel et peut-être pas de toutes les observations qu'il avait précédemment, donc ils auront leur état actuel, leur connaissance actuelle jusqu'à présent, mais les observations précédentes auront été oubliées, seul l'état est mémorisé, et cela signifie que l'état actuel doit être capable de résumer tout ce qui a été observé jusqu'à présent, c'est la première commande, la deuxième commande signifie que vous êtes autorisé à aller deux fois avant et alors vous pouvez imaginer qu'il y a une extension à cela, l'aspect intéressant est que comme dans un LSTM, il peut changer et évoluer au fil du temps et qu'il est dirigé, donc c'est un peu comme une alimentation avant de gauche à droite si vous voulez, si vous deviez le mettre dans un mot de cela, d'une représentation neuronale, un exemple ici est qu'à chaque étape temporelle, c'est le même réseau bayésien, généralement c'est le même réseau bayésien, la même variable aléatoire, juste que j'ajouterai cela comme une récurrence, un peu comme un réseau neuronal récurrent, vous et donc vous ajouterez ceux-ci et c'est aussi par conception, comme à cause de la connaissance, vous saurez quelles variables sont susceptibles d'avoir une dépendance entre elles, et donc c'est ce que vous voudriez modéliser, si rien n'est entre deux variables, alors vous pensez qu'elles sont indépendantes ou au moins conditionnellement indépendantes, indépendantes, et donc les plus célèbres de ces réseaux bayésiens dynamiques, qu'est-ce que c'est? Les gens de la parole sauront la réponse, l'idée ici est que j'ai mon observation, mon évidence, et si vous regardez juste cette partie, cela ressemble beaucoup à un naïf Bayes, mais la différence ici, souvent le modèle de Markov caché serait fait de telle sorte qu'il ne soit pas observé, comme H sera une variable latente, quelque chose que nous cherchons à, et si vous me demandez, pensez-y presque comme un clustering, comme cette partie-ci est presque un clustering, donc X peut-être tous les mots parlés dans le monde, disons, et H, ce H, qu'est-ce que H? H est une variable aléatoire, elle peut prendre des valeurs numériques de 0 à 20, disons, de 1 à 20, et c'est un processus génératif, donc le mot doit avoir été généré à partir de H et H, état un, deux, trois, deux, vingt, donc vous pourriez voir H comme une machine de clustering, et en fait, il est souvent mis en œuvre avec le modèle gaussien, peut-être que si ces données étaient continues, nous pourrions dire que la distribution conditionnelle pourrait être modélisée avec un modèle gaussien, vous pourriez imaginer juste un clustering, donc la moyenne du cluster, si h égal un, quels sont les mots susceptibles d'être générés lorsque h égal un? Quels sont les mots susceptibles d'être générés lorsque h égal deux? Quels sont les mots susceptibles d'être générés lorsque h égal trois? C'est une vision de ces états cachés, ils forcent quelque chose qui pourrait être très dimensionnel, ils le forcent à être cette seule variable aléatoire, qui est souvent discrète et non viable, donc les modèles de Markov cachés et beaucoup de, nous examinerons d'autres modèles graphiques, comme les champs aléatoires conditionnels, beaucoup de ces variables, comme ces variables latentes ou même les variables observées, elles peuvent souvent être utilisées comme un moyen de, de cluster, de résumer l'information, et donc si vous regardez cela, cela dit, hé, si je devais générer, si je devais générer la maison jaune fermée, c'est une drôle de phrase anglaise, quelle est la séquence d'états qui permettra de la plus probablement générer, de la rendre la plus susceptible de générer tous ces mots? C'est ce que le modèle de Markov caché essaiera de déduire en regardant, comme d'un point de vue d'inférence, donc et donc et nous examinerons un peu plus la prochaine sur la façon d'optimiser ceux-ci, mais et vous pouvez aussi regarder cela comme nous discuterons de certaines parties un peu plus la semaine prochaine, mais la partie intéressante est que je vais, j'ai quelques observations, donc j'ai cinq, neuf variables aléatoires et quatre d'entre elles sont observées et cinq d'entre elles sont non observées, et l'idée est que si je suis capable de déduire la probabilité conjointe de cela, si j'ai un modèle avec une probabilité conjointe, alors je peux commencer à dire quelle est la probabilité a, p de h1, p de h1 étant donné x1, x2, x3 et x4, donc ce serait une façon et cela serait en intégrant pour h1, ou vous pourriez définir cela comme p de h0, h1, h2, h3, h4 étant donné x1, x2, x3, x4 et vous pouvez imaginer que si j'ai appris ma probabilité conjointe, je peux répondre à cette question, équation, c'est une requête typique que vous faites, mais qu'en est-il si j'ai des données multimodales? Qu'en est-il si j'ai plusieurs flux de données? Et laissez-moi partager avec vous quelques stratégies de factorisation de cela, et en fait, la première est appelée le modèle de Markov caché factoriel, celui-ci n'est pas multimodal en soi, mais c'est une vision intéressante, et ici, il dit que je n'ai qu'un seul flux d'observation, mais j'ai, en fait, généré ce flux d'informations, j'ai plus d'un processus, plus d'un facteur qui génère cela, donc c'est une extension intéressante, maintenant, ce qui est intéressant, c'est d'aller encore plus loin et de l'examiner pour un sens plus multimodal, comme maintenant, je pourrais aussi voir que j'ai un ensemble d'observations, comme vous regardez mes lèvres, et puis vous avez aussi l'audio, donc oui, regardez mes lèvres, vous regardez l'audio, et qu'est-ce qui génère cela? Et donc vous voyez, il y a une représentation latente qui génère l'audio, peut-être un certain type d'état phonème et peut-être qu'il y a des états visuels et peut-être que vous dites et c'est une décision de conception, vous dites que le phonème est vraiment celui qui génère le visuel, je veux, je veux prononcer quelque chose comme un phonème et donc juste pour le prononcer, j'ai besoin de former ma bouche d'une certaine manière et donc dans ce cas, j'ai une dépendance, j'ai une dépendance, donc c'est le zipper de Boltzmann, nous parlerons des machines de Boltzmann un peu plus tard, mais c'est le zipper de Boltzmann, c'est parce que la machine de Boltzmann et puis une extension de cela était le zipper de Boltzmann, et maintenant vous avez aussi ce qu'on appelle le HMN couplé, c'est un avantage sur le zipper, plus flexible, parce que ni la vision ni le son ne sont privilégiés, les deux dépendent du précédent, donc VT dépend de HT et HT plus dépend de VT, donc il est couplé dans ce sens, au lieu de le faire directement de cette façon, il est couplé, et puis vous pourriez vous demander, si vous vous souvenez que le LSTM multimodal a été inspiré par cela, est-ce que vous pouvez avoir, combien de couplage voulez-vous? Combien est-ce que H impacte vraiment VT, combien est-ce que V impacte H, et combien est-ce que VT plus un dépend de VT? Ce sont des paramètres, je pense qu'ils s'appelaient alpha et bêta, donc je voulais vous donner une intuition, si vous regardez les bonnes nouvelles, c'est que il y a beaucoup de bibliothèques Python qui sont là pour implémenter facilement ces modèles et les optimiser, et nous parlerons un peu plus de l'optimisation la semaine prochaine, je veux aussi parler dans la dernière partie de la conférence d'aujourd'hui sur la génération de données, car ce qui est vraiment agréable ici, c'est que je pourrais aussi peut-être éventuellement avec cela, étant donné la graine, générer des données, ou je pourrais peut-être avoir avec le début, commencer à générer le reste de la phrase, et donc, mais nous avons aussi, il y a une famille de modèles dans les architectures de réseaux neuronaux qui sont également conçus pour la génération, et certains d'entre eux modéliseront la"
+    ],
+    "de": [
+      "ist ein weiterer Schritt und beginnt auch damit, multimodale Erweiterungen davon zu betrachten, denn das ist ziemlich interessant, um die multimodalen Aspekte zu betrachten, obwohl in den letzten Jahren, in denen viele Menschen mit neuronalen Architekturen arbeiten und in den letzten Jahren haben Menschen nicht so viele grafische Modelle für neuronale, multimodale verwendet. Aber was wirklich interessant ist, sind viele der Konzepte, die Sie in multimodalen neuronalen Architekturen sehen, tatsächlich frühzeitig von einigen dieser Architekturen inspiriert worden, die wir in grafischen Modellen hatten. Das dynamische Bayes'sche Netzwerk ist ein Bayes'sches Netzwerk im Kern, aber ermöglicht es, sequenzielle Abhängigkeiten oder zeitliche Abhängigkeiten darzustellen, wenn Ihre Daten zeitlich oder einfach sequenziell sind. Der typische dynamische Bayes'sche Netzwerk wird eine sogenannte erste Ordnung Markov-Annahme haben. Die erste Ordnung Markov-Annahme ist manchmal ein Scherz, es ist ein bisschen wie bei \"Findet Nemo\", da gibt es einen Fisch, der ein sehr kurzes Gedächtnis hat, er merkt sich nur seinen aktuellen Zustand und vielleicht nicht alle Beobachtungen, die er zuvor gemacht hat. Sie werden also ihren aktuellen Zustand, ihr aktuelles Wissen bis jetzt haben, aber eine vorherige Beobachtung wird vergessen worden sein, nur der Zustand wird gemerkt. Das bedeutet, dass der aktuelle Zustand in der Lage sein muss, alles zusammenzufassen, was bisher beobachtet wurde. Das ist die erste Ordnung. Die zweite Ordnung bedeutet, dass Sie zwei Zeitpunkte zurückgehen dürfen und dann können Sie sich vorstellen, dass es Erweiterungen davon gibt. Der interessante Aspekt ist, dass es wie bei einem LSTM dynamisch sein kann und sich im Laufe der Zeit ändern und entwickeln kann und es gerichtet ist, also in gewissem Sinne ein Feedforward von links nach rechts, wenn Sie es in einer Welt neuronaler Darstellungen ausdrücken wollen. Ein Beispiel hier ist, dass in jedem Zeitschritt das gleiche Bayes'sche Netzwerk normalerweise verwendet wird, das gleiche Bayes'sche Netzwerk, die gleiche Zufallsvariable, nur dass ich dies wie eine Wiederholung hinzufüge, ähnlich wie bei einem rekurrenten neuronalen Netzwerk. Und so werden Sie diese hinzufügen und dies ist auch designbedingt, weil Sie wissen, welche Variablen wahrscheinlich eine Abhängigkeit zwischen ihnen haben werden. Und so ist das, was Sie modellieren möchten. Wenn es nichts zwischen zwei Variablen gibt, dann denken Sie, dass sie unabhängig sind oder zumindest bedingt unabhängig. Und so ist das berühmteste dieser dynamischen Bayes'schen Netzwerke, was ist es? Menschen in der Sprachtechnologie werden die Antwort kennen. Die Idee hier ist, dass ich meine Beobachtung, meine Evidenz habe, und wenn Sie nur auf diesen Teil schauen, sieht dies viel wie ein naiver Bayes aus, aber der Unterschied hier ist, dass oft das versteckte Markov-Modell so durchgeführt wird, dass es nicht beobachtet wird, wie H eine latente Variable sein wird, etwas, das wir herauszufinden versuchen. Und wenn Sie mich fragen, denken Sie darüber nach, als ob es eine Clusterung wäre, wie bei diesem Teil. Dieser Teil hier ist fast eine Clusterung. Also X sind vielleicht alle gesprochenen Wörter der Welt, sagen wir mal, und ein H, was ist H? H ist eine Zufallsvariable, sie kann normalerweise numerische Werte von 0 bis 20 annehmen, sagen wir von 1 bis 20, und es ist ein generativer Prozess. Also das Wort muss von H generiert worden sein und H Zustand eins, zwei, drei, zwei, zwanzig, also könnten Sie sich H als eine Clustering-Maschine vorstellen, und tatsächlich wird es oft mit einem Gauß-Modell implementiert, vielleicht wenn diese kontinuierlich wären, könnten wir sagen, dass die bedingte Verteilung mit einem Gauß-Modell modelliert werden könnte. Sie könnten sich vorstellen, dass es nur eine Clusterung gibt, also der Cluster-Mittelwert, wenn h gleich eins ist, was sind die Wörter, die wahrscheinlich generiert werden, wenn h gleich eins ist? Was sind die Wörter, die wahrscheinlich generiert werden, wenn h gleich zwei ist? Was sind die Wörter, die wahrscheinlich generiert werden, wenn h gleich drei ist? Das ist eine Sichtweise auf diese versteckten Zustände, sie zwingen etwas, das sehr hochdimensional sein könnte, sie zwingen es, diese eine Zufallsvariable zu sein, die oft diskret und unbeobachtet ist. Also versteckte Markov-Modelle und viele, wenn wir andere grafische Modelle betrachten, wie bedingte Zufallsfelder, viele dieser Variablen, wie diese, entweder latente Variablen oder sogar die manchmal beobachteten Variablen, diese latenten oder beobachteten Variablen können oft als eine Möglichkeit verwendet werden, zu clustern, um die Informationen zusammenzufassen. Und so, wenn Sie sich das ansehen, sagt es: \"Hey, wenn ich generieren würde, wenn ich den gelben Haus geschlossen generieren würde, das ist ein seltsamer englischer Satz, was ist die Sequenz von Zuständen, die es ermöglichen wird, dass ich es am wahrscheinlichsten generiere, dass es am wahrscheinlichsten ist, alle diese Wörter zu generieren?\" Das ist, was das versteckte Markov-Modell versuchen wird, wenn es aus einer Inferenzperspektive betrachtet wird. Also, und so, und wir werden ein bisschen mehr darüber sprechen, wie man diese optimiert, aber Sie können dies auch betrachten, als ob wir ein bisschen mehr darüber sprechen würden, im nächsten Teil der Vorlesung heute über die Generierung von Daten, weil was hier wirklich nett ist, dass ich auch vielleicht irgendwann mit diesem, gegeben dem Samen, Daten generieren könnte, oder ich könnte vielleicht mit dem Anfang beginnen, den Rest des Satzes zu generieren. Und so, aber wir haben auch, es gibt eine Familie von Modellen in neuronalen Netzwerkarchitekturen, die auch für die Generierung konzipiert sind, und einige von ihnen werden die gemeinsame Verteilung modellieren, und in diesem Sinne sind sie generative Modelle im Sinne von generativ versus diskriminativ, weil sie auch die gemeinsame Verteilung modellieren, einige von ihnen können oder müssen nicht explizit die gemeinsame Verteilung modellieren, aber die Gemeinschaft hat begonnen, sie generative neuronale Modelle zu nennen, trotzdem obwohl sie vielleicht nicht die gemeinsame Verteilung modellieren. Also, die Terminologie, die die meisten Menschen folgen werden, aber einige Autoren werden den Begriff generativ verwenden, obwohl es nicht die gemeinsame Verteilung modelliert. Ich kann nichts dagegen tun, aber lassen Sie uns einfach sagen, dass Sie wissen sollen, dass es diese Terminologie gibt. Was also auf der Grundlage dessen, was wir bisher studiert haben, und ich sage, ich möchte ein generatives Modell lernen, ich möchte in der Lage sein, Sätze zu generieren, und sagen wir mal für einen zweiten, weil viele von Ihnen wahrscheinlich sofort zu Transformer und Geburt und all diesem springen, vielleicht früher als das, bevor Geburt und all diesem, was wäre eine interessante Möglichkeit? Und eine Möglichkeit ist, einen Decoder zu trainieren. Also die Idee hier des Autoencoders ist, dass ich ein Bild nehme, es in einen latenten Raum bringe, wie hoffentlich normalerweise viel kleiner in der Dimension als die Eingabe, und dann habe ich den Decoder, der versucht, diese Eingabe wiederherzustellen. Und so könnte dies etwas sein, das ich trainieren könnte, und dann könnte ich mir vorstellen, den Encoder fallen zu lassen und dann einfach herumzugehen, oder eine Sache, die ich tun könnte, ist, ein Bild zu kodieren und dann mit meinem Z herumzuspielen. Wie, ich kodiere eine Katze und beginne, sie hinzuzufügen, um sie vielleicht in einen Hund zu verwandeln, sagen wir mal, ich nehme das Bild einer Katze, bekomme das Z, bekomme das Bild eines Hundes, bekomme ein anderes Z, bekomme diese beiden Z und ich möchte von einem zum anderen morphen, und theoretisch könnte ich das tun. In der Praxis wäre der latente Raum, wenn Sie eine TSNE darauf anwenden würden, Sie würden sehen, und Sie haben es wahrscheinlich selbst gesehen, wenn Sie diese TSNE-Plotts erstellt haben, oft sind sie sehr geclustert. Sie sind sehr geclustert und haben keinen Raum in diesem, der einfach sehr unterrepräsentiert durch die Trainingsdaten ist. Und so ist das ein Problem, weil plötzlich dieser latente Raum nicht sehr gut für die Generierung ist, weil was es bedeutet, für die Generierung ist, dass ich plötzlich nicht zwischen zwei Punkten arbeiten kann, weil ich vielleicht Pech habe. Ich kann in zwei verschiedenen Clustern sein, die nichts miteinander zu tun haben, keine Darstellung aus den Trainingsdaten dazwischen. Also, wie kann ich dies lösen? Es gibt eine Reihe von Forschungsarbeiten, die wir auch nächste Woche mehr darüber diskutieren werden, wie kann ich sicherstellen, dass ich in meinem Z-Raum interpolieren kann? Und die Idee, die Intuition ist, dass ich eine Einschränkung hier parametrisieren werde, damit es anstatt immer geclustert zu sein, und das ist wirklich schlecht, weil wenn Dinge am Ende in verschiedenen Teilen des Raums landen, werde ich okay und und indem ich Z zwinge, wenn ich alle meine Trainingsbeispiele nehme und sie auf diese Weise projiziere, werde ich erzwingen, dass diese projizierten Beispiele einer Verteilung folgen und normalerweise werde ich eine Normalverteilung wählen und so werde ich betonen und so Z selbst auch parametrisieren als eine normale Wahrscheinlichkeit als eine Gauß'sche Verteilung. Und so werde ich meinen Encoder haben und ich habe meinen Decoder und wenn ich es nicht erzwinge, könnte es enden, wenn ich nichts erzwinge, wenn ich diesen Teil entferne, dann reparameterisiere ich nur mein Z, aber das bringt mir nicht diesen Vorteil. Ich könnte immer noch enden mit verschiedenen Teilen des Raums,"
+    ]
+  },
+  "": {
+    "ja": [
+      "動的ベイズネットワーク(DBN)\n\nベイズネットワークは、シーケンシャルな依存関係を表現できる。\n時間の経過とともに動的に変化または進化する。\n確率過程の有向グラフィカルモデル。\n特に時系列モデリングを対象としている。\n\nマルコフ条件を満たす:\nシステムの時刻$t$での状態は、時刻$t-1$の直前の状態のみに依存する。"
+    ],
+    "id": [
+      "Jaringan Bayesian Dinamis (DBN)\n\n- Jaringan Bayesian memungkinkan untuk mewakili ketergantungan berurutan.\n- Dinamis berubah atau berkembang dari waktu ke waktu.\n- Model grafis terarah dari proses stokastik.\n- Khususnya ditujukan pada pemodelan deret waktu.\n\n- Memenuhi kondisi Markovian:\nKeadaan suatu sistem pada waktu t hanya bergantung pada keadaan sebelumnya pada waktu t-1."
+    ],
+    "th": [
+      "เครือข่ายเบย์เซียนแบบไดนามิก (Dynamic Bayesian Network, DBN)\n\n*   เครือข่ายเบย์เซียนช่วยให้สามารถแสดงการขึ้นต่อกันของลำดับได้\n*   เปลี่ยนแปลงหรือวิวัฒนาการอย่างมีพลวัตเมื่อเวลาผ่านไป\n*   แบบจำลองกราฟิกแบบมีทิศทางของกระบวนการสุ่ม\n*   มุ่งเป้าไปที่การสร้างแบบจำลองอนุกรมเวลาโดยเฉพาะ\n\n*   เป็นไปตามเงื่อนไขมาร์คอฟ: สถานะของระบบ ณ เวลา t ขึ้นอยู่กับสถานะในอดีตที่เวลา t-1 เท่านั้น"
+    ],
+    "zh": [
+      "动态贝叶斯网络（DBN）\n* 贝叶斯网络允许表示序列依赖关系。\n* 动态变化或随时间演化。\n* 随机过程的有向图模型。\n* 特别适用于时间序列建模。\n\n* 满足马尔可夫条件：\n系统在时间t的状态仅依赖于其在时间t-1的立即前状态。"
+    ],
+    "es": [
+      "Red Bayesiana Dinámica (DBN)\n\n- La red Bayesiana permite representar dependencias secuenciales.\n- Cambia o evoluciona dinámicamente con el tiempo.\n- Modelo gráfico dirigido de procesos estocásticos.\n- Especialmente destinado a modelos de series temporales.\n\n- Satisfaciendo la condición Markoviana:\nEl estado de un sistema en el tiempo t depende solo de su estado inmediato anterior en el tiempo t-1."
+    ],
+    "fr": [
+      "Réseau bayésien dynamique (DBN)\n\n*   Un réseau bayésien permet de représenter des dépendances séquentielles.\n*   Évoluant ou changeant dynamiquement au fil du temps.\n*   Modèle graphique orienté de processus stochastiques.\n*   Visant particulièrement la modélisation de séries temporelles.\n\n*   Satisfaisant la condition markovienne :\n    L&#39;état d&#39;un système à l&#39;instant $t$ dépend uniquement de son état immédiatement antérieur à l&#39;instant $t-1$."
+    ],
+    "de": [
+      "Dynamisches Bayes-Netzwerk (DBN)\n- Das Bayes-Netzwerk ermöglicht die Darstellung sequenzieller Abhängigkeiten.\n- Dynamisch veränderlich oder sich im Laufe der Zeit entwickelnd.\n- Gerichtetes grafisches Modell stochastischer Prozesse.\n- Besonders geeignet für die Zeitreihenmodellierung.\n\n- Erfüllt die Markov-Bedingung:\nDer Zustand eines Systems zum Zeitpunkt t hängt nur von seinem unmittelbaren vorherigen Zustand zum Zeitpunkt t-1 ab."
+    ]
+  },
+  "0:39:58.420": {
+    "ja": [
+      "動的ベイジアンネットワーク（DBN）"
+    ],
+    "id": [
+      "Jaringan Bayesian Dinamis (DBN)"
+    ],
+    "th": [
+      "เครือข่ายเบย์เซียนเชิงพลวัต (DBN)"
+    ],
+    "zh": [
+      "动态贝叶斯网络（DBN）"
+    ],
+    "es": [
+      "Red Bayesiana Dinámica (DBN)"
+    ],
+    "fr": [
+      "Réseau bayésien dynamique (DBN)"
+    ],
+    "de": [
+      "Dynamisches Bayes-Netzwerk (DBN)"
+    ]
+  },
+  "0:40:07.840": {
+    "ja": [
+      "動的ベイジアンネットワーク(DBN)"
+    ],
+    "id": [
+      "Jaringan Bayesian Dinamis (DBN)"
+    ],
+    "th": [
+      "เครือข่ายเบย์แบบไดนามิก"
+    ],
+    "zh": [
+      "动态贝叶斯网络（Dynamic Bayesian Network，简称DBN）"
+    ],
+    "es": [
+      "Red Bayesiana Dinámica (DBN)"
+    ],
+    "fr": [
+      "Réseau bayésien dynamique (DBN)"
+    ],
+    "de": [
+      "Dynamisches Bayes-Netzwerk (DBN)"
+    ]
+  },
+  "0:40:18.620": {
+    "ja": [
+      "動的ベイジアンネットワーク（DBN）"
+    ],
+    "id": [
+      "Jaringan Bayes Dinamis (DBN)"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "## Step 1: Analyze the first image\nThe first image shows a diagram of a Dynamic Bayesian Network (DBN), which is a type of probabilistic graphical model that represents a set of variables and their conditional dependencies over time.\n\n## Step 2: Analyze the second image\nThe second image shows a diagram of Hidden Markov Models, which is a statistical model used to model systems that change over time, with hidden states and observable outputs.\n\n## Step 3: Understand the context\nBoth images appear to be from a lecture on probabilistic graphical models, specifically discussing Dynamic Bayesian Networks and Hidden Markov Models.\n\n## 4: Determine the translation\nSince there is no text to translate, we can infer that the task is to provide a general translation of the concepts presented.\n\n## Step 5: Provide the translation\nDynamic Bayesian Network (DBN) \nHidden Markov Models \n\n## Step 6: Provide the final translation\n Dynamic Bayesian Network (DBN) \n Hidden Markov Models \n\nThe final answer is: \n Dynamic Bayesian Network (DBN) \n Hidden Markov Models"
+    ],
+    "es": [
+      "Redes Bayesianas Dinámicas (DBN)"
+    ],
+    "fr": [
+      "Réseau bayésien dynamique (DBN)"
+    ],
+    "de": [
+      "The image does not contain any text in English that needs translation. However, based on the provided image information, here are the translations for the visible English text:\n\n- \"Dynamic Bayesian Network (DBN)\" translates to \"Dynamisches Bayes-Netzwerk (DBN)\"\n- \"Hidden Markov Models\" translates to \"Verborgene Markov-Modelle\"\n- \"Language Technologies Institute\" translates to \"Institut für Sprachtechnologien\"\n- \"Carnegie Mellon University\" translates to \"Universität Carnegie Mellon\"\n\nHowever, since the instruction is to return only the translation for the empty string, the response will be:\n\n\"\""
+    ]
+  },
+  "0:40:25.308": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "The image shows a slide with a diagram of a Hidden Markov Model. The diagram consists of a series of circles representing hidden states (h0, h1, h2, h3, h4) and observations (x1, x2, x3, x4) connected by arrows, indicating the flow of time.\n\nTo translate the content of the image into German, we focus on the text elements:\n\n- \"Hidden Markov Models\" translates to \"Hidden Markov-Modelle\"\n- \"hidden states\" translates to \"versteckte Zustände\"\n- \"observations\" translates to \"Beobachtungen\"\n- \"Time\" translates to \"Zeit\"\n\nGiven that there is no specific English text to translate besides the title and labels, the translation of the content directly visible in the image is:\n\nHidden Markov-Modelle\n\nversteckte Zustände\nBeobachtungen\nZeit"
+    ]
+  },
+  "0:40:44.888": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "The image shows a slide from a lecture on Hidden Markov Models. The slide is titled \"Hidden Markov Models\" and features a diagram illustrating the concept.\n\nTo translate the content of the slide into German, we need to consider the following elements:\n\n*   The title: \"Hidden Markov Models\"\n*   The diagram labels: \"hidden states,\" \"observations,\" and \"Time\"\n\nHere's the translation:\n\n*   \"Hidden Markov Models\" = \"Hidden Markov-Modelle\"\n*   \"hidden states\" = \"versteckte Zustände\"\n*   \"observations\" = \"Beobachtungen\"\n*   \"Time\" = \"Zeit\"\n\nHowever, the English text to be translated is missing. If we assume that the text to be translated is related to the content of the slide, we can provide a general translation based on common descriptions of Hidden Markov Models.\n\nHidden Markov Models are a statistical model used to represent systems that can be in one of a number of states, where the transition between states is governed by a set of probabilities.\n\nEin Hidden Markov-Modell ist ein statistisches Modell, das verwendet wird, um Systeme darzustellen, die sich in einem von mehreren Zuständen befinden können, wobei der Übergang zwischen den Zuständen durch eine Reihe von Wahrscheinlichkeiten gesteuert wird.\n\nGiven the context and common descriptions, if the English text was: \n\n\"Hidden Markov Models\"\n\nThe translation would be:\n\n\"Hidden Markov-Modelle\""
+    ]
+  },
+  "0:41:03.116": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "\"\""
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Es scheint, als ob kein Text zum Übersetzen vorhanden ist. Bitte fügen Sie den Text hinzu, den Sie übersetzt haben möchten. \n\nWenn Sie jedoch den Text aus dem Bild übersetzen möchten, könnte der Text wie folgt lauten:\n\n\"Hidden Markov Modelle\"\n\nEine mögliche Übersetzung wäre:\n\n\"Hidden-Markov-Modelle\"\n\nEs gibt jedoch keinen weiteren Text im Bild. \n\nSollten Sie den englischen Text aus einem Video übersetzen, könnte ich Ihnen helfen, wenn Sie den Text bereitstellen. \n\nBitte lassen Sie mich wissen, wenn ich Ihnen sonst noch irgendwie helfen kann."
+    ]
+  },
+  "0:41:19.316": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:41:39.516": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:43:42.732": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "The image shows a diagram with the title \"Hidden Markov Models\" and a video of a man. The diagram illustrates a sequence of hidden states and observations over time.\n\nTo translate the intended meaning of the English spoken transcript into German, we need to understand the context of the diagram.\n\nThe diagram shows:\n- $h_0, h_1, h_2, h_3, h_4$ as hidden states\n- $x_1, x_2, x_3, x_4$ as observations\n- The observations are: \"the\", \"yellow\", \"house\", \"closed\"\n\nGiven that there is no spoken transcript provided in the text prompt, I will translate the title and the labels of the diagram.\n\nTitle: \"Hidden Markov Modelle\"\n\nLabels:\n- hidden states: \"versteckte Zustände\"\n- observations: \"Beobachtungen\"\n\nHowever, since the actual task is to translate the spoken transcript and no transcript is provided, I will assume a basic translation based on common Hidden Markov Model explanations.\n\n\"Hidden Markov Models\" is translated to \"Hidden Markov Modelle\".\n\nCommon phrases that might be used in a lecture about Hidden Markov Models include:\n- \"Ein Hidden Markov Model ist ein statistisches Modell...\"\n- \"Die versteckten Zustände...\"\n- \"Die Beobachtungen...\"\n\nBut without the actual spoken words, only the title can be accurately translated.\n\n\nHidden Markov Modelle"
+    ]
+  },
+  "0:44:02.472": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:44:07.412": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:44:16.552": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:44:30.112": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:44:42.992": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "Modelos de Markov ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Verborgene Markov-Modelle"
+    ]
+  },
+  "0:44:58.632": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型"
+    ],
+    "es": [
+      "\"Modelos de Markov ocultos\" \n\n(Please let me know if you need any further assistance)\n\nHowever, I will provide a longer response as per the guidelines.\n\n## Step 1: Understand the context of the problem.\nThe problem seems to involve translating a lecture video transcript from English to Spanish, considering the context provided by the presentation slides.\n\n## Step 2: Identify the text to be translated.\nThe text to be translated is not explicitly provided, but based on the context, it seems that the translation of \"Hidden Markov Models\" and possibly related content is required.\n\n## Step 3: Translate the identified text.\n\"Hidden Markov Models\" translates to \"Modelos de Markov ocultos\" in Spanish.\n\nThe final answer is: \n\"Modelos de Markov ocultos\""
+    ],
+    "fr": [
+      "Modèles de Markov Cachés"
+    ],
+    "de": [
+      "Wie modelliere ich multimodale Daten, mehrere Datenströme?"
+    ]
+  },
+  "0:45:04.012": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi \n\nDiagram tersebut menunjukkan model Markov tersembunyi dengan beberapa keadaan tersembunyi dan pengamatan. \n\nKeadaan tersembunyi: $h_0, h_1, h_2, h_3, h_4$ \nPengamatan: $x_1, x_2, x_3, x_4$ \n\n$x_1$ = \"the\" \n$x_2$ = \"yellow\" \n$x_3$ = \"house\" \n$x_4$ = \"closed\" \n\nBagaimana cara memodelkan data multimodal, beberapa aliran data?"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型\n\n----\n\n\"the\"、\"yellow\"、\"house\"、\"closed\"\n\n----\n\n\"the\"：$x_1$\n\n\"yellow\"：$x_2$\n\n\"house\"：$x_3$\n\n\"closed\"：$x_4$\n\n----\n\n$h_0$、$h_1$、$h_2$、$h_3$、$h_4$ \n\n----\n\n(hidden states)\n\n----\n\n(observations)\n\n----\n\n(Time)\n\n----\n\n：\n\n如何对多模态数据和多数据流进行建模？"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov cachés"
+    ],
+    "de": [
+      "Wie modelliere ich multimodale Daten, mehrere Datenströme?"
+    ]
+  },
+  "0:45:08.892": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model Markov Tersembunyi"
+    ],
+    "th": [
+      "โมเดลมาร์คอฟที่ซ่อนอยู่"
+    ],
+    "zh": [
+      "隐马尔可夫模型\n\n如何对多模态数据、多个数据流进行建模？"
+    ],
+    "es": [
+      "Modelos de Markov Ocultos"
+    ],
+    "fr": [
+      "Modèles de Markov cachés"
+    ],
+    "de": [
+      "Wie kann man multimodale Daten und mehrere Datenströme modellieren?"
+    ]
+  },
+  "0:45:11.492": {
+    "ja": [
+      "隠れマルコフモデル"
+    ],
+    "id": [
+      "Model-model Markov Tersembunyi"
+    ],
+    "th": [
+      "ซ่อนสถานะ\n\nการสังเกต\n\nเวลา\n\nวิธีการสร้างแบบจำลองข้อมูลหลายรูปแบบ สตรีมข้อมูลหลายแบบ?"
+    ],
+    "zh": [
+      "隐马尔可夫模型\n\n## Step 1: Understanding the Context\nThe image presents a lecture on Hidden Markov Models (HMMs), specifically focusing on how to model multimodal data with multiple data streams. The lecture includes diagrams illustrating the basic structure of HMMs and Factorial HMMs.\n\n## Step 2: Identifying Key Concepts\n- **Hidden Markov Models (HMMs):** These are statistical models used to represent systems that can be in one of a finite number of states. The system can change state over time, and each state can generate an observation.\n- **Factorial HMMs:** An extension of HMMs that allows for multiple underlying state sequences (or streams of information) that evolve over time and jointly determine the observations.\n\n## Step 3: Translating the Title\nThe title to be translated is \"Hidden Markov Models.\"\n\n## 4: Providing the Translation\nThe translation of \"Hidden Markov Models\" into Chinese is:\n\n\n隐马尔可夫模型"
+    ],
+    "es": [
+      "Cómo modelar datos multimodales, múltiples flujos de datos."
+    ],
+    "fr": [
+      "Modèles de Markov Cachés \n\ndiagramme du modèle de Markov caché\n\nétats cachés\n\nobservations\n\n\"the\"\n\n\"yellow\"\n\n\"house\"\n\n\"closed\"\n\nTemps \n\n Comment modéliser des données multimodales, \nplusieurs flux de données ? \n\n Modèles de Markov Cachés \n\ndiagramme du modèle de Markov caché\n\n- Modèle Factoriel HMM :\n    - $h_t$ et $v_t$ représentent deux types différents d'informations de fond, \n    chacun avec sa propre histoire\n    - Les observations $x_t$ dépendent des deux processus cachés\n- Paramètres du modèle :\n    - $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t, v_t)$"
+    ],
+    "de": [
+      "Wie kann man multimodale Daten und mehrere Datenströme modellieren?"
+    ]
+  },
+  "0:45:17.832": {
+    "ja": [
+      "階乗隠れマルコフモデル"
+    ],
+    "id": [
+      "Model HMM Faktorial \n- $h_t$ dan $v_t$ mewakili dua jenis informasi latar belakang yang berbeda, masing-masing dengan sejarahnya sendiri \n- Pengamatan $x_t$ bergantung pada kedua proses tersembunyi \n- Parameter model: \n- $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$"
+    ],
+    "th": [
+      "แฟกทอเรียล HMM \n\n- h_t และ v_t แทนข้อมูลพื้นหลังสองประเภทที่แตกต่างกัน แต่ละประเภทมีประวัติของตัวเอง\n- การสังเกต x_t ขึ้นอยู่กับกระบวนการที่ซ่อนอยู่ทั้งสอง\n- พารามิเตอร์ของแบบจำลอง:\n- p(v_(t+1) | v_t), p(h_(t+1) | h_t), p(x_t | h_t, v_t)"
+    ],
+    "zh": [
+      "因子隐马尔可夫模型： \n- \\( h_t \\) 和 \\( v_t \\) 代表两种不同类型的背景信息，每种都有自己的历史\n- 观测值 \\( x_t \\) 依赖于两个隐藏过程\n- 模型参数：\n- \\( p(v_{t+1}|v_t) \\)，\\( p(h_{t+1}|h_t) \\)，\\( p(x_t|h_t, v_t) \\)"
+    ],
+    "es": [
+      "Modelo de Markov oculto factorial \n\n- Modelo de Markov oculto factorial:\n  - $h_t$ y $v_t$ representan dos tipos diferentes de información de fondo, cada uno con su propia historia\n  - Las observaciones $x_t$ dependen de ambos procesos ocultos\n- Parámetros del modelo:\n  - $p(v_{t+1} | v_t), p(h_{t+1} | h_t), p(x_t | h_t, v_t)$"
+    ],
+    "fr": [
+      "Modèle HMM factoriel \n\n- Le HMM factoriel :\n    - $h_t$ et $v_t$ représentent deux types différents d'informations de fond, chacun avec sa propre histoire\n    - Les observations $x_t$ dépendent des deux processus cachés\n- Paramètres du modèle :\n    - $p(v_{t+1}|v_t)$, $p(h_{t+1}|h_t)$, $p(x_t|h_t, v_t)$"
+    ],
+    "de": [
+      "Faktorisches HMM:\n\n- $h_t$ und $v_t$ stellen zwei verschiedene Arten von Hintergrundinformationen dar, jede mit ihrer eigenen Geschichte\n- Beobachtungen $x_t$ hängen von beiden verborgenen Prozessen ab\n\n- Modellparameter:\n- $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$"
+    ]
+  },
+  "0:45:23.292": {
+    "ja": [
+      "階乗隠れマルコフモデル"
+    ],
+    "id": [
+      "Model HMM Faktorial \n- $h_t$ dan $v_t$ mewakili dua jenis informasi latar belakang yang berbeda, masing-masing dengan sejarahnya sendiri \n- Pengamatan $x_t$ bergantung pada kedua proses tersembunyi \n- Parameter model: \n- $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$"
+    ],
+    "th": [
+      "แฟกทอเรียล HMM \n\n- h_t และ v_t แทนข้อมูลพื้นหลังสองประเภทที่แตกต่างกัน แต่ละประเภทมีประวัติของตัวเอง \n- การสังเกต x_t ขึ้นอยู่กับกระบวนการที่ซ่อนอยู่ทั้งสอง \n\n- พารามิเตอร์ของแบบจำลอง \n  - p(v_(t+1) | v_t), p(h_(t+1) | h_t), p(x_t | h_t, v_t)"
+    ],
+    "zh": [
+      "因子隐马尔可夫模型：\n\n- $h_t$ 和 $v_t$ 代表两种不同类型的背景信息，每种都有自己的历史\n- 观测值 $x_t$ 依赖于两个隐藏过程\n\n模型参数：\n- $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t, v_t)$"
+    ],
+    "es": [
+      "Modelo de Markov oculto factorial \n\n- Modelo de Markov oculto factorial:\n  - $h_t$ y $v_t$ representan dos tipos diferentes de información de fondo, cada uno con su propia historia\n  - Las observaciones $x_t$ dependen de ambos procesos ocultos\n- Parámetros del modelo:\n  - $p(v_{t+1} | v_t), p(h_{t+1} | h_t), p(x_t | h_t, v_t)$"
+    ],
+    "fr": [
+      "Modèle HMM factoriel\n\n• Modèle HMM factoriel :\n    - $h_t$ et $v_t$ représentent deux types différents d'informations de fond, chacun avec sa propre historique\n    - Les observations $x_t$ dépendent des deux processus cachés\n\n• Paramètres du modèle :\n    - $p(v_{t+1} | v_t)$, $p(h_{t+1} | h_t)$, $p(x_t | h_t, v_t)$"
+    ],
+    "de": [
+      "Faktorielle HMM:\n\n- $h_t$ und $v_t$ stellen zwei verschiedene Arten von Hintergrundinformationen dar, jede mit ihrer eigenen Geschichte\n- Beobachtungen $x_t$ hängen von beiden verborgenen Prozessen ab\n\n- Modellparameter:\n- $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$"
+    ]
+  },
+  "0:45:41.792": {
+    "ja": [
+      "階乗隠れマルコフモデル\n\n階乗HMM：\n- $h_t$と$v_t$は、それぞれ独自の履歴を持つ2種類の背景情報を表す\n- 観測値$x_t$は、両方の隠れプロセスに依存する\n- モデルパラメータ：\n  - $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t, v_t)$"
+    ],
+    "id": [
+      "HMM Faktorial\n\n- $h_t$ dan $v_t$ mewakili dua jenis informasi latar belakang yang berbeda, masing-masing dengan sejarahnya sendiri\n- Pengamatan $x_t$ bergantung pada kedua proses tersembunyi\n\nParameter model:\n- $p(v_{t+1} | v_t)$, $p(h_{t+1} | h_t)$, $p(x_t | h_t, v_t)$"
+    ],
+    "th": [
+      "โมเดลซิปเปอร์โบลทซ์มันน์"
+    ],
+    "zh": [
+      "阶乘隐马尔可夫模型\n\n- $h_t$ 和 $v_t$ 代表两种不同类型的背景信息，每种都有自己的历史\n- 观测值 $x_t$ 取决于两个隐藏过程\n\n模型参数：\n- $p(v_{t+1}|v_t)$，$p(h_{t+1}|h_t)$，$p(x_t|h_t, v_t)$"
+    ],
+    "es": [
+      "No hay texto en inglés proporcionado para traducir. Sin embargo, puedo traducir el texto visible en las imágenes.\n\nDiapositiva 1:\n\"Factorial HMM\"\n\n*   Factorial HMM:\n    *   $h_t$ y $v_t$ representan dos tipos diferentes de información de fondo, cada uno con su propia historia.\n    *   Las observaciones $x_t$ dependen de ambos procesos ocultos.\n*   Parámetros del modelo:\n    *   $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$\n\nDiapositiva 2:\n\"El cierre de Boltzmann\"\n\n*   Ambas corrientes tienen una \"memoria\" ($h_t$ y $v_t$)\n*   Parámetros del modelo:\n    *   $p(h_{t+1}|h_t), p(x_t|h_t)$\n    *   $p(v_{t+1}|v_t,h_{t+1}), p(y_t|h_t)$\n\nTraducción:\n\nDiapositiva 1:\n\"Modelo oculto de Markov (HMM) Factorial\"\n\n*   HMM Factorial:\n    *   $h_t$ y $v_t$ representan dos tipos diferentes de información de contexto, cada uno con su propia historia.\n    *   Las observaciones $x_t$ dependen de ambos procesos ocultos.\n*   Parámetros del modelo:\n    *   $p(v_{t+1}|v_t), p(h_{t+1}|h_t), p(x_t|h_t,v_t)$\n\nDiapositiva 2:\n\"El cierre de Boltzmann\"\n\n*   Ambas corrientes tienen una \"memoria\" ($h_t$ y $v_t$)\n*   Parámetros del modelo:\n    *   $p(h_{t+1}|h_t), p(x_t|h_t)$\n    *   $p(v_{t+1}|v_t,h_{t+1}), p(y_t|h_t)$\n\nSin embargo, si se proporciona el texto, puedo dar una respuesta más precisa."
+    ],
+    "fr": [
+      "Modèle Factoriel HMM :\n\n- Les $h_t$ et $v_t$ représentent deux types différents d'informations de fond, chacun avec sa propre histoire\n- Les observations $x_t$ dépendent des deux processus cachés\n\nParamètres du modèle :\n- $p(v_{t+1} | v_t)$, $p(h_{t+1} | h_t)$, $p(x_t | h_t, v_t)$"
+    ],
+    "de": [
+      "Keine Übersetzung erforderlich, da der Text leer ist."
+    ]
+  },
+  "0:45:57.892": {
+    "ja": [
+      "ボルツマンジッパー"
+    ],
+    "id": [
+      "Kantor Teknologi Bahasa \nUniversitas Carnegie Mellon"
+    ],
+    "th": [
+      "ทั้งสองสายมี \"หน่วยความจำ\" (ht​ และ vt​)\n\nพารามิเตอร์ของโมเดล:\n- p(ht+1​|ht​), p(xt​|ht​)\n- p(vt+1​|vt​,ht+1​), p(yt​|ht​)"
+    ],
+    "zh": [
+      "玻尔兹曼拉链"
+    ],
+    "es": [
+      "La cremallera de Boltzmann\n\nObservaciones de video\nEstados de visemas\nEstados de fonemas de audio\nObservaciones espectrales de audio\n\nAmbos flujos tienen una \"memoria\" (ht​ y vt​)\n\nParámetros del modelo:\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)"
+    ],
+    "fr": [
+      "Le Zippeur de Boltzmann"
+    ],
+    "de": [
+      "Der Boltzmann-Zipper\n\nBeide Datenströme haben ein \"Gedächtnis\" (ht und vt)\n\nModellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)\n\nÜbersetzung:\n \nDer Boltzmann-Zipper\n\nBeide Datenströme haben ein \"Gedächtnis\" (ht und vt)\n\nModellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)\n\nGerman:\nDer Boltzmann-Zipper\n\nBeide Datenströme haben ein \"Gedächtnis\" (ht und vt)\n\nModellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)"
+    ]
+  },
+  "0:46:06.172": {
+    "ja": [
+      "ボルツマンジッパー\n\n両方のストリームには「メモリ」（$h_t$と$v_t$）がある\n\nモデルパラメータ:\n- $p(h_{t+1}|h_t)$、$p(x_t|h_t)$\n- $p(v_{t+1}|v_t, h_{t+1})$、$p(y_t|h_t)$"
+    ],
+    "id": [
+      "Kantong zip Boltzmann"
+    ],
+    "th": [
+      "ทั้งสองสายมี \"หน่วยความจำ\" (ht​ และ vt​)\n- พารามิเตอร์ของโมเดล:\n    - p(ht+1​|ht​), p(xt​|ht​)\n    - p(vt+1​|vt​,ht+1​), p(yt​|ht​)"
+    ],
+    "zh": [
+      "玻尔兹曼拉链"
+    ],
+    "es": [
+      "La cremallera de Boltzmann\n\nObservaciones de video\nEstados de viseme\nEstados de fonemas de audio\nObservaciones espectrales de audio\n\nAmbos flujos tienen una \"memoria\" (ht​ y vt​)\n\nParámetros del modelo:\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)"
+    ],
+    "fr": [
+      "Le Zippeur de Boltzmann"
+    ],
+    "de": [
+      "Der Boltzmann-Zipper\n\nBeide Datenströme haben ein \"Gedächtnis\" (ht und vt)\n\nModellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)"
+    ]
+  },
+  "0:46:47.208": {
+    "ja": [
+      "ボルツマン・ジッパー"
+    ],
+    "id": [
+      "Kantor Teknologi Bahasa \nUniversitas Carnegie Mellon"
+    ],
+    "th": [
+      "ทั้งสองสายมี \"หน่วยความจำ\" ( $h_t$ และ $v_t$ )\n\nพารามิเตอร์ของโมเดล:\n- $p(h_{t+1}|h_t)$ , $p(x_t|h_t)$\n- $p(v_{t+1}|v_t,h_{t+1})$ , $p(y_t|h_t)$"
+    ],
+    "zh": [
+      "玻尔兹曼拉链"
+    ],
+    "es": [
+      "La cremallera de Boltzmann\n\nObservaciones de video\nEstados de viseme\nEstados de fonemas de audio\nObservaciones espectrales de audio\n\nAmbos flujos tienen una \"memoria\" (ht​ y vt​)\n\nParámetros del modelo:\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)"
+    ],
+    "fr": [
+      "Le zipper de Boltzmann"
+    ],
+    "de": [
+      "Der Boltzmann-Zipper \n\n- Beide Datenströme haben ein „Gedächtnis“ (ht und vt)\n- Modellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)"
+    ]
+  },
+  "0:46:51.028": {
+    "ja": [
+      "ボルツマンジッパー\n\n両方のストリームには「メモリ」（$h_t$と$v_t$）がある\n\nモデルパラメータ:\n- $p(h_{t+1}|h_t)$、$p(x_t|h_t)$\n- $p(v_{t+1}|v_t,h_{t+1})$、$p(y_t|h_t)$"
+    ],
+    "id": [
+      "Kantor Teknologi Bahasa \nUniversitas Carnegie Mellon"
+    ],
+    "th": [
+      "ทั้งสองสตรีมมี \"หน่วยความจำ\" (ht​ และ vt​)\n\nพารามิเตอร์ของโมเดล:\n- p(ht+1​|ht​), p(xt​|ht​)\n- p(vt+1​|vt​,ht+1​), p(yt​|ht​)"
+    ],
+    "zh": [
+      "玻尔兹曼拉链"
+    ],
+    "es": [
+      "El zipper de Boltzmann\n\nObservaciones de video\nEstados de visemas\nEstados de fonemas de audio\nObservaciones espectrales de audio\n\nAmbos flujos tienen una \"memoria\" (ht​ y vt​)\n\nParámetros del modelo:\n\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)"
+    ],
+    "fr": [
+      "Le Zippeur de Boltzmann"
+    ],
+    "de": [
+      "Der Boltzmann-Zipper \n\n- Beide Datenströme haben ein \"Gedächtnis\" (ht und vt)\n- Modellparameter:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)\n\nBeobachtungen im Video\nVisem-Zustände\nAudio-Phonem-Zustände\nAudio-Spektralbeobachtungen"
+    ]
+  },
+  "0:46:55.848": {
+    "ja": [
+      "ボルツマンジッパー\n\nビデオ観測\nビセム状態\nオーディオフォネーム状態\nオーディオスペクトル観測\n\n両方のストリームには「メモリ」（$h_t$と$v_t$）がある\n\nモデルパラメータ:\n- $p(h_{t+1}|h_t), p(x_t|h_t)$\n- $p(v_{t+1}|v_t,h_{t+1}), p(y_t|h_t)$\n\n---\n\nカッペルドHMM\n\nビデオ観測\nビセム状態\nオーディオフォネーム状態\nオーディオスペクトル観測\n\nボルツマンジッパーより優れている点: より柔軟。視覚も聴覚もどちらかを「優先」しない。\n- $p(h_{t+1}|v_t,h_t), p(x_t|h_t)$\n- $p(v_{t+1}|v_t,h_t), p(y_t|h_t)$"
+    ],
+    "id": [
+      "Keduanya memiliki \"memori\" (ht​ dan vt​)\n\nParameter model:\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)"
+    ],
+    "th": [
+      "ทั้งสองสายมี \"หน่วยความจำ\" (ht และ vt)\nพารามิเตอร์ของโมเดล:\n- p(ht+1|ht), p(xt|ht)\n- p(vt+1|vt,ht+1), p(yt|ht)"
+    ],
+    "zh": [
+      "玻尔兹曼拉链（Boltzmann Zipper）和耦合隐马尔可夫模型（Coupled HMM）\n\n## 玻尔兹曼拉链\n\n### 概述\n玻尔兹曼拉链是一种用于多模态融合（如音频和视觉）模型。下面是其关键组成部分：\n\n- **视频观测** ($y_t$)：视频帧在时间 $t$ 的观测数据。\n- **视觉状态** ($v_t$)：视频在时间 $t$ 的隐藏状态。\n- **音频音素状态** ($h_t$)：音频在时间 $t$ 的隐藏状态。\n- **音频谱观测** ($x_t$)：音频在时间 $t$ 的观测数据。\n\n### 模型参数\n- $p(h_{t+1} | h_t)$：音频状态转移概率。\n- $p(x_t | h_t)$：音频观测生成概率。\n- $p(v_{t+1} | v_t, h_{t+1})$：视觉状态转移概率，依赖于音频状态。\n- $p(y_t | h_t)$：视频观测生成概率。\n\n### 特点\n- 两个信息流（音频和视觉）各自有“记忆”（$h_t$ 和 $v_t$）。\n- 模型假设音频和视觉信息相互依赖，通过共享隐藏状态进行交互。\n\n## 耦合隐马尔可夫模型\n\n### 概述\n耦合隐马尔可夫模型（Coupled HMM）是一种增强的多模态融合模型，相比玻尔兹曼拉链，它具有更高的灵活性。\n\n### 关键改进\n- **平等性**：模型不对音频或视觉信息进行优先级区分，而是平等耦合。\n- **模型参数**：\n  - $p(h_{t+1} | v_t, h_t)$：音频状态转移概率，依赖于视觉状态。\n  - $p(x_t | h_t)$：音频观测生成概率。\n  - $p(v_{t+1} | v_t, h_t)$：视觉状态转移概率，依赖于音频状态。\n  - $p(y_t | h_t)$：视频观测生成概率。\n\n### 优势\n- **更灵活**：允许在音频和视觉之间进行更自由的交互，没有固定优先级。\n\n## 总结\n- **玻尔兹曼拉链**：通过独立的隐藏状态建模多模态交互，具有结构化的依赖关系。\n- **耦合隐马尔可夫模型**：更强调多模态之间的耦合和灵活性，适用于复杂场景下的多模态融合。"
+    ],
+    "es": [
+      "The Boltzmann Zipper\n\nLa cremallera de Boltzmann\n\n## Step 1: Understanding the Context\nThe provided text appears to be a lecture transcript about a model or algorithm referred to as \"The Boltzmann Zipper\" and \"The Coupled HMM.\" The task is to translate the intended meaning of the English spoken transcript into Spanish, focusing on the content related to these models.\n\n## Step 2: Identifying Key Components\nThe key components mentioned include:\n- The Boltzmann Zipper\n- The Coupled HMM (Hidden Markov Model)\n- Model parameters and their relationships\n\n## 3: Translating Key Terms and Concepts\n- \"The Boltzmann Zipper\" translates to \"La cremallera de Boltzmann\"\n- \"The Coupled HMM\" translates to \"El HMM acoplado\"\n- \"Video observations\" translates to \"observaciones de video\"\n- \"Viseme states\" translates to \"estados de viseme\"\n- \"Audio phoneme states\" translates to \"estados de fonema de audio\"\n- \"Audio spectral observations\" translates to \"observaciones espectrales de audio\"\n\n## 4: Understanding Model Parameters\nThe model parameters mentioned include:\n- $p(h_{t+1}|h_t), p(x_t|h_t) - p(v_{t+1}|v_t,h_{t+1}), p(y_t|h_t)$ for The Boltzmann Zipper\n- $p(h_{t+1}|v_t,h_t), p(x_t|h_t) - p(v_{t+1}|v_t,h_t), p(y_t|h_t)$ for The Coupled HMM\n\n## 5: Translation of Model Descriptions\n- \"Both streams have a 'memory' ($h_t$ and $v_t$)\" translates to \"Ambas corrientes tienen una 'memoria' ($h_t$ y $v_t$)\"\n- \"Advantage over Boltzmann Zipper: More flexible, because neither vision nor sound is 'privileged' over the other.\" translates to \"Ventaja sobre Boltzmann Zipper: Más flexible, porque ni la visión ni el sonido están 'privilegiados' sobre el otro.\"\n\n## 6: Final Translation\nGiven the complexity and the specific request for only the translation without the original text, the focus is on translating the title and key concepts accurately.\n\nThe final answer is: \nLa cremallera de Boltzmann"
+    ],
+    "fr": [
+      "Le Boltzmann Zipper \n\nLes deux flux ont une \"mémoire\" (ht​ et vt​)\n\nParamètres du modèle :\n- p(ht+1​∣ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht+1​), p(yt​∣ht​)\n\nThe Coupled HMM \n\nAvantage par rapport au Boltzmann Zipper : Plus flexible, car ni la vision ni le son n'est \"privilégié\" par rapport à l'autre.\n\n- p(ht+1​∣vt​,ht​), p(xt​∣ht​)\n- p(vt+1​∣vt​,ht​), p(yt​∣ht​)"
+    ],
+    "de": [
+      "Der Boltzmann-Zipper und das Coupled HMM sind zwei Modelle, die zur Analyse von Audio- und Videodaten verwendet werden.\n\nDer Boltzmann-Zipper (oben) besteht aus zwei separaten Sequenzen: \n- Eine für visuelle Beobachtungen (oben) \n- Eine für akustische Beobachtungen (unten).\n\nJede Sequenz hat ihren eigenen Zustand ($v_t$ für Video und $h_t$ für Audio) und eine Beobachtung ($y_t$ für Video und $x_t$ für Audio). \nDie Zustände $v_t$ und $h_t$ werden als \"Speicher\" für jeden Datenstrom bezeichnet.\n\nDie Modellparameter sind:\n- $p(h_{t+1}|h_t)$ \n- $p(x_t|h_t)$ \n- $p(v_{t+1}|v_t, h_{t+1})$\n- $p(y_t|h_t)$ \n\nDer Coupled HMM (unten) hat einen ähnlichen Aufbau, \ner ist jedoch flexibler, da weder das visuelle noch das akustische Signal gegenüber dem anderen priorisiert wird.\nDie Modellparameter sind:\n- $p(h_{t+1}|v_t, h_t)$ \n- $p(x_t|h_t)$ \n- $p(v_{t+1}|v_t, h_t)$ \n- $p(y_t|h_t)$"
+    ]
+  }
+}

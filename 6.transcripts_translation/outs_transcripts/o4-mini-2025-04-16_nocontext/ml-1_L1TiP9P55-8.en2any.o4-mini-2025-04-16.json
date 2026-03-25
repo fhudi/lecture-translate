@@ -1,0 +1,264 @@
+{
+  "0:37:06.216": {
+    "ja": "私が本当に話したかったのは動的ベイズモデルでした。",
+    "zh": "我真正想讨论的是动态贝叶斯模型。",
+    "th": "สิ่งที่ฉันอยากพูดถึงจริงๆ คือแบบจำลองเบย์เซียนไดนามิก",
+    "id": "Hal yang sebenarnya ingin saya bicarakan adalah model Bayesian dinamis.",
+    "es": "Lo que realmente quiero hablar es el modelo bayesiano dinámico.",
+    "fr": "Ce dont je voulais vraiment parler, c’était le modèle bayésien dynamique.",
+    "de": "Worüber ich eigentlich sprechen wollte, war das dynamische Bayessche Modell."
+  },
+  "0:37:11.900": {
+    "ja": "さらに一歩進めて、このモデルのマルチモーダル拡張についても見ていきましょう。現在では多くの人がニューラルアーキテクチャを用いており、グラフィカルモデルをマルチモーダル処理に用いる例は減っています。しかし興味深いのは、ニューラルのマルチモーダルアーキテクチャでしばしば見られる多くの概念が、実は初期のグラフィカルモデル由来だということです。ダイナミックベイジアンネットワーク（DBN）は、ベイジアンネットワークをコアに持ち、時系列や連続データの依存関係を表現できるように拡張したものです。典型的には一次マルコフ仮定（一時の状態のみを記憶し、過去の観測は要約によって扱う）が用いられ、現在の状態だけで過去の全てを要約できるように構築されます。この再帰構造は、ある意味リカレントニューラルネットワークと似ています。\n\n各時刻で同じベイジアンネットワーク構造を用い、前時刻の隠れ変数からの影響を次時刻に渡す形で繰り返しモデル化します。もし二つの変数間にエッジ（依存関係）がなければ、（条件付きで）独立とみなします。有名な例として隠れマルコフモデル（HMM）があり、音声認識では古くから用いられています。観測変数Xと、生成元としての離散的な隠れ変数Hを考えると、Hは0～20などの値を取り得るクラスタリング機構と見なせます。語彙をX、状態クラスタをHとすると、H=kのときにどの単語が生成されやすいかをガウス分布などでモデル化し、系列全体で最尤生成するHの配列を推定します。\n\nまた、マルチモーダルに拡張するアイデアとして、オーディオとリップ運動（ビジョン）を同時に生成するモデルがあります。音声のフォネーム状態と、口の形（ビズーム）状態が、互いに依存し合うように構造化することで、より表現力豊かな時系列モデルとなります。BoltzmannジッパーやカップルHMM（音声も視覚も対等に扱い、互いに依存し合う構造）などがその例です。\n\n次に生成モデルについてです。ニューラル生成モデルは、判別的モデルと対比して「生成モデル」と呼ばれますが、厳密に同じ定義が用いられるわけではありません。トランスフォーマーやBERT以前によく用いられたのは、オートエンコーダ＋デコーダの構造で、画像や文章を潜在空間Zに圧縮し、デコーダで再構成します。しかし単純なオートエンコーダでは、Z空間がクラスタ化しすぎ、クラスタ間に訓練データのない領域が生まれてしまい、線形補間しても意味のある生成が行えません。これを解決するのが変分オートエンコーダ（VAE）で、潜在変数Zを多変量ガウス分布に従うようKLダイバージェンスで制約します。こうするとZ空間全体に訓練データが「広がる」ため、任意のZから有効な生成が可能になります。\n\nさらに敵対的生成ネットワーク（GAN）は、生成器（Generator）と識別器（Discriminator）を競わせることで、よりリアルな合成データを得る手法です。識別器は本物か偽物かを判別し、その出力を最大化し、生成器は識別器を騙すように損失を最小化します。条件付きGAN（cGAN）では、クラスラベルや他の外部情報を条件として与えることで、特定のカテゴリに対応した生成が可能です。識別器を多タスク化し、リアル・フェイク判定とクラス推定の両方を行わせることで、条件付けを確実に強制できます。\n\nまた、Bidirectional GAN（BiGAN）のように、データから潜在Zへのエンコーダも同時に学習し、画像→Z→画像の双方向マッピングを可能にする手法もあります。そして、CycleGANなどのサイクル一貫性損失を用いることで、ペアデータが存在しないドメイン間変換（例：写真↔スケッチ）も学習できます。未対応ペアのデータでも、A→B→Aの再構成誤差を小さくするサイクル損失により、対応付けのないまま変換モデルを構築できます。\n\n以上が本講義の生成モデルと確率的グラフィカルモデルの概要です。次週は最適化手法や変分拡張などを詳しく扱います。",
+    "zh": "让我们更进一步，开始研究该模型在多模态方面的扩展。尽管如今许多人更倾向于使用神经网络架构，近年来图形模型在多模态处理中的使用有所减少，但有趣的是，许多多模态神经网络架构中的概念其实都源自图形模型。动态贝叶斯网络（DBN）是在贝叶斯网络基础上的扩展，用于表示时序或序列数据的依赖关系。典型的动态贝叶斯网络采用一阶马尔可夫假设——类似于“海底总动员”里那条短期记忆的鱼，它只能记住当前状态，而以往的观测只以状态的形式被保留；这样当前状态就能概括过去所有观测。一阶马尔可夫假设只依赖上一步，二阶则依赖前两步，以此类推。\n\n这与LSTM中随时间演变的递归结构类似。如果把它画成神经网络，就是从左到右的有向前馈。常见的例子是隐马尔可夫模型（HMM），在语音识别中被广泛应用。HMM由观测 X 和未观测的隐变量 H 组成，H 类似于聚类器，可取离散值（如1到20），生成过程为先从 H 生成词，再从词生成观测。若观测是连续的，也可用高斯分布建模条件分布。H 对应不同聚类中心，不同 H 值对应不同词的生成概率。HMM 通过推断生成整个词序列最可能的隐状态序列。\n\n在多模态场景下，可将音频和口型（视觉）同时建模：假设有一个隐表示生成音频（如音素状态），同时生成視素状态（viseme）。你可以设计依赖关系，比如音素驱动視素，或者更对称地让二者互相影响，这就类似于 Boltzmann 拉链模型或耦合 HMM。\n\n接下来介绍生成模型。深度学习社区通常将同时建模联合分布的模型称为生成模型，与判别模型相对。早期在 Transformer 和 BERT 之前，常见的是自编码器——将输入映射到低维潜在空间 Z，再用解码器重构输入。但普通自编码器的 Z 空间往往聚类严重，聚类间缺少训练数据，让线性插值生成失效。变分自编码器（VAE）通过强制 Z 服从多元高斯分布（用 KL 散度作为正则项），使潜在空间连续，可在任意点有效采样。\n\nGAN（生成对抗网络）则通过让生成器和判别器相互博弈，使生成数据更逼真。判别器学习区分真/假样本并最大化正确率，生成器则学习“欺骗”判别器，最小化判别器的判别得分。条件 GAN（cGAN）在输入中加入标签或其它条件信息，使得生成器能够按照指定条件生成样本。为了确保条件不被忽略，判别器可以被设计成多任务，既判别真伪，又预测条件标签。\n\nBidirectional GAN（BiGAN）则同时学习从数据到潜在空间的编码器，让模型在两端都可逆。CycleGAN 则利用循环一致性损失，在无配对数据的两域间进行图像翻译（如照片↔素描），通过 A→B→A 和 B→A→B 的重建损失来保证转换的一致性。\n\n以上就是本次讲座关于生成模型与概率图模型的概览。下周我们将深入探讨最优化方法和变分扩展。",
+    "th": "เราจะก้าวไปอีกขั้นและเริ่มพิจารณาการขยายไปสู่มัลติโมดัลของโมเดลนี้ ซึ่งน่าสนใจมากที่แม้ทุกวันนี้ผู้คนจะหันไปใช้สถาปัตยกรรมเชิงประสาทมากขึ้น แต่แนวคิดหลายอย่างในสถาปัตยกรรมมัลติโมดัลเชิงประสาทก็ได้รับแรงบันดาลใจมาจากสถาปัตยกรรมในกราฟิกัลโมเดลตั้งแต่แรกเริ่ม\n\nไดนามิกเบย์เซียนเน็ตเวิร์ก (DBN) คือเบย์เซียนเน็ตเวิร์กที่ขยายเพื่อแทนความสัมพันธ์เชิงลำดับหรือเชิงเวลา โดยทั่วไปจะใช้สมมติฐานมาร์คอฟอันดับหนึ่ง (one-step Markov) ว่ารัฐปัจจุบันสรุปสิ่งที่เคยสังเกตมาทั้งหมดแล้ว อนุญาตให้โมเดลแต่ละก้าวเชื่อมต่อกันเหมือน RNN ในแง่การป้อนต่อเนื่อง\n\nตัวอย่างที่รู้จักกันดีคือ Hidden Markov Model (HMM) ที่มีตัวแปรสังเกต X และตัวแปรแฝง H ซึ่งมักเป็นจำนวนเต็มตั้งแต่ 1–20 เปรียบเสมือนกลไกจัดกลุ่ม (clustering) คำ พอรู้สถานะ H ก็สุ่มคำตามความน่าจะเป็นนั้น แล้วสร้าง X ออกมา\n\nเมื่อมองมัลติโมดัล เราอาจมีสตรีมเสียงและภาพริมฝีปาก (viseme) สร้างโดยตัวแปรแฝงร่วมกัน เช่น โฟนีมเป็นตัวกำกับวิซีม หรือตัวเลือกว่าจะให้ทั้งสองอิงกันและกันแบบ Boltzmann zipper หรือ “coupled HMM”\n\nต่อไปพูดถึงโมเดลเชิงสร้างสรรค์ (Generative Model) ซึ่งในวงการแบ่งเป็น generative vs discriminative โมเดลคลาสสิกก่อน Transformer/BERT คือ autoencoder + decoder แต่ autoencoder ธรรมดา Z-space มักกระจุกตัว ทำให้เราแทบสอดเส้นตรงระหว่างจุดไม่ได้\n\nVariational Autoencoder (VAE) จึงบังคับให้ Z กระจายตามพหุ-แกสซินด้วย KL loss เพื่อให้ Z-space ต่อเนื่อง สามารถ sampling และ interpolation ได้\n\nGAN (Generative Adversarial Network) มี generator และ discriminator แข่งขันกัน Generator พยายามสร้างภาพลวงให้ discriminator ตัดสินผิด ส่วน discriminator พยายามจำแนกจริง/ปลอม พร้อมปรับพารามิเตอร์ให้คะแนนสูงสุด cGAN (conditional GAN) เพิ่มเงื่อนไข (เช่น ป้ายกำกับคลาส) เพื่อให้สร้างภาพตามเงื่อนไขนั้นได้\n\nBidirectional GAN (BiGAN) เพิ่ม encoder สำหรับย้อนกลับจาก X → Z ทำให้เรียนรู้ mapping สองทาง และ CycleGAN ใช้ loss แบบ “วนรอบ” (A→B→A) ในโดเมนที่ไม่มีภาพคู่ ทำให้เรียนรู้การแปลภาพระหว่างโดเมนโดยไม่ต้องใช้ข้อมูลจับคู่\n\nสรุปคือวันนี้เราเริ่มทำความเข้าใจ probabilistic graphical models และ generative models เพื่อเตรียมต่อยอดเรื่องการ optimize และ variational extension ในสัปดาห์หน้า",
+    "id": "Kita akan melangkah lebih jauh dan mulai melihat ekstensi multimodal dari model ini. Meskipun belakangan banyak orang menggunakan arsitektur neural dan graphical model untuk multimodal semakin jarang digunakan, konsep dalam arsitektur neural multimodal sebenarnya terinspirasi dari graphical model klasik.\n\nDynamic Bayesian Network (DBN) adalah Bayesian Network yang diperluas untuk merepresentasikan dependensi sekuensial atau temporal. Biasanya DBN menggunakan asumsi Markov orde satu—hanya keadaan saat ini yang diingat dan merangkum semua observasi sebelumnya. Struktur ini mirip dengan RNN: setiap langkah waktu menggunakan network yang sama dengan variabel acak yang sama, ditambah ketergantungan ke langkah waktu sebelumnya.\n\nContoh terkenalnya adalah Hidden Markov Model (HMM), banyak dipakai di speech. Ada variabel observasi X dan variabel tersembunyi H (latent) yang biasanya bernilai diskrit, misalnya 1–20. H berperan seperti mesin klastering: ketika H=k, kata-kata tertentu lebih mungkin dihasilkan. Seri keadaan H inilah yang kita inferensikan dari observasi.\n\nUntuk multimodal, kita bisa punya stream audio dan stream viseme (gerakan bibir). Kita desain variabel laten untuk fonem dan visem, lalu tentukan bagaimana mereka saling tergantung. Misalnya model Boltzmann zipper atau coupled HMM di mana audio dan visual saling terhubung secara bolak-balik.\n\nBerikutnya adalah generative models dalam neural. Sebelum Transformer/BERT populer, orang sering pakai autoencoder + decoder: encode input ke ruang laten Z, lalu decode kembali. Tapi ruang Z biasa sering terklaster, menyulitkan interpolasi. Variational Autoencoder (VAE) memaksakan distribusi multivariat Gaussian pada Z (dengan KL loss), sehingga ruang Z menjadi lebih halus dan dapat di-sample serta di-interpolasi.\n\nGAN (Generative Adversarial Network) punya generator dan discriminator yang saling berkompetisi. Discriminator belajar membedakan data nyata vs sintetis, generator mencoba menipu discriminator. Di cGAN (conditional GAN), kita tambahkan kondisi (misal label kelas) agar generator menghasilkan data sesuai kondisi.\n\nAda juga Bidirectional GAN (BiGAN) yang menambahkan encoder dari X ke Z, memungkinkan mapping dua arah. CycleGAN menggunakan cycle consistency loss (A→B→A) untuk belajar translasi antar domain tanpa data berpasangan (unpaired).\n\nDemikian overview probabilistic graphical models dan generative models. Minggu depan kita dalami optimisasi dan variational extension lebih jauh.",
+    "es": "Vamos a dar un paso más y ver también las extensiones multimodales de estos modelos. Aunque hoy en día mucha gente opta por arquitecturas neuronales y el uso de modelos gráficos para multimodal es menos frecuente, lo interesante es que muchos de los conceptos en arquitecturas neuronales multimodales se inspiraron en los modelos gráficos tempranos.\n\nLa Red Bayesiana Dinámica (DBN) es básicamente una red bayesiana que permite representar dependencias secuenciales o temporales usando la suposición de Markov de primer orden: el estado actual resume toda la historia. Esta recurrencia es muy parecida a una red neuronal recurrente (RNN) de izquierda a derecha.\n\nUn ejemplo clásico es el Modelo de Markov Oculto (HMM), muy usado en reconocimiento de voz. Tenemos la observación X y una variable oculta H (estado latente) de valores discretos, por ejemplo de 1 a 20. H funciona como un mecanismo de clustering: para cada H=k hay ciertas palabras con mayor probabilidad de generarse. La inferencia consiste en encontrar la secuencia de estados H más probable dada la secuencia de observaciones.\n\nPara multimodal podemos considerar audio y visemas (movimiento de labios). Diseñamos variables latentes para fonemas y visemas y definimos cómo se influyen mutuamente: modelos como el Boltzmann zipper o el HMM acoplado (coupled HMM) tratan el audio y la visión de forma simétrica.\n\nLuego están los modelos generativos. Antes de Transformers y BERT, se usaban autoencoders + decoders: codificar entrada a un espacio latente Z y luego reconstruirla. Pero el espacio Z suele estar muy agrupado, dificultando la interpolación. El Variational Autoencoder (VAE) impone que Z siga una distribución gaussiana multivariante (mediante pérdida KL), haciendo el espacio latente continuo y fácil de muestrear.\n\nGANs (Generative Adversarial Networks) tienen un generador y un discriminador que compiten: el discriminador aprende a distinguir real de sintético, y el generador aprende a engañarlo. El cGAN (GAN condicional) añade una condición (por ejemplo, la etiqueta de clase) para controlar qué tipo de muestra se genera. El discriminador puede multitarea: distinguir real/falso y al mismo tiempo predecir la clase.\n\nEl BiGAN (Bidirectional GAN) añade un encoder desde X a Z, aprendiendo un mapeo inverso. El CycleGAN usa una pérdida de consistencia cíclica (A→B→A) para traducir entre dominios sin datos pareados.\n\nEste es el panorama de modelos gráficos probabilísticos y generativos. La próxima semana profundizaremos en optimización y extensiones variacionales.",
+    "fr": "Allons un pas plus loin et examinons aussi les extensions multimodales de ces modèles. Aujourd’hui, beaucoup utilisent des architectures neuronales, et les modèles graphiques sont moins courants pour le multimodal, mais ce qui est intéressant, c’est que nombre de concepts des architectures neuronales multimodales sont inspirés des modèles graphiques.\n\nLe réseau bayésien dynamique (DBN) est un réseau bayésien permettant de représenter des dépendances séquentielles ou temporelles via l’hypothèse de Markov d’ordre un : l’état courant résume tout l’historique. Cette structure récursive rappelle les RNN, un passage de gauche à droite.\n\nUn exemple classique est le modèle de Markov caché (HMM), très utilisé en reconnaissance vocale. On y a une observation X et une variable latente H (généralement discrète, par ex. 1 à 20). H agit comme un mécanisme de clustering : pour chaque valeur H=k, certaines unités (mots ou traits) ont plus de probabilité d’être générées. L’inférence revient à trouver la séquence d’états la plus vraisemblable.\n\nPour le multimodal, on peut modéliser simultanément l’audio et les visèmes (mouvements des lèvres). On définit des variables latentes pour les phonèmes et les visèmes, et leur dépendance mutuelle : des modèles comme le Boltzmann zipper ou le HMM couplé (coupled HMM) traitent vision et son de manière symétrique.\n\nEnsuite, les modèles génératifs. Avant l’avènement de Transformers/BERT, on utilisait autoencodeur + décodeur : encoder une entrée en un espace latent Z, puis la reconstruire. Mais Z est souvent trop clusterisé, empêchant l’interpolation. Le Variational Autoencoder (VAE) impose que Z suive une distribution gaussienne multivariée (via une perte de divergence KL), rendant l’espace latent continu et sampleable.\n\nLes GAN (Generative Adversarial Networks) opposent un générateur et un discriminateur : le discriminateur apprend à distinguer réel/faux, le générateur à le tromper. Le cGAN (GAN conditionnel) ajoute une condition (par ex. la classe) pour contrôler la génération. Le discriminateur peut être multitâche : distinguer vrai/faux et prédire la condition.\n\nLe BiGAN (Bidirectional GAN) ajoute un encodeur de X vers Z, apprenant le mappage inverse. Le CycleGAN utilise une perte de cohérence cyclique (A→B→A) pour la traduction inter-domaines sans données appariées.\n\nVoilà pour les modèles graphiques probabilistes et les modèles génératifs. La semaine prochaine, nous détaillerons les méthodes d’optimisation et les extensions variationnelles.",
+    "de": "Gehen wir einen Schritt weiter und betrachten auch die multimodalen Erweiterungen dieses Modells. Obwohl heute viele auf neuronale Architekturen setzen und grafische Modelle im Multimodalbereich seltener eingesetzt werden, ist interessant, dass viele Konzepte in multimodalen neuronalen Architekturen bereits aus frühen grafischen Modellen stammen.\n\nEin dynamisches Bayes’sches Netzwerk (DBN) ist im Kern ein Bayes’sches Netzwerk, das sequentielle oder zeitliche Abhängigkeiten abbildet. Üblicherweise wird eine Markov-Annahme erster Ordnung verwendet – der aktuelle Zustand fasst die gesamte Vorgeschichte zusammen. Diese rekursive Struktur ähnelt RNNs, wenn man sie als Vorwärtsfluss von links nach rechts betrachtet.\n\nEin bekanntes Beispiel ist das Hidden-Markov-Modell (HMM), weit verbreitet in der Spracherkennung. Man hat Beobachtungen X und eine latente Variable H (diskret, z. B. Werte 1–20). H agiert wie ein Clustering-Mechanismus: Für jeden Zustand H=k gibt es eine Wahrscheinlichkeitsverteilung über Wörter. Die Inferenz besteht darin, die Zustandsfolge zu finden, die die beobachteten Wörter am wahrscheinlichsten erzeugt.\n\nFür Multimodalität kann man Audio und Viseme (Lippenbewegung) gemeinsam modellieren. Man definiert latente Zustände für Phoneme und Viseme und bestimmt ihre wechselseitigen Abhängigkeiten – etwa im Boltzmann-Zipper oder im gekoppelten HMM (coupled HMM), wo beide Modalitäten gleichberechtigt interagieren.\n\nNun zu generativen Modellen. Vor Transformer und BERT nutzte man oft Autoencoder + Decoder: Man kodiert eine Eingabe in einen latenten Raum Z und rekonstruiert sie. Dieser Raum ist jedoch oft stark geclustert, was Interpolation schwierig macht. Der Variational Autoencoder (VAE) zwingt Z, einer multivariaten Gauß-Verteilung zu folgen (über eine KL-Strafe), wodurch der latente Raum kontinuierlich und samplbar wird.\n\nGANs (Generative Adversarial Networks) arbeiten mit einem Generator und einem Diskriminator im Wettstreit: Der Diskriminator lernt, echt vs. synthetisch zu unterscheiden, der Generator versucht, ihn zu täuschen. Ein conditional GAN (cGAN) fügt eine Bedingung (z. B. Klassenlabel) hinzu, damit gezielt nach Vorgabe generiert wird. Der Diskriminator kann multitasking sein und sowohl echt/falsch entscheiden als auch die Klasse vorhersagen.\n\nBiGAN (Bidirectional GAN) ergänzt einen Encoder von X nach Z, um die inverse Abbildung zu lernen. CycleGAN nutzt zyklische Konsistenzverluste (A→B→A), um Domänen ohne gepaarte Daten zu übersetzen.\n\nDamit haben wir einen Überblick über probabilistische grafische Modelle und generative Modelle. In der nächsten Sitzung vertiefen wir Optimierungsmethoden und variationale Erweiterungen.",
+    "slide_text": []
+  },
+  "": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:39:58.420": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:07.840": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:18.620": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:25.308": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:44.888": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:03.116": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:19.316": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:39.516": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:43:42.732": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:02.472": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:07.412": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:16.552": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:30.112": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:42.992": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:58.632": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:04.012": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:08.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:11.492": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:17.832": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:23.292": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:41.792": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:57.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:06.172": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:47.208": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:51.028": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:55.848": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  }
+}

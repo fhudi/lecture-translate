@@ -1,0 +1,669 @@
+{
+  "0:37:06.216": {
+    "ja": [
+      "「私が本当に話したいのは、動的ベイズについてです。」"
+    ],
+    "id": [
+      "\"Hal yang sebenarnya ingin saya bicarakan adalah Bayesian dinamis.\""
+    ],
+    "th": [
+      "\"สิ่งที่ผมอยากจะพูดถึงจริง ๆ คือ ไดนามิกเบย์เซียน\""
+    ],
+    "zh": [
+      "\"我今天主要想讨论的是动态贝叶斯。\""
+    ],
+    "es": [
+      "\"Lo que realmente quiero hablar es sobre el Bayesiano dinámico.\""
+    ],
+    "fr": [
+      "\"La véritable chose dont je veux parler concerne le bayésien dynamique.\""
+    ],
+    "de": [
+      "\"Das eigentliche Thema, über das ich sprechen möchte, ist das dynamische Bayes-Modell.\""
+    ]
+  },
+  "0:37:11.900": {
+    "ja": [
+      "「さらに一歩進んで、こちらのマルチモーダルな拡張も見てみましょう。とても興味深いと思います。マルチモーダルではありますが、最近は多くの人がニューラルアーキテクチャを採用しており、近年はグラフィカルモデルはあまり使用されていません。しかし、マルチモーダルのニューラルアーキテクチャで見られる多くの概念は、実はグラフィカルモデルからインスパイアされたものです。動的ベイジアンネットワークは、ベイジアンネットワークの中核を持っていますが、連続的な依存関係や時間的な依存関係を表現することができます。典型的な動的ベイジアンネットワークは、1次マルコフ仮定と呼ばれるものを持ちます。これは、現在の状態が過去のすべての観測を要約できなければならないということです。2次、3次と拡張することができます。ダイナミックな側面は、LSTMのように、時間とともに変化し、進化する可能性があるということです。また、有向グラフなので、左から右へのフィードフォワードと見ることができます。 \n\n例として、時間ステップごとに、通常は同じベイジアンネットワークを使用します。同じランダム変数を使用するだけです。繰り返しになりますが、LSTMに似ています。 \n\nそして、これらの変数間の依存関係を設計することで、知識をモデル化することができます。 \n\nそして、隠れマルコフモデルはどうでしょうか。スピーチの分野では、これはよく知られています。観測と証拠があり、この部分だけを見ると、ナイーブベイズのように見えます。しかし、隠れマルコフモデルは、通常、Hが潜在変数であるように実装されます。 \n\nそして、Hは、0から20までの数値を取ることができるランダム変数です。 \n\nそして、生成プロセスは、Hから単語を生成するように設計されています。 \n\nそして、Hはクラスタリング機械と見ることができます。 \n\nそして、ガウシアンモデルで実装されることがよくあります。 \n\nそして、隠れ状態は、高次元の何かを強制的に離散的なランダム変数にすることができます。 \n\nそして、隠れマルコフモデルは、マルチモーダルデータにも拡張できます。 \n\nそして、マルチモーダルデータには、さまざまな拡張があります。 \n\nそして、因子分析HMM、ボルツマンマシン、ボルツマンジッパー、結合HMMなどがあります。 \n\nそして、これらは、マルチモーダルデータをモデル化する方法を提供します。 \n\nそして、Pythonライブラリを使用して、これらのモデルを簡単に実装できます。 \n\nそして、これらのモデルを最適化する方法についても次回に説明します。 \n\nそして、データ生成についてもお話ししたいと思います。 \n\nそして、エンコーダーとデコーダーを訓練する方法についてもお話しします。 \n\nそして、生成モデルと確率的グラフィカルモデルについてもお話しします。」"
+    ],
+    "id": [
+      "\"adalah langkah lebih lanjut dan juga mulai melihat perluasan multimodal dari itu karena itu cukup menarik untuk melihat multimodal meskipun sekarang hari-hari ini di mana banyak orang pergi dengan arsitektur neural dan tahun-tahun terakhir orang tidak menggunakan model grafis sebanyak untuk neural untuk multimodal tetapi yang benar-benar menarik adalah banyak konsep yang Anda lihat dalam arsitektur neural multimodal sebenarnya terinspirasi dari awal dari beberapa arsitektur yang kita miliki dalam model grafis jadi jaringan Bayesian dinamis adalah jaringan Bayesian pada intinya tetapi memungkinkan untuk mewakili ketergantungan berurutan atau temporal jika data Anda bersifat temporal atau hanya ketergantungan berurutan ketergantungan yang khas dari jaringan Bayesian dinamis akan memiliki apa yang disebut asumsi Markov orde pertama asumsi Markov orde pertama kadang-kadang saya membuat lelucon itu sedikit seperti menemukan Nemo seperti ada ikan yang memiliki memori jangka pendek sangat pendek dia hanya ingat keadaan saat ini dan mungkin tidak semua pengamatan sebelumnya yang dia miliki jadi mereka akan memiliki keadaan saat ini pengetahuan mereka sampai sekarang tetapi pengamatan sebelumnya akan terlupakan hanya keadaan yang diingat dan itu berarti bahwa keadaan saat ini harus dapat meringkas semua yang telah diamati sampai masa lalu itu asumsi orde pertama orde kedua berarti bahwa Anda diizinkan untuk pergi dua kali sebelumnya dan kemudian Anda dapat membayangkan ada perpanjangan dari itu aspek yang menarik dari dinamis adalah seperti dalam LSTM itu dapat berubah dan berkembang seiring waktu dan diarahkan jadi itu seperti umpan maju dari kiri ke kanan jika Anda ingin jika Anda ingin meletakkannya dalam kata-kata dari representasi neural contoh di sini adalah bahwa pada setiap langkah waktu itu jaringan Bayesian yang sama biasanya jaringan Bayesian yang sama variabel acak yang sama hanya saja saya menambahkan seperti perulangan seperti terasa seperti perulangan sedikit seperti jaringan neural berulang dan jadi Anda akan menambahkan ini dan ini juga dirancang karena pengetahuan Anda akan tahu variabel mana yang cenderung memiliki ketergantungan antara mereka. Dan itu yang ingin Anda modelkan. Jika tidak ada yang di antara dua variabel, maka Anda berpikir mereka independen atau setidaknya independen bersyarat. independen. Dan yang paling terkenal dari jaringan Bayesian dinamis ini apa? Orang-orang dalam pidato akan tahu jawabannya. Idunya di sini saya memiliki pengamatan saya bukti dan jika Anda melihat bagian ini saja ini terlihat banyak seperti naive Bayes tetapi perbedaannya di sini seringkali model Markov tersembunyi akan dilakukan sedemikian rupa sehingga tidak diamati seperti H akan menjadi variabel laten sesuatu yang kita cari Dan jika Anda bertanya saya berpikir tentang itu hampir seperti pengelompokan seperti bagian ini hampir pengelompokan jadi X mungkin semua kata yang diucapkan di dunia katakanlah dan H ini H adalah variabel acak dapat mengambil nilai numerik biasanya dari 0 sampai 20 katakanlah dari 1 sampai 20 dan itu adalah proses generatif jadi kata-kata perlu dihasilkan dari H dan H keadaan satu dua tiga dua puluh jadi Anda bisa melihat H sebagai mesin pengelompokan dan sebenarnya sering diimplementasikan dengan model Gaussian mungkin jika ini kontinu kita bisa mengatakan distribusi bersyarat dapat dimodelkan dengan model Gaussian dengan Anda bisa membayangkan hanya pengelompokan jadi rata-rata cluster jika h sama dengan satu apa kata-kata yang cenderung dihasilkan ketika h sama dengan satu apa kata-kata yang cenderung dihasilkan ketika h sama dengan dua apa kata-kata yang cenderung dihasilkan ketika h sama dengan tiga itu pandangan dari keadaan tersembunyi ini memaksa sesuatu yang dapat sangat berdimensi tinggi mereka memaksa itu menjadi variabel acak yang sering diskrit dan tidak terlihat dan model Markov tersembunyi dan banyak dari kita akan melihat ketika kita melihat model grafis lainnya seperti bidang acak bersyarat banyak variabel ini seperti variabel laten ini atau bahkan variabel yang diamati kadang-kadang variabel laten atau diamati mereka sering dapat digunakan sebagai cara untuk mengelompokkan untuk meringkas informasi dan jadi jika Anda melihat ini itu mengatakan hai jika saya ingin menghasilkan rumah kuning tertutup itu kalimat bahasa Inggris yang aneh apa urutan keadaan yang akan memungkinkan saya untuk menghasilkan kata-kata ini itu yang model Markov tersembunyi akan mencoba untuk menyimpulkan ketika melihatnya dari perspektif inferensi. Jadi dan jadi dan kita akan melihat sedikit lebih banyak berikutnya tentang bagaimana mengoptimalkan ini tetapi dan Anda juga dapat melihat ini sebagai kita akan membahas beberapa di antaranya sedikit lebih banyak pada bagian optimasi berikutnya. Tetapi bagian yang menarik adalah saya akan memiliki beberapa yang diamati. Jadi saya memiliki lima variabel acak dan empat di antaranya diamati dan lima di antaranya tidak diamati. Dan idenya adalah jika saya dapat menyimpulkan probabilitas gabungan dari ini jika saya memiliki model dengan probabilitas gabungan maka saya dapat mulai dapat mengatakan apa probabilitas a p dari h1 p dari h1 diberikan x1 x2 x3 dan x4. Jadi itu akan menjadi satu cara dan itu akan menjadi marginalisasi untuk h1. Atau Anda dapat mendefinisikan ini sebagai p dari h0 h1 h2 h3 h4 diberikan x1 x2 x3 x4 dan Anda dapat membayangkan bahwa jika saya telah belajar probabilitas gabungan saya dapat menjawab pertanyaan itu. persamaan. Ini pertanyaan yang umum Anda lakukan. Tapi apa jika saya memiliki data multimodal? Apa jika saya memiliki beberapa aliran data? Dan izinkan saya berbagi dengan Anda beberapa strategi untuk memfaktorkan ini. Dan sebenarnya yang pertama disebut HMM faktorial. Ini tidak multimodal dengan sendirinya tetapi ini pandangan yang menarik. Dan di sini dikatakan saya hanya memiliki satu aliran pengamatan tetapi saya memiliki sebenarnya menghasilkan aliran informasi ini saya memiliki lebih dari satu proses lebih dari satu faktor yang menghasilkan ini. Jadi itu perpanjangan yang menarik. Sekarang yang menarik adalah pergi lebih jauh dan melihatnya dalam arti multimodal seperti sekarang saya juga dapat melihat bahwa saya memiliki satu set pengamatan seperti Anda melihat bibir saya dan kemudian Anda juga memiliki audio. Jadi ya lihat bibir saya lihat audio dan apa yang menghasilkan ini? Dan jadi Anda melihat... uh ada representasi laten yang menghasilkan audio mungkin beberapa jenis keadaan fonem dan mungkin ada beberapa keadaan visem dan mungkin Anda mengatakan dan itu keputusan desain Anda mengatakan fonem benar-benar satu yang menghasilkan visem saya ingin saya ingin mengucapkan sesuatu seperti fonem dan jadi untuk mengucapkannya saya perlu membentuk mulut saya dengan cara tertentu dan jadi dalam kasus ini saya memiliki dependen saya memiliki dependen Jadi ini zipper Boltzmann. Kita akan berbicara tentang mesin Boltzmann sebentar lagi tetapi ini zipper Boltzmann. Karena mesin Boltzmann dan kemudian perpanjangan dari itu adalah zipper Boltzmann. Dan sekarang Anda juga memiliki apa yang disebut HMN yang digabungkan. Ini memiliki keuntungan atas zipper lebih fleksibel karena tidak ada visi atau suara yang istimewa. Keduanya tergantung pada yang sebelumnya jadi VT tergantung pada HT dan HT plus tergantung pada VT. Jadi itu digabungkan dalam arti itu bukan membuat direktur ini tapi digabungkan. Dan kemudian Anda dapat bertanya kepada diri sendiri jika Anda ingat LSTM multimodal terinspirasi dengan ini bahwa Anda dapat memiliki berapa banyak kopling yang Anda inginkan? Berapa banyak H benar-benar mempengaruhi VT berapa banyak V mempengaruhi H dan berapa banyak VT plus satu tergantung pada VT. Ini parameter saya pikir mereka disebut alpha dan beta. Jadi saya ingin memberikan Anda beberapa intuisi. Jika Anda melihat berita baiknya juga adalah ada banyak perpustakaan Python yang ada untuk dengan mudah mengimplementasikan model-model ini dan mengoptimalkannya. Dan kita akan berbicara sedikit lebih banyak tentang optimasi minggu depan. Saya juga ingin berbicara dalam bagian terakhir kuliah hari ini tentang menghasilkan data karena apa yang benar-benar bagus di sini adalah bahwa saya juga dapat mungkin akhirnya dengan ini diberikan seed menghasilkan data atau saya dapat mungkin memiliki dengan awal mulai menghasilkan sisa kalimat. Dan jadi tetapi kita juga memiliki ada keluarga model dalam arsitektur jaringan neural yang juga dirancang untuk menghasilkan. dan mereka beberapa di antaranya akan memodelkan distribusi gabungan dan jadi dalam arti itu mereka adalah model generatif dalam arti generatif versus diskriminatif karena mereka juga memodelkan gabungan beberapa mungkin atau mungkin tidak memiliki pemodelan eksplisit dari distribusi gabungan tetapi komunitas mulai menyebutnya model neural generatif begitu saja meskipun mungkin mereka tidak memodelkan distribusi gabungan jadi terminologi yang paling banyak orang ikuti tetapi beberapa penulis akan menggunakan istilah generatif meskipun tidak memodelkan distribusi gabungan saya tidak dapat melakukan apa-apa tetapi mari kita hanya ingin memberi tahu Anda tentang terminologi ini jadi apa berdasarkan apa yang kita pelajari sampai sekarang dan saya ingin belajar model generatif saya ingin dapat menghasilkan kalimat dan katakanlah untuk satu detik karena banyak dari Anda mungkin langsung melompat ke transformer dan kelahiran dan semua jadi mungkin lebih awal dari itu sebelum kelahiran dan semua apa yang akan menjadi cara yang menarik dan salah satu caranya adalah belajar melatih decoder. Jadi idenya di sini dari autoencoder adalah saya mengambil gambar saya membawanya ke ruang laten seperti yang diharapkan biasanya jauh lebih kecil dimensinya daripada input dan kemudian saya memiliki decoder mencoba untuk membuat ulang input ini. Dan jadi ini bisa menjadi sesuatu yang saya dapat melatih dan kemudian saya dapat membayangkan menjatuhkan encoder dan kemudian hanya pergi berkeliling atau satu hal yang saya dapat lakukan adalah menyandikan gambar dan kemudian mulai bermain-main dengan Z saya seperti menyandikan kucing dan kemudian mulai menambahkannya untuk pergi mungkin saya ingin mengubahnya menjadi anjing katakanlah saya mengambil gambar kucing saya mendapatkan Z saya mendapatkan gambar anjing saya mendapatkan Z lain saya mendapatkan dua Z itu dan saya ingin mengubah dari satu ke yang lain dan secara teori saya dapat melakukan itu dengan cara interpolasi linier antara keduanya dan kemudian mulai mensintesis dan mengubah antara keduanya. Ini secara teori saya dapat melakukan itu. Dalam prakteknya ruang laten jika Anda melakukan TSNE pada itu Anda akan melihat dan Anda mungkin telah melihatnya sendiri ketika Anda memplot TSNE jika Anda hanya menggunakan jaringan neural biasa sering kali sangat berkelompok. Mereka sangat berkelompok dan mereka tidak ada ruang di sini yang hanya memiliki seperti sangat kurang diwakili oleh data pelatihan. Dan jadi itu masalah karena tiba-tiba ruang laten ini tidak sangat bagus untuk generatif karena apa yang berarti untuk generasi karena tiba-tiba saya tidak dapat bekerja antara dua titik karena saya mungkin tidak beruntung. Saya mungkin"
+    ],
+    "th": [
+      "เป็นขั้นตอนต่อไปและยังดูส่วนขยายหลายรูปแบบของเรื่องนี้ด้วย เพราะว่ามันน่าสนใจมากที่จะดูหลายรูปแบบ แม้ว่าในปัจจุบันคนส่วนใหญ่ใช้โครงข่ายประสาทเทียมและเมื่อเร็ว ๆ นี้คนไม่ได้ใช้แบบจำลองกราฟิกมากนักสำหรับหลายรูปแบบ แต่สิ่งที่น่าสนใจคือหลายแนวคิดที่คุณเห็นในโครงข่ายประสาทเทียมหลายรูปแบบแท้จริงแล้วได้รับแรงบันดาลใจจากสถาปัตยกรรมเหล่านี้ที่เรามีในแบบจำลองกราฟิก ดังนั้น เครือข่ายแบบเบย์แบบไดนามิกเป็นเครือข่ายแบบเบย์ที่มีการออกแบบมาเพื่อแสดงการขึ้นต่อกันของลำดับหรือเวลา หากข้อมูลของคุณเป็นข้อมูลลำดับหรือเพียงแค่การขึ้นต่อกัน เครือข่ายแบบเบย์แบบไดนามิกทั่วไปจะมีการ 가정แบบมาร์คอฟลำดับที่ 1 การ 가정แบบมาร์คอฟลำดับที่ 1 เป็นบางครั้งที่ฉันพูดติดตลกว่ามันเหมือนกับการหาเนโม ที่ปลามีความจำระยะสั้นมาก มันจำสถานะปัจจุบันของมันและอาจจะไม่จำการสังเกตก่อนหน้านี้ทั้งหมด ดังนั้น พวกเขาจะมีสถานะปัจจุบันและความรู้จนถึงตอนนี้ แต่การสังเกตก่อนหน้านี้จะลืมไปแล้ว มีเพียงสถานะที่ถูกจำเท่านั้น ดังนั้นหมายความว่าสถานะปัจจุบันจะต้องสามารถสรุปทุกสิ่งที่ได้รับการสังเกตจนถึงอดีตได้ นั่นคือ 가정แบบมาร์คอฟลำดับที่ 1 ลำดับที่ 2 หมายความว่าคุณสามารถย้อนกลับไปได้ 2 ครั้ง และคุณสามารถจินตนาการว่ามีการขยายออกไป มีส่วนที่น่าสนใจแบบไดนามิก เช่นเดียวกับ LSTM มันสามารถเปลี่ยนแปลงและพัฒนาไปตามเวลา และมันถูกกำหนดทิศทาง ดังนั้นมันเป็นรูปแบบการป้อนข้อมูลจากซ้ายไปขวา หากคุณต้องการใส่ลงในคำศัพท์ของโครงข่ายประสาทเทียม ตัวอย่างที่นี่คือในแต่ละขั้นตอนเวลา เครือข่ายแบบเบย์เดียวกัน โดยปกติแล้วจะเป็นเครือข่ายแบบเบย์เดียวกัน ตัวแปรสุ่มเดียวกัน เพียงแต่ฉันเพิ่มการเกิดซ้ำ เช่นเดียวกับโครงข่ายประสาทเทียมที่เกิดซ้ำ และคุณจะเพิ่มสิ่งเหล่านี้ และนี่ก็ออกแบบมาเช่นกัน เพราะด้วยความรู้คุณจะรู้ว่าตัวแปรใดมีแนวโน้มที่จะมีการขึ้นต่อกันระหว่างกัน และนั่นคือสิ่งที่คุณต้องการสร้างแบบจำลอง หากไม่มีสิ่งใดอยู่ระหว่างตัวแปรสองตัว คุณคิดว่าพวกมันเป็นอิสระหรืออย่างน้อยก็เป็นอิสระแบบมีเงื่อนไข และแบบจำลองที่น่าสนใจที่สุดของเครือข่ายแบบเบย์แบบไดนามิกคืออะไร ผู้ที่ทำงานเกี่ยวกับคำพูดจะรู้คำตอบ แนวคิดที่นี่คือฉันมีการสังเกต หลักฐาน และหากคุณดูส่วนนี้ มันดูเหมือนกับ naive Bayes มาก แต่ความแตกต่างที่นี่คือแบบจำลองมาร์คอฟที่ซ่อนอยู่มักจะทำในลักษณะที่ไม่สามารถสังเกตได้ เช่น H จะเป็นตัวแปรแฝง สิ่งที่เรากำลังมองหา และหากคุณถามฉัน ลองคิดถึงมันเกือบเหมือนกับการจัดกลุ่ม เช่น ส่วนนี้เกือบเหมือนกับการจัดกลุ่ม ดังนั้น X อาจเป็นคำพูดทั้งหมดในโลก และ H คือตัวแปรสุ่ม มันสามารถรับค่าตัวเลขได้ตั้งแต่ 0 ถึง 20 ลองพูดตั้งแต 1 ถึง 20 และมันเป็นกระบวนการสร้าง ดังนั้นคำพูดจำเป็นต้องถูกสร้างขึ้นจาก H และ H มีสถานะ 1, 2, 3, ..., 20 และคุณสามารถเห็น H เป็นเครื่องจัดกลุ่ม และแท้จริงแล้วมันมักจะถูกนำมาใช้กับแบบจำลองเกาส์เซียน บางทีหากสิ่งเหล่านี้ต่อเนื่องกัน เราสามารถพูดได้ว่าการกระจายแบบมีเงื่อนไขสามารถสร้างแบบจำลองด้วยการกระจายเกาส์เซียน คุณจะสามารถจินตนาการได้เพียงแค่การจัดกลุ่ม ดังนั้นค่าเฉลี่ยของกลุ่ม หาก H เท่ากับ 1 คำพูดที่อาจจะถูกสร้างขึ้นเมื่อ H เท่ากับ 1 คืออะไร คำพูดที่อาจจะถูกสร้างขึ้นเมื่อ H เท่ากับ 2 คืออะไร คำพูดที่อาจจะถูกสร้างขึ้นเมื่อ H เท่ากับ 3 คืออะไร นั่นคือมุมมองหนึ่งของสถานะที่ซ่อนอยู่เหล่านี้ พวกเขาบังคับบางสิ่งที่อาจมีมิติสูง พวกเขาบังคับให้เป็นตัวแปรสุ่มเพียงตัวเดียว ซึ่งมักจะเป็นตัวแปรสุ่มแบบไม่ต่อเนื่อง และแบบจำลองมาร์คอฟที่ซ่อนอยู่และแบบจำลองกราฟิกอื่น ๆ อีกมากมาย ตัวแปรเหล่านี้ไม่ว่าจะเป็นตัวแปรแฝงหรือแม้แต่ตัวแปรที่สังเกตได้ มักจะสามารถใช้เป็นวิธีจัดกลุ่ม สรุปข้อมูล และดังนั้นหากคุณดูสิ่งนี้ มันบอกว่า ถ้าฉันสร้างประโยค ฉันสามารถสร้างประโยคที่มีความน่าจะเป็นได้ และแบบจำลองมาร์คอฟที่ซ่อนอยู่จะพยายามอนุมานได้ เมื่อดูจากมุมมองของการอนุมาน และเราจะดูเพิ่มเติมในสัปดาห์หน้าว่า�จะปรับให้เหมาะสมได้อย่างไร แต่คุณสามารถดูสิ่งนี้ได้ว่า ฉันมีการสังเกต ฉันมีตัวแปรสุ่ม 5 ตัว และ 4 ตัวแปรเป็นตัวแปรที่สังเกตได้ และ 5 ตัวแปรไม่สังเกตได้ และแนวคิดคือหากฉันสามารถอนุมานความน่าจะเป็นร่วมของสิ่งนี้ได้ หากฉันมีแบบจำลองที่มีความน่าจะเป็นร่วม ฉันสามารถเริ่มพูดได้ว่าความน่าจะเป็นของ H1 คืออะไร โดยให้ X1, X2, X3 และ X4 หรือฉันสามารถกำหนดสิ่งนี้เป็น P ของ H0, H1, H2, H3, H4 โดยให้ X1, X2, X3 และ X4 และคุณสามารถจินตนาการได้ว่าหากฉันเรียนรู้ความน่าจะเป็นร่วมของฉัน ฉันสามารถตอบคำถามนั้นได้ สมการ. นั่นเป็นคำถามทั่วไปที่คุณทำ แต่ถ้าฉันมีข้อมูลหลายรูปแบบ? หากฉันมีหลายกระแสข้อมูล? และให้ฉันแบ่งปันกับคุณบางกลยุทธ์ในการแยกตัวประกอบสิ่งนี้ และแท้จริงแล้ว อันดับแรกคือ HMM แบบแฟกทอเรียล นี่ไม่ใช่หลายรูปแบบในตัวเอง แต่เป็นมุมมองที่น่าสนใจ และที่นี่มันบอกว่าฉันมีการสังเกตแบบกระแสเดียว แต่ในความเป็นจริงแล้ว ฉันมีการสร้างกระแสข้อมูลนี้ มีมากกว่าหนึ่งกระบวนการ มีหลายปัจจัยที่สร้างสิ่งนี้ ดังนั้นนั่นคือส่วนขยายที่น่าสนใจ ตอนนี้สิ่งที่น่าสนใจคือการไปไกลกว่านี้และดูในหลายรูปแบบ เช่น ตอนนี้ฉันสามารถดูได้ว่าฉันมีการสังเกตชุดหนึ่ง เช่น ดูที่ริมฝีปากของฉัน แล้วคุณก็มีเสียงด้วย ดังนั้นใช่ ดูที่ริมฝีปากของฉัน ดูที่เสียง และอะไรที่สร้างสิ่งนี้ และคุณเห็น... มีตัวแทนแฝงบางตัวที่สร้างเสียง บางทีอาจเป็นสถานะโฟเนม และอาจมีสถานะวิเซม และบางทีคุณพูด และนั่นคือการตัดสินใจออกแบบ คุณพูดว่าโฟเนมเป็นตัวสร้างวิเซม ฉันต้องการออกเสียงบางอย่าง เช่น โฟเนม และเพื่อให้ออกเสียงฉันจำเป็นต้องกำหนดรูปร่างปากของฉันในลักษณะใดลักษณะหนึ่ง และดังนั้นในกรณีนี้ ฉันมีการขึ้นต่อกัน ฉันมีการขึ้นต่อกัน ดังนั้นนี่คือโบลต์ซมันน์ซิปเปอร์ เราจะพูดถึงโบลต์ซมันน์แมชชีนในภายหลัง แต่สิ่งนี้คือโบลต์ซมันน์ซิปเปอร์ เพราะโบลต์ซมันน์แมชชีนและส่วนขยายของมันคือโบลต์ซมันน์ซิปเปอร์ และตอนนี้คุณยังมีสิ่งที่เรียกว่า Coupled HMN มันเป็นข้อได้เปรียบเหนือซิปเปอร์ ยืดหยุ่นกว่า เพราะไม่มีวิสัยทัศน์หรือเสียงที่ได้รับสิทธิพิเศษ ทั้งสองอย่างขึ้นอยู่กับก่อนหน้านี้ ดังนั้น VT ขึ้นอยู่กับ HT และ HT+1 ขึ้นอยู่กับ VT ดังนั้นจึงควบคู่กันในแง่นั้น แทนที่จะทำให้มันตรงไปตรงมาแบบนี้ มันถูกควบคู่กัน และคุณสามารถถามตัวเองได้ หากคุณจำได้ว่า LSTM หลายรูปแบบได้รับแรงบันดาลใจจากสิ่งนี้ คุณสามารถมีการเชื่อมต่อได้มากน้อยเพียงใด H มีผลกระทบต่อ VT มากน้อยเพียงใด V มีผลกระทบต่อ H มากน้อยเพียงใด และ VT+1 ขึ้นอยู่กับ VT มากน้อยเพียงใด สิ่งเหล่านี้เป็นพารามิเตอร์ ฉันคิดว่าพวกเขาถูกเรียกว่า alpha และ beta ดังนั้นฉันจึงต้องการให้ความเข้าใจแก่คุณ หากคุณดูข่าวดีก็คือมีไลบรารี Python มากมายที่มีอยู่เพื่อนำมาใช้แบบจำลองเหล่านี้และปรับให้เหมาะสม และเราจะพูดถึงรายละเอียดเพิ่มเติมเกี่ยวกับการปรับให้เหมาะสมในสัปดาห์หน้า ฉันอยากจะพูดในส่วนสุดท้ายของบรรยายวันนี้เกี่ยวกับการสร้างข้อมูล เพราะสิ่งที่น่าสนใจมากที่นี่คือฉันสามารถสร้างข้อมูลได้ บางทีอาจมีเมล็ดพันธุ์ และสร้างข้อมูล หรือบางทีฉันอาจจะเริ่มสร้างประโยคที่เหลือ และดังนั้น แต่เราก็มี ครอบครัวของแบบจำลองในสถาปัตยกรรมโครงข่ายประสาทเทียมที่ออกแบบมาเพื่อสร้าง และบางส่วนของพวกเขาจะสร้างการกระจายร่วม และในแง่นั้นพวกเขาเป็นแบบจำลองการสร้างเทียบกับการแบ่งแยก เพราะพวกเขายังสร้างการกระจายร่วม บางส่วนอาจหรืออาจไม่สร้างการกระจายร่วมอย่างชัดเจน แต่ชุมชนเริ่มเรียกพวกเขาว่าแบบจำลองการสร้างประสาทเทียม แต่ถึงแม้ว่าพวกเขาอาจไม่สร้างการกระจายร่วม ฉันไม่สามารถทำอะไรกับคำศัพท์ได้ แต่เรามาดูรายละเอียดเพิ่มเติมเกี่ยวกับเรื่องนี้กัน และเราจะพูดถึงเรื่องนี้เพิ่มเติมในสัปดาห์หน้า และเรายังมี CycleGAN เป็นวิธีการแก้ปัญหานี้ ฉันจะไม่ลงรายละเอียดในตอนนี้เพราะเรื่องเวลา แต่แนวคิดของ CycleGAN คือการพูดว่าฉันมีรูปแบบหนึ่ง ฉันมีอีกรูปแบบหนึ่ง แต่ฉันไม่"
+    ],
+    "zh": [
+      "“这是一个进一步的步骤，我们也开始研究基于多模态扩展的内容，因为这很有趣。虽然现在很多人都在使用神经架构，但近年来人们在多模态方面使用图形模型的次数并不多。但是，有趣的是，在多模态神经架构中看到的许多概念实际上早已从图形模型中的一些架构中受到启发。所以，动态贝叶斯网络从本质上讲是一个贝叶斯网络，但它允许表示序列依赖或时间依赖，如果你的数据是时间序列或只是序列依赖。典型的动态贝叶斯网络将具有一阶马尔可夫假设，一阶马尔可夫假设有时我会开玩笑说，就像寻找小鳍鱼一样，那条鱼的记忆非常短，它只记得当前状态，也许不记得之前所有的观察。所以，它们会有当前状态，当前的知识到现在为止，但之前的观察已经被遗忘，只有状态被记住。所以，这意味着当前状态必须能够总结过去所有观察到的信息。那是 一阶的，二阶意味着你可以回溯两次，然后你可以想象有扩展。动态的有趣方面是，就像LSTM一样，它可以随时间变化和演化，并且是有方向的，所以它在某种意义上是，从左到右的，如果你想把它放在神经表示的词中的话。 \n\n例子这里是，在每个时间步长下，它通常是相同的贝叶斯网络，通常相同的贝叶斯网络，相同的随机变量，只是我会添加这个递归，就像它感觉像递归一样，有点像循环神经网络。你会添加这些，这也是出于设计，因为通过知识，你会知道哪些变量之间可能存在依赖关系。所以，如果两个变量之间没有任何东西，那么你认为它们是独立的或至少是条件独立的。 \n\n最著名的动态贝叶斯网络是什么？人们在语音中会知道答案。隐马尔可夫模型。 \n\n这里的想法是，我有我的观察，我的证据，如果你只看这部分，这看起来很像朴素贝叶斯，但区别在于，隐马尔可夫模型通常是以一种方式完成的，即它没有被观察到，比如H将是一个潜在变量，我们正在寻找的东西。 \n\n如果你们思考一下，几乎就像聚类一样。这部分几乎是聚类。所以，X可能是世界上所有的口语单词，H是一个随机变量，它可以取数值，从0到20，比如说。然后，它是一个生成过程。所以，单词需要从H中生成，H状态1，2，3到20。所以，你可以把H看作是一个聚类机器，事实上，它经常用高斯模型实现，如果这些是连续的，我们可以说条件分布可以用高斯模型建模，你可以想象聚类。所以，聚类均值，如果h等于1，什么单词可能被生成，当h等于1，什么单词可能被生成，当h等于2，什么单词可能被生成，当h等于3。 \n\n这是对这些隐藏状态的一种看法，它们强迫某些东西可能非常高维，它们强迫它成为这个随机变量，通常是离散的随机变量。所以，隐马尔可夫模型和很多，我们来看其他图形模型，如条件随机场，很多这些变量，如这些潜在变量，甚至有时观察到的变量，它们经常可以用作一种方式来聚类，总结信息。 \n\n所以，如果你看这个，它说，嘿，如果我要生成黄色房屋关闭，那是一个奇怪的英语句子，关闭是一个生动的词。是什么样的状态序列将允许我最有可能生成所有这些单词？这是隐马尔可夫模型试图推断的，当从推断的角度来看它时。 \n\n而且，我们下次会更详细地看如何优化这些模型。但是，你也可以把这个看作，我们将讨论一些优化部分下周。但有趣的是，我有一些观察。所以，我有五个，九个随机变量，四个是观察到的，五个是非观察到的。 \n\n而且，想法是，如果我能够推断出这个联合概率，如果我有一个具有联合概率的模型，那么我可以开始说出什么样的概率，P（h1）给定x1，x2，x3和x4。所以，那是一种方式，那将是边缘化h1。 \n\n或者，你可以把这个定义为P（h0，h1，h2，h3，h4）给定x1，x2，x3，x4，你可以想象，如果我已经学会了我的联合概率，我可以回答那个问题。 \n\n这是一个典型的查询，你会做的。但如果我有多模态数据怎么办？如果我有多流数据流呢？让我与你们分享一些分解这个的策略。 \n\n事实上，第一个被称为因子HMM。这一个本身并不是多模态的，但它是一个有趣的观点。 \n\n而且，这里说的是，我只有一个观察流，但事实上，生成这个信息流，我有不止一个过程，不止一个因素正在生成这个。 \n\n所以，这是一个有趣的扩展。现在，有趣的是，进一步研究它，以更具多模态的意义来看待它，就像现在我也可以看到一组观察结果，比如看着我的嘴唇，然后你也有音频。 \n\n所以，是的，看我的嘴唇，看音频，什么生成了这个？ \n\n所以，你看到... 呃，这里有一个潜在的表示正在生成音频，也许是某种音素状态，也许有一些视觉状态，也许你说，而且这是一个设计决定，你说音素真的是生成视觉状态，我想发音某件事情，所以我需要以某种方式塑造我的嘴巴。 \n\n所以，在这种情况下，我有一个依赖，我有一个依赖。所以，这是玻尔兹曼拉链。我们稍后再谈玻尔兹曼机器，但这是玻尔兹曼拉链。 \n\n而且，现在你也有所谓的耦合HMN。它比拉链更有优势，更灵活，因为视觉和声音都没有特权。它们都取决于前一个，所以VT取决于HT，HT + 1取决于VT。 \n\n所以，在这种意义上它是耦合的，而不是直接这样做，而是耦合的。然后，你可以问自己，如果你记住多模态LSTM是由这个启发的，你可以有多少耦合？H对VT的影响有多大，V对H的影响有多大，VT + 1对VT的影响有多大？ \n\n这些都是参数，我想它们被称为alpha和beta。所以，我想给你一些直觉。 \n\n如果你看，好的消息也是，有很多Python库可以轻松实现这些模型并优化它们。我们下周将更多地讨论优化。 \n\n我还想在今天讲座的最后一部分讨论生成数据，因为这里真的很好，我也可以最终用这个，根据种子生成数据，或者我也可以从开始生成句子的其余部分。 \n\n而且，但是我们也有，神经网络架构中也有一个模型家族是为生成而设计的。而且，它们中的一些将建模联合分布，所以在某种意义上，它们是生成模型，而不是判别模型，因为它们也建模联合。 \n\n一些可能或多或少有明确的建模联合分布，但社区开始称它们为生成神经模型，尽管如此。 \n\n所以，基于我们到目前为止所学的内容，我说我想学习一个生成模型，我想能够生成句子，那么一个方法，一种方法，是学习训练一个解码器。 \n\n所以，这里自动编码器的想法是，我取一个图像，将它带到一个潜在空间，就像通常希望比输入小得多的维度，然后我有一个解码器试图重建这个输入。 \n\n所以，这是，我可以训练，然后我可以想象丢弃编码器，然后只是循环，或者我可以做的一件事是编码一个图像，然后开始修改我的Z。 \n\n就像，我编码一只猫，然后开始添加它，变成一只狗，比方说，我取猫的图像，得到Z，取狗的图像，得到另一个Z，得到这两个Z，然后我想在它们之间变形，在理论上，我可能能够做到这一点。 \n\n实际上，如果你对它进行TSNE分析，潜在空间，你会看到，通常它们是非常聚集的。它们非常聚集，而且没有空间，就像表示很少被训练数据覆盖。 \n\n所以，那是一个问题，因为突然这个潜在空间对生成来说不是很好，因为这意味着我不能在两个点之间工作，因为我可能很倒霉。我可能在两个不同的簇中，没有任何训练数据的表示。 \n\n那么，我如何解决这个问题？有一些研究试图确保，我如何确保我可以在我的z空间中插值？ \n\n而且，直觉是，我将参数化，我将施加一个约束，在这里，而不是总是聚集，而且非常糟糕，因为如果事情最终出现在空间的不同部分，我将没办法， \n\n所以，我将强制z，如果我取所有我的训练样本，并且我以这种方式投影它们，我将强制这些投影样本遵循分布，通常我会选择像正态分布这样的分布。 \n\n所以，我将强调，而且所以z本身，我也将使其参数化为正态分布。所以，我将说，所有这些数据都可以，所有这些数据，我可以将其参数化为具有均值和的协方差的多元高斯分布。 \n\n所以，我将拥有我的编码器和解码器，如果我不强制执行它，如果我不强制执行任何操作，如果我删除这部分，那么我只是重新参数化我的Z，但这并不能解决我问题。 \n\n我仍然可能最终处于空间的不同部分，但我将强制它遵循正态分布，不同的方法可以强制执行。 \n\n一种被证明有效的方法是通过KL损失来鼓励z遵循正态分布。正如我所提到的，关于变分方法的细节将会有更多内容，我们将有一整节课专门讨论变分，因为在变分自编码器上有很多非常有趣的扩展。 \n\n但是，当你这样做时，突然这个正态分布具有很好的属性，因为我可以扭曲。我可以取两个图像，就像两个Z，我可以在它们之间扭曲，移动。 \n\n而且，我知道，只要我在高斯分布范围内，任何地方都是有效的，或者至少是训练数据中见过的东西。 \n\n但是，一个问题是，它们看起来并不真实。我的意思是，它们确实如此，但就像，它们看起来不像这个我的图像。所以，它们并不完全真实。 \n\n所以，这是一个非常有趣的方法被提出，以扩展这一点，说，就像，嘿，我有一个生成器，也许生成器有一个自动编码器，所以"
+    ],
+    "es": [
+      "\"es un paso más allá y también comienza a mirar las extensiones multimodales de eso, porque es bastante interesante mirar lo multimodal, aunque ahora en estos días, donde mucha gente va con arquitecturas neuronales y en los últimos años la gente no ha utilizado modelos gráficos tanto para la multimodalidad, pero lo que es realmente interesante es que muchos de los conceptos que ves en las arquitecturas neuronales multimodales de hecho fueron inspirados desde el principio en algunas de estas arquitecturas que teníamos en modelos gráficos. Así que la red bayesiana dinámica es una red bayesiana en su núcleo, pero permite representar dependencias secuenciales o temporales si tus datos son temporales o solo dependencias secuenciales. La típica red bayesiana dinámica tendrá lo que se llama una suposición de Markov de primer orden. La suposición de Markov de primer orden es a veces que hago la broma de que es un poco como encontrar a Nemo, como si ese pez tuviera una memoria a corto plazo, solo recuerda su estado actual y quizás no todas las observaciones que había previamente, así que tendrán su estado actual, su conocimiento actual hasta ahora, pero las observaciones anteriores habrán sido olvidadas, solo se recuerda el estado. Y eso significa que el estado actual tiene que ser capaz de resumir todo lo que se ha observado hasta el pasado. Eso es de primer orden, de segundo orden significa que se te permite ir dos veces antes y entonces puedes imaginar que hay una extensión a eso.\n\nUn ejemplo aquí es que en cada paso de tiempo es la misma red bayesiana, por lo general es la misma red bayesiana, la misma variable aleatoria, es solo que agregaré esto como una recurrencia, un poco como una red neuronal recurrente. Y así agregaré estas y esto también es por diseño, porque debido al conocimiento sabrás qué variables tienen probabilidades de tener una dependencia entre ellas. Y así eso es lo que querrás modelar. Si no hay nada entre dos variables, entonces piensas que son independientes o al menos condicionalmente independientes.\n\nY así el más famoso de estos modelos de redes bayesianas dinámicas, ¿cuál es? La gente en el habla sabrá la respuesta. La idea aquí es que tengo mis observaciones, mi evidencia, y si miras solo esta parte, esto se parece mucho a un naive Bayes, pero la diferencia aquí es que a menudo el modelo de Markov oculto se haría de tal manera que no se observe, como si H fuera una variable latente, algo que estamos buscando. Y si me preguntas, piénsalo casi como una agrupación, como esta parte. Así que X puede ser todas las palabras habladas en el mundo, digamos, y H, esta H, ¿qué es H? H es una variable aleatoria, puede tomar valores numéricos, por ejemplo, de 0 a 20. Digamos de 1 a 20. Y es un proceso generativo. Así que la palabra necesita haber sido generada a partir de H y H, estado uno, dos, tres, veinte. Así que podrías ver a H como una máquina de agrupación y de hecho a menudo se implementa con un modelo gaussiano.\n\nLa idea aquí es que si fuera a generar, si fuera a generar la casa amarilla cerrada, eso es una oración en inglés un poco rara, ¿cuál es la secuencia de estados que permitirá que sea más probable generar todas estas palabras? Eso es lo que el modelo de Markov oculto intentará inferir cuando lo mire desde la perspectiva de la inferencia.\n\nY así, y veremos un poco más la próxima vez sobre cómo optimizar estos, pero también puedes mirarlo como si tuvieras algunos datos multimodales. ¿Qué pasa si tienes múltiples flujos de datos? Y déjame compartir contigo algunas estrategias para factorizar esto. Y de hecho, el primero se llama HMM factorial. Este no es multimodal en sí mismo, pero es una vista interesante. Y aquí dice que solo tengo un flujo de observación, pero de hecho, al generar este flujo de información, tengo más de un proceso, más de un factor que está generando esto.\n\nAsí que eso es una extensión interesante. Ahora, lo que es interesante es ir aún más lejos y mirarlo para un sentido más multimodal, como ahora podría ver que tengo un conjunto de observaciones, como mirar mis labios, y luego también tienes el audio. Así que sí, miras mis labios, miras el audio, y ¿qué genera esto? Y así... uh hay alguna representación latente que está generando el audio, quizás algún tipo de estado fonético y quizás haya algunos estados de visemas y quizás digas y esa es una decisión de diseño, digas que el fonema es realmente el que genera el visema, quiero pronunciar algo como un fonema y así para pronunciarlo necesito dar forma a mi boca de una cierta manera.\n\nY así en este caso tengo una dependencia, tengo una dependencia. Así que esto es el cierre de Boltzmann. Hablaremos sobre las máquinas de Boltzmann un poco más adelante, pero esto es el cierre de Boltzmann. Es porque la máquina de Boltzmann y luego una extensión de eso fue el cierre de Boltzmann. Y ahora también tienes lo que se llama el HMM acoplado. Es una ventaja sobre el cierre, más flexible, porque ni la visión ni el sonido son privilegiados. Ambos dependen del anterior, así que VT depende de HT y HT más uno depende de VT. Así que está acoplado en ese sentido, en lugar de hacerlo directo de esta manera, está acoplado.\n\nY luego podrías preguntarte, si recuerdas que el LSTM multimodal fue inspirado con esto, ¿cuánto acoplamiento quieres? ¿Cuánto H realmente impacta VT? ¿Cuánto de V impacta H y cuánto VT más uno depende de VT? Estos son parámetros, creo que se llamaban alfa y beta.\n\nQuería darte un poco de intuición. La buena noticia también es que hay muchas bibliotecas de Python que están ahí para implementar fácilmente estos modelos y optimizarlos. Y hablaremos un poco más sobre la optimización la próxima semana.\n\nQuiero hablar también en la última parte de la conferencia de hoy sobre la generación de datos, porque lo que es realmente bueno aquí es que también podría eventualmente con esto, dado el seed, generar datos, o podría quizás tener con el comienzo, empezar a generar el resto de la oración.\n\nY así, pero también tenemos, hay una familia de modelos en arquitecturas de redes neuronales que también están diseñadas para generar. Y algunos de ellos modelarán la distribución conjunta y así en ese sentido son modelos generativos en el sentido de generativo versus discriminativo, porque también modelan conjuntos, algunos de ellos pueden o no tener modelado explícito de la distribución conjunta, pero la comunidad empezó a llamarlos modelos generativos de todos modos, aunque quizás no modelen la distribución conjunta.\n\nAsí que la terminología, la mayoría de la gente seguirá, pero algunos autores usarán el término generativo aunque no esté modelando la distribución conjunta. No puedo hacer nada al respecto, pero solo quiero hacerte saber sobre esta terminología.\n\nAsí que basado en lo que hemos estudiado hasta ahora y digo que quiero aprender un modelo generativo, quiero poder generar oraciones y digamos por un segundo porque muchos de ustedes probablemente saltan directamente a transformadores y nacimientos y todo esto, quizás antes de eso, antes de nacimientos y todo esto, ¿qué sería una forma interesante de hacerlo? Y una de ellas es aprender a entrenar un decodificador.\n\nLa idea aquí del autoencoder es que tomo una imagen, la llevo a un espacio latente, como hopefully mucho más pequeño en dimensión que la entrada, y luego tengo el decodificador tratando de recrear esta entrada.\n\nY así esto podría ser algo que podría entrenar y luego podría imaginarme dejar caer el codificador y luego simplemente ir alrededor, o una cosa que podría hacer es codificar una imagen y luego empezar a jugar con Z. Como, codifico un gato y luego empiezo a agregarle para ir, quizás querría transformarlo en un perro, digamos que tomo la imagen de un gato, obtengo la Z, obtengo la imagen de un perro, obtengo otra Z, obtengo esas dos Z y me gustaría transformar de uno a otro y en teoría podría hacerlo.\n\nPuedo interpolar linealmente entre estos dos y luego empezar a sintetizar y transformar entre los dos. Esto, en teoría, podría hacerlo. En la práctica, el espacio latente, si fueras a hacer un TSNE en él, verías, y probablemente lo has visto tú mismo cuando graficaste, aquellos TSNE, si solo usas redes neuronales típicas, a menudo están muy agrupados.\n\nEstán muy agrupados y no hay espacio en esto que esté muy poco representado por los datos de entrenamiento. Y así eso es un problema porque de repente este espacio latente no es muy bueno para generar porque significa que no puedo trabajar entre dos puntos porque puedo ser desafortunado.\n\nPuedo estar en dos grupos diferentes que no tienen nada, no hay representación de los datos de entrenamiento en el medio. Así que ¿cómo puedo resolver esto? Ha habido algunas líneas de investigación, que discutiremos también más la próxima semana sobre cómo puedo asegurarme de que pueda interpolar en mi espacio Z.\n\nY la idea, la intuición es que voy a parametrizar, voy a poner una restricción aquí, para que en lugar de estar siempre agrupado, y eso es realmente malo, porque si las cosas terminan estando como en diferentes partes del espacio, voy a forzar que esto se proyecte de manera que en lugar de estar siempre agrupado.\n\nY forzando Z, si tomo todas mis muestras de entrenamiento y las proyecto de esta manera, voy a forzar que estas muestras proyectadas sigan una distribución y por lo general elegiré como una distribución normal y así enfatizaré y así Z en"
+    ],
+    "fr": [
+      "\"est un pas de plus et commence également à examiner les extensions multimodales de cela, car cela est assez intéressant à examiner, bien que maintenant, ces jours-ci, où beaucoup de gens optent pour des architectures neuronales et que les gens n'ont pas utilisé les modèles graphiques autant pour le multimodal, mais ce qui est vraiment intéressant, c'est que beaucoup des concepts que vous voyez dans les architectures neuronales multimodales ont en fait été inspirés dès le début par certains de ces architectures que nous avions dans les modèles graphiques. Le réseau bayésien dynamique est un réseau bayésien à son cœur, mais permet de représenter des dépendances séquentielles ou temporelles si vos données sont temporelles ou simplement des dépendances séquentielles. Le réseau bayésien dynamique typique aura ce qu'on appelle une hypothèse de Markov du premier ordre. L'hypothèse de Markov du premier ordre est parfois une plaisanterie, c'est un peu comme trouver Nemo, comme si ce poisson avait une mémoire à court terme, il ne se souvient que de son état actuel et peut-être pas de toutes les observations qu'il avait précédemment. \n\nDonc, il aura son état actuel, ses connaissances actuelles jusqu'à présent, mais les observations précédentes auront été oubliées, seul l'état est mémorisé. Et cela signifie que l'état actuel doit être capable de résumer tout ce qui a été observé jusqu'à présent. C'est l'hypothèse de Markov du premier ordre. L'ordre deux signifie que vous êtes autorisé à aller deux fois avant et alors vous pouvez imaginer qu'il y a une extension à cela. \n\nL'aspect intéressant du dynamique est que, comme dans un LSTM, il peut changer et évoluer au fil du temps et il est dirigé, donc c'est un peu comme une alimentation avant de gauche à droite si vous voulez, si vous deviez le mettre dans un mot de cela d'une représentation neuronale. Un exemple ici est qu'à chaque étape temporelle, c'est le même réseau bayésien, généralement le même réseau bayésien, la même variable aléatoire, c'est juste que j'ajoute cela comme une récurrence, un peu comme une récurrence, un peu comme un réseau neuronal récurrent. \n\nEt donc vous ajouterez ces éléments et c'est aussi par conception, parce que vous saurez quelles variables sont susceptibles d'avoir une dépendance entre elles. Et donc c'est ce que vous voudriez modéliser. S'il n'y a rien entre deux variables, alors vous pensez qu'elles sont indépendantes ou au moins conditionnellement indépendantes. \n\nLe modèle de Markov caché est l'un des plus célèbres de ces réseaux bayésiens dynamiques. L'idée ici est que j'ai mes observations, mes preuves, et si vous regardez juste cette partie, cela ressemble beaucoup à un Bayes naïf, mais la différence ici, souvent le modèle de Markov caché serait fait de telle sorte qu'il ne soit pas observé, comme H sera une variable latente, quelque chose que nous essayons de trouver. \n\nEt si vous me demandez, pensez-y presque comme un clustering, comme cette partie est presque un clustering. Donc X peut être tous les mots parlés dans le monde, disons, et H, qu'est-ce que H ? H est une variable aléatoire, elle peut prendre généralement des valeurs numériques de 0 à 20, disons de 1 à 20. Et c'est un processus génératif. Donc le mot doit avoir été généré à partir de H et H, état un, deux, trois, deux, vingt, donc vous pourriez voir H comme une machine de clustering. \n\nEt en fait, il est souvent mis en œuvre avec le modèle gaussien, peut-être que si ces données étaient continues, nous pourrions dire que la distribution conditionnelle pourrait être modélisée avec un modèle gaussien. Vous pourriez imaginer juste un clustering, donc la moyenne du cluster, si h est égal à un, quelles sont les paroles susceptibles d'être générées lorsque h est égal à un ? Quelles sont les paroles susceptibles d'être générées lorsque h est égal à deux ? \n\nC'est une façon de voir ces états cachés, ils forcent quelque chose qui pourrait être très à haute dimension, ils le forcent à être cette variable aléatoire, souvent discrète et non observable. Donc les modèles de Markov cachés et beaucoup de, nous allons examiner d'autres modèles graphiques, beaucoup de ces variables, comme ces variables latentes ou même les variables observées parfois, peuvent être utilisées comme un moyen de clusteriser, de résumer l'information. \n\nEt donc si vous regardez cela, cela dit : hey, si je devais générer, si je devais générer la maison jaune fermée, c'est une phrase anglaise étrange, quelle est la séquence d'états qui permettra de la générer le plus probablement ? C'est ce que le modèle de Markov caché essaiera de déduire en la regardant comme d'un point de vue d'inférence. \n\nEt donc nous allons examiner un peu plus la prochaine sur la façon d'optimiser ces modèles, mais vous pouvez également examiner cela comme nous discuterons de certaines d'entre elles un peu plus sur la partie optimisation la semaine prochaine. Mais la partie intéressante est que j'ai quelques observations, donc j'ai cinq, neuf variables aléatoires et quatre d'entre elles sont observées et cinq d'entre elles ne sont pas observées. \n\nEt l'idée est que si je suis capable de déduire la probabilité conjointe de cela, si j'ai un modèle avec une probabilité conjointe, alors je peux commencer à dire quelle est la probabilité a, la probabilité de h1 étant donné x1, x2, x3 et x4. Donc ce serait une façon et cela serait marginalisé pour h1. \n\nOu vous pourriez définir cela comme p de h0, h1, h2, h3, h4 étant donné x1, x2, x3, x4 et vous pouvez imaginer que si j'ai appris ma probabilité conjointe, je peux répondre à cette question. \n\nMais qu'en est-il si j'ai des données multimodales ? Qu'en est-il si j'ai plusieurs flux de données ? Et laissez-moi partager avec vous quelques stratégies de factorisation de cela. \n\nEt en fait, la première est appelée HMM factoriel. Celui-ci n'est pas multimodal en soi, mais c'est une vue intéressante. Et ici, cela dit que j'ai un seul flux d'observation, mais en fait, en générant ce flux d'informations, j'ai plus d'un processus, plus d'un facteur qui génère cela. \n\nDonc c'est une extension intéressante. Maintenant, ce qui est intéressant, c'est d'aller encore plus loin et de l'examiner pour un sens plus multimodal, comme maintenant je pourrais également voir que j'ai un ensemble d'observations, comme vous regardez mes lèvres, et puis vous avez également l'audio. \n\nDonc oui, regardez mes lèvres, vous regardez l'audio, et qu'est-ce qui génère cela ? Et donc vous voyez, il y a une représentation latente qui génère l'audio, peut-être une sorte d'état phonémique, et peut-être qu'il y a des états visuels, et peut-être que vous dites et c'est une décision de conception, vous dites que le phonème est vraiment celui qui génère le visuel, je veux prononcer quelque chose comme un phonème, et donc juste pour le prononcer, j'ai besoin de former ma bouche d'une certaine manière. \n\nEt donc dans ce cas, j'ai une dépendance, j'ai une dépendance. Donc c'est le zipper de Boltzmann. Nous parlerons des machines de Boltzmann un peu plus tard, mais c'est le zipper de Boltzmann. \n\nC'est parce que la machine de Boltzmann et puis une extension de cela était le zipper de Boltzmann. Et maintenant, vous avez également ce qu'on appelle le HMN couplé. C'est un avantage sur le zipper, plus flexible, parce que ni la vision ni le son ne sont privilégiés, les deux dépendent du précédent, donc VT dépend de HT, et HT plus un dépend de VT. \n\nDonc il est couplé dans ce sens, au lieu de le rendre direct de cette façon, il est couplé. Et puis vous pourriez vous demander, si vous vous souvenez que le LSTM multimodal a été inspiré par cela, c'est que vous pouvez avoir, combien de couplage voulez-vous ? Combien H impacte-t-il vraiment VT, combien V impacte-t-il H, et combien VT plus un dépendent-ils de VT ? \n\nCe sont des paramètres, je pense qu'ils s'appelaient alpha et bêta. Donc je voulais vous donner une intuition. \n\nSi vous regardez les bonnes nouvelles, c'est qu'il existe de nombreuses bibliothèques Python qui existent pour mettre en œuvre facilement ces modèles et les optimiser. \n\nEt nous parlerons un peu plus de l'optimisation la semaine prochaine. \n\nJe veux également parler dans la dernière partie du cours d'aujourd'hui de la génération de données, car ce qui est vraiment agréable ici, c'est que je pourrais également éventuellement avec cela, étant donné la graine, générer des données, ou je pourrais peut-être avoir avec le début, commencer à générer le reste de la phrase. \n\nEt donc, mais nous avons également, il existe une famille de modèles dans les architectures de réseau neuronal qui sont également conçus pour générer. \n\nEt certains d'entre eux modéliseront la distribution conjointe et donc dans ce sens, ils sont des modèles génératifs au sens de génératif par opposition à discriminatif, parce qu'ils modélisent également la distribution conjointe, certains d"
+    ],
+    "de": [
+      "Ich werde nun eine Übersetzung des englischen Transkripts in die deutsche Sprache liefern.\n\n\"ist ein weiterer Schritt und auch ein Blick auf multimodale Erweiterungen davon, weil das ziemlich interessant ist, um die multimodalen Aspekte zu betrachten, obwohl heutzutage viele Leute mit neuronalen Architekturen arbeiten und in den letzten Jahren die Leute nicht so viel grafische Modelle für neuronale, multimodale Anwendungen verwendet haben, aber was wirklich interessant ist, sind viele der Konzepte, die man in multimodalen neuronalen Architekturen sieht, tatsächlich von frühen Arbeiten an grafischen Modellen inspiriert worden, also das dynamische Bayes-Netzwerk ist ein Bayes-Netzwerk im Kern, aber es ermöglicht die Darstellung von sequentiellen Abhängigkeiten oder temporalen Abhängigkeiten, wenn Ihre Daten temporale oder sequentielle Abhängigkeiten aufweisen, das typische dynamische Bayes-Netzwerk wird eine sogenannte first-order-Markov-Annahme haben, die first-order-Markov-Annahme ist manchmal ein Scherz, es ist ein bisschen wie bei der Suche nach Nemo, da gibt es einen Fisch, der ein sehr kurzes Gedächtnis hat, er merkt sich nur seinen aktuellen Zustand und vielleicht nicht alle vorherigen Beobachtungen, also wird er seinen aktuellen Zustand haben, seine aktuelle Kenntnis bis jetzt, aber die vorherigen Beobachtungen werden vergessen, nur der Zustand wird gemerkt, und das bedeutet, dass der aktuelle Zustand alles zusammenfassen muss, was bisher beobachtet wurde, das ist die first-order-, die second-order- Markov-Annahme bedeutet, dass Sie zwei Schritte zurückgehen können und dann können Sie sich vorstellen, dass es Erweiterungen davon gibt, der interessante Aspekt ist, dass es wie bei einem LSTM dynamisch ist und sich über die Zeit ändern und entwickeln kann, und es ist gerichtet, also ist es in gewissem Sinne ein Feed-Forward von links nach rechts, wenn Sie es in ein neuronales Netzwerk einordnen wollen, ein Beispiel hier ist, dass bei jedem Zeitschritt das gleiche Bayes-Netzwerk ist, normalerweise ist es das gleiche Bayes-Netzwerk, die gleiche Zufallsvariable, es ist nur, dass ich diese Rekurrenz hinzufüge, ein bisschen wie eine Rekurrenz, ein bisschen wie ein rekurales neuronales Netzwerk, und Sie werden diese hinzufügen, und das ist auch durch Design, weil Sie wissen, welche Variablen wahrscheinlich eine Abhängigkeit zwischen ihnen haben werden, und so wollen Sie das modellieren, wenn es nichts zwischen zwei Variablen gibt, dann denken Sie, dass sie unabhängig sind oder zumindest bedingt unabhängig, und so ist das berühmteste dieser dynamischen Bayes-Netzwerke, was ist es? Leute in der Spracherkennung werden die Antwort wissen, die Idee hier ist, dass ich meine Beobachtung, meine Evidenz habe, und wenn Sie nur auf diesen Teil schauen, sieht das viel wie ein naiver Bayes aus, aber der Unterschied hier ist, dass das Hidden-Markov-Modell oft so durchgeführt wird, dass es nicht beobachtet wird, wie H eine latente Variable ist, etwas, das wir suchen, und wenn Sie mich fragen, denken Sie darüber nach, als ob es eine Clusterung wäre, also X sind vielleicht alle gesprochenen Wörter der Welt, sagen wir, und H ist eine Zufallsvariable, die normalerweise numerische Werte annehmen kann, von 0 bis 20, sagen wir von 1 bis 20, und es ist ein generativer Prozess, also das Wort muss von H generiert worden sein, und H, Zustand eins, zwei, drei, bis zwanzig, also Sie könnten H als eine Cluster-Maschine sehen, und tatsächlich wird es oft mit einem Gauß-Modell implementiert, vielleicht wenn diese kontinuierlich wären, könnten wir sagen, dass die bedingte Verteilung mit einem Gauß-Modell modelliert werden könnte, Sie könnten sich vorstellen, dass es nur eine Clusterung ist, also die Cluster-Mittelwerte, wenn H gleich eins ist, was sind die Wörter, die wahrscheinlich generiert werden, wenn H gleich eins ist, was sind die Wörter, die wahrscheinlich generiert werden, wenn H gleich zwei ist, was sind die Wörter, die wahrscheinlich generiert werden, wenn H gleich drei ist, das ist eine Sichtweise auf diese versteckten Zustände, sie zwingen etwas, das sehr hochdimensional sein könnte, sie zwingen es, diese eine Zufallsvariable zu sein, die oft diskret und latent ist, also Hidden-Markov-Modelle und viele, wenn wir andere grafische Modelle betrachten, wie bedingte Zufallsfelder, viele dieser Variablen, wie diese, entweder latente Variablen oder sogar beobachtete Variablen, sie können oft als eine Möglichkeit verwendet werden, um zu clustern, um die Information zusammenzufassen, und so, wenn Sie sich das ansehen, sagt es, hey, wenn ich generieren würde, wenn ich generieren würde, das gelbe Haus geschlossen, das ist ein seltsamer, geschlossener Satz, was ist die Sequenz von Zuständen, die es mir ermöglichen wird, es am wahrscheinlichsten zu generieren, das ist, was das Hidden-Markov-Modell versuchen wird zu inferieren, wenn es darauf schaut, also und so, und wir werden ein bisschen mehr darüber sprechen, wie man diese optimiert, aber Sie können auch darauf schauen, als ob wir einige davon ein bisschen mehr in Teil Optimierung nächste Woche besprechen werden, aber der interessante Teil ist, ich habe einige beobachtet, also habe ich fünf, neun Zufallsvariablen und vier davon sind beobachtet und fünf davon sind nicht beobachtet, und die Idee ist, wenn ich in der Lage bin, die gemeinsame Wahrscheinlichkeit davon zu inferieren, wenn ich ein Modell mit einer gemeinsamen Wahrscheinlichkeit habe, dann kann ich anfangen zu sagen, was ist die Wahrscheinlichkeit, a, p von h1, p von h1 gegeben x1, x2, x3 und x4, also das wäre eine Möglichkeit, und das würde bedeuten, dass ich für h1 marginalisieren würde, oder ich könnte das definieren als p von h0, h1, h2, h3, h4 gegeben x1, x2, x3, x4, und Sie können sich vorstellen, dass wenn ich meine gemeinsame Wahrscheinlichkeit gelernt habe, ich diese Frage beantworten kann, Gleichung, es ist eine typische Anfrage, die Sie durchführen, aber was, wenn ich multimodale Daten habe, was, wenn ich mehrere Datenströme habe, und lassen Sie mich einige Strategien zur Faktorisierung davon teilen, und tatsächlich ist die erste sogenannte faktorielle HMM, das ist nicht multimodal an sich, aber es ist eine interessante Sichtweise, und hier sagt es, ich habe nur einen Beobachtungsstrom, aber ich habe tatsächlich mehr als einen Prozess, mehr als einen Faktor, der diesen Informationsstrom generiert, also das ist eine interessante Erweiterung, jetzt ist es interessant, noch weiter zu gehen und es für einen multimodalen Sinn zu betrachten, also jetzt könnte ich auch sehen, dass ich einen Satz von Beobachtungen habe, wie Sie meine Lippen ansehen, und dann haben Sie auch das Audio, also ja, sehen Sie meine Lippen an, Sie sehen das Audio, und was generiert das, und so sehen Sie, es gibt eine latente Darstellung, die das Audio generiert, vielleicht eine Art Phonemzustand, und vielleicht gibt es einige Visemzustände, und vielleicht sagen Sie, und das ist eine Designentscheidung, Sie sagen, Phonem ist wirklich das, was das Visem generiert, ich will etwas wie ein Phonem aussprechen, und so um es auszusprechen, muss ich meinen Mund auf eine bestimmte Weise formen, und so habe ich in diesem Fall eine Abhängigkeit, also ist das der Boltzmann-Reißverschluss, wir werden über Boltzmann-Maschinen ein bisschen später sprechen, aber das ist der Boltzmann-Reißverschluss, es ist, weil die Boltzmann-Maschine und dann eine Erweiterung davon der Boltzmann-Reißverschluss war, und jetzt haben Sie auch das sogenannte gekoppelte HMN, es ist ein Vorteil gegenüber dem Reißverschluss, flexibler, weil weder Vision noch Sound privilegiert sind, beide hängen von dem vorherigen ab, also VT hängt von HT ab, und HT + 1 hängt von VT ab, also ist es in diesem Sinne gekoppelt, anstatt es direkt zu machen, ist es gekoppelt, und dann können Sie sich fragen, wenn Sie sich an das multimodale LSTM erinnern, das davon inspiriert wurde, können Sie haben, wie viel Kopplung wollen Sie, wie sehr beeinflusst H wirklich VT, wie sehr beeinflusst V H, und wie sehr hängt VT + 1 von VT ab, das sind Parameter, ich denke, sie wurden Alpha und Beta genannt, also wollte ich Ihnen ein bisschen Intuition geben, wenn Sie die guten Nachrichten ansehen, also die gute Nachricht ist, dass es viele Python-Bibliotheken gibt, die es ermöglichen, diese Modelle leicht zu implementieren und zu optimieren, und wir werden nächste Woche ein bisschen mehr über Optimierung sprechen, ich möchte auch im letzten Teil der Vorlesung heute über die Generierung von Daten sprechen, weil es wirklich schön ist, hier ist, dass ich auch irgendwann mit diesem, gegeben dem Samen, Daten generieren kann, oder ich kann vielleicht mit dem Anfang beginnen, den Rest des Satzes zu generieren, und so, aber wir haben auch, es gibt eine Familie von Modellen in neuronalen Netzwerkarchitekturen, die auch für die Generierung entworfen sind, und einige von ihnen werden die gemeinsame Verteilung modellieren, und in diesem Sinne sind sie generative Modelle im Sinne von generativ versus diskriminativ, weil sie auch die gemeinsame Verteilung modellieren, einige von ihnen haben oder haben nicht explizit die Modellierung der gemeinsamen Verteilung, aber die Gemeinschaft begann, sie generative neuronale Modelle zu nennen, trotzdem obwohl sie vielleicht nicht die gemeinsame Verteilung modellieren, also die Terminologie, die die meisten Leute folgen werden, aber einige Autoren werden den Begriff generativ verwenden, obwohl es nicht die gemeinsame Verteilung modelliert, ich kann nichts dagegen"
+    ]
+  },
+  "": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I will translate it into German for you."
+    ]
+  },
+  "0:39:58.420": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:40:07.840": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to translate the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I will translate it into German for you."
+    ]
+  },
+  "0:40:18.620": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia. Saya siap membantu!"
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Spanish. I'll translate the intended meaning, handling any potential ASR errors, and return the translation only."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist with the translation into German."
+    ]
+  },
+  "0:40:25.308": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate from English to Spanish. I'll be happy to help!"
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist with the translation into German."
+    ]
+  },
+  "0:40:44.888": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll be happy to help!"
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like you didn't provide any English transcript for me to translate into German. Please go ahead and provide the text, and I'll be happy to assist you with the translation."
+    ]
+  },
+  "0:41:03.116": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist with translating it into German."
+    ]
+  },
+  "0:41:19.316": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no text to translate. Please provide the English transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:41:39.516": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no text to translate. Please provide the English transcript you'd like me to translate into Spanish."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I will translate it into German for you."
+    ]
+  },
+  "0:43:42.732": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:44:02.472": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Spanish."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:44:07.412": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:44:16.552": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Spanish."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist with the translation into German."
+    ]
+  },
+  "0:44:30.112": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia. Saya siap membantu!"
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to translate the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:44:42.992": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:44:58.632": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript, and I will translate it into Japanese."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia. Saya siap membantu!"
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate from English to Spanish. I'll return the translation."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:45:04.012": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Spanish. I'll translate the intended meaning, handling any potential ASR errors, and return the translation only."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like you haven't provided any text for translation. Please go ahead and provide the English transcript you'd like me to translate into German. I'll do my best to translate the intended meaning."
+    ]
+  },
+  "0:45:08.892": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like you didn't provide any English transcript for me to translate into German. Please go ahead and provide the text, and I'll be happy to assist you with the translation."
+    ]
+  },
+  "0:45:11.492": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no text to translate. Please provide the English transcript you'd like me to translate into Spanish. I'll do my best to translate the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist you with translating it into German."
+    ]
+  },
+  "0:45:17.832": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I will translate it into German for you."
+    ]
+  },
+  "0:45:23.292": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Spanish."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:45:41.792": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:45:57.892": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to translate the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I'll be happy to assist with the translation into German."
+    ]
+  },
+  "0:46:06.172": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:46:47.208": {
+    "ja": [
+      "There is no English transcript provided. Please provide the transcript you'd like me to translate into Japanese. I'll translate the intended meaning, not a word-for-word rendering, and do my best to handle any ASR errors that may be present."
+    ],
+    "id": [
+      "Mohon berikan teks English yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like you didn't provide any text for translation. Please go ahead and provide the English transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:46:51.028": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript you'd like me to translate into Chinese. I'll do my best to translate the intended meaning."
+    ],
+    "es": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Spanish. I'll do my best to provide an accurate translation of the intended meaning."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript you'd like me to translate into German. I'll do my best to convey the intended meaning accurately."
+    ]
+  },
+  "0:46:55.848": {
+    "ja": [
+      "There is no English transcript to translate. Please provide the transcript you'd like me to translate into Japanese. I'll do my best to translate the intended meaning."
+    ],
+    "id": [
+      "Mohon berikan teks bahasa Inggris yang ingin diterjemahkan ke dalam bahasa Indonesia."
+    ],
+    "th": [
+      "ไม่มีข้อความที่ให้มา"
+    ],
+    "zh": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Chinese."
+    ],
+    "es": [
+      "There is no English transcript provided for translation. Please provide the transcript, and I will translate it into Spanish."
+    ],
+    "fr": [
+      "You haven't provided the English transcript that needs to be translated into French. Please provide the text, and I'll be happy to assist you with the translation."
+    ],
+    "de": [
+      "It seems like there is no English transcript provided for translation. Please provide the transcript, and I will translate it into German for you."
+    ]
+  }
+}

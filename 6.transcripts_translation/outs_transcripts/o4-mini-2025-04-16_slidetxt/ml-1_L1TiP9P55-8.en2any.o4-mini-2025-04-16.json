@@ -1,0 +1,263 @@
+{
+  "0:37:06.216": {
+    "ja": "私が本当に話したかったのは動的ベイジアンネットワークでした。",
+    "zh": "我真正想要讨论的是动态贝叶斯网络。",
+    "th": "สิ่งที่ฉันอยากจะพูดถึงจริงๆ คือไดนามิกเบย์เซียนเน็ตเวิร์ก",
+    "id": "Hal yang sebenarnya ingin saya bicarakan adalah jaringan Bayesian dinamis.",
+    "es": "Lo que realmente quiero hablar es la red bayesiana dinámica.",
+    "fr": "Ce dont je voulais vraiment parler, c’était du réseau bayésien dynamique.",
+    "de": "Wirklich sprechen wollte ich über das dynamische Bayes-Netzwerk."
+  },
+  "0:37:11.900": {
+    "ja": "これからマルチモーダル拡張について見ていきます。近年はニューラルアーキテクチャが主流で、グラフィカルモデルはあまり使われませんが、ニューラルネットワークのマルチモーダル構造の多くの概念は、グラフィカルモデルに由来しています。\n\n動的ベイズネットワーク（DBN）はベイズネットワークの一種で、データが時間的・連続的な場合の依存関係を表現できるモデルです。典型的には一次マルコフ性を仮定し、時刻tの状態が時刻t−1のみに依存するとします。LSTMとの類似性があり、各時刻で同じ構造のベイズネットワークを繰り返し適用するようなイメージです。\n\n隠れマルコフモデル（HMM）は隠れ変数Hを導入し、観測XはHから生成されると考える生成モデルとして捉えられます。Hは離散的なクラスタリング要素としても働き、例えば単語の生成モデルではHの値ごとにガウス分布などで条件付き分布をモデル化します。\n\nマルチモーダルデータを扱うには、観測ストリームごとに異なる隠れ過程を持つファクトリアルHMMや、音声と映像の潜在状態を双方向に連結したカップルドHMMなどの拡張があります。\n\nモデルのパラメータ学習には最尤推定やベイズ推定が用いられ、Pythonではpgmpy、BayesPy、Pomegranateなどのライブラリが利用可能です。\n\n次週はこれらの最適化手法や、生成モデルとしてのニューラルアーキテクチャ（VAEやGANなど）について詳しく説明します。",
+    "zh": "接下来我们将探讨多模态扩展。虽然近年来神经架构更为流行，图模型少用，但许多多模态神经模型的概念源自早期的图模型。\n\n动态贝叶斯网络（DBN）在贝叶斯网络基础上，可表示时间或序列依赖。典型假设一阶马尔可夫性，即时刻t的状态仅依赖于t−1。\n\n隐马尔可夫模型（HMM）引入隐藏变量H，通过H生成观测X，可视为离散聚类过程。H的值通常离散，条件分布可用高斯模型等。\n\n针对多模态数据，有因子HMM（多隐藏过程生成同一观测）和耦合HMM（视觉和音频隐藏状态互为输入）等扩展。\n\n参数学习可用最尤或贝叶斯方法，Python中有pgmpy、BayesPy、Pomegranate等库支持。\n\n下周我们将详细讨论优化方法以及生成模型的神经架构（如VAE、GAN）。",
+    "th": "เราจะไปดูการขยายสู่มัลติโมดัลกัน แม้ปัจจุบันจะนิยมสถาปัตยกรรมเชิงประสาท แต่แนวคิดหลายอย่างมาจากกราฟโมเดลเดิม\n\nDynamic Bayesian Network (DBN) คือกราฟเบส์ที่แสดงความขึ้นต่อเนื่องเมื่อข้อมูลเป็นลำดับหรืออนุกรมเวลา สมมติว่ามีเงื่อนไขมาร์คอฟอันดับหนึ่ง คือสถานะที่ t ขึ้นกับ t−1 เท่านั้น คล้าย LSTM แต่เป็น feed-forward ซ้ำๆ\n\nHidden Markov Model (HMM) ใส่ตัวแปรซ่อน H แล้วให้สังเกต X ถูกสร้างจาก H จึงเหมือนกระบวนการจัดกลุ่ม (clustering) H มักเป็นตัวแปรไม่ต่อเนื่อง ค่าสถานะต่างๆ กำหนดการแจกแจงเงื่อนไข\n\nเมื่อมีหลายสตรีม เช่นภาพและเสียง อาจใช้ Factorial HMM ที่มีหลายกระบวนการซ่อน หรือ Coupled HMM ที่ให้สถานะภาพและเสียงขึ้นต่อกันซึ่งกันและกัน\n\nการเรียนรู้พารามิเตอร์ใช้ MLE หรือแบบเบส์ ใน Python มี pgmpy, BayesPy, Pomegranate รองรับ\n\nสัปดาห์หน้าเราจะพูดถึงการปรับแต่งพารามิเตอร์เพิ่มเติม และสถาปัตยกรรมเชิงประสาทสำหรับการสร้างข้อมูล (เช่น VAE, GAN)",
+    "id": "Kita akan melihat perluasan multimodal dari model ini. Saat ini banyak orang menggunakan arsitektur neural, dan jarang memakai model grafis, namun banyak konsep dalam arsitektur multimodal neural terinspirasi oleh model grafis awal.\n\nDynamic Bayesian Network (DBN) adalah jaringan Bayesian yang dapat merepresentasikan dependensi berurutan atau temporal. Biasanya diasumsikan Markov orde pertama, di mana status saat t hanya bergantung pada status t−1. Mirip dengan RNN, model ini mengulang struktur yang sama pada setiap langkah waktu.\n\nHidden Markov Model (HMM) memperkenalkan variabel tersembunyi H, dari mana observasi X dihasilkan. H berfungsi seperti mesin klaster: setiap nilai H menentukan distribusi kondisi, misalnya Gaussian, untuk menghasilkan kata-kata dalam tugas speech.\n\nUntuk data multimodal, ada Factorial HMM dengan beberapa proses tersembunyi, Boltzmann Zipper, dan Coupled HMM yang menghubungkan status viseme dan fonem secara dua arah.\n\nPembelajaran parameter dapat dilakukan dengan MLE atau Bayesian estimator. Di Python tersedia pustaka pgmpy, BayesPy, dan Pomegranate.\n\nMinggu depan kita akan membahas optimisasi dan arsitektur generatif neural seperti VAE dan GAN.",
+    "es": "A continuación veremos extensiones multimodales. Hoy día la gente suele usar arquitecturas neuronales y deja de lado los modelos gráficos, pero muchas ideas en redes neuronales multimodales vienen de esos modelos gráficos iniciales.\n\nUna Red Bayesiana Dinámica (DBN) es una red bayesiana capaz de representar dependencias secuenciales o temporales. Se suele asumir un proceso de Markov de primer orden: el estado en t depende solo del estado en t−1. Es como un feed-forward recurrente.\n\nLos Modelos de Markov Ocultos (HMM) introducen una variable oculta H de la que se generan las observaciones X. H actúa como esquema de clustering, con distribuciones condicionales (por ejemplo gaussianas) para cada valor de H.\n\nPara datos multimodales existen el HMM Factorial con múltiples procesos ocultos; el Boltzmann Zipper; y el HMM Acoplado, donde los estados de visema y fonema se interrelacionan.\n\nLa estimación de parámetros puede hacerse por máxima verosimilitud o métodos bayesianos. En Python hay librerías como pgmpy, BayesPy y Pomegranate.\n\nLa próxima semana hablaremos de optimización y de arquitecturas neurales generativas (VAE, GAN).",
+    "fr": "Nous allons étudier les extensions multimodales. Bien que les architectures neuronales soient aujourd’hui privilégiées, beaucoup d’idées des modèles multimodaux neuronaux proviennent de modèles graphiques plus anciens.\n\nUn Réseau Bayésien Dynamique (DBN) est un réseau bayésien qui modélise les dépendances séquentielles ou temporelles. On y suppose généralement une hypothèse de Markov d’ordre 1 : l’état à l’instant t ne dépend que de l’état à l’instant t−1. C’est un feed-forward récurrent.\n\nLes Modèles de Markov Cachés (HMM) introduisent une variable cachée H d’où proviennent les observations X. H agit comme un mécanisme de clustering : chaque valeur de H correspond à une distribution conditionnelle (souvent gaussienne) pour générer les données observées.\n\nPour les données multimodales, on peut utiliser le HMM Factoriel, le Boltzmann Zipper ou le HMM Couplé, qui relie mutuellement les états visème et phonème.\n\nL’apprentissage des paramètres se fait par maximum de vraisemblance ou approche bayésienne. En Python on peut utiliser pgmpy, BayesPy ou Pomegranate.\n\nLa semaine prochaine nous verrons les méthodes d’optimisation et les architectures neuronales génératives (VAE, GAN).",
+    "de": "Wir betrachten nun multimodale Erweiterungen. Heutzutage verwendet man oft neuronale Architekturen, und grafische Modelle werden seltener eingesetzt. Viele Konzepte in multimodalen neuronalen Modellen stammen jedoch aus frühen grafischen Modellen.\n\nEin Dynamisches Bayes-Netzwerk (DBN) ist ein Bayes-Netzwerk, das sequentielle oder zeitliche Abhängigkeiten darstellt. Man nimmt meist eine Markov-Annahme erster Ordnung an: Der Zustand zu Zeit t hängt nur vom Zustand zu t−1 ab. Es ähnelt einem rekurrenten Feed-Forward.\n\nHidden-Markov-Modelle (HMM) führen eine versteckte Variable H ein, aus der die Beobachtungen X generiert werden. H wirkt als Clustering-Mechanismus: Jeder Wert von H bestimmt eine konditionale Verteilung (z. B. Gaussian), um die Beobachtungen zu erzeugen.\n\nFür multimodale Daten gibt es das faktorielles HMM, den Boltzmann-Zipper und das gekoppelte HMM, bei dem Visem- und Phonem-Zustände sich gegenseitig beeinflussen.\n\nDie Parameterschätzung erfolgt über Maximum-Likelihood oder Bayesschätzung. Python-Bibliotheken wie pgmpy, BayesPy und Pomegranate unterstützen dies.\n\nNächste Woche besprechen wir Optimierungsmethoden und neuronale generative Architekturen (VAE, GAN)."
+  },
+  "": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:39:58.420": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:07.840": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:18.620": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:25.308": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:40:44.888": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:03.116": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:19.316": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:41:39.516": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:43:42.732": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:02.472": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:07.412": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:16.552": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:30.112": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:42.992": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:44:58.632": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:04.012": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:08.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:11.492": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:17.832": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:23.292": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:41.792": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:45:57.892": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:06.172": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:47.208": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:51.028": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  },
+  "0:46:55.848": {
+    "ja": "",
+    "zh": "",
+    "th": "",
+    "id": "",
+    "es": "",
+    "fr": "",
+    "de": ""
+  }
+}
