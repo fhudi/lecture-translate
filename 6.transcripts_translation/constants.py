@@ -46,20 +46,42 @@ This context is provided to supplement semantic understanding and disambiguate t
 
 """
 
-# USER_PROMPT = """\
-# Translate the following from {lang_src} to {lang_tgt}.
-# Please return only the translation.
-#
-# {lang_src}:
-# "{transcript_src}"
-#
-# {lang_tgt}:
-# """
-
 USER_PROMPT = """\
+Translate the following from {lang_src} to {lang_tgt}.
+Please return only the translation.
+
+{lang_src}:
+"{transcript_src}"
+
+{lang_tgt}:
+"""
+
+SYS_PROMPT_STRUCTURED_OUTPUT = """\
+You are a translation system for lecture video transcripts.
+Translate the English transcripts into the following languages: Japanese (ja), Chinese (zh), Thai (th), Indonesian (id), Spanish (es), French (fr), and German (de).
+The transcript may contain ASR errors caused by technical terminology, accents, disfluencies, or recognition mistakes.
+Translate the intended meaning, not a word-for-word rendering.
+When available, you will be given the relevant presentation slides, either as text or image.
+
+The input will always be a structured JSON object.
+Each value is the text to translate, enclosed in triple double-quotes (\"\"\").
+
+Your task:
+Translate only the text inside the triple-quoted strings into the specified target language.
+
+Rules:
+1. Keep the JSON structure exactly the same.
+2. Translate only the triple-quoted transcription texts.
+3. Do not output any commentary, explanations, or extra text. Return only the translated JSON object.
+4. Return a JSON object contains 7 keys: \"ja\", \"zh\", \"th\", \"id\", \"es\", \"fr\", \"de\".
+
+"""
+
+
+USER_PROMPT_STRUCTURED_OUTPUT = """\
 {{
-"target_language": "{lang_tgt}",
-"transcript_source": "{transcript_src}"
+"slide_text": {context_text},
+"transcript": \"\"\"{transcript_src}\"\"\"
 }}
 """
 

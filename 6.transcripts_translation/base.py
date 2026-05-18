@@ -26,12 +26,14 @@ fp_test_transl_transcript = (
     _get_basedir_path()
     / "25.11.transcript_translate/transcript_translate_annotated_by_sbj_all_text.json"
 )
-fp_test_asr_transcript = (
+fp_test_asr_transcript, lang_asr = (
     _get_basedir_path()
-    / "25.11.transcript_translate/transcript_asr_output_by_sbj_all_text.json"
+    # / "25.11.transcript_translate/transcript_asr_output_by_sbj_all_text.json", "asr
+    / "25.11.transcript_translate/transcript_asr_output_by_sbj_all_text.aligned.json", "aligned_asr"
 )
 fp_test_transcript_slide_align = (
-    _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.json"
+    # _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.json"
+    _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.sliding_windows.json"
 )
 fd_basedir_slides = _get_basedir_path() / "25.11.slides_annot/slide_translation_251214"
 
@@ -39,6 +41,7 @@ fd_basedir_slides = _get_basedir_path() / "25.11.slides_annot/slide_translation_
 class BaseModel:
     def __init__(self, *args, **kwargs):
         self.model = None
+        self.model_id = None
 
     def load_model(self, *args, **kwargs):
         raise NotImplementedError
@@ -66,8 +69,13 @@ class BaseModel:
         raise NotImplementedError
 
     def evaluate(
-        self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None,
-        use_non_corrected_asr_output=False,
+            self,
+            output_suffix=None,
+            context=None,
+            lang_src="en",
+            dummy=False,
+            rg_idx=None,
+            use_non_corrected_asr_output=False,
     ):
         with open(fp_test_transl_slide, "r") as f:
             datas_slide_text = json.load(f)
@@ -83,11 +91,12 @@ class BaseModel:
 
         if self.model is None:
             self.model = self.load_model()
+        print(self.model)
+        print("Model ID: ", self.model_id)
 
         lang_source = LANGUAGES[lang_src]  # "English"
         target_languages = {k: v for k, v in LANGUAGES.items() if k != lang_src}
 
-        lang_asr = "asr"
         _lang_src = lang_asr if use_non_corrected_asr_output else lang_src
 
         # ===================== #
@@ -95,7 +104,7 @@ class BaseModel:
         # ===================== #
 
         _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
-        outdir = Path(f"preds_{output_suffix}_{context}_{_cur_time_}")
+        outdir = Path(f"preds_{output_suffix}_{context}_{_cur_time_}_{os.getenv('SLURM_JOB_ID', 'NA')}")
         outdir.mkdir(parents=True, exist_ok=True)
 
         st, ed = rg_idx or (0, len(datas_transcript_text))
@@ -126,7 +135,8 @@ class BaseModel:
                 ):  # [transcript translate]  Preparing text from slide text
                     kwargs["context_img"] = [
                         fd_basedir_slides / sbj / lec_id / f"{fn}.jpg"
-                        for fn in datas_alignment[k][ts]["slides"]
+                        # for fn in datas_alignment[k][ts]["slides"]  # depre, non-sliding windows
+                        for fn in datas_alignment[k][ts]
                     ]
                 cur_preds = {}
                 for lang_tgt, lang_target in target_languages.items():
@@ -168,7 +178,7 @@ class BaseModel:
         # ================= #
 
         _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
-        outdir = Path(f"preds_slides_{output_suffix}_{context}_{_cur_time_}")
+        outdir = Path(f"preds_slides_{output_suffix}_{context}_{_cur_time_}_{os.getenv('SLURM_JOB_ID', 'NA')}")
         outdir.mkdir(parents=True, exist_ok=True)
 
         st, ed = rg_idx or (0, len(datas_slide_text))

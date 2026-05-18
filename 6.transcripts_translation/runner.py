@@ -1,6 +1,10 @@
 from llama32 import Llama32Model
 from llama4 import Llama4Model
 from gemma3it import Gemma3Model
+from qwen35 import Qwen35Model
+from glm46 import GLM46Model
+from aya import AyaVisionModel
+from internvl import InternVLModel
 
 import argparse
 from enum import StrEnum
@@ -12,6 +16,10 @@ class Model(StrEnum):
     Llama4S = "llama4scout"
     Llama4M = "llama4maverick"
     Gemma3It12B = "gemma3it12b"
+    Qwen35_9B = "qwen35_9b"
+    GLM46V_F = "glm46v_flash"
+    AyaV_8B = "aya_vision_8b"
+    InternVL35_8B = "internvl35_8b"
 
 
 class Context(StrEnum):
@@ -84,6 +92,18 @@ if __name__ == "__main__":
 
         case Model.Gemma3It12B:
             model = Gemma3Model(model_id="google/gemma-3-12b-it")
+
+        case Model.Qwen35_9B:
+            model = Qwen35Model(model_id="Qwen/Qwen3.5-9B")
+
+        case Model.GLM46V_F:
+            model = GLM46Model(model_id="zai-org/GLM-4.6V-Flash")
+
+        case Model.AyaV_8B:
+            model = AyaVisionModel(model_id="CohereLabs/aya-vision-8b")
+
+        case Model.InternVL35_8B:
+            model = InternVLModel(model_id="OpenGVLab/InternVL3_5-8B-HF")
 
         case Model.DummyInputCheck:
             from dummy import DummyInputCheckModel

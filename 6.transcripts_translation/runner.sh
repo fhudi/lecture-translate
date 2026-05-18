@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=lectrans_infer
+#SBATCH --job-name=lt_infer_align
 #SBATCH --mail-type="BEGIN,END,FAIL,STAGE_OUT,ARRAY_TASKS"
 #SBATCH --mail-user=slack:U044ZUGHAQN
 # --output=slurm_out/slurm-%x.%j.out
@@ -8,6 +8,7 @@
 # --error=slurm_out/slurm-%x.%a.%A_%j.err
 # --output=slurm_out/slurm-%x.%j.log
 #SBATCH --output=slurm_out/slurm-%x.%a.%A_%j.log
+#SBATCH --exclude="elm[11-15],elm[21-26],elm[41-44],elm[51-55]"
 
 #python runner.py --model "gemma3it12b" --dummy
 
@@ -15,6 +16,25 @@
 if [ "$SLURM_ARRAY_TASK_ID" -eq 666 ]; then
     exit 1
 
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 993 ]; then
+    python runner.py --model "aya_vision_8b" --context "" --dummy --use-non-corrected-asr
+    python runner.py --model "aya_vision_8b" --context "slidetxt" --dummy --use-non-corrected-asr
+    python runner.py --model "aya_vision_8b" --context "slideimg" --dummy --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 994 ]; then
+    python runner.py --model "glm46v_flash" --context "" --dummy --use-non-corrected-asr
+    python runner.py --model "glm46v_flash" --context "slidetxt" --dummy --use-non-corrected-asr
+    python runner.py --model "glm46v_flash" --context "slideimg" --dummy --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 995 ]; then
+    python runner.py --model "internvl35_8b" --context "" --dummy --use-non-corrected-asr
+    python runner.py --model "internvl35_8b" --context "slidetxt" --dummy --use-non-corrected-asr
+    python runner.py --model "internvl35_8b" --context "slideimg" --dummy --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 996 ]; then
+    python runner.py --model "qwen35_9b" --context "" --dummy --use-non-corrected-asr
+    python runner.py --model "qwen35_9b" --context "slidetxt" --dummy --use-non-corrected-asr
+    python runner.py --model "qwen35_9b" --context "slideimg" --dummy --use-non-corrected-asr
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 997 ]; then
     python runner.py --model "gemma3it12b" --context "" --dummy --use-non-corrected-asr
     python runner.py --model "gemma3it12b" --context "slidetxt" --dummy --use-non-corrected-asr
@@ -56,6 +76,34 @@ elif [ "$SLURM_ARRAY_TASK_ID" -eq 13 ]; then
     python runner.py --model "gemma3it12b" --context "slideimg"
 
 
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 31 ]; then
+    python runner.py --model "qwen35_9b" --context ""
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 32 ]; then
+    python runner.py --model "qwen35_9b" --context "slidetxt"
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 33 ]; then
+    python runner.py --model "qwen35_9b" --context "slideimg"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 41 ]; then
+    python runner.py --model "aya_vision_8b" --context ""
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 42 ]; then
+    python runner.py --model "aya_vision_8b" --context "slidetxt"
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 43 ]; then
+    python runner.py --model "aya_vision_8b" --context "slideimg"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 251 ]; then
+    python runner.py --model "glm46v_flash" --context ""
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 252 ]; then
+    python runner.py --model "glm46v_flash" --context "slidetxt"
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 253 ]; then
+    python runner.py --model "glm46v_flash" --context "slideimg"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 261 ]; then
+    python runner.py --model "internvl35_8b" --context ""
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 262 ]; then
+    python runner.py --model "internvl35_8b" --context "slidetxt"
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 263 ]; then
+    python runner.py --model "internvl35_8b" --context "slideimg"
+
 
 #####################################
 #  ASR output as transcript source  #
@@ -83,8 +131,40 @@ elif [ "$SLURM_ARRAY_TASK_ID" -eq 18 ]; then
     python runner.py --model "gemma3it12b" --context "slideimg" --use-non-corrected-asr
 
 
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 36 ]; then
+    python runner.py --model "qwen35_9b" --context "" --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 37 ]; then
+    python runner.py --model "qwen35_9b" --context "slidetxt"  --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 38 ]; then
+    python runner.py --model "qwen35_9b" --context "slideimg"  --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 46 ]; then
+    python runner.py --model "aya_vision_8b" --context "" --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 47 ]; then
+    python runner.py --model "aya_vision_8b" --context "slidetxt"  --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 48 ]; then
+    python runner.py --model "aya_vision_8b" --context "slideimg"  --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 56 ]; then
+    python runner.py --model "glm46v_flash" --context "" --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 57 ]; then
+    python runner.py --model "glm46v_flash" --context "slidetxt"  --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 58 ]; then
+    python runner.py --model "glm46v_flash" --context "slideimg"  --use-non-corrected-asr
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 66 ]; then
+    python runner.py --model "internvl35_8b" --context "" --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 67 ]; then
+    python runner.py --model "internvl35_8b" --context "slidetxt"  --use-non-corrected-asr
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 68 ]; then
+    python runner.py --model "internvl35_8b" --context "slideimg"  --use-non-corrected-asr
 
 
+
+
+#####################################
+#  Slide Task
+#####################################
 
 
 elif [ "$SLURM_ARRAY_TASK_ID" -eq 101 ]; then
