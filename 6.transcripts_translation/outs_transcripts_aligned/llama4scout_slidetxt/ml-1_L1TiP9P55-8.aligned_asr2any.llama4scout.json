@@ -1,0 +1,669 @@
+{
+  "0:37:06.216": {
+    "ja": [
+      "「実際に私が話したいのは動的ベイズモデルです。これはさらに一歩進んでいて、マルチモーダルの拡張にも着目しています。これを見るのは非常に興味深いです。」"
+    ],
+    "id": [
+      "\"Hari ini saya ingin membahas tentang Bayesian dinamik. Ini merupakan langkah lebih lanjut dan juga mulai melihat ekstensi multimodal darinya karena hal ini cukup menarik untuk dilihat dalam multimodal\""
+    ],
+    "th": [
+      "\"สิ่งที่ผมอยากพูดถึงจริงๆ คือ dynamic Bayesian ซึ่งเป็นขั้นตอนที่ก้าวหน้าขึ้น และเริ่มดูส่วนขยายแบบหลายรูปแบบ (multimodal) ของสิ่งนี้ด้วย เพราะว่ามันน่าสนใจมากที่จะดู multimodal\""
+    ],
+    "zh": [
+      "\"我真正想讨论的是动态贝叶斯网络（Dynamic Bayesian）。这是一个更进一步的步骤，同时也开始研究其在多模态扩展方面的应用，因为这是一个非常有趣的研究方向。\""
+    ],
+    "es": [
+      "\"Lo que realmente quiero hablar es de la Bayesiana dinámica. es un paso más allá y también empezar a mirar las extensiones multimodales de eso, porque es bastante interesante mirar lo multimodal\""
+    ],
+    "fr": [
+      "\"La véritable chose dont je veux parler concerne les Bayésiens dynamiques. C'est une étape supplémentaire et aussi commencer à examiner les extensions multimodales de cela, car c'est assez intéressant de regarder le multimode\""
+    ],
+    "de": [
+      "\"Das eigentliche Thema, über das ich sprechen möchte, ist das dynamische Bayes'sche Modell. Es ist ein weiterer Schritt und beginnt auch, sich mit multimodalen Erweiterungen davon zu befassen, weil das ziemlich interessant ist, um die multimodalen Aspekte zu betrachten.\""
+    ]
+  },
+  "0:37:11.900": {
+    "ja": [
+      "「現在、多くの人々はニューラルアーキテクチャを好み、近年、マルチモーダルのためのグラフィカルモデルはあまり使用されていない。しかし、興味深いのは、マルチモーダルのニューラルアーキテクチャで見られる多くの概念は、実はこれらのグラフィカルモデルから着想を得ているということである。動的ベイズネットワークは、ベイズネットワークをコアに持ち、シーケンシャルな依存関係や時間的な依存関係を表現できる。典型的な動的ベイズネットワークは、1次マルコフ仮定と呼ばれるものを持つ。」"
+    ],
+    "id": [
+      "\"meskipun sekarang ini banyak orang menggunakan arsitektur neural dan beberapa tahun terakhir orang tidak banyak menggunakan model grafis untuk multimodal, tapi yang sangat menarik adalah banyak konsep yang kita lihat dalam arsitektur neural multimodal sebenarnya terinspirasi dari beberapa arsitektur yang kita miliki dalam model grafis, jadi jaringan Bayesian dinamis adalah jaringan Bayesian pada intinya tetapi memungkinkan untuk mewakili ketergantungan berurutan atau temporal jika data Anda bersifat temporal atau hanya ketergantungan berurutan, ketergantungan khas jaringan Bayesian dinamis akan memiliki apa yang disebut asumsi Markov orde pertama\""
+    ],
+    "th": [
+      "\"แม้ว่าปัจจุบันจะมีคนจำนวนมากที่ใช้โครงข่ายประสาทเทียม และเมื่อไม่นานมานี้ ผู้คนไม่ค่อยใช้แบบจำลองเชิงกราฟิกสำหรับข้อมูลหลายรูปแบบ (multimodal) มากนัก แต่ที่น่าสนใจคือ แนวคิดหลายอย่างที่คุณเห็นในสถาปัตยกรรมประสาทเทียมหลายรูปแบบ แท้จริงแล้วได้รับแรงบันดาลใจจากสถาปัตยกรรมเหล่านี้ในแบบจำลองเชิงกราฟิกเมื่อก่อน ดังนั้น เครือข่ายแบบเบย์ไดนามิก (Dynamic Bayesian Network) เป็นเครือข่ายแบบเบย์ที่มีแกนหลัก แต่ช่วยให้สามารถแสดงถึงการขึ้นต่อกันของลำดับเวลา หรือหากข้อมูลของคุณเป็นข้อมูลลำดับเวลา หรือแค่การขึ้นต่อกันของลำดับ การเครือข่ายแบบเบย์ไดนามิกทั่วไปจะมีสมมติฐานมาร์คอฟลำดับที่หนึ่ง\""
+    ],
+    "zh": [
+      "“尽管现在很多人转向神经网络架构，近年来人们对图形模型的使用减少了，但在多模态领域，神经网络架构中很多概念实际上是从早期的图形模型架构中借鉴的。动态贝叶斯网络（Dynamic Bayesian Network，DBN）本质上是一个贝叶斯网络，但它允许表示序列依赖关系或时间依赖关系，如果数据是时间序列或具有序列依赖关系。典型的动态贝叶斯网络具有一阶马尔可夫假设，即系统的状态在时间t时仅依赖于其在时间t-1时的即时过去状态。”"
+    ],
+    "es": [
+      "\"aunque ahora en estos días, mucha gente utiliza arquitecturas neuronales y en los últimos años la gente no ha utilizado modelos gráficos tanto para, eh, multimodal, pero lo que es realmente interesante es que muchos de los conceptos que se ven en las arquitecturas neuronales multimodales de hecho se inspiraron desde el principio en algunas de estas arquitecturas que teníamos en modelos gráficos, por lo que la red bayesiana dinámica es una red bayesiana en su núcleo, pero permite representar dependencias secuenciales o temporales si sus datos son temporales o simplemente dependencias secuenciales, la típica red bayesiana dinámica tendrá lo que se llama una suposición de Markov de primer orden\""
+    ],
+    "fr": [
+      "\"bien que de nos jours, de nombreuses personnes utilisent des architectures neuronales et que ces dernières années, les gens n'ont pas utilisé les modèles graphiques autant pour les données multimodales, mais ce qui est vraiment intéressant, c'est que de nombreux concepts que l'on voit dans les architectures neuronales multimodales ont en fait été inspirés dès le début par certains de ces modèles graphiques. Ainsi, le réseau bayésien dynamique est un réseau bayésien à son cœur, mais permet de représenter des dépendances séquentielles ou temporelles si vos données sont temporelles ou simplement des dépendances séquentielles. Le réseau bayésien dynamique typique aura ce que l'on appelle une hypothèse de Markov du premier ordre\""
+    ],
+    "de": [
+      "\"Obwohl heutzutage viele Menschen mit neuronalen Architekturen arbeiten und in den letzten Jahren die grafischen Modelle für multimodale Anwendungen nicht so häufig verwendet wurden, ist es interessant zu sehen, dass viele Konzepte, die in multimodalen neuronalen Architekturen verwendet werden, ursprünglich aus diesen grafischen Modellen inspiriert wurden. Ein dynamisches Bayes-Netzwerk ist im Kern ein Bayes-Netzwerk, aber es ermöglicht die Darstellung von sequentiellen Abhängigkeiten oder zeitlichen Abhängigkeiten, wenn Ihre Daten zeitlich oder einfach sequentiell sind. Das typische dynamische Bayes-Netzwerk hat eine sogenannte erste Ordnung Markov-Annahme\""
+    ]
+  },
+  "": {
+    "ja": [
+      "「1次のマルコフ仮定は、時々冗談を言うことがありますが、ちょっとした記憶力の短い魚を見つけるようなものだと言っています。例えば、『ファインディング・ニモ』に登場する魚は、現在の状態だけを覚えていて、以前に見たすべての観察結果を覚えていないようなものです。したがって、現在の状態は、過去に見たものをすべてまとめることができなければなりません。これが1次の意味です。2次の場合は、2回前まで遡ることができます。そして、これを拡張することができます。動的な興味深い側面は、LSTMのように、時間とともに変化し、進化する可能性があることです。また、有向なので、左から右へのフィードフォワードと考えることができます。もし、ニューラル表現の世界に当てはめると、例えば、時間ステップごとに、通常は同じベイジアンネットワークを使用します。同じ確率変数を使用するだけです。つまり、このような再帰を追加します。ちょっとした再帰ニューラルネットワークのような感じがします。そして、これらを追加します。これは、知識に基づいて設計されたもので、変数間の依存関係がどの変数にあるかを把握できるようになっています。」"
+    ],
+    "id": [
+      "\"Asumsi Markov orde pertama terkadang saya membuat lelucon bahwa itu sedikit seperti mencari Nemo, seperti ada ikan yang memiliki memori jangka pendek yang sangat singkat, sehingga hanya mengingat keadaan saat ini dan mungkin tidak semua pengamatan sebelumnya yang telah dilakukan, sehingga mereka akan memiliki keadaan saat ini, pengetahuan mereka sampai sekarang, tapi pengamatan sebelumnya akan terlupakan, hanya keadaan yang diingat. Dan itu berarti bahwa keadaan saat ini harus dapat meringkas segala sesuatu yang telah diamati sampai saat lalu. Itu adalah orde pertama, orde kedua berarti bahwa Anda diizinkan untuk kembali dua kali sebelumnya, dan kemudian Anda dapat membayangkan ada perpanjangan dari itu.\n\nAspek yang menarik dari dinamika adalah seperti LSTM, dapat berubah dan berkembang seiring waktu, dan itu diarahkan, sehingga dalam arti tertentu, itu adalah feed forward dari kiri ke kanan jika Anda ingin, jika Anda ingin meletakkannya dalam kata-kata representasi neural. Contoh di sini adalah bahwa pada setiap langkah waktu, itu adalah jaringan Bayesian yang sama, biasanya jaringan Bayesian yang sama, variabel acak yang sama, hanya saja saya menambahkan seperti rekurensi, seperti terasa seperti rekurensi sedikit seperti jaringan neural rekurensi, dan Anda akan menambahkan ini dan ini juga dirancang, karena pengetahuan Anda akan tahu variabel mana yang kemungkinan memiliki ketergantungan antara mereka.\""
+    ],
+    "th": [
+      "\"สมมติฐานมาร์คอฟลำดับที่หนึ่ง บางครั้งผมพูดติดตลกว่ามันเหมือนกับการหาเนโม ปลาที่มีการจดจำระยะสั้นมาก มันจำได้แค่สถานะปัจจุบันและอาจไม่ใช่การสังเกตทั้งหมดที่เคยทำมาก่อน ดังนั้น พวกมันจะมีสถานะปัจจุบัน ความรู้ในปัจจุบัน แต่การสังเกตก่อนหน้านั้นจะลืมไปแล้ว จำได้แค่สถานะเท่านั้น ดังนั้นหมายความว่าสถานะปัจจุบันจะต้องสามารถสรุปทุกอย่างที่สังเกตได้ในอดีต นั่นคือลำดับที่หนึ่ง ส่วนลำดับที่สองหมายความว่าคุณสามารถย้อนกลับไปได้สองขั้นตอน จากนั้นคุณสามารถจินตนาการว่ามีการขยายออกไป ความน่าสนใจของไดนามิกคือเหมือนใน LSTM สามารถเปลี่ยนแปลงและพัฒนาได้ตลอดเวลา และมีการ নির্দేశ ดังนั้นจึงเหมือนกับการป้อนข้อมูลจากซ้ายไปขวา หากคุณต้องการ หากคุณนำมันไปใส่ในคำของโครงข่ายประสาทเทียม ตัวอย่างที่นี่คือในแต่ละขั้นตอนเวลา เป็นเครือข่ายแบบเบย์เดียวกัน โดยปกติแล้วจะเป็นเครือข่ายแบบเบย์เดียวกัน ตัวแปรสุ่มเดียวกัน เพียงแต่ผมจะเพิ่ม recurrence เหมือนกับในเครือข่ายประสาทเทียมแบบ recurrent และนี่ก็ออกแบบมาเช่นนี้ เพราะด้วยความรู้ คุณจะรู้ว่าตัวแปรใดมีแนวโน้มที่จะมีความขึ้นต่อกันระหว่างกัน\""
+    ],
+    "zh": [
+      "“一阶马尔可夫假设有时我会开玩笑说它有点像寻找尼莫（Finding Nemo），就像有一条鱼的短期记忆非常短，它只记得当前状态，也许不是所有的先前观察结果，所以它们将拥有当前状态、当前的知识，直到现在，但先前的观察结果将被遗忘，只记住状态。这意味着当前状态必须能够总结过去所有观察到的内容。这是一阶的。第二阶意味着你允许向前看两次，然后你可以想象它会扩展。动态有趣的一面是，像LSTM一样，它可以随着时间变化和演化，而且是有方向的，所以它在某种意义上是从左到右的，如果你想把它放在神经表示的词语中。例如，这里在每个时间步骤上，它都是相同的贝叶斯网络，通常是相同的贝叶斯网络，相同的随机变量，只是我添加了这种递归，就像它有点像递归神经网络一样。而且你会添加这些，这也是故意的，因为根据知识，你会知道哪些变量之间可能存在依赖关系。”"
+    ],
+    "es": [
+      "\"La suposición de Markov de primer orden es a veces, suelo hacer la broma de que es un poco como encontrar a Nemo, como si hubiera un pez que tuviera una memoria a corto plazo muy limitada, que solo recuerda su estado actual y quizás no todas las observaciones anteriores que había hecho, por lo que tendrán su estado actual, su conocimiento actual hasta ahora, pero las observaciones anteriores se habrán olvidado, solo se recuerda el estado. Y eso significa que el estado actual tiene que ser capaz de resumir todo lo que se ha observado hasta el pasado. Eso es de primer orden. De segundo orden significa que se permite retroceder dos veces y luego se puede imaginar que hay una extensión a eso. El aspecto interesante de lo dinámico es que, al igual que en un LSTM, puede cambiar y evolucionar con el tiempo y está dirigido, por lo que es, en cierto sentido, un avance de izquierda a derecha si se quiere, si se fuera a poner en una palabra de esa de una representación neuronal. \n\nAsí que un ejemplo aquí es que en cada paso de tiempo es la misma red bayesiana, por lo general es la misma red bayesiana, la misma variable aleatoria es solo que agregaré esto como una recurrencia, un poco como una red neuronal recurrente. Y así se agregan estos y esto también es por diseño, porque gracias al conocimiento se sabrá qué variables tienen probabilidades de tener una dependencia entre ellas.\""
+    ],
+    "fr": [
+      "\"L'hypothèse de Markov du premier ordre est parfois, je fais la plaisanterie, un peu comme trouver Nemo, comme si ce poisson avait une mémoire à court terme, il ne se souvient que de son état actuel et peut-être pas de toutes les autres observations qu'il a faites précédemment, de sorte qu'il aura son état actuel, ses connaissances actuelles jusqu'à présent, mais les observations précédentes auront été oubliées, seul l'état est mémorisé. Et cela signifie que l'état actuel doit être capable de résumer tout ce qui a été observé jusqu'au passé, c'est le premier ordre. Le deuxième ordre signifie que vous êtes autorisé à aller deux fois avant, et alors vous pouvez imaginer qu'il y a une extension à cela. L'aspect intéressant de la dynamique est que, comme dans un LSTM, il peut changer et évoluer au fil du temps, et il est dirigé, donc c'est un peu comme une propagation avant de gauche à droite si vous voulez, si vous deviez le mettre dans un mot de représentation neuronale. Un exemple ici est qu'à chaque étape temporelle, c'est le même réseau bayésien, généralement c'est le même réseau bayésien, la même variable aléatoire, c'est juste que j'ajoute cela, comme une récurrence, un peu comme un réseau neuronal récurrent. Et donc vous ajouterez ces éléments et ceci est également conçu de cette façon, parce que grâce à la connaissance, vous saurez quelles variables sont susceptibles d'avoir une dépendance entre elles.\""
+    ],
+    "de": [
+      "\"Die Annahme einer ersten Ordnung von Markov ist manchmal, ich mache den Witz, es ist ein bisschen wie die Suche nach Nemo, es gibt einen Fisch, der ein sehr kurzes Gedächtnis hat, er erinnert sich nur an seinen aktuellen Zustand und vielleicht nicht an alle vorherigen Beobachtungen, die er gemacht hat, also wird er seinen aktuellen Zustand, sein aktuelles Wissen bis jetzt haben, aber die vorherigen Beobachtungen werden vergessen sein, nur der Zustand wird erinnert, und das bedeutet, dass der aktuelle Zustand in der Lage sein muss, alles zusammenzufassen, was in der Vergangenheit beobachtet wurde, das ist die erste Ordnung, die zweite Ordnung bedeutet, dass Sie zwei Schritte zurückgehen dürfen, und dann können Sie sich vorstellen, dass es eine Erweiterung davon gibt. Der interessante Aspekt der Dynamik ist, dass es sich wie bei einem LSTM ändern und im Laufe der Zeit entwickeln kann, und es ist gerichtet, also ist es in gewissem Sinne ein Feedforward von links nach rechts, wenn Sie es in ein Wort einer neuronalen Repräsentation übersetzen möchten. Ein Beispiel hierfür ist, dass in jedem Zeitschritt das gleiche Bayes-Netzwerk verwendet wird, normalerweise ist es das gleiche Bayes-Netzwerk, die gleiche Zufallsvariable, es ist nur so, dass ich diese Art von Rekurrenz hinzufüge, es fühlt sich ein bisschen wie eine rekurrente neuronale Netzwerk an, und so werden Sie diese hinzufügen, und das ist auch so konzipiert, weil Sie aufgrund des Wissens wissen werden, welche Variablen wahrscheinlich eine Abhängigkeit zwischen ihnen haben werden.\""
+    ]
+  },
+  "0:39:58.420": {
+    "ja": [
+      "「そして、それがモデル化したいことです。 2つの変数の間に何もない場合、それらは独立しているか、少なくとも条件付きで独立していると考えられます。」"
+    ],
+    "id": [
+      "\"Dan itulah yang ingin Anda modelkan. Jika tidak ada hal di antara dua variabel, maka Anda menganggapnya independen atau setidaknya independen secara kondisional.\""
+    ],
+    "th": [
+      "\"ดังนั้นนี่คือสิ่งที่คุณต้องการสร้างแบบจำลอง หากไม่มีสิ่งใดระหว่างตัวแปรสองตัว คุณคิดว่าพวกมันเป็นอิสระหรืออย่างน้อยก็เป็นอิสระแบบมีเงื่อนไข\""
+    ],
+    "zh": [
+      "\"因此，这就是你想要建模的内容。如果两个变量之间没有任何东西，那么你认为它们是独立的，或者至少是条件独立的。\""
+    ],
+    "es": [
+      "\"Y eso es lo que se quiere modelar. Si no hay nada entre dos variables, entonces se piensa que son independientes o al menos condicionalmente independientes\"."
+    ],
+    "fr": [
+      "\"Et c'est donc ce que vous voudriez modéliser. S'il n'y a rien entre deux variables, alors vous pensez qu'elles sont indépendantes ou au moins conditionnellement indépendantes.\""
+    ],
+    "de": [
+      "\"Und das ist es, was man modellieren möchte. Wenn es nichts zwischen zwei Variablen gibt, dann denkt man, dass sie unabhängig oder zumindest bedingt unabhängig sind.\""
+    ]
+  },
+  "0:40:07.840": {
+    "ja": [
+      "「独立。 そして、これらの動的ベイジアンネットワークの中で最も有名なものは何ですか？」"
+    ],
+    "id": [
+      "\"independen. Jadi yang paling terkenal dari jaringan Bayesian dinamik ini, apa itu?\""
+    ],
+    "th": [
+      "\"เป็นอิสระ และไดนามิกเบย์เซียนเน็ตเวิร์กที่มีชื่อเสียงที่สุดคืออะไร?\""
+    ],
+    "zh": [
+      "\"它们是独立的。那么最著名的动态贝叶斯网络是什么呢？\""
+    ],
+    "es": [
+      "\"independientes. Y entonces, la más famosa de estas redes bayesianas dinámicas, ¿cuál es?\""
+    ],
+    "fr": [
+      "\"indépendant. Et donc le plus célèbre de ces réseaux bayésiens dynamiques, qu'est-ce que c'est ?\""
+    ],
+    "de": [
+      "\"unabhängig. Und was ist das berühmteste dieser dynamischen Bayes-Netze?\""
+    ]
+  },
+  "0:40:18.620": {
+    "ja": [
+      "「話している人には答えがわかる。」"
+    ],
+    "id": [
+      "\"Orang dalam pidato akan tahu jawabannya.\""
+    ],
+    "th": [
+      "ผู้ฟังจะรู้คำตอบในขณะพูด"
+    ],
+    "zh": [
+      "人们在说话时就知道答案"
+    ],
+    "es": [
+      "\"La gente en el habla sabrá la respuesta.\""
+    ],
+    "fr": [
+      "\"Les gens dans le discours sauront la réponse.\""
+    ],
+    "de": [
+      "\"Die Leute werden die Antwort in der Rede kennen.\" \n\nis not the best translation \n\nHere is a better one:\n\n\"Die Leute werden die Antwort aus der Rede kennen.\""
+    ]
+  },
+  "0:40:25.308": {
+    "ja": [
+      "「ここでの考え方は、私は私の観測値、証拠を持っており、この部分だけを見ると、これはナイーブベイズのように見えます。しかし、違いは、多くの場合、隠れマルコフモデルは、Hが潜在的な実行可能変数であるように、つまり私たちが探している何かであるように、観測されていない方法で行われることです。」"
+    ],
+    "id": [
+      "\"Ide di sini adalah saya memiliki observasi, bukti, dan jika Anda melihat bagian ini saja, ini terlihat seperti naive Bayes, tapi perbedaannya di sini, seringkali model Markov tersembunyi dilakukan sedemikian rupa sehingga tidak diobservasi, seperti H akan menjadi laten viable, sesuatu yang kita cari.\""
+    ],
+    "th": [
+      "\"แนวคิดที่นี่คือ ฉันมีการสังเกต และหลักฐานของฉัน และถ้าคุณดูที่ส่วนนี้ มันดูเหมือนกับ naive Bayes มาก แต่ความแตกต่างตรงนี้ โมเดลมาร์คอฟที่ซ่อนอยู่มักจะทำในลักษณะที่ไม่สามารถสังเกตได้ เช่น H จะเป็น latent variable ซึ่งเป็นสิ่งที่เรากำลังมองหา\""
+    ],
+    "zh": [
+      "这里的想法是，我有我的观察，我的证据，如果你只看这部分，这看起来很像朴素贝叶斯，但这里的区别在于，隐马尔可夫模型通常是这样做的，即它没有被观察到，就像H将是一个潜在的可行性，我们正在寻找的东西一样。"
+    ],
+    "es": [
+      "\"La idea aquí es que tengo mi observación, mi evidencia, y si solo miras esta parte, esto se parece mucho a un Naive Bayes, pero la diferencia aquí, a menudo el modelo oculto de Markov se haría de tal manera que no se observe, como H será un viable latente, algo que estamos buscando.\""
+    ],
+    "fr": [
+      "\"L'idée ici est que j'ai mon observation, mon évidence, et si vous regardez juste cette partie, cela ressemble beaucoup à un Bayes naïf, mais la différence ici, souvent le modèle de Markov caché serait fait de telle sorte qu'il ne soit pas observé, comme H sera une variable latente viable, quelque chose que nous recherchons.\""
+    ],
+    "de": [
+      "\"Die Idee hier ist, dass ich meine Beobachtung, meine Evidenz habe, und wenn man sich nur diesen Teil ansieht, sieht das hier viel wie ein naiver Bayes aus, aber der Unterschied hier ist, dass oft das Hidden-Markov-Modell so durchgeführt wird, dass es nicht beobachtet wird, wie H eine latente Variable ist, etwas, das wir suchen.\""
+    ]
+  },
+  "0:40:44.888": {
+    "ja": [
+      "「そして、私に言わせれば、これをこの部分のようなクラスタリングとして考える」"
+    ],
+    "id": [
+      "\"Dan jika Anda bertanya kepada saya, Pikirkan hampir seperti pengelompokan seperti bagian ini\""
+    ],
+    "th": [
+      "และถ้าถามฉัน ลองคิดถึงมันเหมือนกับการคลัสเตอร์ เช่น ส่วนนี้"
+    ],
+    "zh": [
+      "\"如果你们问我，可以把它近似地看作是一个类似这样的聚类\""
+    ],
+    "es": [
+      "\"Y si me preguntas, piénsalo casi como una agrupación como esta parte\""
+    ],
+    "fr": [
+      "\"Et si vous me demandez, pensez-y presque comme un regroupement comme cette partie\""
+    ],
+    "de": [
+      "\"Und wenn Sie mich fragen, denken Sie darüber nach, es fast wie ein Clustering wie in diesem Teil hier zu betrachten\""
+    ]
+  },
+  "0:41:03.116": {
+    "ja": [
+      "ここの部分はほとんどクラスタリングと呼ぶことができる。例えば、Xを世界中のすべての話された単語とすると、HはHは何であるか？ Hは確率変数である。"
+    ],
+    "id": [
+      "\"Bagian ini hampir seperti pengelompokan. Jadi X mungkin semua kata yang diucapkan di dunia, katakanlah, dan H, H ini apa, H adalah variabel acak\""
+    ],
+    "th": [
+      "\"ส่วนนี้ใกล้เคียงกับการจัดกลุ่ม ดังนั้น X อาจเป็นคำพูดทั้งหมดในโลก และ H คือ ตัวแปรสุ่ม\""
+    ],
+    "zh": [
+      "“这里的部分几乎可以看作是聚类。比如 X 可以是世界上所有的口语词汇，H 则表示 H，它是一个随机变量”"
+    ],
+    "es": [
+      "\"Esta parte de aquí es casi una agrupación. Entonces X quizás todas las palabras habladas en el mundo, digamos, y una H, esta H, qué es H, H es una variable aleatoria\""
+    ],
+    "fr": [
+      "\"Cette partie ici est presque un regroupement. Donc X, peut-être tous les mots parlés dans le monde, disons, et un H, ce H, qu'est-ce que H, H est une variable aléatoire\""
+    ],
+    "de": [
+      "\"Dieser Teil hier ist fast eine Clustering. Also X sind vielleicht alle gesprochenen Wörter der Welt, sagen wir, und ein H, dieses H, was ist H? H ist eine Zufallsvariable\""
+    ]
+  },
+  "0:41:19.316": {
+    "ja": [
+      "「通常、0から20までの数値を取る。例えば、1から20まで。 そして、これは生成的なプロセスである。つまり、HとH uh ステート ワン ツー スリー ツーから単語を生成する必要がある。」"
+    ],
+    "id": [
+      "\"Biasanya dapat mengambil nilai numerik dari 0 hingga 20. Katakanlah dari 1 hingga 20 dan Ini adalah proses generatif. Jadi kata tersebut harus dihasilkan dari H dan H eh keadaan satu dua tiga dua\""
+    ],
+    "th": [
+      "\"โดยทั่วไปค่าเป็นตัวเลขตั้งแต่ 0 ถึง 20 เช่น 1 ถึง 20  และนี่เป็นกระบวนการสร้าง ดังนั้นคำศัพท์จำเป็นต้องถูกสร้างขึ้นจาก H และสถานะ H หนึ่ง สอง สาม สอง\""
+    ],
+    "zh": [
+      "\"它通常可以取从 0 到 20 的数值，比如从 1 到 20。并且它是一个生成过程。所以单词需要从 H 和 H 状态（一、二、三……）中生成出来。\""
+    ],
+    "es": [
+      "\"Usualmente puede tomar valores numéricos de 0 a 20. Digamos de 1 a 20 y es un proceso generativo. Entonces la palabra necesita haber sido generada a partir de H y del estado H uno, dos, tres, dos\""
+    ],
+    "fr": [
+      "\"Il peut généralement prendre des valeurs numériques de 0 à 20. Disons de 1 à 20 et c'est un processus génératif. Donc, le mot doit avoir été généré à partir de H et de l'état H un deux trois deux\""
+    ],
+    "de": [
+      "\"Es kann normalerweise numerische Werte von 0 bis 20 annehmen. Sagen wir von 1 bis 20 und es ist ein generativer Prozess. Das Wort muss also aus H und dem H-Zustand eins zwei drei zwei generiert worden sein\""
+    ]
+  },
+  "0:41:39.516": {
+    "ja": [
+      "「20 えーと、つまり、$h$ をクラスタリングマシンとして見ることができて、実際、ガウシアンモデルで実装されることが多い。もしこれらが連続的であれば、条件付き分布をガウシアンモデルでモデル化できたかもしれない。クラスタの平均をイメージしてみよう。$h$が1のとき、どのような単語がクラス生成される可能性が高いか、$h$が2のとき、どのような単語が生成される可能性が高いか、$h$が3のとき、どのような単語が生成される可能性が高いか。これは、これらの隠れた状態の1つの見方である。これらは、何らかの非常に高次元のものを強制的に、離散的なランダム変数にしている。隠れマルコフモデルでは、多くの場合、離散的で観測不能なランダム変数となる。条件付きランダムフィールドのような他のグラフィカルモデルを見ると、これらの変数は、潜在変数か、時には観測変数であり、これらの潜在変数または観測変数は、情報をクラスタリングして要約する方法としてよく使用される。この図を見ると、もし私が「the yellow house closed」を生成しようとした場合、ちょっと変な英語の文だが、この文を最も生成しやすくする状態のシーケンスは何か、ということが隠れマルコフモデルで推論しようとするときに見られる。」"
+    ],
+    "id": [
+      "\"dua puluh jadi, mmm, kamu bisa melihat H sebagai mesin pengelompokan, dan sebenarnya sering diimplementasikan dengan model Gaussian. Mungkin jika ini kontinu, kita bisa mengatakan bahwa distribusi kondisional bisa dimodelkan dengan model Gaussian. Kamu bisa membayangkan pengelompokan, jadi rata-rata cluster. Jika H sama dengan satu, apa kata-kata yang mungkin dihasilkan? Ketika H sama dengan dua, apa kata-kata yang mungkin dihasilkan? Ketika H sama dengan tiga, apa kata-kata yang mungkin dihasilkan? Itu satu pandangan dari variabel tersembunyi ini. Mereka memaksa sesuatu yang bisa sangat berdimensi tinggi, mereka memaksanya menjadi variabel acak yang hanya ini, yang sering kali diskrit dan tidak terlihat. Jadi model Markov tersembunyi, dan banyak, kita akan melihat ketika kita melihat model grafis lain seperti bidang acak kondisional, banyak variabel seperti ini, baik variabel laten maupun variabel teramati, sering kali dapat digunakan sebagai cara untuk mengelompokkan, meringkas informasi. Jadi jika kamu melihat ini, katakan, \"hey, jika saya ingin menghasilkan, jika saya ingin menghasilkan 'the yellow house closed', itu kalimat bahasa Inggris yang aneh, apa urutan keadaan yang akan memungkinkan saya untuk membuat saya paling mungkin menghasilkan semua kata ini?\" Itu yang akan model Markov tersembunyi coba untuk inferensi ketika melihatnya dari perspektif inferensi.\""
+    ],
+    "th": [
+      "\"ยี่สิบ ดังนั้น อืม คุณจะเห็นว่า h เป็นเหมือนเครื่องทำคลัสเตอร์ และในความเป็นจริงแล้ว มันมักจะถูกนำไปใช้กับแบบจำลองเกาส์เซียน บางทีถ้าเป็นแบบต่อเนื่อง เราอาจจะพูดว่า การกระจายแบบมีเงื่อนไขสามารถถูกจำลองด้วยแบบจำลองเกาส์เซียน โดยคุณสามารถนึกภาพได้ว่ามันเป็นการคลัสเตอร์ เช่น ค่าเฉลี่ยของคลัสเตอร์ ถ้า h เท่ากับ 1 คำที่อาจจะถูกสร้างขึ้นเมื่อ h เท่ากับ 1 คืออะไร คำที่อาจจะถูกสร้างขึ้นเมื่อ h เท่ากับ 2 คืออะไร คำที่อาจจะถูกสร้างขึ้นเมื่อ h เท่ากับ 3 คืออะไร นั่นคือมุมมองหนึ่งของสถานะที่ซ่อนอยู่ พวกมันบังคับสิ่งที่อาจจะมีมิติสูงมาก ให้เป็นตัวแปรสุ่มที่มีเพียงค่าเดียวเท่านั้น ซึ่งมักจะเป็นตัวแปรสุ่มไม่ต่อเนื่องและไม่สามารถคาดเดาได้ ดังนั้น แบบจำลองมาร์คอฟที่ซ่อนอยู่ และหลายๆ อย่างที่เราจะดูเมื่อเราดูแบบจำลองกราฟิกอื่นๆ เช่น สนามสุ่มแบบมีเงื่อนไข ตัวแปรเหล่านี้หลายตัว เช่น ตัวแปรที่ซ่อนอยู่หรือแม้แต่ตัวแปรที่สังเกตได้ บางครั้งตัวแปรที่ซ่อนอยู่หรือตัวแปรที่สังเกตได้ พวกมันมักจะสามารถใช้เป็นวิธีในการคลัสเตอร์ สรุปสารสนเทศ และดังนั้น หากคุณดูที่นี้ มันบอกว่า เฮ้ หากฉันจะสร้าง ถ้าฉันจะสร้าง \"the yellow house closed\" นั่นเป็นประโยคภาษาอังกฤษที่แปลก \"closed\" นั่นเป็นคำที่แปลกหน่อย ลำดับของสถานะที่อนุญาตให้ฉันสร้างคำเหล่านี้ได้มากที่สุดคืออะไร นั่นคือสิ่งที่แบบจำลองมาร์คอฟที่ซ่อนอยู่พยายามจะอนุมาน เมื่อดูจากมุมมองของการอนุมาน\""
+    ],
+    "zh": [
+      "所以，我们可以把 $h$ 看作是一台聚类机，事实上，它经常与高斯模型一起实现。如果这些是连续的，我们可以说条件分布可以用高斯模型来建模。你可以想象聚类，如果 $h$ 等于 1，会生成哪些单词？如果 $h$ 等于 2，会生成哪些单词？如果 $h$ 等于 3，又会生成哪些单词？这是对这些隐藏状态的一种看法。它们强制一些可能非常高维的数据，变成一个离散的随机变量，通常是无法直接观察的。所以，隐马尔可夫模型和很多其他的图模型，如条件随机场，很多这些变量，无论是潜在变量还是观测变量，都可以用来聚类，总结信息。所以，如果你看这个，它会说，如果我要生成“the yellow house closed”，这是一个奇怪的句子，什么样的状态序列可以让我最有可能生成所有这些单词？这是隐马尔可夫模型试图推断的。"
+    ],
+    "es": [
+      "\"Veinte, así que, eh, puedes ver a h como una máquina de agrupamiento, uh, y de hecho, a menudo se implementa con el modelo gaussiano. Tal vez si estos fueran continuos, podríamos haber dicho que la distribución condicional podría haberse modelado con un modelo gaussiano. Puedes imaginar simplemente agrupando, así que la media del grupo, si h es igual a uno, ¿cuáles son las palabras que es probable que se generen cuando h es igual a uno? ¿Cuáles son las palabras que es probable que se generen cuando h es igual a dos? ¿Cuáles son las palabras que es probable que se generen cuando h es igual a tres? Esa es una visión de estos estados ocultos. Ellos fuerzan algo que podría ser de muy alta dimensión, lo fuerzan a ser esta variable aleatoria que es a menudo discreta y no observable. Así que los modelos de Markov ocultos y muchos, cuando miramos otros modelos gráficos como campos aleatorios condicionales, muchas de estas variables, como éstas, ya sean variables latentes o incluso variables observadas, a menudo pueden usarse como una forma de agrupar, de resumir la información. Y así, si miras esto, dice: \"Ey, si fuera a generar, si fuera a generar 'la casa amarilla cerrada', esa es una extraña, uh, 'cerrada' es un poco de una oración inglesa extraña. ¿Cuál es la secuencia de estados que me permitirá generar con mayor probabilidad todas estas palabras?\" Eso es lo que el modelo de Markov oculto intentará inferir cuando lo mire desde una perspectiva de inferencia.\""
+    ],
+    "fr": [
+      "\"Donc, euh, vous pouvez voir H comme une machine de regroupement, et en fait, elle est souvent mise en œuvre avec le modèle gaussien. Peut-être que si ces données étaient continues, nous pourrions dire que la distribution conditionnelle pourrait être modélisée avec un modèle gaussien. Vous pourriez imaginer simplement un regroupement, donc la moyenne du cluster. Si H est égal à un, quels sont les mots susceptibles d'être générés ? Quand H est égal à deux, quels sont les mots susceptibles d'être générés ? Quand H est égal à trois, quels sont les mots susceptibles d'être générés ? C'est une façon de voir ces états cachés. Ils permettent de prendre quelque chose qui pourrait être de très grande dimension et de le forcer à être une variable aléatoire, souvent discrète et non observable. Donc, les modèles de Markov cachés et beaucoup de, nous allons regarder d'autres modèles graphiques comme les champs aléatoires conditionnels, beaucoup de ces variables, comme celles-ci, soit des variables latentes, soit même des variables observées, peuvent souvent être utilisées pour regrouper et résumer l'information. Donc, si vous regardez ceci, cela dit : \"Hé, si je devais générer, si je devais générer 'la maison jaune fermée', c'est une drôle de phrase, c'est un peu une phrase anglaise étrange. Quelle est la séquence d'états qui me permettra de générer le plus probablement toutes ces paroles ?\" C'est ce que le modèle de Markov caché va essayer de déduire en le regardant d'un point de vue inférentiel.\""
+    ],
+    "de": [
+      "\"Also, zwanzig, also, Sie könnten sich $h$ als eine Clustering-Maschine vorstellen, und tatsächlich wird es oft mit dem Gauß-Modell implementiert. Vielleicht, wenn diese kontinuierlich wären, könnten wir sagen, dass die bedingte Verteilung mit einem Gauß-Modell modelliert werden könnte. Sie könnten sich das Clustering vorstellen, also den Cluster-Mittelwert. Wenn $h$ gleich eins ist, welche Wörter sind dann wahrscheinlich in der Klasse generiert, wenn $h$ gleich eins ist? Welche Wörter sind wahrscheinlich generiert, wenn $h$ gleich zwei ist? Welche Wörter sind wahrscheinlich generiert, wenn $h$ gleich drei ist? Das ist eine Sichtweise auf diese verborgenen Zustände. Sie zwingen etwas, das sehr hochdimensional sein könnte, dazu, nur eine Zufallsvariable zu sein, die oft diskret und nicht beobachtbar ist. Also Hidden-Markov-Modelle und vieles mehr. Wenn wir uns andere grafische Modelle wie bedingte Zufallsfelder ansehen, werden viele dieser Variablen, wie diese, entweder latente Variablen oder sogar beobachtete Variablen, oft als eine Möglichkeit verwendet, um Informationen zu clustern und zusammenzufassen. Wenn Sie sich das ansehen, sagt es: 'Hey, wenn ich generieren würde, wenn ich den gelben Haus geschlossen generieren würde, ist das ein seltsamer Satz, geschlossen, das ist ein bisschen ein seltsamer englischer Satz.' Was ist die Sequenz von Zuständen, die es mir ermöglichen wird, es höchstwahrscheinlich zu generieren, alle diese Wörter? Das ist es, was das Hidden-Markov-Modell versuchen wird zu inferieren, wenn es aus einer Inferenzperspektive betrachtet wird.\""
+    ]
+  },
+  "0:43:42.732": {
+    "ja": [
+      "「といった感じで、次回以降でこれらの最適化方法についてさらに詳しく見ていきますが、今回紹介した内容は最適化の部分でもう少し詳しく説明します。」"
+    ],
+    "id": [
+      "\"Dan seterusnya dan kita akan melihat lebih banyak lagi nanti tentang bagaimana mengoptimalkan ini, tapi Anda juga bisa melihat ini karena kita akan membahas beberapa di bagian optimasi minggu depan.\""
+    ],
+    "th": [
+      "\"และเราจะมาดูรายละเอียดเพิ่มเติมในลำดับถัดไปเกี่ยวกับวิธีการปรับให้เหมาะสมเหล่านี้ และคุณสามารถดูเพิ่มเติมได้ในส่วนของการปรับให้เหมาะสมในสัปดาห์หน้า\""
+    ],
+    "zh": [
+      "\"等等，我们下次会更深入地讨论如何优化这些模型。同时，我们下周也会在优化部分更深入地讨论一些相关内容。\""
+    ],
+    "es": [
+      "\"Así que veremos un poco más adelante cómo optimizar estos o pero y también puedes ver esto como discutiremos un poco más sobre la parte de optimización la próxima semana.\""
+    ],
+    "fr": [
+      "\"Et ainsi de suite, et nous allons examiner un peu plus en détail ensuite comment optimiser ces éléments, mais vous pouvez également considérer cela comme nous en discuterons un peu plus lors de la partie optimisation la semaine prochaine.\""
+    ],
+    "de": [
+      "\"Soweit so und wir werden uns nächstes Mal noch ein bisschen mehr ansehen, wie man diese optimiert oder aber und man kann sich das auch ansehen, wir werden einiges davon ein bisschen mehr in dem Optimierungsteil nächste Woche besprechen.\""
+    ]
+  },
+  "0:44:02.472": {
+    "ja": [
+      "「しかし、興味深い部分は、私は観測された何かを持っている。」 \n\nHowever, here is a more contextual and polished translation:\n\n「しかし、興味深いのは、私が観測したものがあるということです。」 \n\nIf you want me to continue with the rest of the transcript, please let me know."
+    ],
+    "id": [
+      "\"Tapi bagian yang menarik adalah saya akan memiliki beberapa yang teramati.\""
+    ],
+    "th": [
+      "\"แต่อะไรที่น่าสนใจคือ ผมมีบางสิ่งที่สังเกตได้\""
+    ],
+    "zh": [
+      "\"但有趣的部分在于，我将拥有一些观察结果。\""
+    ],
+    "es": [
+      "\"Pero la parte interesante es que voy a tener algunas observaciones.\""
+    ],
+    "fr": [
+      "\"Mais la partie intéressante est que je vais avoir des observations.\""
+    ],
+    "de": [
+      "\"Aber der interessante Teil ist, dass ich einige beobachtete habe.\""
+    ]
+  },
+  "0:44:07.412": {
+    "ja": [
+      "「つまり、私は5つ、9つの確率変数を持っており、そのうち4つは観測され、5つは観測されていない。」 \n\nHowever, I need the full transcript to provide an accurate translation. Please go ahead and provide the full transcript. I'll be happy to help. \n\n(Also, please let me know if you'd like me to revise anything in this response or provide further assistance.)"
+    ],
+    "id": [
+      "\"Jadi saya memiliki lima, sembilan variabel acak dan empat di antaranya diamati dan lima di antaranya tidak diamati.\""
+    ],
+    "th": [
+      "\"ผมมีตัวแปรสุ่ม 9 ตัว และ 4 ตัวในนั้นถูกสังเกต และอีก 5 ตัวไม่ถูกสังเกต\""
+    ],
+    "zh": [
+      "\"所以我有五个、九个随机变量，其中四个是可观察的，五个是不可观察的。\""
+    ],
+    "es": [
+      "\"Así que tengo cinco, nueve variables aleatorias y cuatro de ellas son observadas y cinco de ellas no son observadas.\""
+    ],
+    "fr": [
+      "\"J'ai donc cinq, neuf variables aléatoires et quatre d'entre elles sont observées et cinq ne le sont pas.\""
+    ],
+    "de": [
+      "\"Ich habe also fünf, neun Zufallsvariablen und vier davon sind beobachtet und fünf davon sind nicht beobachtet.\""
+    ]
+  },
+  "0:44:16.552": {
+    "ja": [
+      "「そして考え方は、これらが同時確率分布に従うと推論できれば、この同時確率モデルがあれば、$p(h_1)$、$p(h_1|x_1, x_2, x_3, x_4)$といった確率を計算できるようになるというものです。」"
+    ],
+    "id": [
+      "\"Dan idenya adalah jika saya mampu untuk menyimpulkan probabilitas gabungan dari ini, jika saya memiliki model dengan probabilitas gabungan, maka saya dapat mulai untuk mengatakan apa probabilitas p dari h1 p dari h1 diberikan x1, x2, x3 dan x4.\""
+    ],
+    "th": [
+      "\"และแนวคิดก็คือ หากฉันสามารถอนุมานความน่าจะเป็นร่วมของการนี้ได้ หากฉันมีแบบจำลองที่มีความน่าจะเป็นร่วม แล้วฉันก็สามารถเริ่มพูดได้ว่าค่าความน่าจะเป็น p ของ h1, p ของ h1 ที่กำหนดให้ x1, x2, x3 และ x4\""
+    ],
+    "zh": [
+      "\"其思想是，如果我能够推断出它们的联合概率，如果我有一个联合概率模型，那么我就可以开始计算p(h1) 的概率，即根据x1、x2、x3和x4的值计算p(h1)\""
+    ],
+    "es": [
+      "\"Y la idea es que si puedo inferir la probabilidad conjunta de esto, si tengo un modelo con una probabilidad conjunta, entonces puedo empezar a decir cuál es la probabilidad a p de h1 p de h1 dado x1, x2, x3 y x4.\""
+    ],
+    "fr": [
+      "\"Et l'idée est que si je suis capable d'inférer la probabilité conjointe de cela, si j'ai un modèle avec une probabilité conjointe, alors je peux commencer à dire quelle est la probabilité a p de h1 p de h1 étant donné x1, x2, x3 et x4.\""
+    ],
+    "de": [
+      "\"Und die Idee ist, wenn ich in der Lage bin, die gemeinsame Wahrscheinlichkeit davon zu inferieren, wenn ich ein Modell mit einer gemeinsamen Wahrscheinlichkeit habe, dann kann ich anfangen zu sagen, was die Wahrscheinlichkeit p von h1 ist, gegeben x1, x2, x3 und x4.\""
+    ]
+  },
+  "0:44:30.112": {
+    "ja": [
+      "「そのため、h1の周辺化が１つの方法になります。」"
+    ],
+    "id": [
+      "\"Jadi itu akan menjadi satu cara dan itu akan menjadi marginalisasi untuk h1.\""
+    ],
+    "th": [
+      "\"นั่นจะเป็นวิธีหนึ่ง และนั่นจะเป็นการหาค่าขອบเขตสำหรับ h1\""
+    ],
+    "zh": [
+      "\"这就是其中一种方法，对 $h_1$ 进行边缘化处理。\""
+    ],
+    "es": [
+      "\"Entonces esa sería una forma y esa sería la marginalización para h1\"."
+    ],
+    "fr": [
+      "\"Donc ce serait une façon et ce serait marginaliser pour h1.\""
+    ],
+    "de": [
+      "\"Das wäre also eine Möglichkeit und zwar die Marginalisierung für h1.\""
+    ]
+  },
+  "0:44:42.992": {
+    "ja": [
+      "「または、これを p of h0, h1, h2, h3, h4 given x1, x2, x3, x4 として定義することもできて、もし私が結合確率を学習すれば、その質問に答えることができる、という式です。」"
+    ],
+    "id": [
+      "\"Atau Anda bisa mendefinisikan ini sebagai p dari h0, h1, h2, h3, h4 diberikan x1, x2, x3, x4 dan Anda dapat membayangkan bahwa jika saya telah mempelajari probabilitas gabungan saya, saya dapat menjawab pertanyaan itu. persamaan.\""
+    ],
+    "th": [
+      "\"หรือนิยามเป็น p ของ h0, h1, h2, h3, h4 เมื่อให้ x1, x2, x3, x4 คุณสามารถนึกภาพออกว่า ถ้าฉันเรียนรู้ความน่าจะเป็นร่วม ฉันสามารถตอบคำถามนั้นได้ สมการ\""
+    ],
+    "zh": [
+      "\"或者，你也可以定义为 p of h0, h1, h2, h3, h4 给定 x1, x2, x3, x4 的概率，你可以想象，如果我学到了联合概率，我就可以回答这个问题。等式。\""
+    ],
+    "es": [
+      "\"O también podrías definir esto como p de h0, h1, h2, h3, h4 dado x1, x2, x3, x4 y puedes imaginar que si he aprendido mi probabilidad conjunta, puedo responder a esa pregunta. ecuación.\""
+    ],
+    "fr": [
+      "\"Ou vous pourriez définir cela comme p de h0, h1, h2, h3, h4 étant donné x1, x2, x3, x4 et vous pouvez imaginer que si j'ai appris ma probabilité conjointe, je peux répondre à cette question. équation.\""
+    ],
+    "de": [
+      "\"Oder man könnte dies als p von h0, h1, h2, h3, h4 gegeben x1, x2, x3, x4 definieren und man kann sich vorstellen, dass ich, wenn ich meine gemeinsame Wahrscheinlichkeit gelernt habe, diese Frage beantworten kann. Gleichung.\""
+    ]
+  },
+  "0:44:58.632": {
+    "ja": [
+      "「通常行う典型的なクエリです。しかし、マルチモーダルデータがある場合はどうでしょうか？」"
+    ],
+    "id": [
+      "\"Ini adalah query yang biasa Anda lakukan. Tapi bagaimana jika saya memiliki data multimodal?\""
+    ],
+    "th": [
+      "\"นี่เป็นคำถามทั่วไปที่คุณทำ แต่ถ้าฉันมีข้อมูลแบบหลายรูปแบบล่ะ?\""
+    ],
+    "zh": [
+      "这是一个典型的查询，但是如果我有多种模态的数据怎么办？"
+    ],
+    "es": [
+      "\"Es una consulta típica que se hace. Pero, ¿qué pasa si tengo datos multimodales?\""
+    ],
+    "fr": [
+      "\"C'est une requête typique que vous faites. Mais que se passe-t-il si j'ai des données multimodales ?\""
+    ],
+    "de": [
+      "\"Das ist eine typische Anfrage, die man durchführt. Aber was, wenn ich multimodale Daten habe?\""
+    ]
+  },
+  "0:45:04.012": {
+    "ja": [
+      "「複数のデータストリームがある場合はどうすればよいか？」"
+    ],
+    "id": [
+      "\"Bagaimana jika saya memiliki beberapa aliran data?\""
+    ],
+    "th": [
+      "\"ถ้าฉันมีข้อมูลหลายกระแส จะทำอย่างไร\""
+    ],
+    "zh": [
+      "如果我有多个数据流，该怎么办？"
+    ],
+    "es": [
+      "¿Qué pasa si tengo varias corrientes de datos?"
+    ],
+    "fr": [
+      "\"Et si j'ai plusieurs flux de données ?\""
+    ],
+    "de": [
+      "\"Was, wenn ich mehrere Datenströme habe?\""
+    ]
+  },
+  "0:45:08.892": {
+    "ja": [
+      "「そして、私たちがこの因数分解を行うためのいくつかの戦略を共有させてください。」"
+    ],
+    "id": [
+      "\"Dan izinkan saya berbagi dengan Anda beberapa strategi untuk memfaktorkan ini.\""
+    ],
+    "th": [
+      "และให้ฉันมาแบ่งปันกับคุณกลยุทธ์ในการแยกตัวประกอบนี้"
+    ],
+    "zh": [
+      "\"现在，我来分享一些分解它的策略。\""
+    ],
+    "es": [
+      "\"Y déjenme compartir con ustedes algunas estrategias para factorizar esto.\""
+    ],
+    "fr": [
+      "\"Et laissez-moi partager avec vous quelques stratégies de factorisation de ceci.\""
+    ],
+    "de": [
+      "\"Und ich möchte mit Ihnen einige Strategien zur Faktorisierung dieses Sachverhalts teilen.\""
+    ]
+  },
+  "0:45:11.492": {
+    "ja": [
+      "「そして実際、最初のモデルはファクториアルHMMと呼ばれます。」"
+    ],
+    "id": [
+      "\"Dan sebenarnya, yang pertama disebut sebagai HMM faktorial.\""
+    ],
+    "th": [
+      "\"และในความเป็นจริง แบบจำลองแรกเรียกว่า Factorial HMM\""
+    ],
+    "zh": [
+      "\"实际上，第一个被称为因子隐马尔可夫模型（Factorial HMM）。\""
+    ],
+    "es": [
+      "\"Y de hecho, al primero se le llama HMM factorial.\""
+    ],
+    "fr": [
+      "\"Et en fait, la première s'appelle Factorial HMM.\""
+    ],
+    "de": [
+      "\"Und tatsächlich wird der erste als Factorial HMM bezeichnet.\""
+    ]
+  },
+  "0:45:17.832": {
+    "ja": [
+      "「これ自体はマルチモーダルではありませんが、興味深い見方です。」"
+    ],
+    "id": [
+      "\"Ini bukan multimodal itu sendiri, tapi ini adalah sudut pandang yang menarik.\""
+    ],
+    "th": [
+      "\"อันนี้ไม่ใช่ข้อมูลหลายรูปแบบในตัวเอง แต่เป็นมุมมองที่น่าสนใจ\""
+    ],
+    "zh": [
+      "\"这本身不是一个多模态的模型，但它提供了一个有趣的视角。\""
+    ],
+    "es": [
+      "\"Este no es multimodal en sí mismo, pero es una visión interesante.\""
+    ],
+    "fr": [
+      "\"Ceci n'est pas un multimodal en soi, mais c'est une vue intéressante.\""
+    ],
+    "de": [
+      "\"Dieses ist nicht multimodal an sich, aber es bietet eine interessante Perspektive.\""
+    ]
+  },
+  "0:45:23.292": {
+    "ja": [
+      "「そして、ここでは観測の流れが1つしかないと述べていますが、実際には、この情報の流れを生成する過程は1つ以上あり、要因も1つ以上あります。」"
+    ],
+    "id": [
+      "\"Dan di sini dikatakan saya hanya memiliki satu aliran observasi, tapi saya sebenarnya, dalam menghasilkan aliran informasi ini, saya memiliki lebih dari satu proses, lebih dari satu faktor yang menghasilkan ini.\""
+    ],
+    "th": [
+      "และตรงนี้บอกว่า ฉันมีเพียงหนึ่งกระแสของการสังเกต แต่ฉันมีจริง ๆ แล้ว การสร้างกระแสของสารสนเทศนี้ ฉันมีมากกว่าหนึ่งกระบวนการ มากกว่าหนึ่งปัจจัยที่กำลังสร้างสิ่งนี้"
+    ],
+    "zh": [
+      "这里提到我只有一个观测流，但实际上，生成这个信息流的过程中，我有多个过程、多个因素在生成它。"
+    ],
+    "es": [
+      "\"Y aquí dice que solo tengo un flujo de observación, pero en realidad, al generar este flujo de información, tengo más de un proceso, más de un factor que lo está generando\"."
+    ],
+    "fr": [
+      "\"Et ici, il est dit que je n'ai qu'un seul flux d'observation, mais j'ai, en fait, en générant ce flux d'informations, plus d'un processus, plus d'un facteur qui les génère.\""
+    ],
+    "de": [
+      "\"Und hier steht, dass ich nur einen Beobachtungsstrom habe, aber ich habe tatsächlich, wenn ich diesen Informationsstrom generiere, mehr als einen Prozess, mehr als einen Faktor, der dies generiert.\""
+    ]
+  },
+  "0:45:41.792": {
+    "ja": [
+      "「これは興味深い拡張です。さらに興味深いのは、さらに一歩進んで、よりマルチモーダルな感覚でそれを見ることです。たとえば、私は1セットの観察結果を持っていて、あなたの唇を見つめていると同時に、オーディオもあるというような具合です。」"
+    ],
+    "id": [
+      "\"Jadi itu adalah sebuah ekstensi yang menarik. Sekarang, yang menarik adalah untuk melangkah lebih jauh dan melihatnya dalam arti multimodal yang lebih luas, seperti sekarang saya juga bisa melihat bahwa saya memiliki satu set pengamatan, seperti Anda melihat bibir saya, dan kemudian Anda juga memiliki audio.\""
+    ],
+    "th": [
+      "\"นี่คือส่วนขยายที่น่าสนใจ ตอนนี้สิ่งที่น่าสนใจคือการไปไกลกว่านั้น และดูในมุมมองแบบหลายรูปแบบมากขึ้น เช่น ตอนนี้ผมมีชุดข้อมูลที่สังเกตได้หนึ่งชุด เช่น คุณดูที่ริมฝีปากของผม และคุณยังมีข้อมูลเสียงด้วย\""
+    ],
+    "zh": [
+      "\"这是一个有趣的扩展。现在，有趣的是进一步扩展它，以更具多模态的方式来看待它。现在，我可以认为我有一组观察值，比如你看着我的嘴唇，然后你还有音频。\""
+    ],
+    "es": [
+      "\"Así que esta es una extensión interesante. Ahora, lo que es interesante es ir aún más lejos y mirarlo desde un sentido más multimodal, como ahora también puedo ver que tengo un conjunto de observaciones, como mirar mis labios, y luego también tienes el audio.\""
+    ],
+    "fr": [
+      "\"C'est donc une extension intéressante. Maintenant, ce qui est intéressant, c'est d'aller encore plus loin et de l'envisager dans un sens plus multimodal, comme maintenant, je peux aussi considérer que j'ai un ensemble d'observations, comme vous regardez mes lèvres, et puis vous avez aussi l'audio.\""
+    ],
+    "de": [
+      "\"Das ist also eine interessante Erweiterung. Jetzt ist es interessant, noch weiter zu gehen und es im Sinne von Multimodalität zu betrachten. Ich könnte zum Beispiel auch eine Beobachtung haben, wie wenn man auf meine Lippen schaut, und dann auch das Audio-Signal.\""
+    ]
+  },
+  "0:45:57.892": {
+    "ja": [
+      "「そうですね、私の唇を見て、オーディオを聞いて、こんなものが生成されるのを見てみましょう」"
+    ],
+    "id": [
+      "\"Jadi, lihat bibir saya, lihat audionya, dan apa yang menghasilkan ini?\""
+    ],
+    "th": [
+      "\"ใช่ ดูที่ริมฝีปากของฉัน ดูที่เสียง และอะไรที่ทำให้เกิดสิ่งนี้\""
+    ],
+    "zh": [
+      "\"所以，看我的嘴唇，听音频，是什么产生了这些？\""
+    ],
+    "es": [
+      "\"Así que sí, mírame los labios, miras el audio, y ¿qué genera esto?\""
+    ],
+    "fr": [
+      "\"Donc oui, regardez mes lèvres, vous regardez l'audio, et qu'est-ce qui génère cela ?\""
+    ],
+    "de": [
+      "\"Also, schau auf meine Lippen, du schaust auf das Audio, und was generiert das?\""
+    ]
+  },
+  "0:46:06.172": {
+    "ja": [
+      "「そして、あなたは... えーっと... ある潜在的な表現がオーディオを生成しているのがわかります。おそらくフォネーム状態のようなものや、ビセム状態のようなものがあり、あなたは... それは設計上の決定です。あなたは、フォネームが実際にビセムを生成するものだと言います。私は何かフォネームのようなものを発音したいので、そのためには私の口を特定の形にする必要があります。したがって、この場合、私は依存関係を持っています。したがって、これはボルツマンジッパーです。ボルツマン機械について少し後で話しますが、これはボルツマンジッパーです。ボルツマン機械の拡張としてボルツマンジッパーが開発されました。そして今、結合されたHMMもあります。これはジッパーよりも有利で、より柔軟です。なぜなら、視覚も音もどちらかを優先するわけではないからです。両者は互いに依存しているので、VTはHTに依存し、HT + 1はVTに依存します。したがって、この意味で結合されています。このように直接的にではなく、結合されているのです。そして、あなたは自分自身に問いかけることができます。マルチモーダルLSTMを思い出せば、これに触発されたのは、どの程度の結合が可能かということです。 HがVTにどの程度影響し、VがHにどの程度影響し、VT + 1がVTにどの程度依存するか。これらはパラメータです。アルファとベータと呼ばれていたと思います。 したがって、私はあなたに少し直感を与えたかったのです。素晴らしいニュースを見ると、Pythonライブラリがたくさんあるので、これらのモデルを簡単に実装して最適化することができます。 そして、来週は最適化についてもう少し話す予定です。今日の講義の最後の部分では、データの生成について話したいと思います。なぜなら、ここで本当に良いのは、私がシードを与えられたら、おそらくこのデータで生成することができ、またはおそらく最初から始めて、文の残りを生成し始めることができるということです。 したがって、しかし、ニューラルネットワークアーキテクチャには、生成用に設計されたモデルのファミリーもあります。いくつかは結合分布をモデル化します。この意味で、生成モデルと呼ぶことができます。 生成と識別という意味で。なぜなら、一部のモデルは結合分布を明示的にモデル化しているからです。しかし、コミュニティは、生成ニューラルモデルと呼ぶようになりました。たとえ結合分布をモデル化していなくても。したがって、用語のほとんどは人々が従うでしょう。しかし、一部の著者は、結合分布をモデル化していなくても、生成という用語を使用します。したがって、私はそれについて何もできません。しかし、私が伝えたいのは、これらの用語についてです。したがって、私たちが今まで学んだことに基づいて、私は生成モデルを学習したいと思います。文を生成できるようにしたいのです。しばらくすると、多くの人がトランスフォーマーやバートなどにジャンプする可能性がありますが、おそらくそれよりも前に、興味深い方法の1つは、デコーダを学習して訓練することです。オートエンコーダの考え方は、私が画像を潜在空間に持ち込み、入力よりも次元が小さい空間に持ち込み、デコーダがこの入力を再作成しようとします。したがって、これは私が訓練できるものです。そして、エンコーダを落として、ただ周りを歩き回ることも想像できます。または、私ができる1つのことは、画像をエンコードして、Zをいじり始めることです。たとえば、猫をエンコードして、それを足し合わせて、犬に変形させたいとします。たとえば、猫の画像を取り、Zを取得し、犬の画像を取得し、別のZを取得し、これら2つのZを取得して、2つの間を線形補間して、2つの間を合成して変形させることができます。理論的には、私はそれができるかもしれません。実際には、潜在空間は、TSNEを実行すると、典型的なニューラルネットワークを使用すると、非常にクラスタ化されていることがわかります。彼らは非常にクラスタ化されており、訓練データによってほとんど表現されていない空間があります。したがって、これは問題です。なぜなら、突然この潜在空間は生成のために非常に良くなくなるからです。生成とは、2つのポイントの間で作業できないことを意味します。 2つの異なるクラスタにいるかもしれませんが、その間には何の表現もありません。 訓練データから。 したがって、どのようにしてこの問題を解決できますか？ 私たちが議論する研究の1つがあります。 来週はこれについてもっと話す予定ですが、私のz空間で補間できるようにするにはどうすればよいでしょうか？ 直感は、私はパラメータ化するつもりです。 私はここに制約を置くつもりです。 常にクラスタ化されているのではなく、 そして、それは本当に悪いことです。 なぜなら、物事が空間の異なる部分に終わった場合、私は大丈夫です。 しかし、私はzを強制するつもりです。 私がすべてのトレーニングサンプルを取り、それをこのように投影する場合、私はそれらを強制的に分布に従わせます。 そして、通常、私は正規分布のようなものを選択します。 したがって、私はそれを強調します。そして、z自体も、私はそれをガウシアン確率分布としてパラメータ化します。 したがって、私はこのデータを、平均と共分散を持つ多変量ガウシアンとしてパラメータ化できます。 したがって、私はエンコーダとデコーダを持っています。 そして、私がそれを強制しなければ、私は私のZを再パラメータ化することができますが、それは私にこの問題を与えます。 私はまだ空間の異なる部分で終わることができます。 しかし、私はそれを正規分布に従わせることを強制します。 そして、私がそれを強制する方法はたくさんあります。 KL損失を使って、Zが正規分布に従うように促す1つの方法は、変分オートエンコーダについて詳しく説明しますが、これは非常に興味深い拡張です。 しかし、私がこれを行うと、突然この正規分布は素晴らしい特性を持ちます。 私は2つの画像、2つのZをワープできます。 私はその間で移動できます。 そして、私がガウシアン内で移動する限り、私は有効であることがわかっています。 または、少なくともトレーニングデータで見たものです。 しかし、1つの問題は、それらが現実的に見えないことです。 つまり、ある程度はそうですが、完全に現実的ではありません。 したがって、これは、生成物を現実的に見せるためにそれを拡張するという非常に興味深いアプローチです。 私は生成物を持っています。おそらくその生成物はオートエンコーダを持っています。したがって、それはエンコーダです。 そして、あなたはランダムベクトルを持っています。 そして、私たちはそれらのいくつかを見ますが、私はそれを持っています。しかし、私はこの合成画像を現実的に見せたいのです。 私は時々本物の画像を与え、時々合成画像を与え、そして私が行うのは、生成器は任意のランダムベクトルをマッピングするように訓練されています。 そして、それは... したがって、私は変分オートエンコーダについて話します。 あなたはそれをガウシアンに強制しようとしていますが、今のところはそれらの制約を置かないでください。 そして、私は任意のランダムベクトルから戻ります。または、特定の分布からのランダムベクトルですが、任意のランダムベクトルです。そして、私はそれを生成して、生成する画像がどれも現実的に見えるようにします。 私はそれに任意のベクトルを与え、それは私に本物の画像を与えるべきです。 画像が、例えば、あなたが見ることができるように、互いに競争するように訓練されていますが、生成器と識別器を訓練するにはどうすればよいですか？ ここでの考え方は、あなたが期待値を持つでしょう。 したがって、あなたは、あなたが持っているすべてのデータに対して、識別器が成功するようにしたいと。 したがって、あなたの損失は、損失を... あなたはそれをできるだけ成功させたいと。 そして、あなたが... そして、反対に... したがって、それが合成であれば、それはこれの1つです。 あなたは... したがって、それが本物か偽物かに応じて... したがって、Dの出力が...」"
+    ],
+    "id": [
+      "Dan jadi Anda lihat... ada beberapa representasi laten yang menghasilkan audio, mungkin beberapa jenis keadaan fonem dan mungkin ada beberapa keadaan visem dan mungkin Anda katakan dan itu adalah keputusan desain Anda katakan fonem benar-benar satu-satunya yang menghasilkan visem saya ingin saya ingin mengucapkan sesuatu seperti fonem dan jadi hanya untuk mengucapkannya saya perlu membentuk mulut saya dengan cara tertentu dan jadi dalam kasus ini saya memiliki dependen saya memiliki dependen Jadi ini adalah Boltzmann zipper. Kita akan membahas tentang mesin Boltzmann sebentar lagi, tapi ini adalah zipper Boltzmann. Karena mesin Boltzmann dan kemudian perpanjangan dari itu adalah zipper Boltzmann. Dan sekarang Anda juga memiliki yang disebut HMN coupled. Ini memiliki kelebihan dibandingkan zipper, lebih fleksibel, karena tidak ada yang istimewa antara penglihatan dan suara. Keduanya tergantung pada sebelumnya, jadi VT tergantung pada HT, dan HT plus tergantung pada VT. Jadi itu coupled dalam arti itu, bukan membuat langsung seperti ini, tapi coupled. Dan kemudian Anda bisa bertanya pada diri sendiri, jika Anda ingat LSTM multimodal terinspirasi dengan ini, bahwa Anda bisa memiliki, berapa banyak coupling yang Anda inginkan? Berapa banyak H benar-benar mempengaruhi VT, berapa banyak V mempengaruhi H, dan berapa banyak VT plus satu tergantung pada VT. Ini adalah parameter, saya pikir mereka disebut alpha dan beta. Jadi saya ingin memberikan Anda beberapa intuisi. Jika Anda melihat berita baiknya juga adalah bahwa ada banyak perpustakaan Python yang ada untuk dengan mudah mengimplementasikan model-model ini dan mengoptimalkannya. Dan kita akan membahas sedikit lebih banyak tentang optimasi minggu depan. Saya juga ingin membahas bagian terakhir dari kuliah hari ini tentang menghasilkan data, karena apa yang menyenangkan di sini adalah bahwa saya juga bisa mungkin akhirnya dengan ini, diberikan seed, menghasilkan data, atau saya bisa mungkin memiliki dengan awal, mulai menghasilkan sisa kalimat. Dan jadi, tapi kita juga memiliki, ada keluarga model dalam arsitektur jaringan neural yang juga dirancang untuk menghasilkan. Dan mereka beberapa dari mereka akan memodelkan distribusi gabungan dan jadi dalam arti itu mereka adalah model generatif dalam arti generatif versus diskriminatif karena mereka juga memodelkan gabungan beberapa dari mereka mungkin atau mungkin tidak memiliki pemodelan eksplisit dari distribusi gabungan tapi komunitas mulai menyebut mereka model generatif neural begitu saja walaupun mungkin mereka tidak memodelkan distribusi gabungan jadi terminologi yang paling banyak orang ikuti tapi beberapa penulis akan menggunakan istilah generatif walaupun tidak memodelkan distribusi gabungan saya tidak bisa berbuat apa-apa tapi mari kita hanya ingin memberitahu Anda tentang terminologi ini jadi apa berdasarkan apa yang kita pelajari sampai sekarang dan saya katakan saya ingin belajar model generatif saya ingin bisa menghasilkan kalimat dan katakanlah untuk satu detik karena banyak dari Anda mungkin langsung melompat ke transformer dan birth dan semua ini jadi mungkin lebih awal dari itu sebelum birth dan semua ini apa yang akan menjadi cara yang menarik dan salah satu caranya adalah belajar melatih decoder. Jadi ide di sini dari autoencoder adalah saya mengambil gambar, saya membawanya ke ruang laten, seperti yang diharapkan biasanya jauh lebih kecil dalam dimensi daripada input, dan saya kemudian memiliki decoder mencoba membuat ulang input ini. Dan jadi ini, ini bisa menjadi sesuatu yang saya bisa latih dan kemudian saya bisa membayangkan menjatuhkan encoder, dan kemudian hanya pergi berkeliling, atau satu hal yang saya bisa lakukan adalah menyandikan gambar, dan kemudian mulai bermain-main dengan Z saya. Seperti, saya menyandikan kucing, dan saya mulai menambahkannya untuk pergi, mungkin saya ingin mengubahnya menjadi anjing, katakanlah saya mengambil gambar kucing, saya mendapatkan Z, saya mendapatkan gambar anjing, saya mendapatkan Z lain, saya mendapatkan dua Z itu, dan saya ingin mengubah dari satu ke yang lain, dan secara teori, saya bisa saja melakukan interpolasi linier antara keduanya dan kemudian mulai mensintesis dan mengubah antara keduanya. Ini, secara teori, saya mungkin bisa melakukan itu. Dalam prakteknya, ruang laten, jika Anda melakukan TSNE pada itu, Anda akan melihat, dan Anda mungkin telah melihatnya sendiri ketika Anda memplot, TSNE itu, jika Anda hanya menggunakan jaringan neural biasa, sering kali mereka sangat terkumpul. Mereka sangat terkumpul dan tidak ada ruang di dalamnya yang hanya memiliki sedikit perwakilan dari data pelatihan. Dan jadi itu masalah karena tiba-tiba ruang laten ini tidak terlalu baik untuk generatif karena apa yang berarti untuk generasi karena tiba-tiba saya tidak bisa bekerja antara dua titik karena saya mungkin tidak beruntung. Saya mungkin berada di dua cluster yang berbeda yang tidak memiliki representasi dari data pelatihan di antaranya. Jadi bagaimana saya bisa memecahkan ini? Ada beberapa lini penelitian, yang akan kita bahas juga lebih banyak minggu depan tentang ini seperti, bagaimana saya bisa memastikan bahwa saya bisa melakukan interpolasi di ruang z saya? Dan ide, intuisi adalah saya akan memparameterisasi, saya akan meletakkan batasan di sini, sehingga bukan hanya terkumpul, dan itu sangat buruk, karena jika hal-hal berakhir berada di bagian yang berbeda dari ruang, saya akan oke dan dan dengan memaksakan z jadi jika saya mengambil semua sampel pelatihan saya dan dan saya memproyeksikannya dengan cara ini saya akan memaksakan bahwa sampel-sampel ini diproyeksikan untuk mengikuti distribusi dan biasanya saya akan memilih seperti distribusi normal dan jadi saya akan menekankan dan jadi z itu sendiri juga saya akan membuat parameterized sebagai distribusi probabilitas gaussian dan jadi saya akan memiliki encoder saya dan saya memiliki decoder saya dan kemudian jika saya tidak memaksakan, bisa berakhir jika saya tidak memaksakan apa-apa, jika saya menghapus bagian ini, maka saya hanya memparameterisasi ulang Z saya, tapi itu tidak memberi saya keuntungan dari masalah ini. Saya masih bisa berakhir dengan bagian yang berbeda dari ruang, tapi saya akan memaksakannya untuk mengikuti distribusi normal, dan ada cara yang berbeda Anda bisa memaksakan. Satu cara yang ditunjukkan untuk bekerja dengan baik adalah mendorong, seperti dengan kehilangan KL, untuk dapat mendorong Z untuk mengikuti distribusi normal. Seperti yang saya sebutkan, akan ada lebih banyak detail tentang itu, tentang pendekatan variasional. Kita akan memiliki kuliah penuh tentang variasional, karena ada banyak ekstensi yang sangat menarik tentang autoencoder variasional. Tapi ketika Anda melakukan ini, maka tiba-tiba distribusi normal ini memiliki properti yang bagus karena saya bisa mengubah. Saya bisa mengambil dua gambar, seperti dua Z. Saya bisa mengubah antara itu. Saya bisa bergerak di sekitar. Dan saya tahu bahwa di mana saja saya bergerak, selama saya berada dalam Gaussian, bahwa saya akan valid, atau setidaknya sesuatu yang telah dilihat dalam data pelatihan. Tapi satu masalah adalah bahwa mereka tidak terlihat realistis maksud saya mereka agak tapi seperti mereka tidak terlihat seperti gambar saya dan jadi mereka tidak terlihat realistis Dan jadi ini pendekatan yang sangat menarik yang disarankan untuk memperluas itu, bahwa mengatakan seperti, hai saya memiliki generasi Dan mungkin generator itu memiliki autoencoder, jadi encoder dan kemudian Anda memiliki vektor acak. Dan kita akan melihat beberapa dari ini tapi jadi saya memiliki Tapi saya ingin gambar sintetis ini terlihat nyata. Saya akan mengatakan, saya akan secara acak, kadang-kadang, memberikan gambar nyata dan kadang-kadang mensintesis, dan saya akan Dan apa yang menyenangkan adalah bahwa generator dilatih untuk memetakan vektor acak dan itu dan jadi saya berbicara dalam autoencoder variasional di mana Anda mencoba memaksakan untuk menjadi gaussian tapi untuk sekarang mari kita katakan kita tidak memaksakan batasan-batasan ini untuk sekarang dan saya kembali ke titik di mana saya mengambil vektor acak atau vektor acak mungkin dari distribusi tertentu tapi vektor acak Dan kemudian saya menghasilkan sehingga gambar apa pun yang saya hasilkan terlihat nyata. Saya ingin bahwa saya memberinya vektor apa pun, dan itu harus memberi saya gambar nyata. Gambar sampai titik bahwa jika saya memiliki seperti dan seperti yang Anda lihat mereka akan bersaing dengan satu sama lain tapi dilatih untuk memetakan vektor acak ke gambar dan kemudian yang lain adalah melatih untuk membedakan gambar sintetis dari gambar nyata. Dan jadi bagaimana kita melatih generator dan diskriminator? Jadi ide di sini adalah bahwa Anda akan memiliki Anda akan memiliki Anda akan memiliki istilah. Jadi di sini Anda memiliki nilai yang diharapkan. Jadi Anda ingin untuk semua data yang datang Anda ingin diskriminator Anda untuk menjadi sukses dan jadi kerugian Anda akan akan membuatnya dan kemudian ketika Anda dan kemudian sebaliknya dan jadi jika datang disintesis itu satu minus ini Anda ingin yakin bahwa dan tergantung dan tergantung jika output D adalah nyata atau tidak"
+    ],
+    "th": [
+      "และดังนั้นคุณจะเห็น... อืม มีบางสิ่งที่เป็น latent representation ที่กำลังสร้างเสียง อาจเป็นบางชนิดของ phoneme state และอาจมีบาง visem states และอาจคุณพูด และนั่นคือการตัดสินใจออกแบบ คุณพูดว่า phoneme เป็นสิ่งเดียวที่สร้าง visem ฉันต้องการ ฉันต้องการออกเสียงบางอย่างเช่น phoneme และดังนั้นเพื่อให้ออกเสียง ฉันจำเป็นต้องกำหนดรูปร่างปากของฉันในลักษณะหนึ่ง และดังนั้นในกรณีนี้ ฉันมี dependent ฉันมี dependent ดังนั้นนี่คือ Boltzmann zipper เราจะพูดถึง Boltzmann machine ในภายหลัง แต่สิ่งนี้คือ Boltzmann zipper เพราะ Boltzmann machine และส่วนขยายของมันคือ Boltzmann zipper และตอนนี้คุณยังมีสิ่งที่เรียกว่า Coupled HMN มันมีข้อได้เปรียบเหนือกว่า zipper มีความยืดหยุ่นมากกว่า เพราะทั้งภาพและเสียงไม่มีสิทธิพิเศษ ทั้งสองอย่างขึ้นอยู่กับก่อนหน้านี้ ดังนั้น VT ขึ้นอยู่กับ HT และ HT บวกขึ้นอยู่กับ VT ดังนั้นจึงเป็น coupled ในแง่นั้น แทนที่จะทำให้มันตรงไปตรงมาแบบนี้ มันเป็น coupled และคุณสามารถถามตัวเองได้ หากคุณจำได้ว่า Multimodal LSTM ได้รับแรงบันดาลใจจากสิ่งนี้ คุณสามารถมีได้มากแค่ไหน การเชื่อมต่อเท่าใด H จริงๆ มีผลกระทบต่อ VT มากแค่ไหน V มีผลกระทบต่อ H มากแค่ไหน และ VT บวกหนึ่งขึ้นอยู่กับ VT มากแค่ไหน สิ่งเหล่านี้คือพารามิเตอร์ ฉันคิดว่าพวกเขาเรียกว่า alpha และ beta ดังนั้นฉันต้องการให้คุณมีความเข้าใจบางอย่าง หากคุณดูข่าวดีก็คือ มีไลบรารี Python มากมายที่สามารถใช้งานได้ง่ายเพื่อใช้โมเดลเหล่านี้และปรับให้เหมาะสม และเราจะพูดเพิ่มเติมเกี่ยวกับการปรับให้เหมาะสมในสัปดาห์หน้า\n\nฉันต้องการพูดในส่วนสุดท้ายของบทเรียนวันนี้เกี่ยวกับการสร้างข้อมูล เพราะสิ่งที่ดีที่นี่คือ ฉันสามารถสร้างข้อมูลได้ด้วยสิ่งนี้ โดยให้ seed หรือฉันสามารถเริ่มสร้างประโยคที่เหลือได้ และดังนั้น แต่เรายังมี ครอบครัวของโมเดลในโครงข่ายประสาทที่ออกแบบมาสำหรับการสร้าง และบางส่วนของพวกเขาจะสร้างการกระจายตัวร่วม และดังนั้นในแง่นี้ พวกเขาเป็นโมเดล generative ในแง่ของ generative เทียบกับ discriminative เพราะพวกเขายังสร้างการกระจายตัวร่วม บางส่วนอาจหรือไม่สร้างการกระจายตัวร่วมอย่างชัดเจน แต่ชุมชนเริ่มเรียกพวกเขาว่า generative neural model อยู่ดี และแม้ว่าพวกเขาอาจไม่สร้างการกระจายตัวร่วม ฉันไม่สามารถทำอะไรกับมันได้ แต่ฉันต้องการแจ้งให้คุณทราบเกี่ยวกับคำศัพท์เหล่านี้\n\nดังนั้นสิ่งที่เราศึกษาจนถึงตอนนี้ และฉันพูดว่าฉันต้องการเรียนรู้โมเดล generative ฉันต้องการสร้างประโยค และสมมติว่าในขณะนี้ เพราะหลายคนอาจจะกระโดดไปที่ transformer และ birth และอื่นๆ ดังนั้นอาจจะเร็วกว่านั้น ก่อน birth และอื่นๆ สิ่งที่น่าสนใจคือการเรียนรู้ฝึกฝน decoder ดังนั้นความคิดที่นี่ของ autoencoder คือ ฉันนำภาพเข้ามา ฉันนำมันไปยังพื้นที่ latent เช่น หวังว่ามันจะเล็กกว่าข้อมูลเข้า�ามาก และจากนั้นฉันมี decoder ที่พยายามสร้างข้อมูลเข้าคืนมา และดังนั้นนี่คือสิ่งที่ฉันสามารถฝึกฝนได้ และจากนั้นฉันสามารถจินตนาการได้ว่าฉันลด encoder และจากนั้นฉันสามารถสร้างภาพได้ หรือสิ่งที่ฉันสามารถทำได้คือการเข้ารหัสภาพ และจากนั้นฉันสามารถเปลี่ยน Z ของฉันได้ เช่น ฉันเข้ารหัสแมว และฉันเริ่มเพิ่มเข้าไปเพื่อไป อาจจะเปลี่ยนเป็นสุนัขได้ ลองพูดว่าฉันนำภาพของแมว ฉันได้ Z ฉันได้ภาพของสุนัข ฉันได้ Z อีกอัน ฉันได้ Z ทั้งสอง และฉันต้องการเปลี่ยนจากหนึ่งไปอีกอัน และในทางทฤษฎี ฉันสามารถประมาณการระหว่างสองสิ่งนี้และเริ่มสังเคราะห์และเปลี่ยนระหว่างสองสิ่งนี้ ในทางทฤษฎี ฉันอาจจะทำได้ ในทางปฏิบัติ พื้นที่ latent หากคุณทำ TSNE บนมัน คุณจะเห็น และคุณอาจจะเห็นมันเองเมื่อคุณพล็อต TSNE หากคุณใช้โครงข่ายประสาททั่วไป พวกเขามักจะถูกจัดกลุ่ม พวกเขาถูกจัดกลุ่มมากและไม่มีพื้นที่ในนี้ที่มีการแทนค่าอย่างมากจากข้อมูลฝึกอบรม และดังนั้นนั่นเป็นปัญหาเพราะพื้นที่ latent นี้ไม่ดีสำหรับการสร้าง เพราะหมายความว่าฉันไม่สามารถทำงานระหว่างสองจุดได้ เพราะฉันอาจจะไม่โชคดี ฉันอาจจะอยู่ในสองคลัสเตอร์ที่แตกต่างกันและไม่มีการแทนค่าจากข้อมูลฝึกอบรมระหว่างกัน\n\nฉันจะแก้ปัญหานี้ได้อย่างไร มีงานวิจัยบางส่วนที่เราจะพูดถึงเพิ่มเติมในสัปดาห์หน้าเกี่ยวกับเรื่องนี้ เช่น ฉันจะทำให้แน่ใจได้อย่างไรว่าฉันสามารถประมาณการในพื้นที่ z ของฉันได้ และความคิด ความเข้าใจคือฉันจะกำหนดพารามิเตอร์ ฉันจะกำหนดข้อจำกัดที่นี่ เพื่อให้แทนที่จะถูกจัดกลุ่มมาก และนั่นไม่ดีมาก เพราะหากสิ่งต่างๆ จบลงในส่วนต่างๆ ของพื้นที่ ฉันจะ... และโดยการบังคับ z ดังนั้นหากฉันนำตัวอย่างฝึกอบรมทั้งหมดของฉัน และฉันฉายภาพพวกมันในลักษณะนี้ ฉันจะบังคับให้พวกมันเป็นไปตามการกระจายตัว และโดยปกติฉันจะเลือกการกระจายตัวแบบปกติ และดังนั้นฉันจะเน้นย้ำ และดังนั้น z เองก็จะถูกกำหนดพารามิเตอร์เป็นการกระจายตัวแบบปกติ ดังนั้นฉันจะพูดว่าข้อมูลทั้งหมดนี้สามารถกำหนดพารามิเตอร์เป็นพื้นที่ซึ่งกำหนดพารามิเตอร์ด้วยการกระจายตัวแบบปกติหลายตัวแปรด้วยค่าเฉลี่ยและ... \n\nและดังนั้นฉันจะมี encoder และ decoder ของฉัน และจากนั้นหากฉันไม่บังคับมัน มันอาจจะจบลง หากฉันไม่บังคับอะไร หากฉันลบส่วนนี้ออก ฉันจะกำหนดพารามิเตอร์ Z ของฉันใหม่ แต่สิ่งนั้นไม่ได้รับประโยชน์จากปัญหานี้ ฉันยังคงจบลงด้วยส่วนต่างๆ ของพื้นที่ แต่ฉันจะบังคับให้มันเป็นไปตามการกระจายตัวแบบปกติ และมีวิธีต่างๆ ที่คุณสามารถบังคับได้ วิธีหนึ่งที่แสดงให้เห็นว่าทำงานได้ดีคือการส่งเสริมด้วย KL loss เพื่อให้สามารถส่งเสริม Z ให้เป็นไปตามการกระจายตัวแบบปกติ ดังที่ฉันกล่าวไว้ จะมีรายละเอียดเพิ่มเติมเกี่ยวกับเรื่องนี้ เกี่ยวกับแนวทาง variational เราจะมีการบรรยายเต็มเกี่ยวกับ variational เพราะมีส่วนขยายที่น่าสนใจมากเกี่ยวกับ variational autoencoder \n\nแต่เมื่อคุณทำเช่นนี้ การกระจายตัวแบบปกติจะมีคุณสมบัติที่ดี เพราะฉันสามารถบิดเบือนได้ ฉันสามารถนำภาพสองภาพ เช่น Z สองภาพ ฉันสามารถบิดเบือนระหว่างนั้นได้ ฉันสามารถเคลื่อนที่ไปมา และฉันรู้ว่าหากฉันอยู่ใน Gaussian ฉันจะถูกต้อง หรืออย่างน้อยสิ่งที่เห็นในข้อมูลฝึกอบรม แต่ปัญหาหนึ่งคือ พวกเขาไม่ดูสมจริง ฉันหมายถึง พวกเขาดูเหมือน แต่พวกเขาไม่ดูสมจริง \n\nและดังนั้นนี่คือแนวทางที่น่าสนใจมากที่ถูกเสนอเพื่อขยายสิ่งนั้น เช่น ฉันมีการสร้าง และอาจมี generator มี autoencoder ดังนั้นมี encoder และจากนั้นคุณมีเวกเตอร์สุ่ม และเราจะเห็นบางส่วนของสิ่งเหล่านี้ แต่ฉันต้องการให้ภาพที่สังเคราะห์ดูสมจริง ฉันจะพูดว่า ฉันจะสุ่ม บางครั้งฉันจะให้ภาพจริง และบางครั้งฉันจะสังเคราะห์ และ... และสิ่งที่ดีคือ generator ได้รับการฝึกฝนให้จับคู่เวกเตอร์สุ่มใดๆ และ... และฉันพูดใน variational autoencoder ที่คุณพยายามบังคับให้เป็น Gaussian แต่ตอนนี้ สมมติว่าเราไม่กำหนดข้อจำกัดใดๆ ในตอนนี้ และฉันกลับไปยังจุดที่ฉันสามารถนำเวกเตอร์สุ่มใดๆ หรือเวกเตอร์สุ่มจากกระจายตัวบางอย่าง แต่เวกเตอร์สุ่มใดๆ และจากนั้นฉันสร้างมันขึ้นมา เพื่อให้ภาพใดๆ ที่ฉันสร้างดูสมจริง \n\nฉันต้องการให้ฉันให้เวกเตอร์ใดๆ และมันควรจะให้ภาพที่สมจริง ภาพที่จุดนั้นคือ หากฉันมี เช่น และคุณสามารถเห็นได้ว่าพวกเขาจะแข่งขันกัน แต่ฝึกฝนให้จับคู่เวกเตอร์ใดๆ กับภาพ และอีกอย่างคือฝึกฝนเพื่อแยกแยะภาพที่สังเคราะห์จากภาพจริง \n\nและดังนั้นเราจะฝึกฝนทั้ง generator และ discriminator ได้อย่างไร ดังนั้นความคิดที่นี่คือคุณจะมี คุณจะมี คุณจะมีเทอม ดังนั้นที่นี่คุณมีค่าที่คาดหวัง ดังนั้นคุณต้องการให้ discriminator ของคุณประสบความสำเร็จมากที่สุด และดังนั้น loss ของคุณจะ... คุณต้องการให้มันประสบความสำเร็จมากที่สุด และจากนั้นเมื่อคุณ... และตรงกันข้าม และดังนั้นหากมันมาในสังเคราะห์ มันคือหนึ่งลบสิ่งนี้ คุณต้องการให้แน่ใจว่า... และขึ้นอยู่กับ... ขึ้นอยู่กับว่า D output เป็นจริงหรือปลอม..."
+    ],
+    "zh": [
+      "\"所以你看... 呃，这里有一些潜在的表示正在生成音频，也许是某种音素状态，也许还有一些视觉状态，也许你说，这是一个设计决定，你说音素确实是生成视觉状态的，我想，我想发音像音素一样，所以为了发音，我需要以某种方式调整我的嘴巴，所以在这种情况下，我有一个依赖关系... 这就是玻尔兹曼拉链（Boltzmann Zipper）。我们稍后会谈到玻尔兹曼机器，但这就是玻尔兹曼拉链。因为玻尔兹曼机器，然后它的扩展是玻尔兹曼拉链。现在你还有一种叫做耦合HMM（Coupled HMM）的东西。它的优势在于比拉链更灵活，因为视觉和声音都没有特权。两者都依赖于前一个，所以$V_T$依赖于$H_T$，而$H_T$又依赖于$V_T$。所以在这种意义上它是耦合的，而不是像这样直接耦合。 然后你可能会问自己，如果你记得多模态LSTM（Multimodal LSTM）就是受这个启发，你可以有多少耦合？$H$对$V_T$的影响有多大，$V$对$H$的影响有多大，以及$V_T$对$V_T$的影响有多大。这些都是参数，我想它们被称为alpha和beta。所以我想给你一些直觉。如果你看好的消息，也是好消息，有很多Python库可以轻松实现这些模型并优化它们。我们下周将更多地讨论优化问题。我还想在今天讲座的最后一部分讨论生成数据，因为这里真正好的一点是，我也可以许可能够通过这个模型， 给定种子，生成数据，或者我可以从开始就生成句子的其余部分。并且，我们还有一个神经网络架构家族，它们也旨在生成。它们中的一些将建模联合分布，所以在某种意义上，它们是生成模型，而不是判别模型，因为它们也建模联合分布。有些可能或可能不明确建模联合分布，但社区开始称它们为生成神经模型，尽管它们可能不建模联合分布。所以，术语大多数人会遵循，但一些作者会使用术语生成，尽管它没有建模联合分布... 基于我们到目前为止所学的内容，我想学习一个生成模型，我想能够生成句子，让我们暂时忽略这个，因为你们中的很多人可能马上会想到Transformer和BERT等等... 也许在BERT和所有这些之前，在那之前，有一个有趣的方法，一个是学习训练一个解码器。所以这里的自编码器的想法是，我取一个图像，将它带到一个潜在空间，希望通常比输入维度小得多，然后我有一个解码器试图重建这个输入。所以，这可能是我可以训练的东西，然后我可以想象丢弃编码器，然后只是循环运行，或者我可以做的一件事是编码一个图像，然后开始修改我的Z。例如，我编码一只猫，然后开始添加它，变成一只狗，假设我取一张猫的图像，得到Z，取一张狗的图像，得到另一个Z，得到这两个Z，然后我想在它们之间进行插值，然后开始合成和在两者之间变形。理论上，我可能能够做到这一点。实际上，如果你对它进行TSNE（t-distributed Stochastic Neighbor Embedding），你会看到，你可能已经在绘制那些TSNE时看到过，当你使用典型的神经网络时，它们通常非常聚集。它们非常聚集，并且没有空间有像训练数据中没有代表性的部分。所以这是一个问题，因为这意味着这个潜在空间不适合生成，因为这意味着我不能在两个点之间工作，因为我可能很倒霉。我可能在两个不同的簇中，没有训练数据的表示。所以我如何解决这个问题？有一系列研究，我们下周将更多地讨论这个，关于如何确保我可以在我的z空间中插值。直觉是，我将参数化，我将施加一个约束，在这里，而不是总是聚集，这是非常糟糕的，因为如果事情最终出现在空间的不同部分，我将... 好吧，呃... 通过强制z，所以如果我取所有我的训练样本，并以这种方式投影它们，我将强制这些投影样本遵循分布，通常我会选择像正态分布这样的分布。所以我将强调，所以z本身，我也将使其参数化为正态分布... 所以我将把所有这些数据参数化到一个空间中，该空间由具有均值和... 的多元高斯参数化。所以我将拥有我的编码器和解码器，然后如果我不强制执行它，它可能会结束... 如果我不强制执行任何操作，如果我删除这个部分，那么我只是重新参数化我的Z，但这并不能解决我这个问题。我仍然可能最终处于空间的不同部分，但我将强制它遵循正态分布，并且有不同的方法可以强制执行。一种被证明有效的方法是使用KL损失来鼓励Z遵循正态分布。正如我所提到的，关于变分方法会有更多细节。我们将有关于变分的完整讲座，因为变分自编码器有很多非常有趣的扩展。但是当你这样做时，那么这个正态分布就有很好的性质。因为我可以扭曲。我可以取两个图像，像两个Z。我可以在它们之间扭曲。我可以移动。并且我知道，只要我在高斯范围内， 我将是有效的，或者至少是训练数据中见过的。但一个问题是它们看起来不... 真实。我的意思是它们确实像... 但它们看起来不完全真实。所以这是一个非常有趣的方法，它被建议扩展这一点，说就像，我有一个生成器，也许生成器有一个自编码器，所以它是一个编码器，然后你有一个随机向量。我们将看到一些这样的... 但是我希望这个合成图像看起来真实。我会说，我将随机，偶尔，给一张真实的图像，有时是合成的，我将... 好的事情是生成器被训练来映射任何随机向量... 那是... 所以我在变分自编码器中谈论它，你试图强制它成为高斯的，但现在让我们说我们不施加任何约束。现在我回到我可以取任何随机向量... 或许是来自某个分布的随机向量... 但任何随机向量。然后我生成它，以便我生成的任何图像看起来都很真实。我希望它给我任何向量，它应该给我一张真实的图像。图像到这种程度是，如果我有... 你可以看到，它们将相互竞争，但训练映射任何向量到图像，另一个是训练区分合成图像和真实图像。所以我们如何训练生成器和判别器？这里的想法是，你将拥有... 你将拥有... 你将拥有一个术语。所以这里你有期望值。所以你希望对于所有数据... 你希望你的判别器尽可能成功... 所以你的损失将... 使它... 嗯... 你希望它尽可能成功，然后当你... 和... 然后相反... 所以如果它来自合成，它是一减去这个... 你希望确保... 取决于... 取决于它是真实的还是假的... 像... 取决于判别器的输出是... \""
+    ],
+    "es": [
+      "\"Y así ves... eh, hay alguna representación latente que está generando el audio, quizás algún tipo de estado fonémico y quizás haya algunos estados visémicos y quizás digas y esa es una decisión de diseño, digas que el fonema es realmente el que genera el visema, quiero, quiero pronunciar algo como un fonema y así que solo para pronunciarlo necesito dar forma a mi boca de cierta manera y así en este caso tengo una dependencia, tengo una dependencia. Así que esto es el zipper de Boltzmann. Hablaremos de las máquinas de Boltzmann un poco más adelante, pero esto es el zipper de Boltzmann. Es porque la máquina de Boltzmann y luego la extensión de eso fue el zipper de Boltzmann. Y ahora también tienes lo que se llama el HMM acoplado. Es una ventaja sobre el zipper, más flexible, porque ni la visión ni el sonido son privilegiados. Ambos dependen del anterior, así que VT depende de HT y HT más uno depende de VT. Así que está acoplado en ese sentido, en lugar de hacerlo directo de esta manera, está acoplado. Y luego puedes preguntarte, si recuerdas que el LSTM multimodal fue inspirado con esto, es que puedes tener, ¿cuánto acoplamiento quieres? ¿Cuánto H realmente impacta VT, cuánto V impacta H y cuánto VT más uno depende de VT? Estos son parámetros, creo que se llamaban alfa y beta. Así que quería darte alguna intuición. Si miras las buenas noticias también es que hay muchas bibliotecas de Python que están ahí para implementar fácilmente estos modelos y optimizarlos. Y hablaremos un poco más sobre la optimización la próxima semana. También quiero hablar en la última parte de la conferencia de hoy sobre la generación de datos, porque lo que es realmente bueno aquí es que también podría eventualmente con esto, dado el seed, generar datos, o podría quizás tener con el comienzo, empezar a generar el resto de la oración. Y así, pero también tenemos, hay una familia de modelos en arquitecturas de redes neuronales que también están diseñadas para generar. Y algunos de ellos modelarán la distribución conjunta y así en ese sentido son modelos generativos en el sentido de generativo versus discriminativo porque también modelan conjuntos, algunos de ellos pueden o no tener modelado explícito de la distribución conjunta pero la comunidad empezó a llamarlos modelos generativos de redes neuronales de todos modos, aunque quizás no modelen la distribución conjunta. Así que la terminología que la mayoría de las personas seguirá, pero algunos autores usarán el término generativo aunque no esté modelando la distribución conjunta. No puedo hacer nada al respecto, pero solo quiero hacerte saber sobre esta terminología. Así que, basado en lo que hemos estudiado hasta ahora y digo que quiero aprender un modelo generativo, quiero poder generar oraciones y digamos por un segundo porque muchos de ustedes probablemente están saltando directamente a transformer y birth y todo esto, quizás antes de eso, antes de birth y todo esto, ¿qué sería una forma interesante? Y una de ellas es aprender a entrenar un decodificador. Así que la idea aquí del autoencoder es que tomo una imagen, la llevo a un espacio latente, como hopefully, generalmente mucho más pequeño en dimensión que la entrada, y luego tengo el decodificador tratando de recrear esta entrada. Y así esto podría ser algo que podría entrenar y luego podría imaginarme soltando el codificador y luego simplemente yendo alrededor, o una cosa que podría hacer es codificar una imagen y luego empezar a manipular mi Z. Como, codifico un gato y empiezo a agregarle para ir, quizás querría transformarlo en un perro, digamos que tomo la imagen de un gato, obtengo la Z, obtengo la imagen de un perro, obtengo otra Z, obtengo esas dos Z y me gustaría transformar de una a otra y en teoría podría simplemente interpolar linealmente entre estas dos y luego empezar a sintetizar y transformar entre las dos. Esto, en teoría, podría hacerlo. En la práctica, el espacio latente, si fueras a hacer un TSNE en él, verías, y probablemente lo has visto tú mismo cuando graficaste, esos TSNE, si solo usas redes neuronales típicas, a menudo están muy agrupados. Están muy agrupados y no hay espacio en esto que solo tenga como muy subrepresentado por los datos de entrenamiento. Y así eso es un problema porque de repente este espacio latente no es muy bueno para generar porque lo que significa para la generación, porque de repente no puedo trabajar entre dos puntos porque puedo ser desafortunado. Puedo estar en dos grupos diferentes que no tienen nada, no hay representación de los datos de entrenamiento en el medio. Así que, ¿cómo puedo resolver esto? Ha habido algunas líneas de investigación, que discutiremos también más la próxima semana sobre esto, de cómo puedo asegurarme de que puedo interpolar en mi espacio z. Y la idea, la intuición es que voy a parametrizar, voy a poner una restricción aquí, para que en lugar de estar siempre agrupado, y eso es realmente malo, porque si las cosas terminan estando como en diferentes partes del espacio, voy a forzar que estos sea proyectado, voy a forzar que estos ejemplos proyectados sigan una distribución y generalmente elegiré como una distribución normal y así enfatizaré y así la propia z también la haré parametrizada como una distribución de probabilidad gaussiana. Y así tendré mi codificador y mi decodificador y luego si no lo fuerzo, podría terminar si no fuerzo nada, si elimino esta parte, entonces simplemente reparametrizo mi Z, pero eso no me gana esta cuestión. Podría terminar con diferentes partes del espacio, pero voy a forzarlo a seguir una distribución normal, y hay diferentes formas en que podría forzarlo. Una forma que se mostró que funciona bien es alentar, como con la pérdida KL, para poder alentar a z a seguir una distribución normal. Como mencioné, habrá más detalles sobre esto, sobre enfoques variacionales. Tendremos una conferencia completa sobre variacional, porque hay muchas extensiones muy interesantes sobre el autoencoder variacional. Pero cuando haces esto, entonces de repente esta distribución normal tiene una propiedad agradable porque puedo deformar. Puedo tomar dos imágenes, como dos Z. Puedo deformar entre eso. Puedo moverme. Y sé que dondequiera que me mueva, siempre y cuando esté dentro de la gaussiana, que será válida, o al menos algo que se ha visto en los datos de entrenamiento. Pero un problema es que no se ven realistas, es decir, se ven algo así, pero no se ven completamente realistas. Y así esta es una aproximación realmente interesante que se sugirió para extender eso, que dice como, hey, tengo una generación y quizás ese generador tenga un autoencoder, así que es un codificador y luego tienes un vector aleatorio. Y veremos algunos de estos, pero así que tengo pero quiero que esta imagen sintetizada se vea real. Diré que voy a aleatoriamente, de vez en cuando, dar una imagen real y a veces sintetizar, y estoy y lo que es agradable es que el generador está entrenado para mapear cualquier vector aleatorio y eso es y así hablaré en el autoencoder variacional donde estás tratando de forzarlo a ser gaussiano pero por ahora digamos que no pongo ninguna de estas restricciones por ahora y estoy de vuelta al punto donde tomo cualquier vector aleatorio o es un vector aleatorio quizás de una cierta distribución pero cualquier vector aleatorio y luego lo genero para que cualquier imagen que genere se vea real. Quiero que le dé cualquier vector y debería darme una imagen real. Una imagen al punto que es, si tengo como, y como puedes ver, van a competir entre sí, pero entrenar para mapear cualquier vector a una imagen, y luego el otro es entrenar para distinguir la imagen sintetizada de la imagen real. Y así, ¿cómo entrenamos tanto al generador como al discriminador? Así que la idea aquí es que tendrás, tendrás, tendrás un término. Así que aquí tienes el valor esperado. Así que quieres que para todos los datos que vienen, quieres que tu discriminador sea tan exitoso como y así tu pérdida será hará que sea tan exitoso como sea posible y luego cuando um y luego lo opuesto um y así si viene sintetizado es uno menos esto, quieres estar seguro de que y dependiendo es real y falso, como y así dependiendo si la salida d es real.\""
+    ],
+    "fr": [
+      "Et donc vous voyez... euh, il y a une représentation latente qui génère l'audio, peut-être un certain type d'état phonémique et peut-être qu'il y a des états visuels et peut-être que vous dites et c'est une décision de conception, vous dites que le phonème est vraiment celui qui génère le visème, je veux, je veux prononcer quelque chose comme un phonème et donc juste pour le prononcer, j'ai besoin de façonner ma bouche d'une certaine manière et donc dans ce cas, j'ai une dépendance, j'ai une dépendance. Donc c'est le Boltzmann zipper. Nous parlerons des machines de Boltzmann un peu plus tard, mais c'est le Boltzmann zipper. C'est parce que la machine de Boltzmann et puis l'extension de cela était le Boltzmann zipper. Et maintenant, vous avez aussi ce qu'on appelle le HMN couplé. C'est un avantage par rapport au zipper, plus flexible, parce que ni la vision ni le son ne sont privilégiés. Les deux dépendent du précédent, donc VT dépend de HT, et HT plus un dépend de VT. Donc c'est couplé dans ce sens, au lieu de le rendre direct de cette façon, c'est couplé. Et puis vous pourriez vous demander, si vous vous souvenez que le LSTM multimodal était inspiré par cela, est-ce que vous pouvez avoir, combien de couplage voulez-vous ? Combien est-ce que H impacte vraiment VT, combien est-ce que V impacte H, et combien est-ce que VT plus un dépend de VT. Ce sont des paramètres, je pense qu'ils étaient appelés alpha et bêta. Donc je voulais vous donner une intuition. Si vous regardez les bonnes nouvelles, c'est qu'il y a beaucoup de bibliothèques Python qui existent pour implémenter facilement ces modèles et les optimiser. Et nous parlerons un peu plus de l'optimisation la semaine prochaine. Je veux également parler dans la dernière partie du cours d'aujourd'hui sur la génération de données, parce que ce qui est vraiment agréable ici, c'est que je pourrais aussi éventuellement avec cela, étant donné la graine, générer des données, ou je pourrais peut-être avoir avec le début, commencer à générer le reste de la phrase. Et donc, mais nous avons aussi, il y a une famille de modèles dans les architectures de réseaux de neurones qui sont également conçus pour générer. Et ils, certains d'entre eux modéliseront la distribution conjointe et donc dans ce sens, ils sont des modèles génératifs au sens de génératif contre discriminatif parce qu'ils modélisent également la distribution conjointe, certains d'entre eux peuvent ou non avoir une modélisation explicite de la distribution conjointe mais la communauté a commencé à les appeler des modèles génératifs de neurones de toute façon, même si peut-être qu'ils ne modélisent pas la distribution conjointe. Donc la terminologie, la plupart des gens vont suivre mais certains auteurs utiliseront le terme génératif même si ce n'est pas modéliser la distribution conjointe. Je ne peux rien faire à cela mais je veux juste vous informer de cette terminologie. Donc sur la base de ce que nous avons étudié jusqu'à présent et je dis que je veux apprendre un modèle génératif, je veux être capable de générer des phrases et disons pour une seconde parce que beaucoup d'entre vous sont probablement tout de suite en train de sauter au transformateur et à la naissance et tout cela, peut-être plus tôt que cela, avant la naissance et tout cela, ce qui serait une façon intéressante et l'une d'elles est d'apprendre à entraîner un décodeur. Donc l'idée ici de l'auto-encodeur est que je prends une image, je l'amène à un espace latent, comme hopefully généralement beaucoup plus petit en dimension que l'entrée, et j'ai ensuite le décodeur essayant de recréer cette entrée. Et donc ceci est, ceci pourrait être quelque chose que je pourrais entraîner et puis je pourrais imaginer laisser tomber l'encodeur, et puis juste aller autour, ou une chose que je pourrais faire est d'encoder une image, et puis commencer à modifier mon Z. Comme, j'encode un chat, et je commence à ajouter à cela pour aller, peut-être que je voudrais le transformer en chien, disons que je prends l'image d'un chat, je reçois le Z, je reçois l'image d'un chien, je reçois un autre Z, je reçois ces deux Z, et je voudrais passer de l'un à l'autre, et en théorie, je pourrais juste interpoler linéairement entre ces deux et puis commencer à synthétiser et transformer entre les deux. C'est, en théorie, je pourrais peut-être le faire. En pratique, l'espace latent, si vous deviez faire un TSNE sur lui, vous verriez, et vous avez probablement vu cela vous-même quand vous avez tracé, ces TSNE, si vous utilisez juste des réseaux de neurones typiques, souvent ils sont très regroupés. Ils sont très regroupés et ils n'ont pas, il y a un espace dans cela qui est juste très sous-représenté par les données d'entraînement. Et donc c'est un problème parce que soudainement cet espace latent n'est pas très bon pour la génération parce que cela signifie que pour la génération, soudainement je ne peux pas travailler entre deux points parce que je pourrais être malchanceux. Je pourrais être dans deux clusters différents qui n'ont rien, pas de représentation des données d'entraînement entre eux. Donc comment puis-je résoudre cela ? Il y a eu une ligne de recherche, que nous discuterons également plus la semaine prochaine sur cela, de savoir comment puis-je m'assurer que je peux interpoler dans mon espace Z ? Et l'idée, l'intuition est que je vais paramétrer, je vais mettre une contrainte ici, de sorte qu'au lieu d'être toujours regroupé, et cela est vraiment mauvais, parce que si les choses finissent par être comme dans différentes parties de l'espace, je vais forcer cela, okay, et en forçant Z, si je prends tous mes échantillons d'entraînement et que je les projette de cette façon, je vais forcer ces échantillons projetés à suivre une distribution et généralement je vais choisir comme une distribution normale et donc je vais souligner et donc Z lui-même également, je vais le paramétrer comme une distribution de probabilité gaussienne et donc je vais dire que toutes ces données peuvent être, toutes ces données, je peux les paramétrer dans un espace qui est paramétré avec la gaussienne multivariée avec la moyenne et donc j'aurai mon encodeur et j'ai mon décodeur et alors si je ne l'applique pas, cela pourrait finir si je n'applique aucune contrainte, si je supprime cette partie, alors je reparamètre juste mon Z, mais cela ne me donne pas ce problème. Je pourrais encore finir avec différentes parties de l'espace, mais je vais le forcer à suivre une distribution normale, et il y a différentes façons de le faire. Une façon qui a montré qu'elle fonctionne bien est d'encourager, comme avec la perte KL, à être capable d'encourager Z à suivre une distribution normale. Comme je l'ai mentionné, il y aura plus de détails à ce sujet, sur les approches variationnelles. Nous aurons un cours complet sur les approches variationnelles, parce qu'il y a beaucoup d'extensions très intéressantes sur l'auto-encodeur variationnel. Mais lorsque vous faites cela, alors soudainement cette distribution normale a de belles propriétés parce que je peux déformer. Je peux prendre deux images, comme deux Z. Je peux déformer entre cela. Je peux me déplacer. Et je sais que partout où je me déplace, tant que je suis dans la gaussienne, que je serai valide, ou au moins quelque chose qui a été vu dans les données d'entraînement. Mais un problème est qu'ils ne ressemblent pas. réaliste, je veux dire qu'ils ressemblent un peu, mais ils n'ont pas l'air réaliste. Et donc c'est cette approche vraiment intéressante qui a été suggérée pour étendre cela, qui dit comme, hé, j'ai une génération et peut-être que le générateur a un auto-encodeur, donc c'est un encodeur et puis vous avez un vecteur aléatoire. Et nous verrons certains d'entre eux, mais donc j'ai mais je veux que cette image synthétisée ressemble à la réalité. Je vais dire, je vais aléatoirement, une fois en un certain temps, donner une image réelle et parfois synthétisée, et je vais et ce qui est agréable, c'est que le générateur est entraîné pour mapper n'importe quel vecteur aléatoire et c'est et donc je parle de l'auto-encodeur variationnel où vous essayez de le forcer à être gaussien mais pour l'instant disons que nous n'appliquons aucune de ces contraintes pour l'instant et je suis de retour au point où je prends n'importe quel vecteur aléatoire ou c'est un vecteur aléatoire peut-être d'une certaine distribution mais n'importe quel vecteur aléatoire et puis je le génère de sorte que n'importe quelle image que je génère ressemble à la réalité. Je veux que je lui donne n'importe quel vecteur, et cela devrait me donner une image réelle. Une image au point que si j'ai comme, et comme vous pouvez le voir, ils vont se concurrencer, mais entraîner à mapper n'importe quel vecteur à une image, et puis l'autre est d'entraîner à distinguer l'image synthétisée de l'image réelle. Et donc comment entraînons"
+    ],
+    "de": [
+      "Und so sehen Sie... äh, es gibt eine latente Darstellung, die den Ton erzeugt, vielleicht eine Art Phonemzustand und vielleicht gibt es einige Visemzustände und vielleicht sagen Sie, und das ist eine Designentscheidung, Sie sagen, Phonem ist wirklich das, was das Visem erzeugt, ich möchte etwas wie ein Phonem aussprechen, und um es auszusprechen, muss ich meinen Mund auf eine bestimmte Weise formen, und so in diesem Fall habe ich eine Abhängigkeit, ich habe eine Abhängigkeit. Dies ist also der Boltzmann-Zipper. Wir werden über Boltzmann-Maschinen ein wenig später sprechen, aber dies ist der Boltzmann-Zipper. Es ist wegen der Boltzmann-Maschine und dann war die Erweiterung davon der Boltzmann-Zipper. Und jetzt haben Sie auch das sogenannte Coupled HMN. Es ist ein Vorteil gegenüber dem Zipper, flexibler, weil weder Vision noch Sound privilegiert sind. Beide hängen von der vorherigen ab, also VT hängt von HT ab, und HT plus plus hängt von VT ab. Es ist also in diesem Sinne gekoppelt, anstatt es direkt auf diese Weise zu machen, ist es gekoppelt. Und dann könnten Sie sich fragen, wenn Sie sich erinnern, dass das multimodale LSTM davon inspiriert wurde, können Sie haben, wie viel Kopplung wollen Sie? Wie sehr beeinflusst H wirklich VT, wie sehr beeinflusst V H, und wie sehr hängt VT plus eins von VT ab? Dies sind Parameter, ich denke, sie wurden alpha und beta genannt.\n\nIch wollte Ihnen also ein wenig Intuition geben. Wenn Sie sich die guten Nachrichten ansehen, ist es auch gut, dass es viele Python-Bibliotheken gibt, die existieren, um diese Modelle leicht zu implementieren und zu optimieren. Und wir werden nächste Woche ein wenig mehr über Optimierung sprechen. Ich möchte auch im letzten Teil der Vorlesung heute über die Generierung von Daten sprechen, weil es wirklich schön ist, dass ich auch vielleicht irgendwann mit diesem, gegebenem Seed, Daten generieren kann, oder ich kann vielleicht mit dem Anfang beginnen, den Rest des Satzes zu generieren. Und so, aber wir haben auch eine Familie von Modellen in neuronalen Netzwerkarchitekturen, die auch für die Generierung konzipiert sind. Und einige von ihnen werden die gemeinsame Verteilung modellieren, und in diesem Sinne sind sie ein generatives Modell im Sinne von generativ versus diskriminativ, weil sie auch die gemeinsame Verteilung modellieren. Einige von ihnen können oder müssen nicht explizit die gemeinsame Verteilung modellieren, aber die Gemeinschaft begann, sie generative neuronale Modelle zu nennen, auch wenn sie vielleicht nicht die gemeinsame Verteilung modellieren.\n\nDie Terminologie, die die meisten Leute folgen werden, aber einige Autoren werden den Begriff generativ verwenden, auch wenn es nicht die gemeinsame Verteilung modelliert. Ich kann nichts dagegen tun, aber ich möchte Sie nur über diese Terminologie informieren. Was würden Sie also auf der Grundlage dessen, was wir bisher studiert haben, sagen, wenn Sie ein generatives Modell lernen wollen, ein generatives Modell, mit dem Sie Sätze generieren können? Eine Möglichkeit wäre, einen Decoder zu trainieren. Die Idee hier vom Autoencoder ist, dass ich ein Bild nehme, es in einen latenten Raum bringe, hoffentlich viel kleiner in der Dimension als die Eingabe, und dann habe ich den Decoder, der versucht, diese Eingabe neu zu erstellen. Und so könnte dies etwas sein, das ich trainieren könnte, und dann könnte ich mir vorstellen, den Encoder fallen zu lassen und dann einfach herumzugehen, oder eine Sache, die ich tun könnte, ist, ein Bild zu kodieren und dann mit meinem Z herumzuspielen. Wie, ich kodiere eine Katze und beginne, sie hinzuzufügen, um vielleicht zu einem Hund zu werden, sagen wir, ich nehme das Bild einer Katze, bekomme das Z, bekomme das Bild eines Hundes, bekomme ein anderes Z, bekomme diese beiden Z, und ich möchte zwischen den beiden morphen, und theoretisch könnte ich einfach linear zwischen diesen beiden interpolieren und dann beginnen, zwischen den beiden zu synthetisieren und zu morphen. Dies ist theoretisch, ich kann das vielleicht tun. In der Praxis würde der latente Raum, wenn Sie ein TSNE darauf anwenden würden, zeigen, dass er sehr geclustert ist. Er ist sehr geclustert und hat keinen Raum, der einfach unterrepräsentiert ist durch die Trainingsdaten. Und so ist das ein Problem, weil plötzlich dieser latente Raum nicht sehr gut für die Generierung ist, weil es bedeutet, dass ich nicht zwischen zwei Punkten arbeiten kann, weil ich vielleicht unglücklich bin. Ich kann in zwei verschiedenen Clustern sein, die nichts haben, keine Darstellung aus den Trainingsdaten dazwischen.\n\nWie kann ich das lösen? Es gibt eine Reihe von Forschungen, die wir auch nächste Woche mehr darüber diskutieren werden, wie ich sicherstellen kann, dass ich in meinem Z-Raum interpolieren kann? Und die Idee, die Intuition ist, dass ich parametrisieren werde, ich werde eine Einschränkung hier einführen, damit ich, anstatt immer geclustert zu sein, und das ist wirklich schlecht, weil wenn Dinge in verschiedenen Teilen des Raums landen, ich okay äh machen werde, und indem ich Z zwinge, wenn ich alle meine Trainingsstichproben nehme und sie auf diese Weise projiziere, werde ich erzwingen, dass diese projizierten Stichproben einer Verteilung folgen, und normalerweise werde ich eine Normalverteilung wählen, und so werde ich betonen, und so Z selbst auch, ich werde es parametrisieren als eine normale Wahrscheinlichkeitverteilung, also eine Gaußverteilung. Und so werde ich sagen, dass all diese Daten in einem Raum parametrisiert werden können, der mit einer multivariaten Gaußverteilung parametrisiert ist, mit dem Mittelwert und so. Und so werde ich meinen Encoder haben und meinen Decoder, und dann, wenn ich es nicht erzwinge, kann es passieren, dass ich einfach mein Z reparameterisiere, aber das bringt mir dieses Problem nicht. Ich könnte immer noch in verschiedenen Teilen des Raums landen, aber ich werde es zwingen, einer Normalverteilung zu folgen, und es gibt verschiedene Möglichkeiten, wie ich es erzwingen kann. Eine Möglichkeit, die gezeigt wurde, dass sie gut funktioniert, ist, mit dem KL-Verlust zu ermutigen, um sicherzustellen, dass Z einer Normalverteilung folgt. Wie ich erwähnt habe, werden wir mehr Details darüber haben, über variational approaches. Wir werden eine vollständige Vorlesung über Variational haben, weil es viele sehr interessante Erweiterungen des variational autoencoders gibt. Aber wenn Sie dies tun, dann hat diese Normalverteilung plötzlich eine schöne Eigenschaft, weil ich warp kann. Ich kann zwei Bilder nehmen, wie zwei Z. Ich kann zwischen ihnen warp. Ich kann mich bewegen. Und ich weiß, dass überall, wo ich mich bewege, solange ich innerhalb der Gaußverteilung bin, dass ich gültig bin, oder zumindest etwas, das in den Trainingsdaten gesehen wurde.\n\nAber ein Problem ist, dass sie nicht wirklich aussehen. Ich meine, sie sehen ein bisschen aus, aber sie sehen nicht wirklich aus wie dieses Bild von mir. Und so sehen sie nicht wirklich realistisch aus. Und so ist dies ein wirklich interessanter Ansatz, der vorgeschlagen wurde, um dies zu erweitern, der sagt, hey, ich habe eine Generierung, und vielleicht hat dieser Generator einen Autoencoder, also einen Encoder und dann haben Sie einen zufälligen Vektor. Und wir werden einige davon sehen, aber ich habe, aber ich möchte, dass dieses synthetisierte Bild echt aussieht. Ich werde sagen, ich werde zufällig, einmal in einer Weile, ein echtes Bild geben und manchmal synthetisiere ich, und ich werde, und was schön ist, ist, dass der Generator trainiert wird, jeden zufälligen Vektor zu kartieren, und das ist, und so spreche ich im variational autoencoder, wo Sie versuchen, ihn zu zwingen, Gaußsch zu sein, aber für jetzt sagen wir, wir setzen keine dieser Einschränkungen, und ich bin zurück zum Punkt, an dem ich jeden zufälligen Vektor nehme, oder es ist ein zufälliger Vektor, vielleicht aus einer bestimmten Verteilung, aber jeder zufällige Vektor, und dann generiere ich ihn, sodass jedes Bild, das ich generiere, echt aussieht. Ich will, dass ich ihm jeden Vektor gebe, und es sollte mir ein echtes Bild geben. Ein Bild bis zu dem Punkt, dass, wenn ich wie habe, und wie Sie sehen können, werden sie miteinander konkurrieren, aber trainiert, jeden Vektor auf ein Bild zu kartieren, und dann ist das andere, einen synthetisierten Bild von einem echten Bild zu unterscheiden. Und so, wie trainieren wir sowohl Generator als auch Diskriminator? Die Idee hier ist also, dass Sie einen Term haben werden. Hier haben Sie also den erwarteten Wert. Sie wollen also, dass Ihr Diskriminator so erfolgreich wie möglich ist, und so wird Ihr Verlust ihn, äh, machen, und dann, wenn Sie, äh, und dann das Gegenteil, und so, wenn es synthetisch ist, ist es eins minus dies, Sie wollen sicher sein, dass, und je nachdem, ob es echt oder gefälscht ist, und so, je nachdem, ob die Ausgabe von D echt ist."
+    ]
+  },
+  "0:46:47.208": {
+    "ja": [
+      "「あるいは、出力が偽物である場合、例えばこれがdであるか、1からzを引いた値であるかのように、現実と偽物のどちらをどう呼ぶかに依存するが、はい、どちらか一方は、識別器が現実であると言う場合、それは現実であるべきであり、偽物であると言う場合、それは1からdを引いた値であるべきである。つまり、このデータから得られるものである。 これが、識別器を成功させるための条件であるが、同時に識別器も成功させたいので、この場合はmin-maxとなる。 なぜなら、最終的には生成器を最小化するか、同時に識別器を最大化したいからである。 生成器はこれをできるだけ小さくしたいと考え、識別器はこれをできるだけ大きくしたいと考えている。 したがって、これを最適化する方法の1つは、生成器を固定し、識別器をできるだけ大きくするか、識別器を固定し、生成器をできるだけ小さくすることである。 したがって、これを最適化する方法の1つである。 さて、GAN自体は有用であるが、私は条件付きGANの方が興味深いと思う。 なぜなら、例えば本物の画像がすべて猫である場合、ただ猫の画像を生成するだけでなく、外部または別のランダム変数を使用して、ギアを調整できる可能性もあるからである。 そして、条件付きGANを実装する方法にはさまざまなバリエーションがあるが、ここでの一般的な考え方は同じである。つまり、画像を合成することを学習するが、クラスを条件とすることである。 そして、課題は、それが条件付けされていることを確認することである。 なぜなら、ただそれを取って、進んでしまうと、無視する可能性があるからである。 そして、完全に無視する可能性がある。 したがって、それが正しく行われたことを確認する方法の1つは、画像クラスを条件として合成された現実の画像を区別するように訓練することである。 したがって、識別器も条件付けすることができる。 しかし、ここでは1つを条件付けしているので、それが1つの方法である。」"
+    ],
+    "id": [
+      "\"Atau outputnya palsu seperti Anda, ini akan menjadi d atau satu minus z, itu hanya tergantung pada apa yang Anda sebut nyata dan apa yang Anda sebut palsu, tapi ya salah satu dari mereka ketika diskriminator mengatakan itu nyata, itu harus nyata dan ketika dikatakan palsu, itu harus satu minus d, jadi itu harus dari data ini, data... itu jika Anda ingin diskriminator berhasil, tapi Anda juga ingin diskriminator, jadi ini min-max dalam kasus ini... karena Anda ingin pada akhirnya meminimalkan generator atau pada saat yang sama memaksimalkan diskriminator... jadi generator ingin membuat ini sekecil mungkin, generator diskriminator ingin membuat ini setinggi mungkin. Jadi salah satu cara untuk mengoptimalkannya adalah dengan memperbaiki generator, membuat diskriminator setinggi mungkin, atau memperbaiki diskriminator dan membuat generator setinggi mungkin. Jadi itu salah satu cara untuk menghasilkan, untuk mengoptimalkan ini.\n\nSekarang, GAN itu sendiri berguna, agak berguna, tapi saya pribadi suka dengan Conditional GAN itu menarik karena tidak hanya Anda bisa menghasilkan gambar kucing apa saja, misalnya, karena katakanlah gambar nyata semua adalah kucing, tapi sekarang mungkin saya juga memiliki kemungkinan bahwa saya memiliki variabel acak lain yang saya akan gunakan untuk memulai... dan ada variasi yang berbeda dari cara mengimplementasikan Conditional GAN, tapi ide umumnya di sini sama, yaitu Anda belajar mensintesis gambar tapi bersandar pada kelas... dan tantangannya adalah memastikan bahwa itu telah dikondisikan dengan benar karena jika Anda hanya mengambil dan melakukannya, ada kemungkinan bahwa itu diabaikan... dan mungkin saja generator mengabaikannya sepenuhnya... jadi salah satu cara untuk memastikan bahwa itu dilakukan dengan benar adalah melatih untuk membedakan, mensintesis gambar nyata yang dikondisikan pada kelas gambar juga... jadi Anda bisa membuat diskriminator juga... tapi di sini Anda mengkondisikan salah satu, jadi itu salah satu cara untuk melakukannya.\""
+    ],
+    "th": [
+      "\"หรือผลลัพธ์เป็นของปลอม เช่น คุณเรียกค่านี้ว่า d หรือ 1 ลบ z ขึ้นอยู่กับว่าคุณเรียกอะไรว่าจริงและอะไรว่าปลอม แต่ใช่ หนึ่งในนั้น เมื่อ discriminator บอกว่าจริง มันควรจะจริง และเมื่อบอกว่าปลอม มันควรจะเป็น 1 ลบ d ดังนั้น มันควรจะมาจากข้อมูลนี้... นั่นคือ ถ้าคุณต้องการให้ discriminator ประสบความสำเร็จ แต่คุณยังต้องการให้ discriminator... ดังนั้นจึงเป็น min-max ในกรณีนี้ เพราะคุณต้องการลด generator หรือเพิ่ม discriminator ในเวลาเดียวกัน... ดังนั้น generator ต้องการทำให้ค่านี้เล็กที่สุดเท่าที่จะทำได้ discriminator ต้องการทำให้ค่านี้สูงที่สุด... วิธีหนึ่งในการปรับให้เหมาะสมคือการ fix generator ทำให้ discriminator สูงที่สุด หรือ fix discriminator ทำให้ generator สูงที่สุด... นั่นคือวิธีหนึ่งในการสร้างและปรับให้เหมาะสม... ตอนนี้ GAN ในตัวมันเองมีประโยชน์ แต่ Conditional GAN น่าสนใจเพราะไม่เพียงแต่คุณสามารถสร้างภาพแมวใดๆ ได้ แต่คุณยังมีตัวแปรสุ่มภายนอกหรือตัวแปรสุ่มอื่นที่สามารถใช้เพื่อควบคุม... และมีการเปลี่ยนแปลงในระดับต่างๆ ของการ implement Conditional GAN แต่แนวคิดทั่วไปที่นี่เหมือนกัน คือคุณเรียนรู้การสังเคราะห์ภาพโดยมีเงื่อนไขบน class และความท้าทายคือต้องแน่ใจว่ามันได้รับการปรับเงื่อนไขแล้ว... หากคุณเพียงแค่ทำและไปต่อ มีโอกาสที่มันจะเพิกเฉย... และเป็นไปได้ที่ generator เพิกเฉย discriminator โดยสิ้นเชิง... วิธีหนึ่งเพื่อให้แน่ใจว่าทำถูกต้องคือฝึกฝนเพื่อแยกแยะการสังเคราะห์ภาพจริงโดยมีเงื่อนไขบน class ของภาพด้วย\""
+    ],
+    "zh": [
+      "\"或者输出是假的，像你这样的，这将是d或1减z，只是取决于你怎么称呼真实的，怎么称呼假的。但是，是的，其中一个，当判别器说是真实的，它就应该是真实的，当它说是假的，它就应该是1减d。所以它应该来自这些数据，嗯，如果你想让判别器成功，嗯，但你也想要判别器，所以在这种情况下是最小最大，嗯，因为你最终想要最小化生成器或同时最大化判别器，嗯。所以生成器想要使这个尽可能小，生成器，判别器想要使这个尽可能大。那么一种优化它的方法是固定生成器，使判别器尽可能大，或者固定判别器，使生成器尽可能大。所以这是一种生成，优化它的方法。现在，GAN本身是有用的，有点用，但我个人喜欢它。条件GAN很有趣，因为不仅如此，你就像能够生成任何猫的图像，比如说，因为比如说真实的图像都是猫，但现在我也可能有一个外部或另一个随机变量，我将能够使用它来开始齿轮。并且有不同程度的变异，如不同的实现条件GAN的方法，但这里的总体思路是相同的，是学习合成图像，但条件是类，而挑战将是确保它已经被条件化，因为如果你，如果你只是拿走并直接进行，有可能它只是忽略它，嗯，并且有可能它完全忽略生成器完全忽略。所以，确保它是正确完成的一种方法，是训练来区分，中心合成真实图像，条件是图像类，所以你也可以制作判别器，但是在这里，你是有条件的，并且，所以这是一种方法。\""
+    ],
+    "es": [
+      "\"Al o la salida es falsa como tú, esto sería d o uno menos z, solo depende de lo que llames real y lo que llames falso, pero sí, uno de ellos, cuando el discriminador dice que es real, debería ser real y cuando dice falso, debería ser uno menos d, así que debería ser de estos datos, eso es si quieres que el discriminador tenga éxito, pero también quieres el discriminador, así que es un min max en este caso, porque al final quieres minimizar el generador o al mismo tiempo maximizar el discriminador, el generador quiere hacer esto lo más pequeño posible, el discriminador quiere hacer esto lo más alto posible. Así que una forma de optimizarlo sería fijar el generador, hacer que el discriminador sea lo más alto posible, o fijar el discriminador y hacer que el generador sea lo más alto posible. Esa es una forma de generar, de optimizar esto. Ahora, GAN en sí mismo es útil, es algo útil, pero personalmente me gusta. El GAN condicional es interesante porque no solo puedes generar cualquier imagen de un gato, digamos, porque digamos que las imágenes reales son todas de gatos, sino que ahora también tengo la posibilidad de tener una variable externa o aleatoria que podré usar para empezar a engranar. Y hay diferentes variaciones de extensión de diferentes formas de implementar un GAN condicional, pero la idea general aquí es la misma, es que aprendes a sintetizar la imagen pero condicionada a la clase, y el desafío será asegurarse de que se ha condicionado correctamente, porque si solo tomas y sigues adelante, hay una posibilidad de que simplemente lo ignore, y es posible que lo ignore por completo, el generador ignora por completo. Así que una forma de asegurarse de que se hace correctamente es entrenar para distinguir entre imágenes reales y sintetizadas condicionadas a la clase de imagen también, para que puedas hacer que el discriminador también, pero aquí estás condicionando uno, y así es una forma de hacerlo.\""
+    ],
+    "fr": [
+      "\"ou alors la sortie est fausse comme vous, ce serait d ou un moins z, cela dépend juste de ce que vous appelez réel et de ce que vous appelez faux, mais oui, l'un d'eux, lorsque le discriminateur dit que c'est réel, cela devrait être réel et quand il dit faux, cela devrait être un moins d, donc cela devrait provenir de ces données, c'est si vous voulez que le discriminateur réussisse, mais vous voulez également le discriminateur, donc c'est un minimum maximum dans ce cas, parce que vous voulez à la fin minimiser le générateur ou en même temps maximiser le discriminateur, le générateur veut rendre cela aussi petit que possible, le discriminateur veut rendre cela aussi élevé que possible. Donc, une façon de l'optimiser serait de fixer le générateur, de rendre le discriminateur aussi élevé que possible, ou de fixer le discriminateur et de rendre le générateur aussi élevé que possible. C'est une façon de générer, d'optimiser cela. Maintenant, le GAN en lui-même est utile, est quelque peu utile, mais je personnellement aime ça. Le GAN conditionnel est intéressant parce que ce n'est pas seulement que vous êtes comme capable de générer n'importe quelle image d'un chat, disons, parce que disons que les images réelles sont toutes de chats, mais maintenant peut-être que j'ai aussi la possibilité d'avoir une variable externe ou une autre variable aléatoire que je vais pouvoir utiliser pour commencer à engager. et il existe différentes variations de l'étendue de différentes façons de mettre en œuvre un GAN conditionnel, mais l'idée générale ici est la même, c'est que vous apprenez à synthétiser l'image mais conditionnellement à la classe et que le défi sera de s'assurer qu'elle a été conditionnée parce que si vous si vous prenez juste et juste allez-y, il y a une chance qu'il l'ignore simplement, et il est possible qu'il l'ignore complètement, le générateur ignore complètement, donc une façon de s'assurer que cela est fait correctement est entraînée pour distinguer le centre synthétise l'image réelle conditionnée à la classe d'image également, donc vous pourriez également faire le discriminateur. Mais ici, vous conditionnez l'un, et donc vous, c'est une façon de le faire.\""
+    ],
+    "de": [
+      "\"oder die Ausgabe ist gefälscht wie du, das wäre d oder eins minus z, es hängt nur davon ab, was du als echt und was du als gefälscht bezeichnest, aber ja, wenn der Diskriminator sagt, es ist echt, sollte es echt sein, und wenn er sagt, es ist gefälscht, sollte es eins minus d sein, also sollte es aus diesen Daten stammen, das ist, wenn du willst, dass der Diskriminator erfolgreich ist, aber du auch willst, dass der Diskriminator, es ist ein Min-Max-Spiel in diesem Fall, weil du am Ende den Generator minimieren oder gleichzeitig den Diskriminator maximieren willst, also will der Generator dies so klein wie möglich machen, der Diskriminator will dies so hoch wie möglich machen, also eine Möglichkeit, es zu optimieren, wäre, den Generator zu fixieren, den Diskriminator so hoch wie möglich zu machen, oder den Diskriminator zu fixieren und den Generator so hoch wie möglich zu machen, das ist eine Möglichkeit, dies zu optimieren. Jetzt ist GAN an sich nützlich, aber ich persönlich finde Conditional GAN interessant, weil es nicht nur darum geht, dass du in der Lage bist, ein beliebiges Bild einer Katze zu erzeugen, sagen wir, weil die echten Bilder alle von Katzen sind, aber jetzt hast du vielleicht auch die Möglichkeit, dass du eine externe oder eine andere Zufallsvariable hast, die du verwenden kannst, um zu beginnen, und es gibt verschiedene Variationen von verschiedenen Möglichkeiten, ein Conditional GAN zu implementieren, aber die allgemeine Idee hier ist dieselbe, nämlich dass du lernst, das Bild zu synthetisieren, aber unter der Bedingung der Klasse, und die Herausforderung wird sein, sicherzustellen, dass es unter dieser Bedingung steht, weil wenn du einfach nimmst und einfach weitermachst, besteht die Chance, dass es einfach ignoriert wird, und es ist möglich, dass es den Generator komplett ignoriert, also eine Möglichkeit, sicherzustellen, dass es korrekt gemacht wird, ist, zu trainieren, um ein synthetisches Bild zu unterscheiden, das unter der Bedingung der Bildklasse steht, also könntest du auch den Diskriminator machen, aber hier bedingst du eines, und das ist eine Möglichkeit, es zu tun.\""
+    ]
+  },
+  "0:46:51.028": {
+    "ja": [
+      "「興味深い方法の1つは、巡回損失のようなものを言うことで、識別器または少なくとも識別器がクラスも取得したいと考えていることを確認することです。そして、その部分は敵対的な部分ではないが、クラスの決定を正しく出力することも確認したいのです。したがって、識別器は本物と偽物を識別しようとしており、そのためには私たちが話した損失関数を使用することになります。しかし、この場合は、識別器がクラスを識別できることを確認するために、より古典的な損失関数を使用します。したがって、もしあなたが猫をここに置いた場合、猫の画像を取得し、犬であれば犬の画像を取得したいのです。でも、もし私たちがXからZへの符号化も学習したい場合はどうでしょうか？これは... しかし、もしかしたら私たちはXからZへの符号化もしたいかもしれませんし、私は少し後にこの例を挙げるつもりです。私はこのモデルについて例を挙げるつもりです。しかし、その前に、私はInfoganのようなモデルの例をいくつか挙げたいと思います。そして、そのうちの1つはオーディオからシーンへの変換です。したがって、あなたはオーディオを取得し、そして... そして... そして、条件付けはオーディオに基づいており、それでもランダムなクラス、ランダムなノイズがあり、ジェネレータと識別器は識別しますが、あなたは一種の2番目の識別器を持つことができます。それは、同じ識別器と呼ぶこともできますが、ただのマルチタスクです。1つは偽物と本物の識別ですが、もう1つは予測についてです。したがって、これは素晴らしい単純な拡張です。したがって、アーキテクチャはまったく同じではありません。クラスは同じではありませんが、ここでは条件付けが異なるものがあります。それらは関連しています。実際、この場合、私のオーディオからそのクラスへのリンクがあります。私のオーディオからそのクラスへのリンクがあります。そして、それは興味深いです。なぜなら、彼らは本当にクールなことをできるからです。聞いてください。ここで私がこれをやります。そして、システムは自動的に、音と大量のフェアデータから、うまく... すみません、それについて。私の机で作業する必要があります。私はちょうどこの方法をクリックします。しかし、この場合、再生されます。とても素敵なのは、両方とも水です。4つすべてが水を持っていますが、少しうるさいです。ですから、それは小さなことですが、それから... それはちょっとしたトリックで、かわいかったです。私のグループでの現在の研究にも関連するもう1つは、トーキングヘッドです。ジェネレータはランドマークになり、あなたは合成を目指しており、あなたは識別器を持っています。同じ識別器、本物または偽物、そしてあなたはグラウンドトゥルースを持っています。そして、彼らがそれに追加したのは、画像を見ることも... この入力画像を見ることも含めて、この作業に役立てています。しかし、これは興味深いです。なぜなら、彼らはこれをできて、またカスタマイズもできるからです。したがって、入力はランドマークと画像を取得し、その画像を生成するようなものになります。したがって、あなたは2つの条件に基づいて... ランドマークと画像に基づいて... 画像を生成したいのです。そして、それは別の人の画像かもしれませんし、あなたは彼らに同じ顔の表情を持たせたいのです。そして、あなたはこのようなものを取得します。これは本当にクールだと思います。入力画像を取り、それを... 彼女が話すようにするのは、本当にクールだと思いました。」"
+    ],
+    "id": [
+      "\"Salah satu cara yang sangat menarik adalah mengatakan sedikit seperti kehilangan siklik sebagai cara seperti Anda ingin yakin bahwa diskriminator atau setidaknya diskriminator juga ingin mendapatkan kelas dan bagian itu Anda inginkan. Itu tidak akan menjadi bagian dari bagian adversarial adalah bahwa Anda ingin yakin bahwa Anda juga output dengan benar keputusan tentang kelas. Jadi diskriminator Anda mencoba melakukan yang nyata dan palsu dan untuk itu Anda akan memiliki kehilangan yang kita bicarakan. Tapi untuk ini kita akan memiliki yang lebih klasik untuk memastikan bahwa diskriminator Anda mampu membedakan kelas. Jadi Anda ingin yakin bahwa jika Anda meletakkan kucing di sini Anda mendapatkan gambar kucing jika itu anjing itu gambar anjing karena diskriminator Tapi apa jika kita ingin juga belajar untuk menyandikan dari X ke Z? Jadi ini... Tapi mungkin kita juga ingin menyandikan dari x ke z dan saya akan memberikan contoh sebentar tentang ini Uh, saya akan memberikan model tentang ini. Tapi sebelum saya masuk ke sana saya ingin memberikan beberapa contoh model seperti Infogan. Dan salah satu dari mereka adalah audio ke scene. Jadi Anda mendapatkan audio dan kemudian dan kemudian um uh dan kemudian jadi kondisi berdasarkan pada audio uh dan masih acak kelas uh kebisingan acak di sini Anda memiliki generator dan diskriminator Anda akan membedakan tapi Anda memiliki semacam diskriminator kedua bisa jadi semacam itu bisa disebut diskriminator yang sama, tapi hanya multitask. Satu tentang palsu versus tidak palsu, tapi mereka juga memiliki yang lain tentang memprediksi. Jadi itu perpanjangan yang sederhana dan bagus. Jadi tidak persis sama arsitektur. Tidak sama kelas, tapi di sini dan ini Anda memiliki kondisi yang berbeda yang berbeda. Dari kelas, tapi mereka terkait. Sebenarnya, dalam kasus ini, ada link antara audio saya ke kelas itu juga. Ada link antara audio saya ke kelas itu. Dan itu menarik karena sekarang mereka dapat melakukan beberapa hal yang sangat keren. Saya harap Anda dapat mendengarnya. Di sini adalah melakukan ini. Dan sistem secara otomatis, hanya dari suara dan banyak data yang adil, berhasil... Maaf tentang itu. Saya perlu bekerja pada meja saya. Saya hanya akan mengklik dengan cara ini. Tapi Anda mendapatkan, dalam kasus ini, akan menjadi permainan. Yang sangat bagus adalah seperti keduanya adalah air. Semua empat dari mereka memiliki air, tapi sedikit keras. Jadi hanya sedikit, jadi kecil, tapi kemudian jika itu... Jadi itu trik kecil yang lucu. Satu yang terkait juga dengan penelitian kami saat ini di kelompok saya adalah juga kepala berbicara. uh akan menjadi generator akan menjadi landmark uh dan kemudian uh Anda mendapatkan sintesis itu tujuan Anda um dan kemudian Anda memiliki diskriminator diskriminator yang sama nyata atau palsu uh dan kemudian jadi Anda memiliki kebenaran dasar dan apa yang mereka tambahkan ke itu juga melihat gambar uh untuk membantu dengan ini uh melihat gambar input juga um tapi ini menarik karena sekarang mereka dapat melakukan ini uh dan juga menyesuaikan uh jadi apa input akan menjadi adalah bahwa Anda mendapatkan beberapa landmark Anda mendapatkan gambar dan Anda menghasilkan gambar itu jadi Anda kondisi hampir pada dua hal mereka seperti landmark dan Anda ingin menghasilkan uh gambar uh berdasarkan ini jadi Anda Dan jadi mungkin gambar orang yang berbeda dan Anda ingin mereka dengan ekspresi wajah yang sama Juga, dan jadi Anda mendapatkan beberapa hal seperti ini, yang saya pikir sangat sangat keren Mengambil gambar input dan membuat Saya maksud membuat dia berbicara Yang itu sangat keren bagi saya.\""
+    ],
+    "th": [
+      "วิธีที่น่าสนใจคือพูดนิดหน่อยเหมือนกับ loss แบบวนซ้ำเป็นวิธีหนึ่งที่คุณต้องการให้แน่ใจว่า discriminator หรืออย่างน้อย discriminator ก็ต้องการได้ class ด้วย และส่วนนั้นคุณต้องการ ไม่ใช่ส่วนของ adversarial ที่คุณต้องการให้แน่ใจว่าคุณ output การตัดสินใจเกี่ยวกับ class อย่างถูกต้องด้วย ดังนั้น discriminator ของคุณพยายามทำจริงและปลอม และสำหรับสิ่งนั้นคุณจะมี loss ที่เราคุยกัน แต่สำหรับสิ่งนี้เราจะมีแบบคลาสสิกมากกว่าที่จะทำให้ discriminator ของคุณสามารถแยกแยะ class ได้ ดังนั้นคุณต้องการให้แน่ใจว่าหากคุณใส่แมวที่นี่ คุณจะได้ภาพแมว ถ้ามันเป็นสุนัข ก็เป็นภาพสุนัข เพราะ discriminator แต่ถ้าเราต้องการเรียนรู้การเข้ารหัสจาก X ไป Z ด้วย? ดังนั้น... แต่บางทีเราอาจต้องการเข้ารหัสจาก x ไป z และฉันจะให้ตัวอย่างในภายหลังเกี่ยวกับเรื่องนี้ ฉันจะให้แบบจำลองเกี่ยวกับเรื่องนี้ แต่ก่อนที่ฉันจะพูดถึงเรื่องนั้น ฉันต้องการให้คุณดูตัวอย่างของแบบจำลองเหล่านี้ เช่น Infogan หนึ่งในนั้นคือเสียงกับฉาก ดังนั้นคุณจะได้เสียงและจากนั้น... และจากนั้น... เงื่อนไขจะขึ้นอยู่กับเสียง และยังคงเป็น class สุ่ม เสียงสุ่มที่นี่คุณมี generator และ discriminator ของคุณจะแยกแยะ แต่คุณก็มี discriminator ที่สองซึ่งเป็นแบบ multitask หนึ่งคือเกี่ยวกับ fake กับไม่ fake แต่ อีกหนึ่งคือเกี่ยวกับการทำนาย ดังนั้นจึงเป็นส่วนขยายที่ง่ายมาก ดังนั้นจึงไม่เหมือนกับสถาปัตยกรรมเดียวกัน ไม่เหมือนกับ class เดียวกัน แต่ที่นี่และในกรณีนี้ มีลิงก์ระหว่างเสียงกับ class ด้วย มีลิงก์ระหว่างเสียงกับ class และนั่นน่าสนใจเพราะตอนนี้พวกเขาสามารถทำสิ่งที่เจ๋งจริงๆ ฉันหวังว่าคุณจะได้ยินเสียงนี้ ที่นี้... ระบบอัตโนมัติจากเสียงและข้อมูลที่ยุติธรรม สามารถ... ขอโทษสำหรับเรื่องนั้น ฉันจำเป็นต้องทำงานบนโต๊ะทำงานของฉัน ฉันจะคลิกไปทางนี้ แต่ในกรณีนี้ มันจะเล่นได้ สิ่งที่น่าสนใจคือ ทั้งสองอย่างเป็นน้ำ ทั้งสี่มีน้ำ แต่เสียงดังเล็กน้อย ดังนั้นจึงเป็นเพียงเล็กน้อย จึงเป็นเรื่องเล็ก แต่ถ้ามัน... มันเป็นเคล็ดลับที่น่ารัก หนึ่งที่เกี่ยวข้องกับการวิจัยปัจจุบันในกลุ่มของฉันคือ talking head จะเป็น landmark และจากนั้นคุณจะได้สังเคราะห์นั่นคือเป้าหมายของคุณ และจากนั้นคุณมี discriminator discriminator เดียวกันจริงหรือปลอม และจากนั้นคุณมี ground truth และสิ่งที่พวกเขาเพิ่มเข้าไปคือดูที่ภาพด้วย เพื่อช่วยในเรื่องนี้ ดูที่ภาพ input ด้วย แต่สิ่งนี้ก็น่าสนใจเพราะตอนนี้พวกเขาสามารถทำสิ่งนี้ได้ และปรับแต่งด้วย ดังนั้น input ที่จะเข้ามาคือคุณจะได้ landmark บางอย่าง คุณจะได้ภาพ และคุณกำลังสร้างภาพนั้น ดังนั้นคุณกำลังกำหนดเงื่อนไขบนสองสิ่ง พวกมันเหมือน landmark และคุณต้องการสร้างภาพตามสิ่งนี้ ดังนั้นคุณ... และดังนั้นอาจเป็นภาพของบุคคลอื่น และคุณต้องการให้มี facial expression เหมือนกัน และดังนั้นคุณจะได้บางอย่างเช่นนี้ ซึ่งฉันคิดว่าเจ๋งมาก การนำภาพ input และทำให้... ฉันหมายถึงทำให้เธอพูด ซึ่งฉันคิดว่าเจ๋งมาก"
+    ],
+    "zh": [
+      "\"一个有趣的方法是，像循环损失一样，确保判别器（discriminator）不仅要区分真假，还要能正确分类。这部分不属于对抗性部分，而是要确保判别器也能正确输出类别决策。所以，判别器要做的是区分真假和类别，我们会有相应的损失函数。但是，对于这个，我们会使用更经典的方法，确保判别器能够区分类别。如果你输入一张猫的图片，它应该输出猫的图片；如果是狗，它应该输出狗的图片。但是，如果我们也想从X编码到Z呢？这就是... 但是，也许我们也想从x编码到z，我稍后会举例说明。我会给出一些模型例子，比如Infogan。其中一个是音频到场景。你输入音频，然后... 然后，条件是基于音频的，仍然是随机类别，随机噪声。你有生成器和判别器，判别器会区分真假，但你也可以有一个第二判别器，可以是同一个判别器，只是多任务处理。一个是真假，另一个是预测。所以，这是一个简单的扩展。架构和类别不同，但它们是相关的。事实上，在这种情况下，音频和类别之间存在联系。音频和类别之间存在联系。这很有趣，因为现在他们可以做一些很酷的事情。我希望你能听到。 这里有一个例子。系统自动地，仅从声音和一批公平的数据中，成功地... 对不起，我需要使用我的桌子。我就点击一下。但是，在这种情况下，它将播放。真正好的是，它们都是水。四张图片都有水，但声音有一点大。所以，只有一点，所以很小，但如果... 这是一个很棒的技巧。其中一个与我团队目前的研究相关的是，也谈到头部。生成器将是地标，然后你得到合成图像，这是你的目标。然后你有判别器，同一个判别器，真实或虚假。然后你有真实值，他们添加的是还要看图像，帮助这个... 还要看输入图像。所以，这很有趣，因为现在他们可以做到这一点，还可以定制。所以，输入将是地标和图像，你正在生成图像，所以你几乎是在两个条件上进行调节。它们就像地标，你想根据它生成图像。所以，你可能得到一张不同人的图像，你希望他们有相同的面部表情。并且，你会得到这样的一些东西，我认为非常酷的是，拿这个输入图像并使其... 我是说，使她说话。 这对我来说真的很酷。\""
+    ],
+    "es": [
+      "\"Una forma que fue realmente interesante es decir un poco casi como una pérdida cíclica como una forma es como quieres estar seguro de que el discriminador o al menos el discriminador también quiere obtener la clase y esa parte que quieres. No va a ser parte de la parte adversaria es que quieres estar seguro de que también produces correctamente la decisión sobre la clase. Entonces tu discriminador está tratando de hacer real y falso y para eso tendrás la pérdida de la que hablamos. Pero para esto tendremos una más clásica para estar seguro de que tu discriminador es capaz de discriminar la clase. Entonces quieres estar seguro de que si pones un gato aquí obtienes una imagen de un gato, si es un perro es una imagen de un perro porque el discriminador... Pero ¿y si quisiéramos aprender a codificar de X a Z también? Entonces esto es... Pero quizás también queramos codificar de x a z y te voy a dar un ejemplo en un momento sobre esto. Te voy a dar modelos sobre esto. Pero antes de entrar en eso, quiero darte algunos ejemplos de estos modelos como Infogan. Y uno de ellos es de audio a escena. Entonces obtienes un audio y luego... y luego... y luego la condición se basa en el audio... y todavía es la clase aleatoria... el ruido aleatorio aquí tienes tu generador y tu discriminador discriminará pero tienes una especie de segundo discriminador que podría ser el mismo discriminador, pero solo una multitarea. Una es sobre falso versus no falso, pero también hay otra sobre predecir. Entonces es una extensión simple y agradable. Entonces no es exactamente la misma arquitectura. No es la misma clase, pero aquí y esta es una condición diferente que es diferente. De la clase, pero están relacionados. De hecho, en este caso, hay un enlace entre mi audio y esa clase también. Hay un enlace entre mi audio y esa clase. Y eso es interesante porque ahora pueden hacer cosas realmente geniales. Espero que puedas escucharlo. Aquí está... El sistema hace esto automáticamente, solo con el sonido y un montón de datos justos, logró... Lo siento por eso. Necesito trabajar en mi escritorio. Solo voy a hacer clic de esta manera. Pero obtienes, en este caso, va a ser una reproducción. Lo que es realmente agradable es como si ambos fueran agua. Los cuatro tienen agua, pero un poco fuerte. Entonces es solo un poco, así que es pequeño, pero luego si... Entonces fue un pequeño truco que era lindo. Otro que está relacionado también con nuestra investigación actual en mi grupo es también la cabeza parlante. Uh, uno de los generadores será el punto de referencia... y luego... obtienes la síntesis que es tu objetivo... y luego tienes el discriminador, el mismo discriminador real o falso... y luego tienes la verdad y lo que agregaron a eso es también mirar la imagen... para ayudar con esto... mirando la imagen de entrada también... pero esto es interesante porque ahora pueden hacer esto... y también personalizar... entonces lo que la entrada será es que obtienes algunos puntos de referencia, obtienes una imagen y estás generando esa imagen... entonces estás condicionando casi en dos cosas que son como el punto de referencia y quieres generar... la imagen... basada en esto... entonces puedes Y así puede ser una imagen de una persona diferente y quieres que tengan la misma expresión facial también, y así obtienes algunas cosas como esta, que creo que es realmente genial. Tomar esa imagen de entrada y hacer... es decir, hacer que hable. Me pareció realmente genial.\""
+    ],
+    "fr": [
+      "\"Une façon vraiment intéressante est de dire un peu comme une perte cyclique comme moyen, c'est comme si vous vouliez être sûr que le discriminateur ou au moins le discriminateur veuille également obtenir la classe et que cette partie vous la voulez. Elle ne fera pas partie de la partie adversaire, c'est que vous voulez être sûr que vous sortez également correctement la décision concernant la classe. Donc votre discriminateur essaie de faire réel et faux et pour cela vous aurez la perte dont nous avons parlé. Mais pour cela, nous allons en avoir une plus classique pour être sûr que votre discriminateur est capable de discriminer la classe. Donc vous voulez être sûr que si vous mettez un chat ici, vous obtenez une image d'un chat, si c'est un chien, c'est une image d'un chien, car le discriminateur... Et si nous voulions également apprendre à encoder de X à Z ? Donc c'est... Mais peut-être que nous voulons également encoder de x à z et je vais donner un exemple dans un peu de temps à ce sujet. Je vais vous donner des modèles à ce sujet. Mais avant de passer à cela, je veux vous donner quelques exemples de ces modèles comme Infogan. Et l'un d'eux est audio à scène. Donc vous obtenez un audio et puis... et puis... et puis le conditionnement est basé sur l'audio... et c'est toujours la classe aléatoire... le bruit aléatoire ici, vous avez votre générateur et votre discriminateur va discriminer, mais vous avez en quelque sorte un deuxième discriminateur, cela pourrait être le même discriminateur, mais juste une tâche multiple. L'un concerne faux ou pas faux, mais l'autre concerne également la prédiction. C'est une extension simple et agréable. Ce n'est pas exactement la même architecture. Ce n'est pas la même classe, mais ici et celle-ci, vous avez un conditionnement différent qui est différent. De la classe, mais ils sont liés. En fait, dans ce cas, il existe un lien entre mon audio et cette classe également. Il existe un lien entre mon audio et cette classe. Et c'est intéressant parce que maintenant, ils peuvent faire des choses vraiment cool. J'espère que vous pouvez l'entendre. Voici... Et le système automatiquement, juste à partir du son et d'un tas de données équitables, a réussi à... Désolé pour cela. Je dois travailler sur mon bureau. Je vais juste cliquer de cette façon. Mais vous obtenez, dans ce cas, cela va être joué. Ce qui est vraiment agréable, c'est comme si les deux étaient de l'eau. Les quatre ont de l'eau, mais un peu fort. C'est juste un peu, donc c'est petit, mais alors si... C'était un petit truc qui était mignon. Un autre qui est également lié à nos recherches actuelles dans mon groupe est également la tête parlante. Les générateurs seront les points de repère... et puis vous obtenez la synthèse, c'est votre objectif... et puis vous avez le discriminateur, le même discriminateur réel ou faux... et puis vous avez la vérité terrain et ce qu'ils ont ajouté à cela, c'est également regarder l'image... pour aider avec cela... en regardant également l'image d'entrée... mais c'est intéressant parce que maintenant, ils peuvent faire cela... et également personnaliser... donc ce que l'entrée sera, c'est que vous obtenez des points de repère, vous obtenez une image et vous générez cette image, donc vous conditionnez presque sur deux choses, elles sont comme les points de repère et vous voulez générer... l'image... basée sur cela, donc vous... et donc cela peut être une image d'une personne différente et vous voulez qu'elle ait la même expression faciale... et donc vous obtenez des choses comme cela, qui je pense est vraiment cool... Prendre cette image d'entrée et la faire... je veux dire, la faire parler... Ce qui était vraiment cool pour moi.\""
+    ],
+    "de": [
+      "Eine interessante Methode ist es, eine Art zyklischen Verlust zu verwenden, ähnlich wie ein Weg, um sicherzustellen, dass der Diskriminator oder zumindest der Diskriminator auch die Klasse erhält und dass Teil, den Sie wollen. Es wird nicht Teil des adversativen Teils sein, sondern Sie wollen sicherstellen, dass Sie auch die Entscheidung über die Klasse korrekt ausgeben. Ihr Diskriminator versucht also, echt und gefälscht zu unterscheiden, und dafür haben wir den Verlust, den wir besprochen haben. Aber für diesen Teil werden wir einen klassischen verwenden, um sicherzustellen, dass Ihr Diskriminator in der Lage ist, die Klasse zu diskriminieren. Sie wollen also sicherstellen, dass, wenn Sie hier eine Katze einsetzen, Sie ein Bild einer Katze erhalten, wenn es ein Hund ist, ist es ein Bild eines Hundes, weil der Diskriminator ... Aber was, wenn wir auch von X auf Z kodieren möchten? Das ist ... Aber vielleicht wollen wir auch von x auf z kodieren und ich werde gleich ein Beispiel dafür geben. Ich werde Ihnen Modelle dafür geben. Aber bevor ich darauf eingehe, möchte ich Ihnen einige Beispiele für diese Modelle geben, wie zum Beispiel Infogan. Und einer davon ist Audio zu Szene. Sie erhalten also ein Audio und dann ... und dann ist die Konditionierung auf dem Audio basiert und es ist immer noch die zufällige Klasse, der zufällige Rausch hier, Sie haben Ihren Generator und Ihr Diskriminator wird diskriminieren, aber Sie haben eine Art zweiten Diskriminator, der auch ein Teil desselben Diskriminators sein könnte, aber einfach ein Multitask. Eine ist über echt versus nicht echt, aber die andere ist über die Vorhersage. Es ist also eine nette einfache Erweiterung. Es ist also nicht genau dieselbe Architektur. Es ist nicht dieselbe Klasse, aber hier und in diesem Fall haben Sie eine andere Konditionierung, die anders ist. Von der Klasse, aber sie sind verwandt. Tatsächlich gibt es in diesem Fall eine Verbindung zwischen meinem Audio und dieser Klasse. Es gibt eine Verbindung zwischen meinem Audio und dieser Klasse. Und das ist interessant, weil sie jetzt wirklich coole Dinge tun können. Ich hoffe, Sie können es hören. Hier ist ein Beispiel. Und das System schafft es automatisch, nur aus dem Klang und einer Menge fairer Daten ... Entschuldigung, ich muss an meinem Schreibtisch arbeiten. Ich werde nur auf diese Seite klicken. Aber Sie bekommen in diesem Fall ein Spiel. Was wirklich nett ist, ist, dass beide Wasser haben. Alle vier haben Wasser, aber ein bisschen laut. Es ist also nur ein bisschen, es ist also ein kleiner, aber wenn es ... Es war ein kleiner Trick, der süß war. Ein weiterer, der auch mit unserer aktuellen Forschung in meiner Gruppe zusammenhängt, ist auch ein sprechender Kopf. Der Generator wird das Wahrzeichen sein und dann erhalten Sie die Synthese, das ist Ihr Ziel, und dann haben Sie den Diskriminator, denselben Diskriminator, echt oder gefälscht, und dann haben Sie die Ground Truth und was sie dazu hinzugefügt haben, ist auch das Bild anzusehen, um dabei zu helfen, das Eingangsbild anzusehen und so weiter. Aber das ist interessant, weil sie jetzt dies tun können und auch anpassen können, was die Eingabe sein wird, ist, dass Sie ein Wahrzeichen erhalten, Sie erhalten ein Bild und Sie generieren dieses Bild, Sie konditionieren also auf zwei Dinge, die wie das Wahrzeichen sind und Sie wollen das Bild basierend darauf generieren, also können Sie ein Bild einer anderen Person haben und Sie wollen, dass sie dieselbe Gesichts表情 hat, und so bekommen Sie einige Dinge wie dies, was ich wirklich, wirklich cool finde. Diese Eingabe-Bilder zu nehmen und ... ich meine, sie zum Sprechen zu bringen. Das fand ich wirklich cool."
+    ]
+  },
+  "0:46:55.848": {
+    "ja": [
+      "そして最後に1つ言及したいのは、以前述べたように、ジェネレータを作成するだけでなく、エンコーダも持つことができ、XからZへのマッピングも可能にしたい場合があることです。そして、そのアプローチの1つとして、双方向GANと呼ばれるものがあります。これにより、少し混乱するかもしれませんが、識別器は、画像が本物かどうか、また、エンコーディングが本物かどうかを判断するなど、2つの識別タスクを行う必要があります。それは、本物のエンコーディングですか？それとも偽のエンコーディングですか？生成されたエンコーディングですか？それは合成画像ですか？それとも本物の画像ですか？つまり、それは本物のベクトルですか？それとも合成ベクトルですか？そして、それは doubled になります。そして、これを学習してマッピングします。最後に、オートエンコーダを組み込むというファミリーについてお話ししたいと思います。これは、別の方法で生成するものです。オートエンコーダのように、何かにエンコードしてから生成するのです。そして、それはオートエンコーダを訓練する方法であり、あなたが知っているように、それをバージョンアップのアプローチにすることができますが、これは素晴らしいことです。なぜなら、この研究の多くはペアデータで機能しますが、このようなアーキテクチャをペアになっていないデータに拡張することもできるからです。ペアになっていないデータは、ある程度までペアになっているデータです。つまり、ある関係があることはわかっているのですが、どれがどれに対応しているかはわからないのです。そして、詳細については来週お話しすると思いますが、サイクルGANについてお話しします。"
+    ],
+    "id": [
+      "\"Dan satu hal terakhir adalah ide untuk membawa Yang saya sebutkan sebelumnya, seperti apa jika Anda tidak hanya ingin membuat generator, tapi Anda juga ingin memiliki encoder seperti Anda juga ingin dapat pergi dari X ke Z. Dan kemudian apa yang dapat Anda lakukan dalam satu pendekatan yang dilakukan adalah mereka menyebutnya GAN dua arah. Dan jadi ini sedikit membingungkan, tapi diskriminator harus melakukan dua tugas diskriminasi seperti mengatakan apakah gambar itu nyata atau tidak? Dan apakah encoding itu nyata atau tidak? Apakah itu encoding yang nyata? Atau encoding palsu? Atau menghasilkan encoding? encoding? Itu coding yang dihasilkan? Apakah itu gambar yang disintesis atau gambar nyata? Jadi apakah itu vektor yang nyata atau vektor yang disintesis? Dan jadi itu doubled. dan ini belajar untuk memetakkan satu Dan akhirnya ada keluarga terakhir yang ingin saya bicarakan adalah membawa auto encoder jadi itu cara lain untuk menghasilkan karena itu membawa seperti encoder sehingga Anda mengenkode sesuatu dan kemudian menghasilkan dan kemudian jadi itu cara untuk melatih encoder Anda dan seperti yang Anda tahu Anda dapat membuatnya menjadi pendekatan versional dan itu sangat bagus karena banyak pekerjaan ini bekerja pada data pasangan tapi sekarang Anda juga dapat memperluas arsitektur ini untuk bekerja pada data tidak berpasangan tidak berpasangan seperti pasangan mingguan masih berpasangan sampai titik tertentu seperti Anda tahu bahwa ada beberapa hubungan tapi Anda tidak tahu mana yang dengan mana dan untuk itu Dan saya pikir ada lebih banyak detail tentang ini dan minggu depan tapi kita akan membahas GAN siklus ini\""
+    ],
+    "th": [
+      "และอีกสิ่งหนึ่งสุดท้ายคือ แนวคิดของการนำ ซึ่งผมกล่าวถึงก่อนหน้านี้ เช่น ถ้าคุณไม่ต้องการสร้างเพียงตัวสร้าง แต่คุณยังต้องการมีตัวเข้ารหัส เช่นเดียวกับที่คุณต้องการไป เพื่อให้สามารถจาก X ไป Z และจากนั้นคุณสามารถทำได้ในแนวทางหนึ่งที่ทำคือ พวกเขาเรียกมันว่า GAN แบบสองทิศทาง และนี่ทำให้เกิดความสับสนเล็กน้อย แต่ผู้จำแนกจะต้องทำสองงานจำแนก เช่น การบอกว่าภาพเป็นจริงหรือไม่ และ การเข้ารหัสเป็นจริงหรือไม่ เป็นการเข้ารหัสจริงหรือการเข้ารหัสปลอม หรือการเข้ารหัสที่สร้างขึ้น เป็นภาพที่สังเคราะห์ขึ้นหรือภาพจริง ดังนั้น เป็นเวกเตอร์จริงหรือเวกเตอร์ที่สังเคราะห์ขึ้น และนี่เป็นสองเท่า และเรียนรู้ที่จะแมปหนึ่ง และสุดท้ายคือ ครอบครัวสุดท้ายที่ผมอยากพูดถึงคือ การนำตัวเข้ารหัสอัตโนมัติมาด้วย ดังนั้นนี่เป็นอีกวิธีหนึ่งของการสร้าง เนื่องจากมันนำตัวเข้ารหัสอัตโนมัติมา คุณจึงเข้ารหัสบางสิ่งและสร้าง จากนั้นนี่เป็นวิธีฝึกอบรมตัวเข้ารหัสอัตโนมัติ และคุณรู้ว่าคุณสามารถทำให้มันเป็นแนวทางแบบแปรผันได้ และนี่ดีมากเพราะงานส่วนใหญ่ทำงานกับข้อมูลคู่ แต่ตอนนี้คุณสามารถขยายสถาปัตยกรรมนี้เพื่อทำงานกับข้อมูลที่ไม่คู่กันได้ ไม่คู่กันเหมือนกับคู่กันในระดับหนึ่ง เช่น คุณรู้ว่ามีความสัมพันธ์บางอย่าง แต่คุณไม่รู้ว่าอันไหนเป็นอันไหน และสำหรับสิ่งนั้น และผมคิดว่ามีรายละเอียดเพิ่มเติมเกี่ยวกับเรื่องนี้ และสัปดาห์หน้าผมจะพูดถึง GAN แบบวนจร"
+    ],
+    "zh": [
+      "\"最后还有一件事，我之前提到过，如果你不仅想创建一个生成器，还想拥有一个编码器，可以从X到Z进行转换。一种方法是使用双向GAN，这可能会让人感到困惑，但判别器需要执行两个判别任务：判断图像是真实的还是虚假的，以及判断编码是真实的还是虚假的。是真实的编码还是生成的编码？是合成图像还是真实图像？是真实向量还是合成向量？这样判别器的工作就加倍了。最后，我想谈到的一个家族是自编码器，这是另一种生成方法。它将自编码器结合起来，先编码，然后生成。这是一种训练自编码器的方法，你可以将其扩展到非成对数据的版本。这很不错，因为很多工作都基于成对数据，但现在你也可以将这种架构扩展到非成对数据。它们仍然在某种程度上是成对的，你知道它们之间存在某种关系，但你不知道哪一个是哪一个。关于这一点，我想还有更多细节，我们下周再讨论。但我们会谈到这些循环GAN。\""
+    ],
+    "es": [
+      "\"Y luego, una última cosa es la idea de también traer la que mencioné anteriormente, como si no solo quisieras crear un generador, sino que también quisieras tener un codificador, como si también quisieras ir para poder pasar de X a Z. Y luego, lo que puedes hacer en un enfoque que se hizo es lo que llaman GAN bidireccional. Y así, esto se vuelve un poco confuso, pero el discriminador tendrá que hacer dos tareas de discriminación, como decir si la imagen es real o no, y si la codificación es real o no. ¿Es la codificación real o la codificación falsa? ¿O produce codificación? ¿Es una imagen sintetizada o una imagen real? Entonces, ¿es un vector real o un vector sintetizado? Y así, es un duplicado. Y esto aprende a mapear uno. Y finalmente, hay una familia final que quiero hablar sobre traer el auto codificador, así que es otra forma de generar porque trae como el auto codificador, así que codificas algo y luego generas, y luego es una forma de entrenar tu auto codificador. Y como sabes, puedes hacer un enfoque variacional de eso, y eso es realmente bueno porque gran parte de este trabajo funciona con datos emparejados, pero ahora también puedes extender este tipo de arquitectura para funcionar con datos no emparejados, no emparejados como si estuvieran emparejados hasta cierto punto, como sabes que hay alguna relación, pero no sabes cuál es con cuál. Y para eso, creo que hay más detalles sobre esto y la próxima semana, pero hablaremos sobre estos ciclo GAN\""
+    ],
+    "fr": [
+      "\"Et puis une dernière chose est l'idée de également apporter la, comme je l'ai mentionné plus tôt, c'est comme si vous ne vouliez pas seulement créer un générateur, mais que vous vouliez également avoir un encodeur, comme vous voudriez également être capable d'aller de X à Z. Et puis ce que vous pouvez faire dans une approche qui a été faite, c'est ce qu'ils appellent le GAN bidirectionnel. Et donc cela devient un peu compliqué, mais le discriminateur devra faire deux tâches de discrimination, c'est comme dire si l'image est réelle ou non ? Et si l'encodage est réel ou non ? Est-ce l'encodage réel ? Ou est-ce l'encodage faux ? Ou produire l'encodage ? L'encodage est-il généré ? Est-ce une image synthétique ou une image réelle ? Donc est-ce que c'est un vecteur réel ou un vecteur synthétique ? Et donc c'est doublé. Et cela apprend à mapper un et enfin il y a la famille finale que je veux discuter est d'apporter l'auto-encodeur, c'est une autre façon de générer parce que cela apporte comme l'auto-encodeur, vous encodez quelque chose et puis vous générez et puis c'est une façon de former votre auto-encodeur et comme vous le savez, vous pouvez en faire une approche variationnelle et c'est vraiment agréable parce que beaucoup de ce travail fonctionne sur des données appariées mais maintenant vous pouvez également étendre ce type d'architecture pour fonctionner sur des données non appariées, non appariées comme votre semaine appariée, c'est encore apparié jusqu'à un certain point comme vous savez qu'il existe une relation mais vous ne savez pas laquelle est avec laquelle et pour cela et je pense qu'il y a plus de détails à ce sujet et la semaine prochaine mais nous allons discuter de ces GAN cycliques\""
+    ],
+    "de": [
+      "\"Und dann ist da noch eine letzte Sache, nämlich die Idee, die ich früher erwähnt habe, wie wenn man nicht nur einen Generator erstellen möchte, sondern auch einen Encoder haben möchte, also auch von X nach Z gehen möchte. Und dann kann man in einem Ansatz, der gemacht wurde, das sogenannte bidirektionale GAN nehmen. Das wird ein bisschen verwirrend, aber der Diskriminator muss zwei Diskriminierungsaufgaben erfüllen, nämlich sagen, ob das Bild echt oder nicht ist? Und ob die Kodierung echt oder nicht ist? Ist es die echte Kodierung? Oder ist es eine gefälschte Kodierung? Oder eine erzeugte Kodierung? Ist es ein synthetisches Bild oder ein echtes Bild? Ist es also ein echter Vektor oder ein synthetischer Vektor? Es ist also eine doppelte Aufgabe. Und dies lernt, eine zu kartieren. Und schließlich gibt es die letzte Familie, über die ich sprechen möchte, nämlich die Autoencoder. Es ist eine weitere Möglichkeit, zu generieren, da es wie ein Autoencoder ist, der in etwas kodiert und dann generiert. Und so ist es eine Möglichkeit, Ihren Autoencoder zu trainieren. Und wie Sie wissen, können Sie es zu einem variationalen Ansatz machen, und das ist wirklich schön, weil viel von dieser Arbeit an gepaarten Daten arbeitet, aber jetzt können Sie diese Art von Architektur auch auf ungepaarte Daten erweitern. Ungepaarte Daten sind immer noch bis zu einem gewissen Punkt gepaart, wie Sie wissen, dass es eine Beziehung gibt, aber Sie wissen nicht, welche mit welcher. Und dafür denke ich, dass es mehr Details darüber gibt, und nächste Woche werden wir über diese Cycle-GANs sprechen.\""
+    ]
+  }
+}
