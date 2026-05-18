@@ -1,0 +1,344 @@
+{
+  "0:00:28.892": {
+    "ja": "えーっと、聞こえたら親指を上げてください。いいですね。声は届いていますか？さて、始めましょう。これまでやってきたことに戻ると、スペースコンプレキシティ、つまりアルゴリズムが様々な問題に対してどれだけのメモリを必要とするかを測る指標について話していました。",
+    "zh": "嗯，如果能听到请竖个大拇指。好了，看起来没问题。我声音正常吗？那我们开始吧。回到之前的内容，我们一直在讲空间复杂度，也就是衡量算法在解决各种问题时所需内存量的指标。",
+    "th": "อืม ถ้าได้ยินช่วยยกหัวแม่มือขึ้นหน่อย ได้เลย เห็นแล้ว ผมเสียงชัดไหม เอาล่ะ มาเริ่มกันดีกว่า กลับมาที่สิ่งที่เราเคยทำกัน เรากำลังพูดถึงความซับซ้อนเชิงพื้นที่ (space complexity) ซึ่งวัดว่าอัลกอริทึมต้องการหน่วยความจำเท่าไรในการแก้ปัญหาต่างๆ",
+    "id": "Uh, angkat jempol kalau kalian bisa dengar. Bagus, terlihat. Saya terdengar jelas? Oke, kita mulai. Kembali ke apa yang sudah kita bahas, kita tadi membicarakan kompleksitas ruang, yaitu ukuran seberapa banyak memori yang dibutuhkan algoritma untuk berbagai masalah.",
+    "es": "Uh, alza el pulgar si me escuchas. Bien, veo que me escuchan. Bueno, vamos a empezar. Volviendo a lo que hemos estado haciendo, hemos estado hablando de la complejidad espacial, que mide cuánta memoria requiere el algoritmo para diversos problemas.",
+    "fr": "Euh, levez le pouce si vous m'entendez. Parfait, vous m'entendez bien ? Bon, on va commencer. Pour revenir à ce qu'on faisait, on parlait de la complexité spatiale, c'est-à-dire de la quantité de mémoire requise par un algorithme pour différents problèmes.",
+    "de": "Ähm, zeigt mir einen Daumen hoch, wenn ihr mich hören könnt. Super, ihr hört mich also. Dann legen wir los. Zurück zu dem, was wir gemacht haben: Wir haben über die Platzkomplexität gesprochen, also darüber, wie viel Speicher ein Algorithmus für verschiedene Probleme benötigt."
+  },
+  "0:00:55.228": {
+    "ja": "ここでは、空間計算量クラス SPACE(f(n)) と非決定性空間計算量クラス NSPACE(f(n))、および多項式空間と非決定性空間を定義し、いくつかの例を示します。",
+    "zh": "我们定义空间复杂度类 SPACE(f(n)) 和非确定性空间复杂度类 NSPACE(f(n))，讨论多项式空间和非确定性空间，并给出一些示例，等等。",
+    "th": "เราจะนิยามคลาสความซับซ้อนเชิงพื้นที่ SPACE(f(n)) และ NSPACE(f(n)) รวมถึงพื้นที่เชิงพหุนามและพื้นที่เชิงพหุนามแบบไม่กำหนดล่วงหน้า พร้อมยกตัวอย่างบางกรณี ฯลฯ",
+    "id": "Kita mendefinisikan kelas kompleksitas ruang SPACE(f(n)) dan kelas kompleksitas ruang nondeterministik NSPACE(f(n)), membahas ruang polinomial dan ruang nondeterministik, serta memberikan beberapa contoh, dan sebagainya.",
+    "es": "Definimos las clases de complejidad de espacio SPACE(f(n)) y de espacio no determinista NSPACE(f(n)), el espacio polinómico y el espacio no determinista, y damos algunos ejemplos, etc.",
+    "fr": "Nous définissons les classes de complexité spatiale SPACE(f(n)) et de complexité spatiale non déterministe NSPACE(f(n)), l'espace polynomial et l'espace non déterministe, et nous donnons quelques exemples, etc.",
+    "de": "Wir definieren die Platzkomplexitätsklassen SPACE(f(n)) und NSPACE(f(n)), behandeln den polynomialen Platz und den nichtdeterministischen Platz und geben einige Beispiele usw."
+  },
+  "0:01:11.132": {
+    "ja": "今日は、例の中でも私たちにとって重要なこのラダーDFAの問題についてお話しします。",
+    "zh": "今天，我们要讨论的一个例子，对我们来说非常重要，是这个阶梯DFA问题。",
+    "th": "และวันนี้ เราจะมาพูดถึงหนึ่งในตัวอย่าง ซึ่งเป็นตัวอย่างสำคัญสำหรับเรา นั่นคือปัญหา DFA บันไดนี้",
+    "id": "Hari ini, kita akan membahas salah satu contoh yang penting bagi kita, yaitu masalah DFA tangga ini.",
+    "es": "Y hoy vamos a hablar de uno de los ejemplos, que para nosotros va a ser importante: se trata de este problema de DFA de escalera.",
+    "fr": "Aujourd'hui, nous allons parler de l'un des exemples, qui va être important pour nous, concernant ce problème de DFA en escalier.",
+    "de": "Und heute werden wir über eines der Beispiele sprechen, das für uns wichtig sein wird und dieses Leiter-DFA-Problem betrifft."
+  },
+  "0:01:22.788": {
+    "ja": "ではもう一度おさらいして、もう少し重点的に取り上げます。スペース分析については、前回いくつか質問をいただきましたので。",
+    "zh": "那么我会再讲一遍，稍微强调一下空间分析——上次有人对它有一些疑问。",
+    "th": "ดังนั้นผมจะทบทวนอีกครั้งและเน้นย้ำมากขึ้นเกี่ยวกับการวิเคราะห์เชิงพื้นที่ ซึ่งครั้งที่แล้วมีคนสอบถามเข้ามาบ้าง",
+    "id": "Jadi saya akan membahasnya lagi, memberikan penekanan lebih pada analisis ruang, yang waktu lalu ada beberapa pertanyaan tentangnya.",
+    "es": "Así que voy a repasarlo de nuevo y a darle un poco más de énfasis. El análisis espacial, sobre el que me hicieron algunas preguntas la vez pasada.",
+    "fr": "Je vais donc revenir dessus, en insistant un peu plus. L'analyse spatiale, sur laquelle j'ai reçu quelques questions la dernière fois.",
+    "de": "Ich werde das also noch einmal durchgehen und etwas stärker betonen: die Raumanalyse, zu der ich beim letzten Mal einige Fragen bekommen habe."
+  },
+  "0:01:31.100": {
+    "ja": "そしてそこから先に進んでSavageの定理を証明し、それからPSPACEの完全問題について話し、前回紹介したTQBFという問題が実際にPSPACE完全問題であることを示します。",
+    "zh": "然后我们将从那里继续，证明Savage定理，然后讨论PSPACE的完全问题，并证明上次介绍的TQBF问题实际上是一个PSPACE完全问题。",
+    "th": "และจากนั้นเราจะดำเนินต่อไปและพิสูจน์ทฤษฎีบทของ Savage แล้วพูดถึงปัญหา PSPACE แบบสมบูรณ์ และแสดงให้เห็นว่าปัญหา TQBF ซึ่งเราได้แนะนำไปเมื่อครั้งก่อนนั้นแท้จริงแล้วเป็นปัญหา PSPACE แบบสมบูรณ์",
+    "id": "Kemudian kita akan melanjutkan dari sana dan membuktikan teorema Savage, lalu membahas masalah lengkap untuk PSPACE, dan menunjukkan bahwa masalah TQBF yang kita perkenalkan terakhir kali sebenarnya adalah masalah PSPACE lengkap.",
+    "es": "A continuación avanzaremos desde allí y demostraremos el teorema de Savage, luego hablaremos sobre problemas completos para PSPACE, y mostraremos que este problema TQBF, que presentamos la última vez, es en realidad un problema PSPACE completo.",
+    "fr": "Ensuite, nous passerons à la suite et démontrerons le théorème de Savage, puis nous parlerons des problèmes complets pour PSPACE et montrerons que ce problème TQBF, que nous avons présenté la dernière fois, est en réalité un problème PSPACE complet.",
+    "de": "Und dann werden wir von dort aus weitermachen und Savages Theorem beweisen, anschließend über komplette Probleme für PSPACE sprechen und zeigen, dass dieses Problem TQBF, das wir beim letzten Mal eingeführt haben, tatsächlich ein PSPACE-vollständiges Problem ist."
+  },
+  "0:01:48.508": {
+    "ja": "すべては時が来れば。",
+    "zh": "一切都会在适当的时候。",
+    "th": "ทุกอย่างจะเกิดขึ้นในเวลาที่เหมาะสม.",
+    "id": "Semuanya akan tiba pada waktunya.",
+    "es": "Todo a su tiempo.",
+    "fr": "Tout en son temps.",
+    "de": "Alles zu gegebener Zeit."
+  },
+  "0:01:48.968": {
+    "ja": "少し復習します。チューリングマシンがある量の空間で動作するとはどういうことかを定義しました。",
+    "zh": "稍作回顾。我们定义了图灵机在一定空间内运行的含义。",
+    "th": "มาทบทวนกันเล็กน้อยครับ เราได้กำหนดความหมายของการที่เครื่องทัวริงทำงานในปริมาณหน่วยความจำที่กำหนดไว้แล้ว",
+    "id": "Sedikit ulasan. Kami telah mendefinisikan apa yang dimaksud dengan mesin Turing yang berjalan dalam jumlah ruang tertentu.",
+    "es": "Un pequeño repaso. Definimos lo que queremos decir con que una máquina de Turing se ejecute en una cierta cantidad de espacio.",
+    "fr": "Un petit rappel. Nous avons défini ce que nous entendons par une machine de Turing fonctionnant dans une certaine quantité d’espace.",
+    "de": "Ein kurzes Review. Wir haben definiert, was wir unter einer Turing-Maschine verstehen, die in einer bestimmten Menge an Speicher läuft."
+  },
+  "0:01:56.348": {
+    "ja": "これは、空間 f(n) で動作する場合、長さ n の任意の入力に対してテープ上のセルを最大で f(n) 個しか使用しないということです。",
+    "zh": "这意味着在空间 f(n) 下运行时，对于任意长度为 n 的输入，它最多只使用 f(n) 个磁带单元。",
+    "th": "นั่นหมายความว่าหากทำงานในพื้นที่ f(n) บนข้อมูลนำเข้าทุกชุดที่มีความยาว n มันจะใช้เซลล์บนเทปสูงสุดเพียง f(n) เซลล์เท่านั้น",
+    "id": "Artinya, jika dijalankan dalam ruang f(n), maka pada setiap masukan berpanjang n, ia paling banyak menggunakan f(n) sel pita. ",
+    "es": "Eso significa que, si se ejecuta en espacio f(n), utiliza como máximo f(n) celdas de cinta en cada entrada de longitud n.",
+    "fr": "Cela signifie que, si la machine fonctionne en espace f(n), elle utilise au plus f(n) cellules de ruban pour chaque entrée de longueur n.",
+    "de": "Das bedeutet, dass sie, wenn sie in Platz f(n) läuft, bei jeder Eingabe der Länge n höchstens f(n) Bandzellen verwendet."
+  },
+  "0:02:07.228": {
+    "ja": "O(f(n))です。同様に、非決定性チューリングマシンも同じことを行います。ただし、それに加えて、非決定性マシンは計算のすべての分岐で停止しなければなりません。そして、各分岐はその上限で定められたテープセル数しか使用してはいけません。",
+    "zh": "O(f(n))。同样，非确定性图灵机也满足这一点。但除此之外，非确定性图灵机必须在其计算的每一个分支上都停机，并且每个分支最多只能使用那限定数量的磁带格。",
+    "th": "O(f(n)) และในทำนองเดียวกัน เครื่องทัวริงแบบไม่เชิงกำหนดก็ทำเช่นเดียวกัน แต่เพิ่มเติมคือ เครื่องแบบไม่เชิงกำหนดต้องหยุดในทุกกิ่งของการคำนวณ และแต่ละกิ่งต้องใช้เซลล์ในเทปไม่เกินจำนวนที่จำกัดนั้น",
+    "id": "O(f(n)). Demikian pula, mesin Turing nondeterministik melakukan hal yang sama. Namun selain itu, mesin nondeterministik harus berhenti di setiap cabang komputasinya. Dan setiap cabang komputasi harus menggunakan paling banyak sejumlah sel pita yang terbatas tersebut.",
+    "es": "O(f(n)). Y de manera similar, una máquina de Turing no determinista hace lo mismo. Pero además de eso, la máquina no determinista debe detenerse en cada rama de su cómputo. Y cada rama de su cómputo debe usar a lo sumo esa cantidad acotada de celdas de cinta.",
+    "fr": "O(f(n)). Et de la même façon, une machine de Turing non déterministe fait la même chose. Mais en plus, la machine non déterministe doit s'arrêter sur chaque branche de son calcul. Et chaque branche de son calcul ne doit utiliser au plus cette quantité bornée de cellules de ruban.",
+    "de": "O(f(n)). Und ähnlich tut eine nichtdeterministische Turingmaschine dasselbe. Aber zusätzlich muss die nichtdeterministische Maschine auf jedem Berechnungszweig anhalten. Und jeder Zweig ihrer Berechnung darf höchstens diese begrenzte Anzahl von Bandzellen verwenden."
+  },
+  "0:02:29.852": {
+    "ja": "今日は非決定性空間計算についても話します。これは私たちにとって重要です。前にも言ったように、多項式クラス、PSPACEクラス、非決定性PSPACEクラスを定義しました。",
+    "zh": "今天我们也要讨论非确定性空间计算，这对我们很重要。正如我之前提到的，我们定义了多项式类、PSPACE 类和非确定性 PSPACE 类。",
+    "th": "วันนี้เราจะพูดถึงการคำนวณเชิงพื้นที่แบบไม่กำหนด (non-deterministic space computation) ด้วย ซึ่งจะเกี่ยวข้องกับเรา ตามที่ผมได้กล่าวไปแล้ว เราได้กำหนดคลาสต่างๆ ได้แก่ คลาสพหุนาม, PSPACE และ PSPACE non-deterministic แล้ว",
+    "id": "Jadi hari ini kita juga akan membahas komputasi ruang non-deterministik, yang akan relevan bagi kita. Seperti yang saya sebutkan, kita telah mendefinisikan kelas-kelas: kelas polinomial, PSPACE, dan PSPACE non-deterministik.",
+    "es": "Así que hoy también vamos a hablar sobre computación en espacio no determinista, lo cual será relevante para nosotros. Como mencioné, definimos las clases: clase polinomial, PSPACE y PSPACE no determinista.",
+    "fr": "Aujourd’hui, nous allons également parler du calcul en espace non déterministe, ce qui sera pertinent pour nous. Comme je l'ai mentionné, nous avons défini les classes : classe polynomiale, PSPACE et PSPACE non déterministe.",
+    "de": "Heute werden wir auch über nichtdeterministische Speicherberechnung sprechen, was für uns relevant sein wird. Wie ich bereits erwähnt habe, haben wir die Klassen definiert: die polynomiale Klasse, PSPACE und nichtdeterministische PSPACE."
+  },
+  "0:02:47.144": {
+    "ja": "そして、これが私たちが考える co-NP クラスと NP クラスの相互関係です。",
+    "zh": "这就是我们认为 co-NP 类和 NP 类彼此之间的关联方式。",
+    "th": "และนี่คือวิธีที่เราเชื่อว่าคลาส co-NP และ NP มีความสัมพันธ์กัน",
+    "id": "Dan inilah cara kami meyakini bahwa kelas co-NP dan NP saling berhubungan.",
+    "es": "Y así es como creemos que las clases co-NP y NP están relacionadas entre sí.",
+    "fr": "Et voici comment nous pensons que les classes co-NP et NP sont reliées l’une à l’autre.",
+    "de": "Und so glauben wir, dass die Klassen co-NP und NP zueinander in Beziehung stehen."
+  },
+  "0:02:56.924": {
+    "ja": "そしてもちろん、前回申し上げたように、この分野には非常に大きな未解決の問題がいくつかあります。",
+    "zh": "当然，正如我上次提到的，这个领域还有一些非常重大的未解决问题。",
+    "th": "และแน่นอน ตามที่ฉันได้กล่าวไว้ครั้งที่แล้ว ในสาขานี้ยังมีปัญหาใหญ่หลายประการที่ยังไม่มีคำตอบ",
+    "id": "Dan tentu saja, seperti yang saya sebutkan terakhir kali, ada beberapa masalah besar yang masih belum terpecahkan di bidang ini.",
+    "es": "Y, por supuesto, como mencioné la última vez, hay algunos problemas muy importantes sin resolver en esta área.",
+    "fr": "Et, bien sûr, comme je l’ai mentionné la dernière fois, il existe dans ce domaine plusieurs problèmes majeurs encore non résolus.",
+    "de": "Und natürlich, wie ich beim letzten Mal erwähnt habe, gibt es in diesem Bereich einige sehr große ungelöste Probleme."
+  },
+  "0:03:03.756": {
+    "ja": "つまり、すべてが P に崩壊してしまう可能性があり、それはもちろん非常に驚くべきことです。",
+    "zh": "因此，一切都可能归结到 P，这当然会非常令人惊讶。",
+    "th": "ดังนั้น ทุกอย่างอาจยุบลงมาเป็น P ได้ ซึ่งแน่นอนว่าเป็นเรื่องที่น่าประหลาดใจอย่างยิ่ง.",
+    "id": "Jadi semuanya berpotensi runtuh menjadi P, yang tentu saja sangat mengejutkan.",
+    "es": "Así que todo podría, en teoría, colapsar hasta P, lo cual, por supuesto, sería muy sorprendente.",
+    "fr": "Donc tout pourrait concevablement se réduire à P, ce qui serait, bien sûr, très surprenant.",
+    "de": "Also könnte prinzipiell alles auf P zusammenbrechen, was natürlich höchst überraschend wäre."
+  },
+  "0:03:10.656": {
+    "ja": "しかし、そうでないことを証明する方法がわかりません。",
+    "zh": "但我们不知道如何证明相反的情况。",
+    "th": "แต่เราไม่รู้ว่าจะพิสูจน์ในทางตรงกันข้ามได้อย่างไร",
+    "id": "Tapi kami tidak tahu bagaimana membuktikan sebaliknya.",
+    "es": "Pero no sabemos cómo demostrar lo contrario.",
+    "fr": "Mais nous ne savons pas comment démontrer le contraire.",
+    "de": "Aber wir wissen nicht, wie man das Gegenteil beweisen kann."
+  },
+  "0:03:12.416": {
+    "ja": "さて、今日証明する大きな定理は、多項式空間と非決定性多項式空間が実際に同じクラスに収束する、つまり同一のクラスであるということです。",
+    "zh": "否则，今天我们要证明的一个重要定理是，多项式空间（PSPACE）和非确定性多项式空间（NPSPACE）实际上会相互塌缩，也就是它们是同一类。",
+    "th": "อย่างไรก็ตาม ทฤษฎีบทสำคัญที่เราจะพิสูจน์ในวันนี้คือ พื้นที่โพลิโนเมียลและพื้นที่โพลิโนเมียลแบบไม่เชิงกำหนดจริงๆ แล้วจะยุบตัวลงมาเป็นคลาสเดียวกัน",
+    "id": "Ngomong-ngomong, teorema besar yang akan kita buktikan hari ini adalah bahwa ruang polinomial dan ruang polinomial nondeterministik sesungguhnya runtuh menjadi satu sama lain—mereka adalah kelas yang sama.",
+    "es": "De lo contrario. Y el gran teorema que vamos a demostrar hoy es que el espacio polinomial y el espacio polinomial no determinista en realidad colapsan entre sí, es decir, son la misma clase.",
+    "fr": "Sinon. Et le grand théorème que nous allons prouver aujourd'hui est que l'espace polynomial et l'espace polynomial non déterministe s'effondrent l'un dans l'autre, formant en fait une même classe.",
+    "de": "Ansonsten. Und der große Satz, den wir heute beweisen werden, lautet, dass polynomieller Platz und nichtdeterministischer polynomieller Platz tatsächlich zusammenfallen, also dieselbe Klasse bilden."
+  },
+  "0:03:27.228": {
+    "ja": "時間計算量の場合に当てはまると考えられている状況、つまり非決定性から決定性への変換が指数的増大をもたらすのに対して、空間計算量では二乗の増加にとどまる、ということをこれから見ていきます。",
+    "zh": "与我们认为适用于时间复杂度的情况相反——将非确定性转换为确定性会带来指数级的增长——对于空间复杂度而言，它只会带来平方级的增长，正如我们将看到的那样。",
+    "th": "ดังนั้นต่างจากสถานการณ์ที่เราเชื่อว่าเป็นกรณีของความซับซ้อนทางเวลา ซึ่งการแปลงจากอัลกอริธึมแบบไม่กำหนดแนวทางไปเป็นแบบกำหนดแนวทางจะทำให้เกิดการเพิ่มขึ้นอย่างเอ็กซ์โพเนนเชียล สำหรับความซับซ้อนทางพื้นที่จะเพิ่มขึ้นเพียงแบบกำลังสอง ดังที่เราจะได้เห็น",
+    "id": "Jadi, berbeda dengan situasi yang kita yakini terjadi pada kompleksitas waktu—di mana konversi dari nondeterministik ke deterministik menyebabkan peningkatan eksponensial—untuk kompleksitas ruang, peningkatannya hanya kuadratik, seperti yang akan kita lihat.",
+    "es": "Entonces, en contraste con la situación que creemos que ocurre en la complejidad temporal, donde creemos que la conversión de no determinista a determinista produce un incremento exponencial, para la complejidad espacial solo se produce un aumento cuadrático, como veremos.",
+    "fr": "Ainsi, contrairement à la situation que nous considérons pour la complexité temporelle, où la conversion d’un modèle non déterministe à un modèle déterministe engendre une croissance exponentielle, pour la complexité en espace cela n’induit qu’une augmentation quadratique, comme nous le verrons.",
+    "de": "Im Gegensatz zu der Situation, die wir für die Zeitkomplexität annehmen — bei der die Umwandlung von nichtdeterministischen in deterministische Verfahren einen exponentiellen Anstieg bewirkt — führt dies bei der Platzkomplexität nur zu einer quadratischen Zunahme, wie wir sehen werden."
+  },
+  "0:03:49.340": {
+    "ja": "これまでの内容について何か質問はありますか？なければ、いくつかの記法に移りましょう。強調しておきますが、本日証明する大きな定理はPSPACEとNPSPACEが等しいということで、さらにPSPACE完全性についても扱います。",
+    "zh": "对于刚才的内容有没有问题？如果没有，我们就进入一些符号表示。我要强调的是，今天我们要证明的主要定理是PSPACE和NPSPACE是相等的，并且我们还将讨论PSPACE完备性。",
+    "th": "มีคำถามเกี่ยวกับเนื้อหาส่วนนี้ไหมครับ? ถ้าไม่มี เราจะเข้าสู่สัญกรณ์บางส่วน และผมอยากเน้นว่า ทฤษฎีบทสำคัญที่เราจะพิสูจน์วันนี้คือ PSPACE และ NPSPACE เท่าเทียมกัน และเราจะพูดถึงความครบถ้วนเชิง PSPACE ด้วย",
+    "id": "Ada pertanyaan tentang ini? Jika tidak, kita akan masuk ke beberapa notasi. Saya tekankan bahwa teorema besar yang akan kita buktikan hari ini adalah bahwa PSPACE dan NPSPACE sama, dan kita juga akan membahas kelengkapan PSPACE.",
+    "es": "¿Alguna pregunta sobre esto o pasamos a la notación? Quiero enfatizar que el gran teorema que vamos a demostrar hoy es que PSPACE y NPSPACE son iguales, y también hablaremos de la completitud en PSPACE.",
+    "fr": "Des questions sur tout cela ou passons-nous à la notation ? Je tiens à souligner que le grand théorème que nous allons démontrer aujourd’hui est que PSPACE et NPSPACE sont égaux, et nous parlerons également de la complétude en PSPACE.",
+    "de": "Gibt es Fragen dazu, oder gehen wir einfach zu einigen Notationen über? Ich möchte betonen, dass der große Satz, den wir heute beweisen werden, besagt, dass PSPACE und NPSPACE gleich sind, und wir werden auch über PSPACE-Vollständigkeit sprechen."
+  },
+  "0:04:04.252": {
+    "ja": "しかし、どちらも定理を証明することが含まれています。",
+    "zh": "但这两者都涉及证明定理。",
+    "th": "แต่ทั้งสองอย่างเกี่ยวข้องกับการพิสูจน์ทฤษฎีบท",
+    "id": "Namun keduanya melibatkan pembuktian teorema.",
+    "es": "Pero ambos implican demostrar teoremas.",
+    "fr": "Mais les deux impliquent de prouver des théorèmes.",
+    "de": "Aber beide erfordern das Beweisen von Theoremen."
+  },
+  "0:04:24.252": {
+    "ja": "第一の場合、Savage の定理、すなわち非決定性空間から決定性空間への変換には空間の二乗が必要になるというものと、第二の場合、TQBF が PSPACE‐完全であることの証明は、いずれもここで扱った後者の DFA 問題が決定性多項式空間で解けるという定理の一般化とみなせる。",
+    "zh": "在第一种情况下，Savage 定理指出将非确定性空间转换为确定性空间所需的空间是平方的；在第二种情况下，证明 TQBF 是 PSPACE 完全的。这两条定理都可以视为这里所述——即后者的 DFA 问题可以在确定性多项式空间内求解——定理的推广。",
+    "th": "ในกรณีแรก ทฤษฎีของ Savage ระบุว่าการแปลงจากพื้นที่แบบไม่กำหนด (non-deterministic) ไปยังพื้นที่แบบกำหนด (deterministic) ต้องใช้พื้นที่เป็นกำลังสอง และในกรณีที่สอง การพิสูจน์ว่า TQBF เป็น PSPACE-สมบูรณ์ ทั้งสองทฤษฎีนี้สามารถถือเป็นการขยายทั่วไปของทฤษฎีที่ว่า ปัญหา DFA ส่วนหลังสามารถแก้ได้ในพื้นที่พหุนามแบบกำหนด",
+    "id": "Dalam kasus pertama, teorema Savage yang menyatakan bahwa mengubah ruang nondeterministik menjadi ruang deterministik memerlukan ruang kuadrat, dan dalam kasus kedua, pembuktian bahwa TQBF adalah PSPACE-lengkap, kedua teorema itu dapat dianggap sebagai generalisasi dari teorema di sini bahwa masalah DFA yang terakhir dapat diselesaikan dalam ruang polinomial deterministik.",
+    "es": "En el primer caso, el teorema de Savage que establece que convertir espacios no deterministas en deterministas implica un cuadrado del espacio, y en el segundo caso, la demostración de que TQBF es PSPACE-completo; ambos teoremas pueden considerarse generalizaciones del teorema aquí expuesto, según el cual el último problema de DFA puede resolverse en espacio polinómico determinista.",
+    "fr": "Dans le premier cas, le théorème de Savage selon lequel convertir des espaces non déterministes en espaces déterministes se fait au prix d’un carré du volume d’espace, et dans le second cas, la démonstration que TQBF est PSPACE-complet ; ces deux théorèmes peuvent être considérés comme des généralisations du théorème ici énoncé, selon lequel le dernier problème de DFA peut se résoudre en espace polynomial déterministe.",
+    "de": "Im ersten Fall kann man Savages Theorem, dass die Umwandlung von nichtdeterministischen in deterministische Räume eine Quadratur des Platzbedarfs erfordert, und im zweiten Fall den Beweis, dass TQBF PSPACE-vollständig ist, jeweils als Verallgemeinerungen des hier vorliegenden Theorems ansehen, das besagt, dass das letztgenannte DFA-Problem in deterministischem polynomiellen Platz lösbar ist."
+  },
+  "0:04:58.908": {
+    "ja": "これによってこの定理の証明がどのように機能するかを実際に理解できます。ある意味、この定理は、後で扱う他の二つの定理をもう少し抽象的な形で示したものの、より具体的なバージョンなのです。",
+    "zh": "所以这实际上展示了该定理的证明是如何进行的，因为从某种意义上说，这一定理是我们稍后将看到的另外两个更抽象定理的一个更具体的版本。",
+    "th": "ดังนั้นจริงๆ แล้วนี่แสดงให้เห็นว่าการพิสูจน์ทฤษฎีบทนี้ทำงานอย่างไร เพราะในแง่หนึ่ง ทฤษฎีบทนี้เป็นเวอร์ชันที่ค่อนข้างเป็นรูปธรรมมากขึ้นของสิ่งที่เราจะได้เห็นในทฤษฎีบทอีกสองข้อที่เป็นนามธรรมมากขึ้น",
+    "id": "Jadi ini benar-benar menunjukkan bagaimana bukti teorema ini bekerja, karena dalam suatu arti, teorema ini adalah versi yang lebih konkret dari apa yang akan kita lihat pada dua teorema lainnya dalam bentuk yang agak lebih abstrak.",
+    "es": "Así que esto muestra realmente cómo funciona la demostración de este teorema, porque, en cierto sentido, este teorema es una versión más concreta de lo que veremos en esos otros dos teoremas en una forma algo más abstracta.",
+    "fr": "Donc cela montre vraiment comment fonctionne la démonstration de ce théorème, car en un sens, ce théorème est une version plus concrète de ce que nous verrons dans ces deux autres théorèmes, sous une forme un peu plus abstraite.",
+    "de": "Dies zeigt also tatsächlich, wie der Beweis dieses Satzes funktioniert, denn gewissermaßen ist dieser Satz eine konkretere Version dessen, was wir in etwas abstrakterer Form in den beiden anderen Sätzen sehen werden."
+  },
+  "0:05:12.936": {
+    "ja": "では、まずは物事をより具体的に理解するのが好きなので、これが最初に取り組むのに良い例なんです。",
+    "zh": "好吧，我喜欢先以更具体的方式来理解事物，所以这是一个很好的入门示例。",
+    "th": "เอาล่ะ ฉันชอบที่จะเข้าใจสิ่งต่างๆ ในลักษณะที่เป็นรูปธรรมก่อน นั่นคือเหตุผลที่นี่เป็นตัวอย่างที่ดีสำหรับการเริ่มต้น",
+    "id": "Oke, saya suka memahami segala sesuatu dengan cara yang lebih konkret terlebih dahulu, jadi inilah contoh yang baik untuk memulai.",
+    "es": "Bien, me gusta entender las cosas de una forma más concreta al principio, así que este es un buen ejemplo para comenzar.",
+    "fr": "D'accord, j'aime d'abord comprendre les choses de manière plus concrète, c'est pourquoi c'est un bon exemple pour commencer.",
+    "de": "Okay, ich möchte Dinge zuerst auf eine konkretere Weise verstehen, deshalb ist das ein gutes Beispiel, um damit zu beginnen."
+  },
+  "0:05:22.396": {
+    "ja": "しかし実際のところ、結局は同じ証明で、ただあの三つの定理に対して繰り返しているだけです。",
+    "zh": "但归根结底，还是同一个证明，只是对那三个定理重复了一遍而已。",
+    "th": "แต่จริงๆ แล้ว เมื่อถึงที่สุด มันก็เป็นการพิสูจน์ชุดเดียวกัน เพียงแต่ถูกทำซ้ำกับสามทฤษฎีนั้นเท่านั้น",
+    "id": "Tapi sebenarnya, pada akhirnya ini adalah bukti yang sama, hanya diulang untuk ketiga teorema tersebut.",
+    "es": "Pero, en realidad, al final del día, es la misma demostración, simplemente repetida para esos tres teoremas.",
+    "fr": "Mais en fin de compte, c'est la même démonstration, simplement répétée pour ces trois théorèmes.",
+    "de": "Aber letztendlich ist es derselbe Beweis, der einfach für diese drei Theoreme wiederholt wird."
+  },
+  "0:05:25.996": {
+    "ja": "これは本当に1つで3つ分の価値があります。",
+    "zh": "这真的是一物三用。",
+    "th": "นี่มันเหมือนได้สามอย่างในราคาเดียวจริงๆ",
+    "id": "Jadi ini benar-benar tiga dalam satu harga.",
+    "es": "Esto es en realidad tres por el precio de uno.",
+    "fr": "C’est vraiment trois pour le prix d’un.",
+    "de": "Das ist wirklich drei zum Preis von einem."
+  },
+  "0:05:29.556": {
+    "ja": "ここでは三つの定理を扱い、一つの証明を示します。同じ証明を、異なる抽象化のレベルで見ていくことになります。",
+    "zh": "这里有三个定理和一个证明。你会看到相同的证明，但会在不同的抽象层次上进行展示。",
+    "th": "ที่นี่มีทฤษฎีสามบทและหลักฐานหนึ่งบท ดังนั้นคุณจะได้เห็นหลักฐานเดียวกัน แต่ในระดับนามธรรมที่แตกต่างกัน",
+    "id": "Di sini ada tiga teorema dan satu bukti. Jadi Anda akan melihat bukti yang sama, tetapi pada tingkat abstraksi yang berbeda.",
+    "es": "Tres teoremas, una prueba aquí. Así que vas a ver la misma prueba, pero en diferentes niveles de abstracción.",
+    "fr": "Trois théorèmes, une seule démonstration ici. Vous allez donc voir la même démonstration, mais à différents niveaux d'abstraction.",
+    "de": "Drei Theoreme, ein Beweis hier. Sie werden denselben Beweis sehen, aber auf verschiedenen Abstraktionsebenen."
+  },
+  "0:05:43.932": {
+    "ja": "ではもう一度復習しましょう。分かった人もいると思いますが、まだ分かっていない人もいるかもしれません。",
+    "zh": "那我们再复习一遍，我知道你们中有些人已经掌握了，但也许有些人还没有。",
+    "th": "งั้นเรามาทบทวนกันอีกครั้งนะครับ ผมรู้ว่าบางคนเข้าใจแล้ว แต่บางคนอาจจะยังไม่เข้าใจ",
+    "id": "Jadi, mari kita tinjau lagi, dan saya tahu beberapa dari kalian sudah paham, tapi mungkin beberapa belum.",
+    "es": "Entonces, repasemos de nuevo. Sé que algunos de ustedes ya lo entendieron, pero quizá otros no.",
+    "fr": "Alors, récapitulons une nouvelle fois. Je sais que certains d'entre vous ont compris, mais peut-être pas tous.",
+    "de": "Also lasst uns das noch einmal durchgehen. Ich weiß, einige von euch haben es verstanden, aber vielleicht manche von euch nicht."
+  },
+  "0:05:52.052": {
+    "ja": "では、ladder DFA問題を解くアルゴリズムを明確にしてみましょう。",
+    "zh": "我们来弄清一下求解梯形DFA问题的算法。",
+    "th": "ลองทำความชัดเจนเกี่ยวกับอัลกอริธึมในการแก้ปัญหา ladder DFA กันเถอะ",
+    "id": "Mari kita coba jelaskan algoritma untuk menyelesaikan masalah ladder DFA.",
+    "es": "Y tratemos de aclarar el algoritmo para resolver el problema ladder DFA.",
+    "fr": "Et essayons de clarifier l’algorithme pour résoudre le problème de ladder DFA.",
+    "de": "Und lassen Sie uns versuchen, den Algorithmus zur Lösung des Ladder-DFA-Problems klar darzustellen."
+  },
+  "0:05:55.152": {
+    "ja": "それで、もし覚えているなら、まず先に本題に入ります。ラダー問題とは、ラダー（階段）は文字列の列であり、各ステップで文字を一文字ずつ変えながら、ある文字列から別の文字列へとつながっていくものです。",
+    "zh": "那么，如果你还记得的话，首先让我直接进入正题。阶梯问题是：一个阶梯是一系列字符串，每次只改变一个字符，从一个字符串连接并转换到另一个字符串。",
+    "th": "ดังนั้น ถ้าคุณยังจำได้ ก่อนอื่นขอข้ามไปยังเนื้อหาหลักเลย ปัญหาเลเดอร์คือ เลเดอร์เป็นลำดับของสตริงที่แต่ละครั้งจะเปลี่ยนทีละอักขระ เชื่อมต่อจากสตริงหนึ่งไปยังอีกสตริงหนึ่ง",
+    "id": "Jadi, jika Anda masih ingat, pertama-tama saya akan langsung ke inti pembahasan. Masalah ladder adalah: sebuah ladder adalah rangkaian string yang berganti satu karakter pada satu waktu, menghubungkan satu string ke string lainnya.",
+    "es": "Así que, si lo recuerdas, primero déjame ir directo al grano. El problema de la escalera es que una escalera es una secuencia de cadenas que cambian de a una letra a la vez, conectando una cadena con otra.",
+    "fr": "Donc, si vous vous en souvenez, laissez-moi d’abord aller directement à l’essentiel. Le problème de l’échelle est le suivant : une échelle est une suite de chaînes qui changent un caractère à la fois, reliant ainsi une chaîne à une autre.",
+    "de": "Also, falls ihr euch erinnert, lasst mich zuerst direkt zum Wesentlichen kommen. Das Leiter-Problem besteht darin, dass eine Leiter eine Folge von Zeichenketten ist, die jeweils ein Zeichen ändert und so eine Verbindung von einer Zeichenkette zur nächsten herstellt."
+  },
+  "0:06:16.004": {
+    "ja": "“work”から“play”へ、1文字ずつ変更していきます。",
+    "zh": "所以你将通过一次改变一个符号，从“work”变到“play”。",
+    "th": "ดังนั้นคุณจะเปลี่ยนจาก work ไปเป็น play โดยเปลี่ยนสัญลักษณ์ทีละตัว",
+    "id": "Jadi Anda akan mengubah 'work' menjadi 'play' dengan mengganti satu simbol pada satu waktu.",
+    "es": "Así que vas a ir de 'work' a 'play', cambiando un símbolo a la vez.",
+    "fr": "Donc vous allez passer de “work” à “play”, en changeant un symbole à la fois.",
+    "de": "Also wechselst du von 'work' zu 'play', indem du jeweils ein Symbol änderst."
+  },
+  "0:06:18.384": {
+    "ja": "この例を示しました。あるいは、あなた自身で簡単にこれを行う例を考えることもできます。",
+    "zh": "我们举了一个例子。或者你也可以很容易地想出一个如何做这件事的例子。",
+    "th": "เราได้ยกตัวอย่างนี้ให้ดูแล้ว หรือคุณก็สามารถคิดตัวอย่างการทำแบบนี้ได้อย่างง่ายดาย",
+    "id": "Jadi kami sudah memberikan contoh tentang hal ini. Atau Anda juga bisa dengan mudah memberikan contoh bagaimana melakukan hal ini.",
+    "es": "Así que dimos un ejemplo de esto. O bien, puedes pensar fácilmente en un ejemplo de cómo hacer esto.",
+    "fr": "Nous avons donné un exemple de ceci. Sinon, vous pouvez facilement trouver un exemple de la façon de le faire.",
+    "de": "Wir haben ein Beispiel dafür genannt. Oder Sie können problemlos selbst ein Beispiel dafür finden, wie man das macht."
+  },
+  "0:06:26.684": {
+    "ja": "計算上の問題とは、あなたにそれができますか？この文字列からあの文字列へ変換し、特定の言語の範囲内にとどまることはできますか？",
+    "zh": "这个计算问题是：你能做到吗？你能从这个字符串转换到那个字符串，并且保持在某种语言范围内吗？",
+    "th": "โจทย์ทางคอมพิวเตอร์คือ คุณทำได้หรือไม่? คุณสามารถเปลี่ยนจากสตริงนี้ไปเป็นสตริงนั้น และยังคงอยู่ภายในภาษาใดภาษาหนึ่งได้หรือไม่?",
+    "id": "Masalah komputasi ini adalah, bisakah Anda melakukannya? Bisakah Anda beralih dari string ini ke string itu dan tetap berada dalam bahasa tertentu?",
+    "es": "El problema computacional es: ¿puedes hacerlo? ¿Puedes pasar de esta cadena a esa cadena y mantenerte dentro de cierto lenguaje?",
+    "fr": "Le problème computationnel est le suivant : pouvez-vous le faire ? Pouvez-vous passer de cette chaîne à cette autre chaîne tout en restant dans un certain langage ?",
+    "de": "Das rechnerische Problem lautet: Schaffst du es? Kannst du von dieser Zeichenkette zu jener Zeichenkette wechseln und dabei in einer bestimmten Sprache bleiben?"
+  },
+  "0:06:32.344": {
+    "ja": "ですから、それは英単語の集合かもしれませんし、ある特定のDFAが認識するすべての文字列の言語かもしれません。つまり、あるDFAが受理するすべての文字列であったり、英単語であったりするわけです。これが私たちが「言語」と言うときの意味です。そしてラダープロブレムは……実はラダープロブレム自体をメモしていないのですが、有界ラダープロブレムは基本的に同じ考え方です。",
+    "zh": "所以这可能是英语单词的语言，也可能是某个特定DFA所识别的所有字符串的语言。换句话说，它可能是某个DFA接受的所有字符串，或者可能就是英语单词。这就是我们所说的“语言”。至于阶梯问题——嗯，我好像并没有写下阶梯问题本身，但有界阶梯问题基本上是同样的思路。",
+    "th": "ดังนั้น มันอาจจะเป็นภาษาของคำศัพท์ภาษาอังกฤษ หรืออาจจะเป็นภาษาของสายอักขระทั้งหมดที่ DFA ใด ๆ ตัวหนึ่งยอมรับ กล่าวคืออาจจะเป็นสายอักขระทั้งหมดที่ DFA นั้นรับ หรืออาจจะเป็นคำศัพท์ภาษาอังกฤษ นี่คือสิ่งที่เราหมายถึงว่า “ภาษา” และปัญหาเลดเดอร์... อืม ฉันคิดว่าฉันไม่ได้จดปัญหาเลดเดอร์ไว้โดยตรง แต่ปัญหาเลดเดอร์แบบมีขอบเขตก็ใช้แนวคิดเดียวกัน",
+    "id": "Jadi bisa jadi itu adalah bahasa dari kata-kata bahasa Inggris, atau bisa juga bahasa dari semua string yang dikenali oleh suatu DFA tertentu. Artinya bisa jadi semua string yang diterima oleh DFA tersebut, atau mungkin kata-kata bahasa Inggris. Itulah yang kami maksud dengan “bahasa”. Dan masalah ladder... yah, saya rasa saya tidak menuliskan masalah ladder itu sendiri, tapi masalah bounded ladder pada dasarnya menggunakan gagasan yang sama.",
+    "es": "Entonces podría tratarse del lenguaje de palabras en inglés, o podría ser el lenguaje de todas las cadenas que reconoce un DFA específico. Es decir, podrían ser todas las cadenas que acepta ese DFA, o quizá palabras en inglés. Eso es lo que entendemos por “lenguaje”. Y el problema de la escalera... bueno, creo que no anoté el problema en sí, pero el problema de la escalera acotada es básicamente la misma idea.",
+    "fr": "Donc, cela peut être le langage des mots anglais, ou bien le langage de toutes les chaînes qu’un automate fini déterministe particulier reconnaît. Autrement dit, ce peuvent être toutes les chaînes acceptées par cet automate, ou, vous savez, des mots anglais. C’est ce que nous entendons par “langage”. Et le problème de la ladder… eh bien, je ne crois pas avoir noté le problème en lui-même, mais le problème de la ladder bornée repose essentiellement sur la même idée.",
+    "de": "Also könnte es die Sprache englischer Wörter sein, oder die Sprache aller Strings, die ein bestimmter DFA erkennt. Das heißt, es könnten alle Strings sein, die dieser DFA akzeptiert, oder eben englische Wörter. Das ist, was wir unter „Sprache“ verstehen. Und das Ladder-Problem ist—nun, ich glaube, ich habe das Ladder-Problem selbst nicht notiert, aber das begrenzte Ladder-Problem beruht im Wesentlichen auf der gleichen Idee."
+  },
+  "0:07:18.088": {
+    "ja": "アイデアです。DFAと文字列U、Vが与えられ、これは問題の有界バージョンで、取れるステップ数に制限を設けるものです。",
+    "zh": "思路：给定一个DFA，给定字符串U和V，现在这是问题的有界版本，我将对你能执行的步数设定一个上限。",
+    "th": "แนวคิด: คุณได้รับ DFA และสตริง U กับ V และตอนนี้เป็นเวอร์ชันจำกัดของปัญหา ที่ฉันจะกำหนดขีดจำกัดสำหรับจำนวนขั้นตอนที่คุณสามารถทำได้",
+    "id": "Gagasan. Anda diberikan sebuah DFA dan string U serta V, dan sekarang ini adalah versi terbatas dari masalah di mana saya akan memberikan batasan pada jumlah langkah yang dapat Anda lakukan.",
+    "es": "Idea. Se te da un DFA y las cadenas U y V, y ahora esta es la versión acotada del problema, en la que te voy a imponer un límite en el número de pasos que puedes dar.",
+    "fr": "Idée. On vous donne un automate fini déterministe (DFA), ainsi que les chaînes U et V, et voici la version bornée du problème où je vais vous donner une limite sur le nombre d'étapes que vous pouvez effectuer.",
+    "de": "Idee. Ihnen wird ein deterministischer endlicher Automat (DFA) und die Zeichenketten U und V gegeben. Dies ist nun die beschränkte Version des Problems, bei der ich Ihnen eine Begrenzung der Anzahl der Schritte vorgebe, die Sie ausführen können."
+  },
+  "0:07:19.168": {
+    "ja": "ここでは、その例を示しています。B が与えられたときに、この文字列からあの文字列へ B ステップ以内で到達できるかどうかを問うというわけです。",
+    "zh": "我在这里做个说明。给定一个 B，你想判断是否能在 B 步内把这个字符串转换成那个字符串？",
+    "th": "ฉันกำลังสาธิตตรงนี้ เมื่อคุณได้รับ B แล้ว คุณต้องการตรวจสอบว่าจะสามารถเปลี่ยนจากสตริงนี้เป็นสตริงนั้นได้ภายใน B ขั้นตอนไหม",
+    "id": "Jadi saya menjelaskannya di sini. Anda akan diberikan sebuah B, dan Anda ingin menanyakan: apakah saya bisa mengubah string ini menjadi string itu dalam B langkah?",
+    "es": "Lo estoy ilustrando aquí. Te darán un B y quieres saber: ¿puedo pasar de esta cadena a esa cadena en B pasos?",
+    "fr": "Je l'illustre ici. On vous donne un B et vous voulez savoir si vous pouvez aller de cette chaîne à cette autre en B étapes.",
+    "de": "Ich illustriere das hier. Ihnen wird ein B gegeben und Sie möchten fragen, ob Sie in B Schritten von diesem String zu jenem String gelangen können."
+  },
+  "0:07:38.972": {
+    "ja": "OK. u から v へ移るのに辺があれば、という記法がありました。そして、有界ラダープロブレム（bounded ladder problem）ですが、これは後で再帰的なアルゴリズムで解こうとしている問題です。すなわち、u から v まで、１度に１つの記号だけを変えながら、途中の各文字列がすべて B で受理されるようなはしごでたどり着けるか、という問題です。",
+    "zh": "OK。我们有一种记法，用来表示如果存在一条边就能从 u 到 v。接下来介绍的有界阶梯问题（bounded ladder problem），我之所以引入它，是因为我打算用递归算法来求解：能否通过“阶梯”从 u 到 v，每次只改变一个符号，并且沿途的每个字符串都被自动机 B 接受？",
+    "th": "โอเค เรามีสัญกรณ์สำหรับเขียนว่า ถ้ามีเอจ (edge) เราสามารถเดินจาก u ไป v ได้ ปัญหา bounded ladder ที่ผมจะแนะนำต่อไป—เพราะผมตั้งใจจะใช้วิธีอัลกอริธึมแบบวนซ้ำ (recursive)—ก็คือ เราจะไปถึงจาก u ถึง v ได้หรือไม่ โดยใช้ “บันได” ที่เปลี่ยนทีละสัญลักษณ์ และทำให้ทุกสตริงระหว่างทางถูกเครื่องสถานะ B รับเข้า?",
+    "id": "Oke. Kita punya notasi untuk menuliskan bahwa kita bisa berpindah dari u ke v jika terdapat sebuah edge. Jadi, bounded ladder problem—yang saya perkenalkan karena saya akan menargetkan algoritma rekursif untuk menyelesaikannya—adalah: dapatkah saya sampai dari u ke v dengan sebuah ladder, mengubah satu simbol setiap langkah, di mana setiap string di sepanjang jalur diterima oleh B?",
+    "es": "OK. Teníamos una notación para escribir que podemos ir de u a v si existe una arista. Y entonces, el problema de la escalera acotada (bounded ladder problem), que estoy presentando porque pretendo desarrollar un algoritmo recursivo para resolverlo, es: ¿puedo llegar de u a v mediante una escalera, cambiando un símbolo a la vez, de modo que cada cadena intermedia sea aceptada por B?",
+    "fr": "D'accord. Nous avions une notation pour indiquer qu'on peut passer de u à v s'il existe une arête. Et donc, le problème du « bounded ladder » que j'introduis, car je compte le résoudre par un algorithme récursif, est le suivant : peut-on aller de u à v à l'aide d'une échelle, en changeant un seul symbole à la fois, de sorte que chaque chaîne intermédiaire soit acceptée par B ?",
+    "de": "OK. Und wir hatten eine Notation dafür, dass man von u nach v gelangt, wenn eine Kante existiert. Das bounded ladder problem, das ich vorstelle, weil ich es mit einem rekursiven Algorithmus lösen möchte, lautet: Kann ich von u nach v gelangen, indem ich eine Leiter benutze, dabei jeweils nur ein Symbol ändere, und so dass jede Zwischenzeichenkette von B akzeptiert wird?"
+  },
+  "0:08:10.460": {
+    "ja": "そして、私は大文字のBステップ、小文字のbステップしか許されていません。",
+    "zh": "我只被允许使用大写的B步和小写的b步。",
+    "th": "และฉันได้รับอนุญาตให้ทำได้เพียงสเต็ป B (ตัวใหญ่) กับสเต็ป b (ตัวเล็ก)",
+    "id": "Dan saya hanya diperbolehkan langkah B (huruf besar) dan langkah b (huruf kecil).",
+    "es": "Y solo se me permiten pasos B (mayúscula) y pasos b (minúscula).",
+    "fr": "Et je ne suis autorisé qu’à des pas B (majuscule) et des pas b (minuscule).",
+    "de": "Und ich darf nur B-Schritte (großes B) und b-Schritte (kleines b) machen."
+  },
+  "0:08:15.724": {
+    "ja": "それが私がこれから説明するアルゴリズムで解こうとしている計算問題です。アルゴリズムは「BL」と呼ぶことにします。そして、こちらが入力です。",
+    "zh": "这就是我要用接下来要描述的算法来解决的计算问题。我将把该算法称为 BL。下面是输入。",
+    "th": "ดังนั้น นี่คือปัญหาการคำนวณที่ผมจะให้ขั้นตอนวิธีที่กำลังจะอธิบายนี้แก้ไข ผมจะเรียกขั้นตอนวิธีนี้ว่า BL และนี่คือตัวอินพุต",
+    "id": "Jadi, itulah masalah komputasi yang akan saya selesaikan dengan algoritma yang akan saya jelaskan. Algoritma itu akan saya sebut BL. Dan ini adalah inputnya.",
+    "es": "Así que ese es el problema computacional que voy a resolver con el algoritmo que voy a describir. Voy a llamar a ese algoritmo BL. Y aquí está la entrada.",
+    "fr": "Voilà le problème de calcul que je vais résoudre avec l'algorithme que je vais décrire. Je vais appeler cet algorithme BL. Et voici l’entrée.",
+    "de": "Das ist also das Rechenproblem, das ich mit dem Algorithmus lösen werde, den ich gleich beschreibe. Ich werde diesen Algorithmus BL nennen. Und hier ist die Eingabe."
+  },
+  "0:08:32.880": {
+    "ja": "そしてアルゴリズムはまず、vが1に等しいかどうかを調べます。これは、uからvへ1ステップで移動しようとしている場合です。",
+    "zh": "算法首先会检查v是否等于1，也就是我是否只是想在一个步骤中从u到v。",
+    "th": "และอัลกอริธึมจะเริ่มต้นด้วยการตรวจดูว่า v เท่ากับ 1 หรือไม่ ซึ่งหมายถึงว่าฉันกำลังพยายามจะไปจาก u ถึง v ในเพียงก้าวเดียว",
+    "id": "Dan algoritmanya pertama-tama akan memeriksa apakah v sama dengan 1, yaitu jika saya hanya mencoba untuk pergi dari u ke v dalam satu langkah.",
+    "es": "Y el algoritmo, antes que nada, va a comprobar si v es igual a 1, es decir, si solo estoy intentando ir de u a v en un único paso.",
+    "fr": "Et l'algorithme va d'abord vérifier si v est égal à 1, c'est-à-dire si j'essaie simplement d'aller de u à v en une seule étape.",
+    "de": "Und der Algorithmus wird zunächst prüfen, ob v gleich 1 ist, also ob ich einfach in einem Schritt von u nach v kommen möchte."
+  },
+  "0:08:44.380": {
+    "ja": "これは非常に簡単な問題です。U と V が直線上にあることを確認したいだけだからです。",
+    "zh": "这是一个非常简单的问题，因为你显然只是想检验 U 和 V 是否在这条直线上。",
+    "th": "นี่เป็นปัญหาที่ง่ายมาก เพราะคุณก็แค่อยากทดสอบว่า U และ V อยู่บนเส้นตรงนั้น",
+    "id": "Ini masalah yang sangat sederhana karena Anda jelas ingin menguji bahwa U dan V terletak pada garis itu.",
+    "es": "Es un problema muy sencillo porque, obviamente, quieres comprobar que U y V estén en la recta.",
+    "fr": "C'est un problème très simple, car vous voulez évidemment vérifier que U et V sont sur la droite.",
+    "de": "Es ist ein sehr einfaches Problem, weil man offensichtlich testen möchte, dass U und V auf der Geraden liegen."
+  }
+}
