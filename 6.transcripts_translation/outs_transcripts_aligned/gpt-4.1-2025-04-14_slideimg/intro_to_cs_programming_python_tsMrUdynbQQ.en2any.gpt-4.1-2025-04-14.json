@@ -1,0 +1,686 @@
+{
+  "0:00:17.052": {
+    "ja": "始めましょう。今日は、まったく新しいトピックのセットを始めます。これから4回の講義でこのトピックについて話します。とても重要なテーマです。",
+    "zh": "我们开始吧。今天我们将开始全新的主题系列，并且接下来的四节课都会谈论这些内容，这是一个很重要的主题。",
+    "th": "มาเริ่มกันเลย วันนี้เราจะเริ่มหัวข้อใหม่ทั้งหมด และเราจะพูดถึงหัวข้อเหล่านี้ตลอดสี่ครั้งถัดไป ซึ่งเป็นหัวข้อใหญ่",
+    "id": "Mari kita mulai. Jadi hari ini, kita akan mulai membahas serangkaian topik baru dan kita akan membahas topik-topik ini selama empat kuliah berikutnya. Ini adalah topik yang besar.",
+    "es": "Vamos a empezar. Hoy vamos a comenzar un conjunto completamente nuevo de temas y hablaremos sobre ellos durante las próximas cuatro clases. Es un tema importante.",
+    "fr": "Commençons. Aujourd'hui, nous allons aborder un tout nouveau groupe de sujets et nous parlerons de ces sujets pendant les quatre prochains cours. C'est un sujet important.",
+    "de": "Fangen wir an. Heute beginnen wir mit einer völlig neuen Reihe von Themen, über die wir in den nächsten vier Vorlesungen sprechen werden. Es ist ein großes Thema."
+  },
+  "0:00:22.952": {
+    "ja": "これからの4回の講義で私たちが達成しようとしている大きなアイデアは、自分たちで独自のオブジェクト型を定義し始めることです。よろしいですか？",
+    "zh": "我们接下来四节课的核心目标，就是开始自己定义自有的对象类型，明白吗？",
+    "th": "แนวคิดหลักที่เราต้องการจะทำให้สำเร็จในสี่บรรยายถัดไปนี้ คือการที่เราจะเริ่มกำหนดประเภทอ็อบเจ็กต์ของเราเอง เข้าใจไหมครับ?",
+    "id": "Ide besar yang ingin kita capai dalam empat kuliah berikutnya adalah agar kita mulai mendefinisikan tipe objek kita sendiri, oke?",
+    "es": "La gran idea que queremos lograr en las próximas cuatro clases es que empecemos a definir nuestros propios tipos de objetos, ¿de acuerdo?",
+    "fr": "L'idée principale que nous essayons d'accomplir dans ces quatre prochains cours, c'est de commencer à définir nos propres types d'objets, d'accord ?",
+    "de": "Die zentrale Idee, die wir in den nächsten vier Vorlesungen umsetzen wollen, ist, dass wir beginnen, unsere eigenen Objekttypen zu definieren, okay?"
+  },
+  "0:00:38.232": {
+    "ja": "そして、これらのオブジェクト型はPythonクラスと呼ばれるもので定義していきます。",
+    "zh": "我们将通过称为Python类的方式来定义这些对象类型。",
+    "th": "และเราจะกำหนดประเภทของอ็อบเจ็กต์เหล่านี้ผ่านสิ่งที่เรียกว่า Python classes",
+    "id": "Dan kita akan mendefinisikan tipe objek ini melalui sesuatu yang disebut kelas Python.",
+    "es": "Y definiremos estos tipos de objetos a través de algo llamado clases de Python.",
+    "fr": "Et nous allons définir ces types d’objets à travers ce qu’on appelle des classes Python.",
+    "de": "Und wir werden diese Objekttypen mit sogenannten Python-Klassen definieren."
+  },
+  "0:00:44.892": {
+    "ja": "それでは今日の講義では、まずはとてもシンプルなオブジェクト型を定義して、そこから少しずつ発展させていきます。",
+    "zh": "今天的课程，我们会先给你们定义一个非常简单的对象类型，然后再在这个基础上逐步扩展。",
+    "th": "ในบรรยายวันนี้ เราจะเริ่มจากการนิยามประเภทของอ็อบเจ็กต์ที่ง่ายมาก ๆ ก่อน แล้วเราจะค่อย ๆ สร้างต่อยอดจากตรงนั้น",
+    "id": "Pada kuliah hari ini, kita akan mulai dengan mendefinisikan tipe objek yang sangat sederhana, lalu kita akan membangunnya dari sana.",
+    "es": "En la clase de hoy, simplemente vamos a definir un tipo de objeto muy sencillo y a partir de ahí iremos construyendo más conceptos.",
+    "fr": "Dans le cours d'aujourd'hui, nous allons commencer par définir un type d'objet très simple, puis nous allons développer à partir de là.",
+    "de": "In der heutigen Vorlesung werden wir zunächst einen ganz einfachen Objekttyp definieren und darauf aufbauend weitermachen."
+  },
+  "0:00:53.152": {
+    "ja": "それでは、一歩引いて、これまで私たちが扱ってきた本当に具体的なオブジェクトについて考えてみましょう。",
+    "zh": "那么让我们退一步，想一想我们一直在处理的一些非常具体的对象。",
+    "th": "งั้นขอให้เราถอยหลังสักก้าวแล้วลองคิดถึงวัตถุเฉพาะเจาะจงจริง ๆ ที่เราทำงานด้วยมาก่อนหน้านี้",
+    "id": "Jadi mari kita mundur sejenak dan pikirkan tentang objek-objek tertentu, objek yang benar-benar spesifik yang telah kita kerjakan.",
+    "es": "Así que vamos a dar un paso atrás y pensar en objetos particulares, objetos realmente específicos con los que hemos estado trabajando.",
+    "fr": "Prenons donc un peu de recul et réfléchissons à des objets particuliers, des objets vraiment spécifiques sur lesquels nous avons travaillé.",
+    "de": "Nehmen wir also einen Schritt zurück und denken wir über ganz bestimmte Objekte nach, also wirklich spezifische Objekte, mit denen wir gearbeitet haben."
+  },
+  "0:01:02.172": {
+    "ja": "たとえば、私たちはおそらく数値1234を使ってきました。",
+    "zh": "比如说，我们一直在使用数字1234。",
+    "th": "ตัวอย่างเช่น เราได้ทำงานกับตัวเลข 1,234 มาแล้ว",
+    "id": "Sebagai contoh, kita sudah bekerja dengan angka 1.234.",
+    "es": "Por ejemplo, hemos estado trabajando probablemente con el número 1.234.",
+    "fr": "Par exemple, nous avons probablement travaillé avec le nombre 1 234.",
+    "de": "Zum Beispiel haben wir wahrscheinlich mit der Zahl 1.234 gearbeitet."
+  },
+  "0:01:06.672": {
+    "ja": "これまで、浮動小数点数のパイ（π）、3.14159 を扱ってきました。",
+    "zh": "我们一直在使用浮点数 pi，也就是 3.14159。",
+    "th": "เราได้ทำงานกับค่าทศนิยม pi หรือ 3.14159 มาแล้ว",
+    "id": "Kita telah bekerja dengan float pi, yaitu 3.14159.",
+    "es": "Hemos estado trabajando con el número flotante pi, 3.14159.",
+    "fr": "Nous avons travaillé avec le nombre flottant pi, 3,14159.",
+    "de": "Wir haben mit der Fließkommazahl pi, also 3,14159, gearbeitet."
+  },
+  "0:01:09.472": {
+    "ja": "これまで、H-E-L-L-Oのような文字の並びや、数字のリストを扱ってきましたよね？",
+    "zh": "我们之前一直在处理字符序列，比如 H-E-L-L-O，还有数字列表，对吧？",
+    "th": "เราทำงานกับลำดับของตัวอักษร เช่น H-E-L-L-O และรายการของตัวเลข ใช่ไหมครับ?",
+    "id": "Kita telah bekerja dengan urutan karakter, seperti H-E-L-L-O, dan juga daftar angka, kan?",
+    "es": "Hemos estado trabajando con secuencias de caracteres, como H-E-L-L-O, y con listas de números, ¿cierto?",
+    "fr": "Nous avons travaillé avec des séquences de caractères, comme H-E-L-L-O, et des listes de nombres, n'est-ce pas ?",
+    "de": "Wir haben mit Zeichenfolgen gearbeitet, wie H-E-L-L-O, und mit Zahlenlisten, richtig?"
+  },
+  "0:01:15.432": {
+    "ja": "では、これらの特定の要素が含まれたリストがこちらです。",
+    "zh": "这里有一个包含这些特定元素的列表。",
+    "th": "นี่คือลิสต์ที่มีองค์ประกอบเฉพาะเหล่านั้นอยู่ในนั้น",
+    "id": "Jadi, inilah daftar dengan elemen-elemen spesifik tersebut di dalamnya.",
+    "es": "Aquí tienes una lista con esos elementos específicos en su interior.",
+    "fr": "Voici donc une liste contenant ces éléments spécifiques.",
+    "de": "Hier ist also eine Liste mit diesen bestimmten Elementen darin."
+  },
+  "0:01:18.772": {
+    "ja": "そして、私たちは辞書を使って作業してきました。",
+    "zh": "我们一直在使用字典。",
+    "th": "และเราได้ทำงานกับดิกชันนารีแล้ว",
+    "id": "Dan kami telah bekerja dengan kamus.",
+    "es": "Y hemos estado trabajando con diccionarios.",
+    "fr": "Et nous avons travaillé avec des dictionnaires.",
+    "de": "Und wir haben mit Dictionaries gearbeitet."
+  },
+  "0:01:22.332": {
+    "ja": "そして、これらを含む具体的な辞書がこちらです。",
+    "zh": "这里有一个包含这些内容的具体字典。",
+    "th": "และนี่คือตัวอย่างดิกชันนารีโดยเฉพาะที่มีข้อมูลเหล่านี้",
+    "id": "Dan berikut adalah kamus spesifik dengan item-item ini.",
+    "es": "Y aquí tienes un diccionario específico con estos.",
+    "fr": "Et voici un dictionnaire spécifique avec ceux-ci.",
+    "de": "Und hier ist ein spezielles Wörterbuch mit diesen."
+  },
+  "0:01:27.292": {
+    "ja": "さて、ここにあるものはすべてオブジェクトですよね？",
+    "zh": "现在，这上面的每一个东西都是对象，对吧？",
+    "th": "ตอนนี้ ทุกอย่างที่อยู่ข้างบนนั้นคืออ็อบเจกต์ใช่ไหมครับ?",
+    "id": "Nah, setiap hal di atas ini adalah objek, benar?",
+    "es": "Ahora, cada una de estas cosas aquí arriba es un objeto, ¿verdad?",
+    "fr": "Alors, chacun de ces éléments ici est un objet, n'est-ce pas ?",
+    "de": "Nun, jedes dieser Dinge hier oben ist ein Objekt, richtig?"
+  },
+  "0:01:30.092": {
+    "ja": "私たちのプログラムにそれがあります。",
+    "zh": "我们的程序中有它。",
+    "th": "เรามีสิ่งนี้ในโปรแกรมของเรา",
+    "id": "Kami memilikinya di dalam program kami.",
+    "es": "Lo tenemos en nuestro programa.",
+    "fr": "Nous l'avons dans notre programme.",
+    "de": "Wir haben es in unserem Programm."
+  },
+  "0:01:33.092": {
+    "ja": "私たちはそれを操作できます。他のものに追加することもできます。",
+    "zh": "我们可以操作它。我们也可以把它加到其他东西上。",
+    "th": "เราสามารถจัดการมันได้ เราสามารถนำมันไปรวมกับสิ่งอื่น ๆ ได้",
+    "id": "Kita bisa memanipulasinya. Kita bisa menambahkannya ke hal lain.",
+    "es": "Podemos manipularlo. Podemos añadirlo a otras cosas.",
+    "fr": "Nous pouvons le manipuler. Nous pouvons l'ajouter à d'autres choses.",
+    "de": "Wir können damit arbeiten. Wir können es zu anderen Dingen hinzufügen."
+  },
+  "0:01:35.872": {
+    "ja": "インデックスを付けたり、いろいろな操作ができます。しかし、これらのオブジェクトのそれぞれには基本的にタイプ（型）があるんですよね。",
+    "zh": "我们可以进行索引等各种操作。但每一个这样的对象基本上都有一个特定的类型，对吧？",
+    "th": "เราสามารถทำดัชนี เราสามารถทำสิ่งเหล่านี้ได้ทั้งหมด แต่ละวัตถุเหล่านี้ก็มีประเภทของมันเองใช่ไหม",
+    "id": "Kita bisa mengindeks. Kita bisa melakukan semua hal ini. Tapi setiap objek ini pada dasarnya memiliki tipe tertentu, bukan?",
+    "es": "Podemos indexar. Podemos hacer todas estas cosas. Pero básicamente cada uno de estos objetos tiene un cierto tipo, ¿verdad?",
+    "fr": "Nous pouvons indexer. Nous pouvons faire toutes ces choses. Mais chacun de ces objets a en fait un certain type, n'est-ce pas ?",
+    "de": "Wir können indizieren. Wir können all diese Dinge tun. Aber im Grunde hat jedes dieser Objekte einen bestimmten Typ, oder?"
+  },
+  "0:01:39.372": {
+    "ja": "これは講義1で紹介したときに話しました",
+    "zh": "这个我们在第一节课介绍的时候已经讲过了",
+    "th": "เราได้พูดถึงเรื่องนี้ไปแล้วในบรรยายครั้งแรกตอนที่ฉันแนะนำ",
+    "id": "Kita sudah membahas ini di perkuliahan pertama saat saya memperkenalkan",
+    "es": "Hablamos de esto en la primera clase cuando lo presenté",
+    "fr": "Nous en avons parlé lors du premier cours quand j'ai introduit cela",
+    "de": "Darüber haben wir schon in der ersten Vorlesung gesprochen, als ich das vorgestellt habe"
+  },
+  "0:01:47.708": {
+    "ja": "それはどういう意味でしょうか？その講義で私は、「オブジェクトの型は、そのオブジェクトでどんな操作ができるかを基本的に教えてくれる」と言いましたよね。",
+    "zh": "那是什么意思呢？在那节课里，我说过一个对象的类型基本上决定了我们可以对它做哪些操作，对吧？",
+    "th": "แล้วนั่นหมายความว่าอย่างไร? ในเล็กเชอร์นั้น ฉันได้พูดไว้ว่า ประเภทของอ็อบเจ็กต์จะบอกเราว่าเราสามารถทำอะไรกับมันได้บ้าง ใช่ไหม?",
+    "id": "Jadi, apa artinya itu? Dalam kuliah tersebut, saya mengatakan bahwa tipe dari suatu objek pada dasarnya memberi tahu kita hal-hal apa saja yang bisa kita lakukan terhadapnya, kan?",
+    "es": "¿Y qué significa eso? Bueno, en esa clase dije que el tipo de un objeto básicamente nos indica las cosas que podemos hacer con él, ¿verdad?",
+    "fr": "Qu'est-ce que cela signifie ? Eh bien, dans ce cours, j'ai dit que le type d'un objet nous indique essentiellement les choses que nous pouvons faire avec lui, n'est-ce pas ?",
+    "de": "Was bedeutet das also? In dieser Vorlesung habe ich gesagt, dass der Typ eines Objekts uns im Grunde sagt, welche Dinge wir mit ihm machen können, richtig?"
+  },
+  "0:01:56.748": {
+    "ja": "数値でできることは、文字列でできることとは異なります。",
+    "zh": "你能对数字做的操作，会和对字符串能做的操作不同。",
+    "th": "สิ่งที่คุณสามารถทำกับตัวเลขได้จะต่างจากสิ่งที่คุณสามารถทำกับสตริง",
+    "id": "Hal-hal yang dapat Anda lakukan dengan angka akan berbeda dengan hal-hal yang dapat Anda lakukan dengan string.",
+    "es": "Las cosas que puedes hacer con un número serán diferentes a las cosas que puedes hacer con cadenas de texto.",
+    "fr": "Les opérations que vous pouvez réaliser avec un nombre sont différentes de celles que vous pouvez réaliser avec des chaînes de caractères.",
+    "de": "Die Dinge, die man mit einer Zahl machen kann, unterscheiden sich von denen, die man mit Zeichenketten machen kann."
+  },
+  "0:01:59.328": {
+    "ja": "そして私たちはその講義以来、今日までずっとこれを見てきました。",
+    "zh": "自那次讲座以来直到今天，我们一直在看到这一点。",
+    "th": "และเราก็ได้เห็นสิ่งนี้มาตั้งแต่บรรยายนั้นจนถึงวันนี้",
+    "id": "Dan kita sudah melihat hal ini sejak kuliah itu hingga hari ini.",
+    "es": "Y hemos estado viendo esto desde esa clase hasta hoy.",
+    "fr": "Et nous avons constaté cela depuis ce cours jusqu'à aujourd'hui.",
+    "de": "Und wir haben das seit dieser Vorlesung bis heute immer wieder gesehen."
+  },
+  "0:02:06.416": {
+    "ja": "これから自分自身のオブジェクト型を作成する方法を見ていきます。そのためには、次のことを理解しておく必要があります。そして、これが今日何度も繰り返し説明することになります。つまり、一度オブジェクト型を作成しようと決めたら、例えばこれらのそれぞれのオブジェクトは、何らかの設計図を使って作成されています。",
+    "zh": "接下来我们将看看如何创建我们自己的对象类型。为此，我们需要理解以下内容。这也是我今天会不断重复强调的事情。也就是说，一旦你决定去创建一个对象类型，比如说，这些对象中的每一个，实际上都是通过某种蓝图创建出来的。",
+    "th": "เราจะมาดูกันว่าเราสามารถสร้างประเภทอ็อบเจ็กต์ของเราเองได้อย่างไร เพื่อที่จะทำสิ่งนี้ เราต้องเข้าใจสิ่งต่อไปนี้ และนี่คือสิ่งที่ผมจะพูดซ้ำ ๆ วันนี้ เมื่อคุณตัดสินใจจะสร้างประเภทอ็อบเจ็กต์ขึ้นมา หรือว่าอ็อบเจ็กต์แต่ละตัวเหล่านี้ ก็ถูกสร้างขึ้นโดยใช้พิมพ์เขียวบางอย่าง",
+    "id": "Kita akan melihat bagaimana kita dapat membuat tipe objek kita sendiri. Untuk melakukan itu, kita harus memahami hal berikut. Dan ini adalah sesuatu yang akan saya ulangi berkali-kali hari ini. Jadi begitu Anda memutuskan untuk membuat sebuah tipe objek, atau setiap objek ini misalnya, semuanya diciptakan menggunakan semacam cetak biru.",
+    "es": "Vamos a ver cómo podemos crear nuestros propios tipos de objetos. Para hacer eso, tenemos que entender lo siguiente. Y esto es algo que voy a repetir varias veces hoy. Así que, una vez que decidas crear un tipo de objeto, por ejemplo, cada uno de estos objetos ha sido creado utilizando algún tipo de plano.",
+    "fr": "Nous allons voir comment créer nos propres types d'objets. Pour cela, il faut comprendre ce qui suit. Et c'est quelque chose que je vais répéter plusieurs fois aujourd'hui. Ainsi, dès que vous décidez de créer un type d'objet, ou bien chacun de ces objets, par exemple, a été créé à partir d'un certain plan.",
+    "de": "Wir werden uns anschauen, wie wir eigene Objekttypen erstellen können. Dafür müssen wir Folgendes verstehen. Und das ist etwas, das ich heute mehrfach wiederholen werde. Sobald du dich also entscheidest, einen Objekttyp zu erstellen, oder jedes einzelne dieser Objekte zum Beispiel, wurde anhand eines bestimmten Bauplans erstellt."
+  },
+  "0:02:22.588": {
+    "ja": "そして、これらのオブジェクトを作るときには、2つのことを考える必要があります。",
+    "zh": "在创建这些对象时，你需要考虑两个方面。",
+    "th": "และเมื่อคุณสร้างอ็อบเจกต์เหล่านี้ คุณต้องคำนึงถึงสองสิ่ง",
+    "id": "Dan ketika Anda membuat objek-objek ini, Anda perlu memikirkan dua hal.",
+    "es": "Y cuando estás creando estos objetos, necesitas pensar en dos cosas.",
+    "fr": "Et lorsque vous créez ces objets, vous devez penser à deux choses.",
+    "de": "Und wenn Sie diese Objekte erstellen, müssen Sie an zwei Dinge denken."
+  },
+  "0:02:25.748": {
+    "ja": "最初の質問は、このオブジェクトを表すデータは何かということです。",
+    "zh": "首先要问的是，哪些数据将用来表示这个对象？",
+    "th": "คำถามแรกคือ ข้อมูลใดจะใช้แทนวัตถุนี้?",
+    "id": "Pertama, data apa yang akan merepresentasikan objek ini?",
+    "es": "La primera pregunta es: ¿qué datos representarán este objeto?",
+    "fr": "La première question est : quelles données vont représenter cet objet ?",
+    "de": "Die erste Frage ist: Welche Daten werden dieses Objekt repräsentieren?"
+  },
+  "0:02:28.468": {
+    "ja": "そして二つ目は、このオブジェクトはどのような振る舞いを持つのか、ということです。",
+    "zh": "第二个问题是，这个对象会有哪些行为？",
+    "th": "ประการที่สอง คือ วัตถุนี้จะมีพฤติกรรมอะไรบ้าง?",
+    "id": "Dan yang kedua adalah, perilaku apa yang akan dimiliki objek ini?",
+    "es": "Y la segunda es, ¿qué comportamientos tendrá este objeto?",
+    "fr": "Et la seconde question est : quels comportements cet objet aura-t-il ?",
+    "de": "Und die zweite Frage ist: Welche Verhaltensweisen wird dieses Objekt haben?"
+  },
+  "0:02:31.808": {
+    "ja": "ここにあるオブジェクトはかなりシンプルですね。",
+    "zh": "现在，上面的这些对象其实都很简单，对吧？",
+    "th": "วัตถุที่อยู่ตรงนี้ค่อนข้างง่ายใช่ไหมครับ",
+    "id": "Sekarang, objek-objek di sini cukup sederhana, kan?",
+    "es": "Ahora, los objetos aquí arriba son bastante simples, ¿verdad?",
+    "fr": "Maintenant, les objets ici sont assez simples, n'est-ce pas ?",
+    "de": "Die Objekte hier oben sind ziemlich einfach, oder?"
+  },
+  "0:02:34.268": {
+    "ja": "この整数を表すデータの種類は、まあ、実際にはデータはありません。",
+    "zh": "表示这个整数的数据类型，其实，说真的，根本没有数据。",
+    "th": "ประเภทของข้อมูลที่แทนจำนวนเต็มนี้ก็คือ เอ่อ จริง ๆ แล้วก็ไม่มีข้อมูลอะไรเลย",
+    "id": "Jenis data yang merepresentasikan integer ini sebenarnya, yah, sebenarnya tidak ada datanya.",
+    "es": "Los tipos de datos que representan este entero, bueno, en realidad no hay datos.",
+    "fr": "Les types de données qui représentent cet entier, eh bien, il n’y a vraiment pas de données.",
+    "de": "Die Arten von Daten, die diese Ganzzahl repräsentieren, nun ja, es gibt eigentlich keine Daten."
+  },
+  "0:02:37.568": {
+    "ja": "それ自体が数字です。",
+    "zh": "就是数字本身。",
+    "th": "มันก็เป็นแค่ตัวเลขเท่านั้นเอง",
+    "id": "Itu hanyalah angkanya saja.",
+    "es": "Es simplemente el número en sí.",
+    "fr": "C'est simplement le nombre lui-même.",
+    "de": "Es ist einfach nur die Zahl selbst."
+  },
+  "0:02:40.488": {
+    "ja": "しかし、いくつかの操作を持っています。",
+    "zh": "但是它有一些操作。",
+    "th": "แต่มันมีการดำเนินการบางอย่าง",
+    "id": "Tapi objek tersebut memiliki beberapa operasi.",
+    "es": "Pero tiene algunas operaciones.",
+    "fr": "Mais il possède certaines opérations.",
+    "de": "Aber es hat einige Operationen."
+  },
+  "0:02:46.940": {
+    "ja": "リストを表すデータは、整数を表すデータとは異なります。",
+    "zh": "表示列表的数据会和表示整数的数据不同。",
+    "th": "ข้อมูลที่ใช้แทนรายการจะแตกต่างจากข้อมูลที่ใช้แทนจำนวนเต็ม",
+    "id": "Data yang merepresentasikan daftar akan berbeda dengan data yang merepresentasikan sebuah integer.",
+    "es": "Los datos que representan una lista son diferentes de los datos que representan un entero.",
+    "fr": "Les données qui représentent une liste sont différentes de celles qui représentent un entier.",
+    "de": "Die Daten, die eine Liste darstellen, sind anders als die Daten, die eine Ganzzahl darstellen."
+  },
+  "0:02:51.740": {
+    "ja": "リストは一連の数字で構成されているようなものだからです。",
+    "zh": "因为列表其实就是由一串数字组成的。",
+    "th": "เพราะว่าลิสต์คือสิ่งที่ประกอบด้วยลำดับของตัวเลข",
+    "id": "Karena sebuah list pada dasarnya terdiri dari urutan angka.",
+    "es": "Porque una lista básicamente está compuesta por una secuencia de números.",
+    "fr": "Parce qu'une liste est en quelque sorte constituée d'une séquence de nombres.",
+    "de": "Weil eine Liste im Grunde aus einer Abfolge von Zahlen besteht."
+  },
+  "0:02:57.948": {
+    "ja": "そして、辞書を構成するデータはリストを構成するデータとはまったく異なります。なぜなら、辞書は各エントリがキーと値のペアになっているからです。",
+    "zh": "然后，组成字典的数据和组成列表的数据是完全不同的，因为字典中的每一项都有一个键和值的对应关系。",
+    "th": "จากนั้นข้อมูลที่ประกอบกันเป็นดิกชันนารีจะแตกต่างจากข้อมูลที่ประกอบเป็นลิสต์โดยสิ้นเชิง เพราะดิกชันนารีจะมีแต่ละเอ็นทรีที่ประกอบด้วยคู่ของคีย์และค่า",
+    "id": "Kemudian, data yang membentuk sebuah dictionary benar-benar berbeda dengan data yang membentuk list, karena dictionary memiliki entri yang masing-masing terdiri dari pasangan key dan value.",
+    "es": "Luego, los datos que conforman un diccionario son completamente diferentes a los que conforman una lista, porque un diccionario tiene entradas donde cada una tiene un par clave y valor.",
+    "fr": "Ensuite, les données qui composent un dictionnaire sont complètement différentes de celles qui composent une liste, car un dictionnaire contient des entrées où chaque entrée a une paire clé-valeur.",
+    "de": "Die Daten, aus denen ein Dictionary besteht, sind dann völlig unterschiedlich zu denen einer Liste, da ein Dictionary Einträge hat, bei denen jedes Element aus einem Schlüssel-Wert-Paar besteht."
+  },
+  "0:03:09.340": {
+    "ja": "それぞれのオブジェクトを表すデータは異なりますよね。",
+    "zh": "对吧？所以每个对象的数据表示都是不同的。",
+    "th": "ใช่ไหมครับ? ดังนั้นข้อมูลที่แทนแต่ละวัตถุก็จะแตกต่างกัน",
+    "id": "Benar? Jadi data yang merepresentasikan setiap objek ini berbeda-beda.",
+    "es": "¿Verdad? Así que los datos que representan a cada uno de estos objetos son diferentes.",
+    "fr": "N'est-ce pas ? Donc les données qui représentent chacun de ces objets sont différentes.",
+    "de": "Richtig? Die Daten, die jedes dieser Objekte repräsentieren, sind also unterschiedlich."
+  },
+  "0:03:12.540": {
+    "ja": "そして、私たちはこれから使う新しいオブジェクトをどのようなデータで表現するかを決めていきます。",
+    "zh": "接下来我们要决定哪些数据代表我们将要使用的新对象。",
+    "th": "และเราจะตัดสินใจว่าข้อมูลแบบใดที่จะแทนวัตถุใหม่ที่เราจะใช้",
+    "id": "Dan kita akan memutuskan data apa yang mewakili objek baru yang akan kita gunakan.",
+    "es": "Y vamos a decidir qué datos representan los nuevos objetos que vamos a usar.",
+    "fr": "Et nous allons décider quelles données vont représenter les nouveaux objets que nous allons utiliser.",
+    "de": "Und wir werden entscheiden, welche Daten die neuen Objekte repräsentieren, die wir verwenden werden."
+  },
+  "0:03:17.228": {
+    "ja": "そしてもちろん、これは最初の講義から知っていることですが、これらの異なるオブジェクト型によって、私たちがどのようにそれらとやり取りできるかも異なるのです。",
+    "zh": "当然，这也是我们从第一节课就知道的，不同类型的对象之间，我们可以与它们交互的方式也是不一样的。",
+    "th": "แน่นอนว่าสิ่งนี้เป็นสิ่งที่เราเคยพูดถึงตั้งแต่เลกเชอร์แรกแล้วว่า วิธีที่เราสามารถโต้ตอบกับวัตถุเหล่านี้จะแตกต่างกันไปตามแต่ละประเภทของวัตถุเหล่านี้",
+    "id": "Tentu saja, ini adalah sesuatu yang sudah kita ketahui sejak kuliah pertama, bahwa cara kita berinteraksi dengan objek-objek ini juga berbeda tergantung pada tipe objeknya.",
+    "es": "Y por supuesto, esto es algo que hemos sabido desde la primera clase: la forma en que podemos interactuar con estos objetos también es diferente según el tipo de objeto.",
+    "fr": "Et bien sûr, c'est quelque chose que nous savons depuis le premier cours : les façons dont nous pouvons interagir avec ces objets diffèrent aussi selon les types d'objets.",
+    "de": "Und natürlich wissen wir das bereits seit der ersten Vorlesung: Auch die Arten, wie wir mit diesen Objekten interagieren können, unterscheiden sich je nach Objekttyp."
+  },
+  "0:03:26.048": {
+    "ja": "用語の観点では、操作したい実際のオブジェクトを作成した場合、それを型のインスタンスと呼びます。",
+    "zh": "在术语方面，当我们创建一个实际想要操作的对象时，我们称它为某种类型的实例。",
+    "th": "ในแง่ของคำศัพท์ เมื่อเราสร้างอ็อบเจกต์จริงที่เราต้องการจัดการ เราจะเรียกมันว่าตัวอย่างของประเภทหนึ่ง",
+    "id": "Dalam hal terminologi, ketika kita membuat objek nyata yang ingin kita manipulasi, kita menyebutnya sebagai instansi dari suatu tipe.",
+    "es": "En términos de terminología, cuando creamos un objeto real que queremos manipular, lo llamamos una instancia de un tipo.",
+    "fr": "En termes de terminologie, lorsque nous créons un objet réel que nous voulons manipuler, nous l'appelons une instance d'un type.",
+    "de": "Bezüglich der Terminologie: Wenn wir ein tatsächliches Objekt erstellen, das wir manipulieren möchten, nennen wir es eine Instanz eines Typs."
+  },
+  "0:03:32.956": {
+    "ja": "この特定の数字、1,234は整数の一例です。",
+    "zh": "这个特定的数字 1,234 是整数的一个实例。",
+    "th": "ตัวเลขนี้โดยเฉพาะ 1,234 เป็นตัวอย่างหนึ่งของจำนวนเต็ม",
+    "id": "Angka spesifik ini, 1.234, adalah salah satu contoh dari integer.",
+    "es": "Este número específico, 1,234, es un ejemplo de un entero.",
+    "fr": "Ce nombre spécifique, 1 234, est un exemple d'entier.",
+    "de": "Diese spezifische Zahl, 1.234, ist ein Beispiel für eine ganze Zahl."
+  },
+  "0:03:39.176": {
+    "ja": "そして、この特定の文字列シーケンス、小文字の h、l、オブジェクト指向プログラミングの考え方は、基本的にPythonではすべてがオブジェクトであるということです。",
+    "zh": "这个特定的字符序列，小写的 h，l，面向对象编程的理念基本上就是在 Python 里一切都是对象。",
+    "th": "ลำดับของตัวอักษรเฉพาะนี้ ตัว h ตัว l ตัวเล็ก แนวคิดของการเขียนโปรแกรมเชิงวัตถุใน Python ก็คือ ทุกอย่างคืออ็อบเจ็กต์",
+    "id": "Dan urutan karakter tertentu ini, h kecil, l, ide dari pemrograman berorientasi objek pada dasarnya adalah bahwa segala sesuatu di Python adalah objek.",
+    "es": "Y esta secuencia específica de caracteres, h minúscula, l, la idea de la programación orientada a objetos es básicamente que todo en Python es un objeto.",
+    "fr": "Et cette séquence spécifique de caractères, en minuscule h, l, l'idée de la programmation orientée objet est essentiellement que tout dans Python est un objet.",
+    "de": "Und diese spezielle Zeichenfolge, kleines h, l, die Idee der objektorientierten Programmierung ist im Grunde, dass in Python alles ein Objekt ist."
+  },
+  "0:03:54.544": {
+    "ja": "これは関数を紹介したときにも話しました。私たちは関数をオブジェクトのように扱いました。",
+    "zh": "这点我们在介绍函数时已经讨论过了。我们把函数当作对象来看待。",
+    "th": "เราได้พูดถึงเรื่องนี้ไปแล้วตอนที่เราแนะนำฟังก์ชัน เราปฏิบัติกับฟังก์ชันเหมือนกับว่าเป็นอ็อบเจ็กต์",
+    "id": "Hal ini sudah kita bicarakan saat memperkenalkan fungsi. Kita memperlakukan fungsi seperti objek.",
+    "es": "Esto ya lo mencionamos cuando introdujimos las funciones. Tratamos las funciones como objetos.",
+    "fr": "Nous en avons parlé lorsque nous avons introduit les fonctions. Nous avons traité les fonctions comme des objets.",
+    "de": "Das haben wir bereits besprochen, als wir Funktionen eingeführt haben. Wir haben Funktionen wie Objekte behandelt."
+  },
+  "0:03:59.124": {
+    "ja": "つまり、新しい型のオブジェクトを作成できるということです。",
+    "zh": "这意味着我们可以创建具有某种类型的新对象。",
+    "th": "ซึ่งหมายความว่าเราสามารถสร้างอ็อบเจ็กต์ใหม่ที่มีประเภทบางอย่างได้",
+    "id": "Artinya kita dapat membuat objek baru yang memiliki tipe tertentu.",
+    "es": "Y eso significa que podemos crear nuevos objetos que tengan algún tipo.",
+    "fr": "Et cela signifie que nous pouvons créer de nouveaux objets ayant un certain type.",
+    "de": "Das bedeutet, dass wir neue Objekte mit einem bestimmten Typ erstellen können."
+  },
+  "0:04:05.444": {
+    "ja": "それで実際にこれらの非常に特定のものを作成します",
+    "zh": "所以我们实际上会创建这些非常特定的东西",
+    "th": "ดังนั้นเราจึงสร้างสิ่งที่เฉพาะเจาะจงเหล่านี้ขึ้นมา",
+    "id": "Jadi, kita benar-benar membuat hal-hal yang sangat spesifik ini",
+    "es": "Así que en realidad creamos estos elementos muy específicos",
+    "fr": "Donc, nous créons en fait ces éléments très spécifiques",
+    "de": "Also erstellen wir tatsächlich diese ganz bestimmten Dinge"
+  },
+  "0:04:10.876": {
+    "ja": "そして、オブジェクトを破棄することもできます。つまり、オブジェクトを作成し、操作し、好きなときに破棄することができるのです。",
+    "zh": "我们也可以销毁对象，对吧？所以你可以创建、操作它们，也可以根据需要销毁它们。",
+    "th": "และเรายังสามารถทำลายอ็อบเจกต์เหล่านี้ได้ด้วยใช่ไหมครับ ดังนั้นคุณจะสร้าง ปรับเปลี่ยน และทำลายอ็อบเจกต์เหล่านี้ได้ตามต้องการ",
+    "id": "Dan kita juga bisa menghancurkan objek, bukan? Jadi, Anda bisa membuat, memanipulasi, dan menghancurkan objek sesuai keinginan.",
+    "es": "Y también podemos destruir los objetos, ¿cierto? Así que puedes crearlos, manipularlos y destruirlos cuando lo necesites.",
+    "fr": "Et nous pouvons aussi détruire les objets, n'est-ce pas ? Vous pouvez donc les créer, les manipuler et les détruire selon vos besoins.",
+    "de": "Und wir können die Objekte auch zerstören, richtig? Sie können sie also erstellen, manipulieren und nach Belieben wieder löschen."
+  },
+  "0:04:13.356": {
+    "ja": "しかし、これらのオブジェクトのそれぞれには、",
+    "zh": "但是每一个这样的对象都有一个。",
+    "th": "แต่ละวัตถุเหล่านี้ต่างก็มี",
+    "id": "Namun, masing-masing objek ini memiliki.",
+    "es": "Pero cada uno de estos objetos tiene un.",
+    "fr": "Mais chacun de ces objets a un.",
+    "de": "Aber jedes dieser Objekte hat ein."
+  },
+  "0:04:18.748": {
+    "ja": "それでは、データ抽象化についてもう少しお話ししましょう。",
+    "zh": "接下来我们再多谈一点关于数据抽象。",
+    "th": "งั้นเรามาคุยกันเพิ่มเติมเกี่ยวกับเรื่องการนามธรรมของข้อมูลกันเถอะ",
+    "id": "Jadi mari kita bahas lebih lanjut tentang abstraksi data.",
+    "es": "Hablemos un poco más sobre la abstracción de datos.",
+    "fr": "Parlons un peu plus de l'abstraction des données.",
+    "de": "Sprechen wir noch ein wenig mehr über Datenabstraktion."
+  },
+  "0:04:20.788": {
+    "ja": "何か作りたいオブジェクトが思い浮かんだら、世界にある何でもいいので、何かを考えてみてください。",
+    "zh": "一旦你有了想要创建的对象，试着想想世界上的任何事物，随便一样东西。",
+    "th": "เมื่อคุณมีวัตถุที่คุณอยากจะสร้าง ลองนึกถึงสิ่งใดสิ่งหนึ่งในโลกนี้ อะไรก็ได้",
+    "id": "Jadi, setelah Anda memiliki objek yang ingin Anda buat, coba pikirkan apa saja di dunia ini, sesuatu apa pun.",
+    "es": "Entonces, una vez que tienes un objeto que te gustaría crear, piensa en cualquier cosa en el mundo, cualquier cosa.",
+    "fr": "Donc, une fois que vous avez un objet que vous souhaitez créer, pensez à n'importe quoi dans le monde, peu importe quoi.",
+    "de": "Sobald Sie ein Objekt haben, das Sie erstellen möchten, denken Sie an irgendetwas auf der Welt, irgendetwas."
+  },
+  "0:04:31.580": {
+    "ja": "考えなければならない2つのことは、「オブジェクトをどのように表現するか」という点です。",
+    "zh": "你需要考虑的两件事是，你将如何表示这个对象。",
+    "th": "สองสิ่งที่คุณต้องคิดคือ วิธีที่คุณจะใช้ในการแสดงออบเจ็กต์นั้นคืออะไร",
+    "id": "Dua hal yang perlu Anda pikirkan adalah bagaimana cara Anda merepresentasikan objek tersebut.",
+    "es": "Las dos cosas que debes pensar son cuál va a ser la forma en que vas a representar el objeto.",
+    "fr": "Les deux choses auxquelles vous devez penser sont : quelle sera la façon dont vous allez représenter l'objet.",
+    "de": "Die zwei Dinge, über die Sie nachdenken müssen, sind: Auf welche Weise werden Sie das Objekt darstellen?"
+  },
+  "0:04:39.644": {
+    "ja": "もう一つは、このオブジェクトの振る舞いは何か、ということです。",
+    "zh": "另一个问题是，这个对象有哪些行为？",
+    "th": "อีกอย่างหนึ่งก็คือ พฤติกรรมของอ็อบเจ็กต์นี้คืออะไร?",
+    "id": "Hal lain yang perlu dipertanyakan adalah, perilaku apa saja yang dimiliki objek ini?",
+    "es": "Y lo otro es, ¿cuáles son los comportamientos de este objeto?",
+    "fr": "Et l'autre chose, c'est : quels sont les comportements de cet objet ?",
+    "de": "Und die andere Frage ist: Was sind die Verhaltensweisen dieses Objekts?"
+  },
+  "0:04:42.424": {
+    "ja": "他のプログラマーや他のオブジェクトはどのようにやりとりできますか？",
+    "zh": "其他程序员或其他对象如何进行交互？",
+    "th": "โปรแกรมเมอร์คนอื่น ๆ หรืออ็อบเจกต์อื่น ๆ จะโต้ตอบกันได้อย่างไร?",
+    "id": "Bagaimana programmer lain atau objek lain dapat berinteraksi?",
+    "es": "¿Cómo pueden interactuar otros programadores u otros objetos?",
+    "fr": "Comment d'autres programmeurs ou d'autres objets peuvent-ils interagir ?",
+    "de": "Wie können andere Programmierer oder andere Objekte interagieren?"
+  },
+  "0:04:48.988": {
+    "ja": "自分たちでオブジェクト型を作るときには、これらのデータ抽象化について考える必要があります。",
+    "zh": "当我们创建自己的对象类型时，我们需要考虑这些数据抽象。",
+    "th": "เมื่อเราสร้างประเภทอ็อบเจกต์ของตัวเอง เราต้องคำนึงถึงนามธรรมของข้อมูลเหล่านี้ด้วย",
+    "id": "Jadi saat kita membuat tipe objek sendiri, kita harus memikirkan tentang abstraksi data ini.",
+    "es": "Entonces, cuando creamos nuestro propio tipo de objeto, tenemos que pensar en estas abstracciones de datos.",
+    "fr": "Donc, lorsque nous créons notre propre type d'objet, nous devons penser à ces abstractions de données.",
+    "de": "Wenn wir unseren eigenen Objekttyp erstellen, müssen wir über diese Datenabstraktionen nachdenken."
+  },
+  "0:04:52.948": {
+    "ja": "では、もっと現実的な例を見てみましょう。例えば、実際に存在する2台の非常に具体的な車があるとしましょう。これらの車は実際に運転することができますし、操作することもできます。すでに作られている車です。",
+    "zh": "让我们来看一个更贴近现实的例子。假设我有两辆现实中确实存在的、非常具体的汽车。我们实际上可以驾驶这些汽车，也可以操作它们，它们已经被制造出来了。",
+    "th": "งั้นเรามาดูตัวอย่างที่ใกล้เคียงกับชีวิตจริงมากขึ้น สมมติว่าฉันมีรถสองคันที่เฉพาะเจาะจงจริง ๆ ซึ่งมีอยู่จริงในโลก เราสามารถขับรถเหล่านี้ได้จริง ๆ สามารถควบคุมมันได้ และมันก็ถูกสร้างขึ้นมาแล้ว",
+    "id": "Mari kita ambil contoh yang lebih nyata dalam kehidupan sehari-hari. Misalnya, saya memiliki dua mobil yang sangat spesifik dan benar-benar ada di dunia nyata. Kita benar-benar bisa mengendarai mobil-mobil ini, memanipulasinya, dan mobil-mobil ini memang sudah dibuat.",
+    "es": "Veamos un ejemplo más realista. Supongamos que tengo dos autos muy específicos que realmente existen en el mundo real. Podemos conducir estos autos, manipularlos. Ya han sido creados.",
+    "fr": "Prenons un exemple plus concret. Disons que j'ai ces deux voitures très spécifiques qui existent réellement dans le monde réel. Nous pouvons réellement conduire ces voitures, les manipuler. Elles ont déjà été créées.",
+    "de": "Nehmen wir ein etwas lebensnäheres Beispiel. Angenommen, ich habe diese zwei ganz bestimmten Autos, die tatsächlich in der realen Welt existieren. Wir können diese Autos tatsächlich fahren, wir können sie manipulieren. Sie wurden bereits hergestellt."
+  },
+  "0:05:07.008": {
+    "ja": "それらは実際のオブジェクトです。",
+    "zh": "它们是真正的对象。",
+    "th": "พวกมันเป็นอ็อบเจ็กต์จริง ๆ",
+    "id": "Mereka adalah objek yang sebenarnya.",
+    "es": "Son objetos reales.",
+    "fr": "Ce sont de véritables objets.",
+    "de": "Es sind tatsächliche Objekte."
+  },
+  "0:05:09.948": {
+    "ja": "実は舞台裏では、これらのオブジェクトは何らかの設計図を使って作られています。",
+    "zh": "其实在幕后，这些对象是通过某种蓝图创建的。",
+    "th": "เบื้องหลังนั้น วัตถุเหล่านี้ถูกสร้างขึ้นโดยใช้บลูปรินต์บางอย่าง",
+    "id": "Sebenarnya, di balik layar, objek-objek ini dibuat menggunakan suatu cetak biru.",
+    "es": "Bueno, detrás de escena, estos objetos fueron creados usando algún tipo de plano.",
+    "fr": "En coulisses, ces objets ont été créés à partir d’un certain plan directeur.",
+    "de": "Hinter den Kulissen wurden diese Objekte mit einer Art Bauplan erstellt."
+  },
+  "0:05:15.408": {
+    "ja": "この青写真は実際に触れるものではありません。これは、特定のオブジェクトを作る方法についての抽象的な概念にすぎません。",
+    "zh": "这个蓝图其实并不是一个可以触摸的实体。它基本上只是一个关于如何创建那些特定对象的抽象概念。",
+    "th": "พิมพ์เขียวนี้ไม่ได้เป็นสิ่งที่จับต้องได้จริง ๆ มันคือแนวคิดเชิงนามธรรมเกี่ยวกับวิธีสร้างวัตถุเฉพาะเหล่านั้น",
+    "id": "Cetak biru ini bukanlah sesuatu yang nyata atau berwujud. Ini pada dasarnya adalah gagasan abstrak tentang bagaimana membuat objek-objek tertentu itu.",
+    "es": "Este plano no es algo tangible en realidad. Básicamente, es una noción abstracta de cómo crear esos objetos específicos.",
+    "fr": "Ce plan n’est pas quelque chose de tangible. C’est essentiellement une notion abstraite sur la façon de créer ces objets spécifiques.",
+    "de": "Dieser Bauplan ist keine konkrete, greifbare Sache. Er ist im Grunde eine abstrakte Vorstellung davon, wie man diese bestimmten Objekte erstellt."
+  },
+  "0:05:27.228": {
+    "ja": "では、自分たちでオブジェクトの型を作ろうとするとき、設計上の判断を考えなければいけませんよね。",
+    "zh": "因此，当我们考虑创建自己的对象类型时，我们必须考虑设计决策，对吧？",
+    "th": "ดังนั้นเมื่อเรากำลังคิดจะสร้างประเภทวัตถุของเราเอง เราต้องคำนึงถึงการตัดสินใจด้านการออกแบบใช่ไหมครับ",
+    "id": "Jadi, ketika kita berpikir untuk membuat tipe objek kita sendiri, kita harus mempertimbangkan keputusan desain, bukan?",
+    "es": "Entonces, al pensar en crear nuestros propios tipos de objetos, debemos considerar las decisiones de diseño, ¿verdad?",
+    "fr": "Donc, lorsque nous réfléchissons à la création de nos propres types d'objets, nous devons prendre en compte les décisions de conception, n'est-ce pas ?",
+    "de": "Wenn wir also darüber nachdenken, eigene Objekttypen zu erstellen, müssen wir Designentscheidungen treffen, richtig?"
+  },
+  "0:05:32.428": {
+    "ja": "もし私が実際の車を作るために誰かが使える車の設計図を作りたいとしたら。",
+    "zh": "如果我想创建一个别人可以用来制造现实中汽车的蓝图。",
+    "th": "ถ้าฉันต้องการสร้างพิมพ์เขียวสำหรับรถยนต์ที่ใครสักคนสามารถใช้เพื่อสร้างรถยนต์จริงในชีวิตจริงได้",
+    "id": "Jika saya ingin membuat cetak biru untuk mobil yang kemudian bisa digunakan seseorang untuk membuat mobil nyata di kehidupan nyata.",
+    "es": "Si quiero crear un plano para un coche que alguien luego pueda usar para construir un auto real en la vida real.",
+    "fr": "Si je veux créer un plan pour une voiture que quelqu'un pourra ensuite utiliser pour fabriquer une vraie voiture dans la vie réelle.",
+    "de": "Wenn ich eine Blaupause für ein Auto erstellen möchte, die jemand verwenden kann, um ein echtes Auto im wirklichen Leben zu bauen."
+  },
+  "0:05:42.364": {
+    "ja": "そして、私たち自身でこれらのオブジェクトを作成しているので、どんなデザインにするか自分たちで決められるのが、とても面白いところです。",
+    "zh": "由于我们是自己创建这些对象，所以可以自己做出这些设计决策，这其实非常酷。",
+    "th": "และเนื่องจากเราเป็นคนสร้างวัตถุเหล่านี้เอง เราจึงสามารถตัดสินใจเรื่องการออกแบบได้ด้วยตัวเอง ซึ่งก็เจ๋งมาก",
+    "id": "Dan karena kita membuat objek-objek ini sendiri, kita bisa mengambil keputusan desainnya sendiri, yang mana itu cukup keren.",
+    "es": "Y como estamos creando estos objetos nosotros mismos, podemos tomar estas decisiones de diseño, lo cual es bastante genial.",
+    "fr": "Et comme nous créons nous-mêmes ces objets, nous pouvons prendre ces décisions de conception, ce qui est vraiment cool.",
+    "de": "Und da wir diese Objekte selbst erstellen, können wir auch die Designentscheidungen selbst treffen, was ziemlich cool ist."
+  },
+  "0:05:44.004": {
+    "ja": "もし私がこの車を作るとしたら、車の設計図を作るとしたら、たとえば車の長さ、幅、高さ、そして色を使おうと考えるでしょう。",
+    "zh": "如果我要设计这辆车的蓝图，我可能会用到车的长度、宽度、高度，还有车的颜色。",
+    "th": "ถ้าผมจะสร้างรถยนต์คันนี้ คือวางแบบแปลนของรถ ผมก็จะใช้เช่น ความยาวรถ ความกว้างรถ ความสูงรถ และสีก็ด้วย",
+    "id": "Jadi kalau saya membuat mobil ini, gambar rancangannya, saya akan menggunakan misalnya panjang mobil, lebar mobil, tinggi mobil, dan warna mobil.",
+    "es": "Si yo estuviera creando este coche, el plano del coche, diría que voy a usar, por ejemplo, la longitud del coche, el ancho, la altura, y el color del coche.",
+    "fr": "Si je devais créer cette voiture, la conception de la voiture, je dirais que j'utiliserais peut-être la longueur de la voiture, la largeur, la hauteur et la couleur de la voiture.",
+    "de": "Wenn ich dieses Auto entwerfen würde, also einen Bauplan für ein Auto erstellen müsste, würde ich zum Beispiel die Länge, die Breite, die Höhe und die Farbe des Autos angeben."
+  },
+  "0:05:57.084": {
+    "ja": "そして、それら4つのデータ属性が表すのは",
+    "zh": "这四个数据属性将代表",
+    "th": "และแอตทริบิวต์ข้อมูลทั้งสี่นี้จะเป็นตัวแทนของ",
+    "id": "Dan keempat atribut data tersebut akan merepresentasikan",
+    "es": "Y esos cuatro atributos de datos representarán",
+    "fr": "Et ces quatre attributs de données vont représenter",
+    "de": "Und diese vier Datenattribute werden repräsentieren"
+  },
+  "0:06:02.364": {
+    "ja": "でももちろん、それは私の設計の判断ですよね。もしあなたが車にもっと詳しかったり、もっと詳細な説明や表現をしたい場合は、馬力がいくつあるか、ドアが何枚あるか、何人乗れるか、そういった他の情報も含めることになるでしょう。",
+    "zh": "但当然，这只是我的设计选择。如果你对汽车更加熟悉，或者你想更详细地描述或表示汽车，你可能还会添加马力数、有几扇门、能坐几个人之类的其他信息。",
+    "th": "แต่แน่นอนว่านั่นคือการตัดสินใจในการออกแบบของฉันใช่ไหมครับ ถ้าคุณคุ้นเคยกับรถยนต์มากกว่านี้ หรืออยากอธิบายรายละเอียดหรือสร้างตัวแทนในเชิงลึกมากขึ้น คุณก็อาจระบุจำนวนแรงม้า จำนวนประตู หรือจำนวนคนที่รถคันนั้นบรรจุได้ หรือข้อมูลอื่น ๆ เช่นนั้น",
+    "id": "Tentu saja, itu adalah keputusan desain saya, bukan? Jika Anda lebih akrab dengan mobil atau ingin memberikan deskripsi atau representasi yang lebih detail, Anda juga bisa menyertakan informasi seperti berapa banyak tenaga kuda, berapa pintu, atau berapa banyak orang yang bisa masuk, dan hal-hal lain semacam itu.",
+    "es": "Pero claro, esa es mi decisión de diseño, ¿verdad? Si estás más familiarizado con los autos o si quisieras hacer una descripción o representación más detallada, también podrías incluir cuántos caballos de fuerza tiene, cuántas puertas, cuántas personas caben, y otras cosas así.",
+    "fr": "Mais bien sûr, c'est ma décision de conception, n'est-ce pas ? Si vous êtes plus familier avec les voitures ou si vous souhaitez fournir une description ou une représentation plus détaillée, vous pourriez aussi indiquer le nombre de chevaux, le nombre de portes, combien de personnes peuvent y entrer, et d'autres informations de ce genre.",
+    "de": "Aber natürlich ist das meine Designentscheidung, richtig? Wenn Sie sich besser mit Autos auskennen oder eine detailliertere Beschreibung oder Darstellung möchten, könnten Sie auch angeben, wie viel PS das Auto hat, wie viele Türen es hat, wie viele Personen hineinpassen, und andere solche Informationen."
+  },
+  "0:06:19.644": {
+    "ja": "しかし、自動車の非常に単純なデータ抽象化は、長さや幅です。",
+    "zh": "但是，对汽车而言，一个非常简单的数据抽象就是长度和宽度。",
+    "th": "แต่การนามธรรมข้อมูลอย่างง่ายมากสำหรับรถยนต์ก็คือ ความยาวและความกว้าง",
+    "id": "Namun, abstraksi data yang sangat sederhana untuk sebuah mobil adalah panjang dan lebar.",
+    "es": "Pero una abstracción de datos muy simple para un coche es la longitud y el ancho.",
+    "fr": "Mais une abstraction de données très simple pour une voiture, c'est la longueur et la largeur.",
+    "de": "Aber eine sehr einfache Datenabstraktion für ein Auto ist die Länge und die Breite."
+  },
+  "0:06:26.908": {
+    "ja": "これがデータ抽象化です。では、このオブジェクトを作成しようとするとき、どんなデータがそのオブジェクトを表すのでしょうか？",
+    "zh": "这就是数据抽象。那么，你要创建的这个对象是由哪些数据来表示的呢？",
+    "th": "นั่นคือการสรุปข้อมูล แล้วข้อมูลแบบใดที่เป็นตัวแทนของอ็อบเจกต์ที่คุณกำลังจะสร้างนี้?",
+    "id": "Itulah yang disebut abstraksi data. Jadi, data apa yang mewakili objek yang ingin Anda buat?",
+    "es": "Eso es la abstracción de datos. Entonces, ¿qué datos representan el objeto que estás tratando de crear?",
+    "fr": "C'est cela l'abstraction des données. Alors, quelles données représentent l'objet que vous essayez de créer ?",
+    "de": "Das ist Datenabstraktion. Welche Daten repräsentieren also das Objekt, das Sie erstellen möchten?"
+  },
+  "0:06:29.228": {
+    "ja": "では、インターフェースについてはどうでしょうか？",
+    "zh": "那么，接口呢？",
+    "th": "แล้วส่วนของอินเตอร์เฟซล่ะ?",
+    "id": "Lalu, bagaimana dengan antarmukanya?",
+    "es": "¿Y qué hay de la interfaz?",
+    "fr": "Et l'interface alors ?",
+    "de": "Wie sieht es mit dem Interface aus?"
+  },
+  "0:06:32.628": {
+    "ja": "インターフェースに関しては、プログラマーがそのオブジェクトや他のオブジェクトがこのオブジェクトとどのようにやり取りできるかを決めます。",
+    "zh": "在接口方面，我们决定程序员或其他对象可以通过哪些方式与这个对象交互。",
+    "th": "ในแง่ของอินเทอร์เฟซ เราตัดสินใจว่ามีวิธีใดบ้างที่โปรแกรมเมอร์หรืออ็อบเจ็กต์อื่นจะสามารถโต้ตอบกับอ็อบเจ็กต์นี้ได้",
+    "id": "Dalam hal antarmuka, kita memutuskan bagaimana cara para pemrogram atau objek lain dapat berinteraksi dengan objek ini.",
+    "es": "En cuanto a la interfaz, decidimos de qué maneras los programadores o otros objetos pueden interactuar con este objeto.",
+    "fr": "En ce qui concerne l'interface, nous décidons des différentes manières dont les programmeurs ou d'autres objets peuvent interagir avec cet objet.",
+    "de": "Bezüglich der Schnittstelle legen wir fest, auf welche Weise Programmierer oder andere Objekte mit diesem Objekt interagieren können."
+  },
+  "0:06:41.008": {
+    "ja": "たとえば、ユーザーに変更を許可することもできますし、車に音を出させる、つまりクラクションを鳴らすといった機能を持たせることもできると言えます。これは、この車が持つ1つの機能になるかもしれません。",
+    "zh": "所以我们可以说，我们可以让用户进行一些更改。我们也可以说让汽车发出声音，比如按喇叭，这可能是这辆车可以做的一项功能。",
+    "th": "ดังนั้นเราสามารถพูดได้ว่าเราอาจให้ผู้ใช้เปลี่ยนแปลงบางอย่างได้ หรือเราจะให้รถสามารถส่งเสียงได้ เช่น การบีบแตร นี่ก็อาจเป็นหนึ่งในฟังก์ชันที่รถคันนี้สามารถทำได้",
+    "id": "Jadi kita bisa bilang bahwa kita bisa membiarkan pengguna melakukan perubahan. Kita juga bisa bilang bahwa kita bisa membuat mobil mengeluarkan suara, misalnya membunyikan klakson—itu bisa menjadi salah satu fungsi yang bisa dilakukan mobil ini.",
+    "es": "Entonces podríamos decir que podríamos permitir que los usuarios hagan cambios. También podríamos decir que el auto puede hacer un sonido, como tocar la bocina; esa podría ser una de las funciones que este auto podría tener.",
+    "fr": "Donc on pourrait dire que l'on peut permettre aux utilisateurs de faire des modifications. On peut aussi dire que la voiture peut faire un bruit, comme klaxonner; ce pourrait être une des fonctions que cette voiture peut accomplir.",
+    "de": "Wir könnten also sagen, dass wir es den Nutzern erlauben könnten, Änderungen vorzunehmen. Oder wir könnten sagen, dass das Auto ein Geräusch machen kann, also zum Beispiel die Hupe betätigen – das wäre eine Funktion, die dieses Auto haben könnte."
+  },
+  "0:06:56.464": {
+    "ja": "もしクラクションを鳴らしてと言ったら、画面に何かを表示するかもしれませんよね？",
+    "zh": "如果我们说按喇叭，那你可能会在屏幕上显示一些内容，对吧？",
+    "th": "ถ้าเราบอกให้บีบแตร บางทีคุณอาจจะแสดงอะไรบางอย่างบนหน้าจอใช่ไหม?",
+    "id": "Dan jika kita mengatakan bunyikan klakson, mungkin kamu akan mencetak sesuatu ke layar, kan?",
+    "es": "Y si decimos tocar la bocina, entonces tal vez imprimirías algo en la pantalla, ¿verdad?",
+    "fr": "Et si on dit de klaxonner, alors peut-être que vous afficheriez quelque chose à l'écran, n'est-ce pas ?",
+    "de": "Und wenn wir sagen, hup die Hupe, dann würdest du vielleicht etwas auf dem Bildschirm ausgeben, oder?"
+  },
+  "0:07:01.404": {
+    "ja": "そのような感じです。そして、車をA地点からB地点へ走らせたり、車を円を描くように動かすこともできます。",
+    "zh": "大致就是这样。然后我们可以让汽车从A点开到B点，或者让汽车绕圈行驶。",
+    "th": "ประมาณนั้น แล้วเราก็สามารถให้รถขับจากจุด A ไปจุด B หรือให้รถวิ่งเป็นวงกลมก็ได้",
+    "id": "Seperti itu. Lalu kita bisa membuat mobil berjalan dari titik A ke titik B, atau kita bisa membuat mobil berjalan melingkar.",
+    "es": "Algo así. Y luego podemos hacer que el coche vaya del punto A al punto B, o que el coche dé vueltas en círculo.",
+    "fr": "Quelque chose comme ça. Ensuite, on peut faire avancer la voiture du point A au point B, ou la faire tourner en cercle.",
+    "de": "So in etwa. Wir könnten dann das Auto von Punkt A nach Punkt B fahren lassen oder es im Kreis fahren lassen."
+  },
+  "0:07:09.044": {
+    "ja": "車が別の車と衝突することもできます。",
+    "zh": "你可以让这辆车撞上另一辆车。",
+    "th": "คุณอาจทำให้รถชนกับรถคันอื่นก็ได้",
+    "id": "Anda dapat membuat mobil tersebut menabrak mobil lain.",
+    "es": "Podrías hacer que el coche choque con otro coche.",
+    "fr": "Vous pourriez faire en sorte que la voiture en percute une autre.",
+    "de": "Man könnte das Auto mit einem anderen Auto kollidieren lassen."
+  },
+  "0:07:10.244": {
+    "ja": "そして、これらすべての動作がこの特定の車のインターフェースの一部となっています。",
+    "zh": "而所有这些行为都是这个特定汽车接口的一部分。",
+    "th": "และพฤติกรรมเหล่านี้ทั้งหมดก็เป็นส่วนหนึ่งของอินเทอร์เฟซสำหรับรถคันนี้",
+    "id": "Dan semua perilaku ini adalah bagian dari antarmuka untuk mobil tertentu ini.",
+    "es": "Y todos estos comportamientos forman parte de la interfaz de este coche en particular.",
+    "fr": "Et tous ces comportements font partie de l'interface de cette voiture en particulier.",
+    "de": "Und all diese Verhaltensweisen sind Teil der Schnittstelle dieses speziellen Autos."
+  },
+  "0:07:14.504": {
+    "ja": "しかし、ここから作成するすべての車、つまり作成されるすべての実際のオブジェクトが、これらすべての振る舞いとデータ属性を持つように定義していきます。",
+    "zh": "但是我们会这样定义它们，以确保从现在开始我们创建的任何汽车，也就是我们实例化的每一个对象，都拥有所有这些行为和数据属性。",
+    "th": "แต่เราจะนิยามมันไว้เพื่อให้รถยนต์ทุกคันที่เราสร้างต่อจากนี้ไป ไม่ว่าจะเป็นอ็อบเจกต์จริงใด ๆ ก็จะมีพฤติกรรมเหล่านี้และแอตทริบิวต์ข้อมูลเหล่านี้ทั้งหมด",
+    "id": "Namun kita akan mendefinisikannya sedemikian rupa sehingga setiap mobil yang kita buat mulai sekarang, setiap objek nyata yang kita buat, akan memiliki semua perilaku dan atribut data ini.",
+    "es": "Pero los vamos a definir de tal manera que cualquier coche que creemos a partir de ahora, cualquier objeto real que creemos, tendrá todos estos comportamientos y todos estos atributos de datos.",
+    "fr": "Mais nous allons les définir de telle sorte que toute voiture que nous créerons à partir de maintenant, tout objet réel que nous créerons, aura tous ces comportements et tous ces attributs de données.",
+    "de": "Aber wir werden sie so definieren, dass jedes Auto, das wir von jetzt an erstellen, jedes tatsächliche Objekt, das wir erstellen, all diese Verhaltensweisen und all diese Datenattribute haben wird."
+  },
+  "0:07:27.104": {
+    "ja": "もう少し身近な例として、リストがあります。これまでリストを使ってきましたが、実は舞台裏で誰かがリストというデータ型を作ったのです。",
+    "zh": "一个更贴近我们例子是列表。到目前为止我们一直在使用列表。其实在幕后，有人定义了列表这种数据类型。",
+    "th": "ตัวอย่างที่ใกล้ตัวเราหน่อยก็คือ ลิสต์ เราได้ทำงานกับลิสต์มาตลอด ที่เบื้องหลังนั้นมีคนสร้างชนิดข้อมูลที่ชื่อว่าลิสต์ขึ้นมา",
+    "id": "Contoh yang lebih dekat dengan kita adalah list. Selama ini kita sudah bekerja dengan list. Jadi di balik layar, seseorang telah membuat tipe data list.",
+    "es": "Un ejemplo más cercano es la lista. Hemos estado trabajando con listas hasta ahora. Así que, detrás de escena, alguien creó el tipo de dato lista.",
+    "fr": "Un exemple un peu plus proche de nous, c'est la liste. Nous avons travaillé avec des listes jusqu'à présent. En fait, en coulisses, quelqu'un a créé le type de donnée liste.",
+    "de": "Ein Beispiel, das uns näher liegt, ist die Liste. Wir haben bisher mit Listen gearbeitet. Im Hintergrund hat also jemand den Datentyp Liste erstellt."
+  },
+  "0:07:37.564": {
+    "ja": "つまり、Pythonには、リストを構成するデータ、つまりデータ属性を定義するコードがあるということです。",
+    "zh": "也就是说，Python 中有一些代码基本上定义了这个列表所包含的数据，也就是数据属性。",
+    "th": "กล่าวคือในภาษา Python จะมีโค้ดที่กำหนดข้อมูลซึ่งประกอบเป็นลิสต์หรือแอตทริบิวต์ของข้อมูลนั้นเอง",
+    "id": "Jadi, ada kode di Python yang pada dasarnya mendefinisikan data yang membentuk daftar itu, yaitu atribut data.",
+    "es": "Entonces, hay un código en Python que básicamente define los datos que componen la lista, es decir, los atributos de datos.",
+    "fr": "Donc, il y a du code en Python qui définit essentiellement les données constituant la liste, c'est-à-dire les attributs de données.",
+    "de": "Es gibt also Code in Python, der im Grunde die Daten definiert, aus denen die Liste besteht, also die Datenattribute."
+  },
+  "0:07:47.064": {
+    "ja": "リストはどのように記述され、その振る舞いや手続き、リストに関連する関数はどのようなものか…",
+    "zh": "列表是如何描述的，以及列表的行为、过程、相关函数又是如何的……",
+    "th": "ลิสต์ถูกอธิบายอย่างไร และพฤติกรรม วิธีการ ฟังก์ชันต่าง ๆ ที่เกี่ยวข้องกับลิสต์...",
+    "id": "Bagaimana sebuah list dijelaskan, serta perilaku, prosedur, fungsi-fungsi yang berkaitan dengan list...",
+    "es": "¿Cómo se describe una lista, y cuáles son los comportamientos, procedimientos y funciones asociados a una lista...?",
+    "fr": "Comment une liste est-elle décrite, ainsi que les comportements, les procédures, les fonctions associés à une liste...",
+    "de": "Wie wird eine Liste beschrieben und welche Verhaltensweisen, Prozeduren, Funktionen hat eine Liste..."
+  },
+  "0:07:54.940": {
+    "ja": "データ属性に関して言えば、このリストクラスを作成した人が下せた設計上の決定はたくさんあります。",
+    "zh": "关于数据属性，创建这个列表类的人其实可以做出许多不同的设计决策。",
+    "th": "ในแง่ของคุณลักษณะข้อมูล จริงๆ แล้วมีตัวเลือกการออกแบบมากมายที่ผู้ออกแบบคลาส list นี้สามารถเลือกได้",
+    "id": "Dalam hal atribut data, sebenarnya ada banyak keputusan desain yang bisa diambil oleh pembuat kelas list ini.",
+    "es": "En cuanto a los atributos de datos, hay muchas decisiones de diseño que la persona que creó esta clase de lista podría haber tomado.",
+    "fr": "En ce qui concerne les attributs de données, il y a de nombreuses décisions de conception que la personne ayant créé cette classe de liste aurait pu prendre.",
+    "de": "Was die Datenattribute betrifft, so gibt es viele Designentscheidungen, die die Person, die diese List-Klasse erstellt hat, hätte treffen können."
+  },
+  "0:08:00.800": {
+    "ja": "彼らはリストをどのように表現できたのでしょうか？",
+    "zh": "他们本可以如何表示这个列表？",
+    "th": "พวกเขาอาจจะแทนค่า list ได้อย่างไรบ้าง?",
+    "id": "Bagaimana mereka bisa merepresentasikan daftar tersebut?",
+    "es": "¿Cómo podrían haber representado la lista?",
+    "fr": "Comment auraient-ils pu représenter la liste ?",
+    "de": "Wie hätten sie die Liste darstellen können?"
+  },
+  "0:08:03.580": {
+    "ja": "例えば、連続したメモリ領域を割り当てて、その中に要素を順番に格納します、というふうにもできたわけですね。小さいメモリアドレスから順番に要素が入ります。",
+    "zh": "他们本可以说，我将分配一个连续的内存块，然后你的元素就会按顺序存放在那里，对吧，从最小的内存地址开始。",
+    "th": "พวกเขาอาจจะบอกว่า เราจะจัดสรรบล็อกของหน่วยความจำที่ติดกัน แล้วองค์ประกอบแต่ละตัวก็จะถูกจัดเรียงตามลำดับ จากตำแหน่งหน่วยความจำที่เล็กที่สุด",
+    "id": "Mereka bisa saja memutuskan untuk mengalokasikan sebuah blok memori yang berurutan, dan elemen-elemennya akan ditempatkan sesuai urutan itu, dimulai dari alamat memori terkecil.",
+    "es": "Por ejemplo, podrían haber decidido asignar un bloque contiguo de memoria, y tus elementos irían en ese orden, empezando desde la dirección de memoria más baja.",
+    "fr": "Ils auraient pu dire : je vais allouer un bloc contigu de mémoire, et vos éléments seront placés dans cet ordre, à partir de l'adresse mémoire la plus petite.",
+    "de": "Man hätte auch sagen können: Ich reserviere einen zusammenhängenden Speicherblock, und deine Elemente werden in dieser Reihenfolge abgelegt, angefangen bei der kleinsten Speicheradresse."
+  },
+  "0:08:15.452": {
+    "ja": "一つの設計上の決定です。別の選択肢としては、連続したメモリブロックを割り当てる代わりに、あちこちにメモリを割り当てることもできます。",
+    "zh": "这是一种设计决策。另一种方法是，不用分配一整块连续的内存，你可以把内存分散在不同的位置分配。",
+    "th": "นี่เป็นการตัดสินใจในการออกแบบอย่างหนึ่ง อีกวิธีหนึ่งก็คือ แทนที่จะจัดสรรหน่วยความจำที่เป็นบล็อกต่อเนื่องกัน คุณอาจจะจัดสรรหน่วยความจำแบบกระจายก็ได้",
+    "id": "Itu adalah salah satu keputusan desain. Pilihan lain adalah, alih-alih mengalokasikan blok memori yang bersebelahan, Anda bisa mengalokasikan memori di tempat-tempat yang berbeda.",
+    "es": "Esa es una decisión de diseño. Otra opción podría ser que, en lugar de asignar un bloque contiguo de memoria, podrías asignar la memoria en diferentes lugares.",
+    "fr": "C'est une décision de conception. Une autre option pourrait être qu'au lieu d'allouer un bloc de mémoire contigu, on pourrait allouer la mémoire à différents endroits.",
+    "de": "Das ist eine Designentscheidung. Eine andere Möglichkeit wäre, dass man statt eines zusammenhängenden Speicherblocks den Speicher an verschiedenen Stellen zuweist."
+  },
+  "0:08:21.392": {
+    "ja": "大丈夫です。",
+    "zh": "没关系。",
+    "th": "ไม่เป็นไรครับ",
+    "id": "Tidak apa-apa.",
+    "es": "Está bien.",
+    "fr": "Ce n'est pas grave.",
+    "de": "Das ist in Ordnung."
+  },
+  "0:08:24.832": {
+    "ja": "しかし、私のリストの各要素は、2つのものによって表されます。1つ目はその場所にある値で、2つ目はPythonがリスト内の次の要素を取得するためにどのメモリアドレスに行けばいいかを示す他の整数などです。",
+    "zh": "但是，我列表中的每个元素都会由两个部分来表示，第一个是该位置的值，第二个可能是另一个整数之类的东西，用来告诉Python下一个元素在内存中的位置。",
+    "th": "แต่ละองค์ประกอบในลิสต์ของผมก็จะถูกแทนด้วยสองสิ่ง อย่างแรกคือค่าที่ตำแหน่งนั้น และอย่างที่สองอาจเป็นจำนวนเต็มอีกตัวหรือข้อมูลที่บอก Python ว่าควรไปที่ตำแหน่งหน่วยความจำไหนเพื่อนำเอาองค์ประกอบถัดไปในลิสต์มาใช้",
+    "id": "Tetapi kemudian setiap elemen dalam daftar saya akan diwakili oleh dua hal, yang pertama adalah nilai pada lokasi itu, dan yang kedua mungkin berupa bilangan bulat lain atau hal lain yang memberitahu Python ke lokasi memori mana harus pergi untuk mendapatkan elemen berikutnya dalam daftar.",
+    "es": "Pero entonces, cada elemento en mi lista será representado por dos cosas: la primera es el valor en esa posición, y la segunda podría ser otro entero, o algo que le indique a Python a qué ubicación de memoria debe ir para obtener el siguiente elemento de la lista.",
+    "fr": "Mais alors, chaque élément de ma liste sera représenté par deux choses : la première est la valeur à cet emplacement, et la seconde peut être un autre entier ou quelque chose qui indique à Python à quel emplacement mémoire aller pour obtenir l’élément suivant de la liste.",
+    "de": "Aber dann wird jedes Element in meiner Liste durch zwei Dinge dargestellt: Das erste ist der Wert an dieser Stelle, und das zweite könnte eine weitere Zahl oder etwas sein, das Python sagt, an welche Speicheradresse es gehen muss, um das nächste Element in der Liste zu finden."
+  }
+}
