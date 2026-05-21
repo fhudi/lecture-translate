@@ -104,7 +104,11 @@ class BaseModel:
         # ===================== #
 
         _cur_time_ = datetime.now().strftime("%y%m%d_%H%M%S")
-        outdir = Path(f"preds_{output_suffix}_{context}_{_cur_time_}_{os.getenv('SLURM_JOB_ID', 'NA')}")
+        _outdir_suffix_ = (
+            f"{os.getenv('SLURM_ARRAY_JOB_ID', 'NA')}_{os.getenv('SLURM_ARRAY_TASK_ID', 'NA')}"
+            if 'SLURM_ARRAY_JOB_ID' in os.environ else os.getenv('SLURM_JOB_ID', 'NA')
+        )
+        outdir = Path(f"preds_{output_suffix}_{context}_{_cur_time_}_{_outdir_suffix_}")
         outdir.mkdir(parents=True, exist_ok=True)
 
         st, ed = rg_idx or (0, len(datas_transcript_text))
