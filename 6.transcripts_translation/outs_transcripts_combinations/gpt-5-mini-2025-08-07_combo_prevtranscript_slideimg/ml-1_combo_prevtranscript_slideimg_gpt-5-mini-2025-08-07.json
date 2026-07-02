@@ -1,0 +1,669 @@
+{
+  "0:37:06.216": {
+    "ja": [
+      "本当に話したいのは動的ベイズネットワークのことで、これは一歩進んだものであり、さらにそのマルチモーダル拡張にも着目し始めたいと思っています。マルチモーダルを見るのは非常に興味深いからです。"
+    ],
+    "zh": [
+      "我真正想讨论的是动态贝叶斯网络——它更进一步——我们也开始研究它的多模态扩展，因为研究多模态非常有趣。"
+    ],
+    "th": [
+      "สิ่งที่ผมอยากพูดถึงจริงๆ คือเครือข่ายแบย์เชียนเชิงพลวัต ซึ่งเป็นก้าวต่อไป และเรายังเริ่มมองการขยายแบบมัลติโมดัลของมันด้วย เพราะค่อนข้างน่าสนใจที่จะศึกษามัลติโมดัล"
+    ],
+    "id": [
+      "Yang sebenarnya ingin saya bicarakan adalah bahwa jaringan Bayesian dinamis merupakan langkah selanjutnya, dan kita juga mulai melihat ekstensi multimodal dari itu, karena cukup menarik untuk melihat aspek multimodalnya."
+    ],
+    "es": [
+      "Lo que realmente quiero tratar es que la red bayesiana dinámica supone un paso más, y también empezar a explorar sus extensiones multimodales, porque resulta bastante interesante estudiar los aspectos multimodales."
+    ],
+    "fr": [
+      "Ce dont je veux vraiment parler, c'est que le réseau bayésien dynamique constitue une étape supplémentaire, et qu'il faut aussi commencer à examiner ses extensions multimodales, car il est assez intéressant d'étudier le multimodal."
+    ],
+    "de": [
+      "Worüber ich eigentlich sprechen möchte, ist, dass das dynamische Bayessche Netzwerk einen Schritt weiter geht und dass man auch beginnen sollte, multimodale Erweiterungen davon zu untersuchen, weil es sehr interessant ist, sich das Multimodale anzusehen."
+    ]
+  },
+  "0:37:11.900": {
+    "ja": [
+      "最近では多くの人がニューラルアーキテクチャを採用しており、近年はマルチモーダルに対してグラフィカルモデルがあまり使われなくなっています。しかし興味深いことに、マルチモーダルなニューラルアーキテクチャに見られる概念の多くは、実際には初期の段階でグラフィカルモデルのいくつかの構造から着想を得たものです。動的ベイズネットワークは基本的にはベイズネットワークですが、時系列データや単なる逐次的依存といった順序的な依存関係を表現することができます。典型的な動的ベイズネットワークは、いわゆる一次マルコフ仮定を持ちます。"
+    ],
+    "zh": [
+      "尽管现在很多人都采用神经网络架构，近年来人们在多模态领域不太使用图模型了，但有意思的是，你在多模态神经架构中看到的许多概念，实际上早期就是从我们在图模型中使用的一些结构中得到启发的。动态贝叶斯网络本质上是一个贝叶斯网络，但它允许表示序列依赖或时间依赖（如果你的数据有时间性的话），或者只是一般的顺序依赖。典型的动态贝叶斯网络会有所谓的一阶马尔可夫假设。"
+    ],
+    "th": [
+      "แม้ว่าในปัจจุบันผู้คนจำนวนมากจะหันไปใช้สถาปัตยกรรมแบบนิวรัล และในช่วงไม่กี่ปีมานี้คนก็ไม่ได้ใช้แบบจำลองเชิงกราฟกันมากนักสำหรับงานนิวรัลหรือมัลติโมดัล แต่สิ่งที่น่าสนใจก็คือแนวคิดหลายอย่างที่เห็นในสถาปัตยกรรมนิวรัลแบบมัลติโมดัลจริงๆ แล้วได้รับแรงบันดาลใจมาตั้งแต่ต้นจากสถาปัตยกรรมบางอย่างในแบบจำลองเชิงกราฟ ดังนั้นเครือข่ายเบย์เซียนแบบไดนามิกเป็นเครือข่ายเบย์เซียนโดยแกนหลัก แต่อนุญาตให้แทนความขึ้นต่อกันเป็นลำดับหรือเชิงเวลาได้หากข้อมูลของคุณเป็นเชิงเวลา หรือเป็นเพียงความขึ้นต่อกันตามลำดับ เครือข่ายเบย์เซียนแบบไดนามิกทั่วไปมักมีสิ่งที่เรียกว่า สมมติฐานมาร์คอฟลำดับหนึ่ง"
+    ],
+    "id": [
+      "Meskipun akhir-akhir ini banyak orang memilih arsitektur neural dan dalam beberapa tahun terakhir orang tidak lagi sering menggunakan model grafis untuk sistem neural, terutama multimodal, yang menarik adalah banyak konsep yang Anda lihat dalam arsitektur neural multimodal sebenarnya terinspirasi sejak awal dari beberapa arsitektur yang ada pada model grafis. Jadi jaringan Bayesian dinamis pada dasarnya adalah sebuah jaringan Bayesian, tetapi memungkinkan merepresentasikan ketergantungan berurutan atau temporal jika data Anda bersifat temporal, atau sekadar ketergantungan berurutan. Jaringan Bayesian dinamis yang tipikal memiliki apa yang disebut asumsi Markov orde pertama."
+    ],
+    "es": [
+      "Aunque hoy en día mucha gente apuesta por arquitecturas neuronales y en los últimos años los modelos gráficos no se han utilizado tanto en entornos neuronales multimodales, lo realmente interesante es que muchos de los conceptos que ves en las arquitecturas neuronales multimodales, de hecho, se inspiraron desde temprano en algunas de las arquitecturas que teníamos en los modelos gráficos. Así que la red bayesiana dinámica es, en esencia, una red bayesiana, pero permite representar dependencias secuenciales o temporales, es decir, si tus datos tienen carácter temporal. La red bayesiana dinámica típica incorpora lo que se llama la suposición de Markov de primer orden."
+    ],
+    "fr": [
+      "Bien qu'aujourd'hui beaucoup de gens optent pour des architectures neuronales et que, ces dernières années, on ait moins utilisé les modèles graphiques pour les approches neuronales multimodales, il est vraiment intéressant de constater que nombre des concepts que l'on retrouve dans les architectures neuronales multimodales ont en fait été inspirés dès le départ par certaines de ces architectures issues des modèles graphiques. Le réseau bayésien dynamique est, dans son principe, un réseau bayésien, mais il permet de représenter des dépendances séquentielles ou temporelles lorsque vos données sont de nature temporelle, ou simplement des dépendances séquentielles. Un réseau bayésien dynamique typique repose sur ce qu'on appelle l'hypothèse de Markov d'ordre un."
+    ],
+    "de": [
+      "Obwohl heutzutage viele Leute auf neuronale Architekturen setzen und man in den letzten Jahren grafische Modelle weniger für neuronale—äh—für multimodale Anwendungen verwendet hat, ist das wirklich Interessante, dass viele Konzepte, die man in multimodalen neuronalen Architekturen sieht, tatsächlich schon früh von einigen dieser Architekturen in grafischen Modellen inspiriert wurden. Ein dynamisches Bayessches Netzwerk ist im Kern ein Bayessches Netzwerk, ermöglicht aber die Darstellung sequentieller bzw. zeitlicher Abhängigkeiten, falls Ihre Daten zeitlich sind, oder einfach nur sequentielle Abhängigkeiten. Ein typisches dynamisches Bayessches Netzwerk beruht auf der sogenannten Markov-Annahme erster Ordnung."
+    ]
+  },
+  "": {
+    "ja": [
+      "これらの変数の多くは、潜在変数であれ、時には観測される変数であれ、そういったものです。これらの潜在変数や観測変数は、情報をクラスタ化したり要約したりする手段として使われることがよくあります。ですからこれを見ると、「もし私が 'if I was to generate the yellow house closed' を生成するとしたら…」と言っています。ああ、その 'closed' は変だし、ちょっと変な英語の文です。どの状態の列があればこれらの単語を最も高い確率で生成できるか──ということを、隠れマルコフモデルは推論の観点から推定しようとする、というわけです。"
+    ],
+    "zh": [
+      "这些变量，比如这些要么是潜在变量，要么有时候是观测到的变量，嗯、呃。 这些潜在或观测变量，往往可以用来做聚类、概括信息。 所以如果你看这个，它说，“嘿，如果我要生成，呃，如果我要生成 ‘the yellow house closed’。那是个奇怪的，呃，‘closed’。那句英文有点奇怪。哪一种状态序列能让我最有可能生成这些词？这就是隐马尔可夫在从推断角度看时会试图推断的东西。”"
+    ],
+    "th": [
+      "ตัวแปรพวกนี้หลายตัว เช่น ตัวแปรแฝง หรือบางครั้งตัวแปรที่สังเกตได้ อืม ตัวแปรแฝงหรือตัวแปรที่สังเกตได้เหล่านี้ มักถูกใช้เป็นวิธีในการจัดกลุ่มหรือสรุปข้อมูล ดังนั้นถ้าดูตรงนี้ มันจะพูดว่า “เอ่อ ถ้าฉันจะสร้าง… ถ้าฉันจะสร้างประโยค ‘บ้านสีเหลืองปิด’ นั่นเป็นประโยคภาษาอังกฤษที่ค่อนข้างแปลก” ลำดับสถานะแบบไหนที่จะทำให้ผมมีความน่าจะเป็นสูงสุดในการสร้างคำเหล่านี้ทั้งหมด? นั่นแหละคือสิ่งที่โมเดลมาร์คอฟแฝงจะพยายามอนุมานเมื่อมองจากมุมมองการอนุมาน"
+    ],
+    "id": [
+      "Banyak variabel ini, seperti variabel laten ini atau bahkan terkadang variabel yang teramati, um uh. Variabel laten atau teramati ini sering bisa digunakan sebagai cara untuk untuk mengelompokkan, untuk merangkum informasi. Jadi jika Anda melihat ini, tertulis, \"Hei, jika saya menghasilkan uh jika saya menghasilkan 'the yellow house closed'.\" Itu aneh, uh 'closed', uh. Itu agak aneh sebagai kalimat bahasa Inggris. Apa urutan keadaan yang akan uh memungkinkan saya — paling mungkin — untuk menghasilkan semua kata ini? Itulah yang akan coba disimpulkan oleh model Markov tersembunyi ketika dilihat dari perspektif inferensi."
+    ],
+    "es": [
+      "Muchas de estas variables, ya sean variables latentes o incluso a veces variables observadas... Estas variables latentes u observadas a menudo pueden usarse como una forma de agrupar o resumir la información. Y si miras esto, dice: \"Oye, si yo fuera a generar, eh, si fuera a generar 'the yellow house closed'. Eso es raro... 'closed'... Es una frase en inglés un poco extraña. ¿Cuál es la secuencia de estados que me permitiría, eh, con mayor probabilidad generar todas estas palabras? Eso es lo que el modelo oculto de Markov intentará inferir cuando se lo mire desde una perspectiva de inferencia.\""
+    ],
+    "fr": [
+      "Beaucoup de ces variables — qu'il s'agisse de variables latentes ou parfois même de variables observées — euh. Ces variables latentes ou observées peuvent souvent servir à regrouper ou à résumer l'information. Et donc si vous regardez ceci, il est écrit : « Hé, si je devais générer — euh — 'the yellow house closed'. C'est une phrase un peu étrange — 'closed' — euh. C'est une phrase anglaise un peu bizarre. Quelle est la séquence d'états qui me permettra le plus probablement de générer tous ces mots ? C'est ce que le modèle de Markov caché va essayer d'inférer lorsqu'on l'examine du point de vue de l'inférence. »"
+    ],
+    "de": [
+      "Viele dieser Variablen, also entweder latente Variablen oder sogar, äh, manchmal beobachtete Variablen. Diese latenten oder beobachteten Variablen können oft dazu verwendet werden, die Informationen zu gruppieren beziehungsweise zusammenzufassen. Und wenn man sich das anschaut, steht da: „Hey, wenn ich erzeugen würde, äh, wenn ich ‚the yellow house closed‘ erzeugen würde.“ Das ist ein seltsames, äh, „closed“, äh. Das ist ein etwas merkwürdiger englischer Satz. Welche Folge von Zuständen würde mir erlauben, am wahrscheinlichsten all diese Wörter zu erzeugen? Das ist es, was das Hidden-Markov-Modell zu schätzen versuchen wird, äh, wenn man es aus einer Inferenzperspektive betrachtet."
+    ]
+  },
+  "0:39:58.420": {
+    "ja": [
+      "ですから、それがモデル化したいことです。2つの変数の間に他の何かが介在しない場合、それらは独立している、あるいは少なくとも条件付きで独立していると考えます。"
+    ],
+    "zh": [
+      "因此这就是你想要建模的。如果在两个变量之间没有其他事物，那么你就认为它们是独立的，或者至少是条件独立的。"
+    ],
+    "th": [
+      "และนั่นคือสิ่งที่คุณต้องการจะสร้างแบบจำลอง หากไม่มีสิ่งอื่นอยู่ระหว่างตัวแปรสองตัว คุณก็จะถือว่าพวกมันเป็นอิสระ หรืออย่างน้อยก็เป็นอิสระตามเงื่อนไข"
+    ],
+    "id": [
+      "Dan itulah yang ingin Anda modelkan. Jika tidak ada hal lain di antara dua variabel, maka Anda menganggap keduanya independen atau setidaknya independen secara kondisional."
+    ],
+    "es": [
+      "Y eso es lo que querrías modelar. Si no hay nada más entre dos variables, entonces se considera que son independientes o, al menos, condicionalmente independientes."
+    ],
+    "fr": [
+      "Et c'est donc ce que vous voudriez modéliser. S'il n'y a rien d'autre entre deux variables, vous pensez alors qu'elles sont indépendantes ou, du moins, conditionnellement indépendantes."
+    ],
+    "de": [
+      "Und genau das möchte man modellieren. Wenn zwischen zwei Variablen nichts anderes liegt, hält man sie für unabhängig oder zumindest für bedingt unabhängig."
+    ]
+  },
+  "0:40:07.840": {
+    "ja": [
+      "というわけで、これらの動的ベイジアンネットワークの中で最も有名なものは何ですか？"
+    ],
+    "zh": [
+      "所以在这些动态贝叶斯网络中，最著名的部分是什么？"
+    ],
+    "th": [
+      "แล้วในบรรดาเครือข่ายเบย์เซียนเชิงไดนามิกเหล่านี้ อะไรคือส่วนที่มีชื่อเสียงที่สุด?"
+    ],
+    "id": [
+      "Jadi, yang paling terkenal dari jaringan Bayesian dinamis ini, bagian \"paling terkenal\" itu apa?"
+    ],
+    "es": [
+      "Y entonces, ¿cuál es la más famosa de estas redes bayesianas dinámicas?"
+    ],
+    "fr": [
+      "Et donc, le plus célèbre de ces réseaux bayésiens dynamiques — quelle est la partie la plus célèbre ?"
+    ],
+    "de": [
+      "Und also, das bekannteste dieser dynamischen Bayesschen Netze – welcher Teil ist am bekanntesten?"
+    ]
+  },
+  "0:40:18.620": {
+    "ja": [
+      "話している人たちは答えを知っているでしょう。"
+    ],
+    "zh": [
+      "发言的人会知道答案。"
+    ],
+    "th": [
+      "คนที่พูดจะรู้คำตอบ"
+    ],
+    "id": [
+      "Orang yang berbicara akan mengetahui jawabannya."
+    ],
+    "es": [
+      "La gente del campo del habla sabrá la respuesta."
+    ],
+    "fr": [
+      "Les personnes dans le domaine de la parole sauront la réponse."
+    ],
+    "de": [
+      "Die Leute in der Rede werden die Antwort wissen."
+    ]
+  },
+  "0:40:25.308": {
+    "ja": [
+      "これは隠れマルコフモデルです。ここでの考え方は観測、つまり証拠を持っているということで、この部分だけを見るとナイーブベイズに非常によく似ています。しかし違いは、隠れマルコフモデルではしばしば h のようなものが観測されず、潜在変数として扱われ、我々が推定しようとする対象になるという点です。"
+    ],
+    "zh": [
+      "这是隐马尔可夫模型。这里的想法是我有观测值、我的证据，如果你只看这部分，它看起来很像朴素贝叶斯，但不同之处在于隐马尔可夫模型通常将其设为不可观测的，例如 h 会是一个潜在变量，是我们要去推断的东西。"
+    ],
+    "th": [
+      "นี่คือแบบจำลองมาร์คอฟซ่อนเร้น (Hidden Markov Models) แนวคิดก็คือผมมีการสังเกตของผม เป็นหลักฐานของผม และถ้าคุณดูแค่ส่วนนี้ มันดูคล้ายกับ naive Bayes มาก แต่ความแตกต่างคือ บ่อยครั้งแบบจำลองมาร์คอฟซ่อนเร้นจะถูกออกแบบให้ไม่ถูกสังเกต เช่น h จะเป็นตัวแปรแฝง สิ่งที่เรากำลังพยายามหา"
+    ],
+    "id": [
+      "Ini adalah Model Markov Tersembunyi. Idenya di sini adalah saya memiliki pengamatan saya, bukti saya, dan jika Anda melihat hanya bagian ini, ini sangat mirip dengan naive Bayes, tetapi perbedaannya adalah seringkali model Markov tersembunyi dibuat sedemikian rupa sehingga tidak teramati — h akan menjadi variabel laten, sesuatu yang ingin kita temukan."
+    ],
+    "es": [
+      "Se trata de los modelos ocultos de Markov. La idea aquí es que tengo mi observación, mi evidencia, y si miras solo esta parte, esto se parece mucho a un Naive Bayes, pero la diferencia es que, a menudo, el modelo oculto de Markov se plantea de tal forma que no es observado: h será una variable latente, algo que buscamos."
+    ],
+    "fr": [
+      "Il s'agit des modèles de Markov cachés. L'idée ici est que j'ai mes observations, mes éléments de preuve, et si vous regardez juste cette partie, cela ressemble beaucoup à un classifieur naïf de Bayes, mais la différence, c'est que souvent le modèle de Markov caché est conçu de manière à ce qu'il ne soit pas observé : h sera une variable latente, quelque chose que l'on cherche à inférer."
+    ],
+    "de": [
+      "Das sind die Hidden-Markov-Modelle. Die Idee hier ist, dass ich meine Beobachtung, meine Evidenz habe, und wenn man sich nur diesen Teil anschaut, sieht das sehr nach Naive-Bayes aus, aber der Unterschied ist, dass beim Hidden-Markov-Modell h oft nicht beobachtet wird, also eine latente Variable ist, die wir zu ermitteln versuchen."
+    ]
+  },
+  "0:40:44.888": {
+    "ja": [
+      "もし私に聞くなら、このモデルを別の見方で見るとクラスタリングのように考えられます。ほとんどこの部分のようなクラスタリングだと思ってください。"
+    ],
+    "zh": [
+      "如果你问我的话，另一种看待这个模型的方式是把它看作一种聚类——几乎可以把这一部分当作聚类来想。"
+    ],
+    "th": [
+      "ถ้าคุณถามผม อีกวิธีหนึ่งในการมองโมเดลนี้คือมองว่าเป็นการจัดกลุ่ม ลองคิดว่ามันเกือบจะเหมือนการจัดกลุ่มในส่วนนี้"
+    ],
+    "id": [
+      "Kalau menurut saya, cara lain melihat model ini adalah sebagai pengelompokan. Pikirkan itu hampir seperti pengelompokan, seperti bagian ini."
+    ],
+    "es": [
+      "Y si me preguntas, otra forma de ver este modelo es como un agrupamiento. Piénsalo casi como un clustering, como esta parte."
+    ],
+    "fr": [
+      "Et si vous me le demandez, une autre façon de considérer ce modèle est comme un regroupement. Pensez-y presque comme un regroupement, comme cette partie."
+    ],
+    "de": [
+      "Wenn Sie mich fragen: Eine andere Möglichkeit, dieses Modell zu betrachten, ist, es als Clustering zu sehen. Betrachten Sie es fast wie ein Clustering, so wie diesen Teil hier."
+    ]
+  },
+  "0:41:03.116": {
+    "ja": [
+      "ここはほとんどクラスタリングのようなものです。例えば x は世界中で話されるすべての単語かもしれません。そして h、つまりこの h は何か？h は確率変数です。"
+    ],
+    "zh": [
+      "这部分几乎可以看作是一种聚类。所以 x 可能是世界上所有被说出的词语，比如说。那 h，这个 h，h 是什么？h 是一个随机变量。"
+    ],
+    "th": [
+      "ส่วนนี้เกือบจะเป็นการจัดกลุ่ม ดังนั้น x อาจหมายถึงคำพูดทั้งหมดในโลกก็ได้ สมมติอย่างนั้น แล้ว h ตัวนี้คืออะไร? h เป็นตัวแปรสุ่ม"
+    ],
+    "id": [
+      "Bagian ini hampir seperti sebuah pengelompokan. Jadi x mungkin adalah semua kata yang diucapkan di dunia, misalnya. Dan h ini, apa itu h? h adalah sebuah variabel acak."
+    ],
+    "es": [
+      "Esta parte aquí es casi un agrupamiento. Entonces x puede ser todas las palabras habladas del mundo, digamos. Y una h, esta h, ¿qué es h? h es… es una variable aleatoria."
+    ],
+    "fr": [
+      "Cette partie ici est presque un regroupement. Donc x peut être, disons, tous les mots prononcés dans le monde. Et un h, ce h, qu'est‑ce que c'est ? h est, c'est une variable aléatoire."
+    ],
+    "de": [
+      "Dieser Teil hier ist fast eine Clusterbildung. Also x könnten zum Beispiel alle gesprochenen Wörter der Welt sein. Und h — dieses h — was ist h? h ist, äh, eine Zufallsvariable."
+    ]
+  },
+  "0:41:19.316": {
+    "ja": [
+      "通常は0から20の数値を取ります。今回は1から20としましょう。そしてこれは生成過程です。つまり、その単語はhから生成されている必要があり、hは離散的な状態のうちの一つしか取れません。"
+    ],
+    "zh": [
+      "它通常可以取 0 到 20 的数值。比如说，取 1 到 20。并且这是一个生成过程。因此这个词必须是由 h 生成的，而 h 只能取离散状态中的某一个。"
+    ],
+    "th": [
+      "โดยปกติแล้วมันสามารถรับค่าตัวเลขได้ตั้งแต่ 0 ถึง 20 — สมมติว่าตั้งแต่ 1 ถึง 20 — และนี่เป็นกระบวนการเชิงกำเนิด ดังนั้นคำจะต้องถูกสร้างขึ้นมาจาก h และ h จะรับค่าได้เพียงหนึ่งในสถานะแบบไม่ต่อเนื่องเท่านั้น"
+    ],
+    "id": [
+      "Biasanya nilainya bisa berupa angka dari 0 hingga 20. Misalnya, dari 1 sampai 20. Dan ini adalah proses generatif. Jadi kata itu harus dihasilkan dari h, dan h hanya dapat mengambil salah satu dari keadaan diskrit."
+    ],
+    "es": [
+      "Normalmente puede tomar valores numéricos de 0 a 20. Digamos, de 1 a 20. Y es un proceso generativo. Así que la palabra tiene que haber sido generada a partir de h, y h sólo puede tomar uno de los estados discretos."
+    ],
+    "fr": [
+      "Il peut généralement prendre des valeurs numériques de 0 à 20. Disons de 1 à 20. C'est un processus génératif. Donc le mot doit avoir été généré par h, et h ne peut prendre qu'un seul des états discrets."
+    ],
+    "de": [
+      "Es kann normalerweise numerische Werte von 0 bis 20 annehmen. Sagen wir von 1 bis 20. Und es ist ein generativer Prozess. Das Wort muss also aus h generiert worden sein, und h kann nur einen der diskreten Zustände annehmen."
+    ]
+  },
+  "0:41:39.516": {
+    "ja": [
+      "1、2、3、…20まで。つまりhをクラスタリングマシンと見なすことができます。実際、しばしばガウスモデルで実装されます。もしこれらが連続値であれば、条件付き分布をガウスでモデル化できると言えますし、単にクラスタリングを行っていると考えられます。例えばh=1のときのクラスタ平均はどんな単語が生成されやすいか、h=2のときはどんな単語が生成されやすいか、h=3のときはどうか、というように考えることができます。これが隠れ状態の一つの見方です。隠れ状態は本来非常に高次元になり得るものを、ただ一つのランダム変数、たいていは離散的なランダム変数に押し込めます。なので隠れマルコフモデルや、条件付き確率場のような他のグラフィカルモデルでも同様の考え方が出てきます。"
+    ],
+    "zh": [
+      "“1、2、3……到20。所以你可以把 h 看作一个聚类器。事实上，它常常用高斯模型来实现；如果这些是连续的，我们可以把条件分布用高斯模型来建模，可以把它想象成聚类。比如簇的均值当 h=1 时是什么？当 h=1 时哪些词更可能被该簇生成？当 h=2 时哪些词更可能被生成？当 h=3 时又是哪些词更可能被生成？这就是对这些隐藏状态的一种看法。它们把原本可能是非常高维的东西强制成这个唯一的随机变量，而这个随机变量通常是离散的。所以隐马尔可夫模型以及我们在研究其他图模型（比如条件随机场）时也会看到类似的情况。”"
+    ],
+    "th": [
+      "1, 2, 3 ... ถึง 20. ดังนั้นคุณอาจมอง h เป็นเครื่องจักรจัดกลุ่ม และจริงๆ แล้วมันมักถูกนำไปใช้งานร่วมกับแบบจำลองเกาส์เซียน — ถ้าค่าพวกนี้เป็นค่าต่อเนื่อง เราอาจบอกได้ว่าการแจกแจงแบบมีเงื่อนไขสามารถแบบจำลองด้วยเกาส์เซียน ซึ่งคุณสามารถจินตนาการว่าเป็นการทำคลัสเตอร์ ดังนั้น ค่าเฉลี่ยของคลัสเตอร์เมื่อ h=1 คือคำใดที่มีแนวโน้มจะถูกสร้างเมื่อ h=1? คำใดมีแนวโน้มจะถูกสร้างเมื่อ h=2? คำใดมีแนวโน้มจะถูกสร้างเมื่อ h=3? นั่นเป็นมุมมองหนึ่งของสถานะซ่อนเร้นเหล่านี้ ที่บีบสิ่งที่อาจมีมิติสูงมากให้เหลือเพียงตัวแปรสุ่มตัวเดียว ซึ่งมักจะเป็นตัวแปรสุ่มแบบไม่ต่อเนื่อง ดังนั้น แบบจำลองมาร์คอฟซ่อนเร้น และโมเดลอื่นๆ อีกมาก — เราจะดูเมื่อเราพบโมเดลกราฟิกอื่นๆ เช่น Conditional Random Field (CRF)"
+    ],
+    "id": [
+      "1, 2, 3 sampai 20. Jadi Anda bisa melihat h sebagai mesin pengelompokan, dan sebenarnya sering diimplementasikan dengan model Gaussian — jika nilainya kontinu, kita bisa mengatakan distribusi kondisionalnya dimodelkan dengan Gaussian; Anda bisa membayangkan ini sebagai pengelompokan. Jadi rata‑rata klaster ketika h=1 — kata‑kata apa yang kemungkinan besar dihasilkan oleh klaster saat h=1? Kata‑kata apa yang kemungkinan besar dihasilkan saat h=2? Kata‑kata apa yang kemungkinan besar dihasilkan saat h=3? Itulah salah satu pandangan terhadap keadaan tersembunyi ini. Mereka memaksa sesuatu yang bisa sangat berdimensi tinggi menjadi hanya variabel acak tunggal ini yang seringkali berupa variabel acak diskret. Jadi model Markov tersembunyi dan banyak model lain — akan kita lihat ketika kita membahas model grafis lain seperti conditional random field."
+    ],
+    "es": [
+      "1, 2, 3, hasta 20. Así que podrías ver a h como una máquina de agrupamiento, y, de hecho, a menudo se implementa con un modelo gaussiano; quizá, si estas variables fueran continuas, podríamos haber dicho que la distribución condicional se podría haber modelado con un modelo gaussiano, es decir, podrías imaginarlo simplemente como agrupamiento. Entonces, la media del clúster si h = 1: ¿qué palabras es probable que genere el clúster cuando h = 1? ¿Qué palabras es probable que se generen cuando h = 2? ¿Qué palabras es probable que se generen cuando h = 3? Esa es una manera de ver estos estados ocultos. Forzan algo que podría ser de muy alta dimensión a convertirse en solo esta variable aleatoria, que a menudo es discreta. Así que los modelos ocultos de Markov y muchos otros los veremos cuando analicemos otros modelos gráficos, como los campos aleatorios condicionales."
+    ],
+    "fr": [
+      "De 1 à 20. Donc, on peut voir h comme une machine de regroupement (clustering) ; en fait, il est souvent implémenté avec un modèle gaussien : si ces variables étaient continues, on pourrait modéliser la distribution conditionnelle par une gaussienne, ce qui revient, en quelque sorte, à du clustering. Ainsi, la moyenne du cluster pour h = 1 — quels sont les mots qui sont susceptibles d'être générés lorsque h = 1 ? Quels sont les mots susceptibles d'être générés lorsque h = 2 ? Quels sont les mots susceptibles d'être générés lorsque h = 3 ? C'est une façon de voir ces états cachés. Ils contraignent quelque chose qui pourrait être de très haute dimension : ils le réduisent à cette unique variable aléatoire, qui est souvent discrète. Les modèles de Markov cachés, et de nombreux autres modèles graphiques que nous examinerons, comme les champs aléatoires conditionnels, reposent sur cette idée."
+    ],
+    "de": [
+      "\"1, 2, 3, bis 20. Also, äh, man kann h als eine Clustering-Maschine sehen, äh, und tatsächlich wird es oft mit einem Gauß-Modell implementiert. Vielleicht, wenn diese kontinuierlich wären, könnten wir sagen, die bedingte Verteilung könnte durch ein Gauß-Modell modelliert werden — man kann sich das einfach als Clustering vorstellen. Also der Cluster‑Mittelwert, wenn h=1 ist: Welche Wörter werden wahrscheinlich vom Cluster erzeugt, wenn h=1? Welche Wörter werden wahrscheinlich erzeugt, wenn h=2? Welche Wörter werden wahrscheinlich erzeugt, wenn h=3? Das ist eine Sichtweise auf diese versteckten Zustände. Sie zwingen etwas, das sehr hochdimensional sein könnte, dazu, auf diese eine Zufallsvariable reduziert zu werden, die oft eine diskrete Zufallsvariable ist. Also Hidden‑Markov‑Modelle und viele andere — das werden wir sehen, wenn wir uns andere graphische Modelle wie bedingte Zufallsfelder anschauen.\""
+    ]
+  },
+  "0:43:42.732": {
+    "ja": [
+      "というわけで、これらをどのように最適化するかは次にもう少し見ていきますし、別の見方として捉えることもできます。最適化の部分については来週、もう少し詳しく議論します。"
+    ],
+    "zh": [
+      "我们接下来会再多看一些如何优化这些，或者你也可以这样看：我们会在下周的优化部分更详细地讨论其中的一些内容。"
+    ],
+    "th": [
+      "เอาล่ะ เราจะมาดูเพิ่มเติมในตอนต่อไปเกี่ยวกับวิธีการเพิ่มประสิทธิภาพของพวกนี้ หรือคุณอาจมองมันแบบนี้ก็ได้ — เราจะพูดถึงส่วนการเพิ่มประสิทธิภาพนี้เพิ่มเติมเล็กน้อยในสัปดาห์หน้า"
+    ],
+    "id": [
+      "Jadi, kita akan melihat sedikit lebih lanjut nanti tentang bagaimana mengoptimalkan ini; Anda juga bisa memandangnya seperti itu — kita akan membahas beberapa bagiannya sedikit lebih lanjut pada bagian optimisasi minggu depan."
+    ],
+    "es": [
+      "Así que... veremos un poco más a continuación sobre cómo optimizarlos; también pueden verlo de esta manera y lo discutiremos un poco más en la parte de optimización la semana que viene."
+    ],
+    "fr": [
+      "Bon, nous verrons un peu plus la prochaine fois comment optimiser ces modèles, et vous pouvez aussi le voir comme ça — nous en discuterons un peu plus sur la partie optimisation la semaine prochaine."
+    ],
+    "de": [
+      "Also, ähm, wir schauen uns als Nächstes noch ein bisschen an, wie man diese optimiert, und man kann das auch so sehen — wir werden einen Teil davon nächste Woche beim Thema Optimierung etwas ausführlicher behandeln."
+    ]
+  },
+  "0:44:02.472": {
+    "ja": [
+      "しかし面白いのは、いくつか観測値を持っているということです。"
+    ],
+    "zh": [
+      "但有趣的部分是——我有一些已观测到的值。"
+    ],
+    "th": [
+      "แต่ส่วนที่น่าสนใจก็คือผมจะ—ผมมีข้อมูลที่สังเกตได้บางส่วน"
+    ],
+    "id": [
+      "Tapi bagian yang menarik adalah saya akan—saya punya beberapa yang teramati."
+    ],
+    "es": [
+      "Pero lo interesante es que voy a—tengo algunas observaciones."
+    ],
+    "fr": [
+      "Mais la partie intéressante, c'est que je vais... j'ai des observations."
+    ],
+    "de": [
+      "Aber der interessante Teil ist, ich werde — ich habe einige Beobachtungen."
+    ]
+  },
+  "0:44:07.412": {
+    "ja": [
+      "なので、私は5つ…9つの確率変数を持っていて、そのうち4つは観測されており、5つは観測されていません。"
+    ],
+    "zh": [
+      "所以我有五——九个随机变量，四个是被观测到的，五个是未被观测到的。"
+    ],
+    "th": [
+      "ดังนั้นผมมีตัวแปรสุ่มห้าถึงเก้าตัว และสี่ตัวในนั้นเป็นตัวแปรที่สังเกตได้ ส่วนห้าตัวเป็นตัวแปรที่ไม่ได้สังเกต"
+    ],
+    "id": [
+      "Jadi saya memiliki sembilan variabel acak, empat di antaranya teramati dan lima di antaranya tidak teramati."
+    ],
+    "es": [
+      "Así que tengo cinco--nueve variables aleatorias y cuatro de ellas son observadas y cinco de ellas no son observadas."
+    ],
+    "fr": [
+      "Donc j'ai cinq — neuf variables aléatoires et quatre d'entre elles sont observées et cinq d'entre elles ne le sont pas."
+    ],
+    "de": [
+      "Also habe ich neun Zufallsvariablen, von denen vier beobachtet und fünf nicht beobachtet sind."
+    ]
+  },
+  "0:44:16.552": {
+    "ja": [
+      "つまり、この結合確率を推定できる、すなわち結合確率を持つモデルがあれば、P(h1)、すなわち x1, x2, x3, x4 を条件とした h1 の確率がどうなるかを言えるようになる、ということです。"
+    ],
+    "zh": [
+      "意思是，如果我能够推断出它的联合概率——如果我有一个带有联合概率的模型——那么我就可以开始说出诸如 P(h1) 以及在给定 x1、x2、x3 和 x4 时的 P(h1 | x1, x2, x3, x4) 这样的概率。"
+    ],
+    "th": [
+      "และแนวคิดก็คือ ถ้าสามารถอนุมานความน่าจะเป็นร่วมของสิ่งนี้ได้ ถ้ามีแบบจำลองที่มีความน่าจะเป็นร่วม ก็จะเริ่มบอกได้ว่าความน่าจะเป็นของ h1 คือเท่าไร หรือ P(h1 | x1, x2, x3, x4) เป็นเท่าไร"
+    ],
+    "id": [
+      "Idenya adalah jika saya dapat menentukan probabilitas gabungan ini, jika saya memiliki model dengan probabilitas gabungan, maka saya bisa mulai mengatakan berapa probabilitas, yaitu P(h1), P(h1 | x1, x2, x3, dan x4)."
+    ],
+    "es": [
+      "Y la idea es que, si soy capaz de inferir la probabilidad conjunta de esto, si tengo un modelo con una probabilidad conjunta, entonces puedo empezar a decir cuál es la probabilidad: P(h1), P(h1 | x1, x2, x3, x4)."
+    ],
+    "fr": [
+      "Et l'idée est que si je peux inférer la probabilité conjointe, si j'ai un modèle avec une probabilité conjointe, alors je peux commencer à dire quelle est la probabilité, à savoir P(h1), P(h1 | x1, x2, x3, x4)."
+    ],
+    "de": [
+      "Und die Idee ist: Wenn ich die gemeinsame Wahrscheinlichkeit dessen bestimmen kann — also ein Modell mit einer gemeinsamen Wahrscheinlichkeitsverteilung habe — dann kann ich anfangen zu sagen, wie wahrscheinlich h1 ist, also P(h1) bzw. P(h1 | x1, x2, x3, x4)."
+    ]
+  },
+  "0:44:30.112": {
+    "ja": [
+      "それが一つの方法で、h1を周辺化することになります。"
+    ],
+    "zh": [
+      "所以这是一种方法，即对 h1 进行边缘化。"
+    ],
+    "th": [
+      "ดังนั้น นั่นจะเป็นวิธีหนึ่ง และนั่นคือการหาความน่าจะเป็นมาร์จินัลของ h1"
+    ],
+    "id": [
+      "Jadi itu akan menjadi salah satu cara dan itu berarti melakukan marginalisasi untuk h1."
+    ],
+    "es": [
+      "Así que esa sería una forma y eso equivaldría a marginalizar h1."
+    ],
+    "fr": [
+      "Donc ce serait une façon, et cela correspondrait à marginaliser la variable h1."
+    ],
+    "de": [
+      "Das wäre eine Möglichkeit, und das wäre die Marginalisierung von h1."
+    ]
+  },
+  "0:44:42.992": {
+    "ja": [
+      "あるいは、これを P(h0, h1, h2, h3, h4 | x1, x2, x3, x4) と定義することもでき、もし結合確率を学習していれば、その質問に答えられると想像できます。"
+    ],
+    "zh": [
+      "或者你可以将其定义为在 x1、x2、x3、x4 条件下的 P(h0, h1, h2, h3, h4)，可以想象如果我已经学到了联合概率分布，我就能回答这个问题。"
+    ],
+    "th": [
+      "หรือคุณอาจกำหนดสิ่งนี้เป็น P(h0, h1, h2, h3, h4 | x1, x2, x3, x4) และคุณสามารถจินตนาการได้ว่า ถ้าฉันเรียนรู้ความน่าจะเป็นร่วมแล้ว ฉันจะตอบคำถามนั้นได้"
+    ],
+    "id": [
+      "Atau Anda bisa mendefinisikan ini sebagai P(h0, h1, h2, h3, h4 | x1, x2, x3, x4), dan Anda bisa membayangkan bahwa jika saya telah mempelajari distribusi probabilitas gabungan saya, saya dapat menjawab pertanyaan itu."
+    ],
+    "es": [
+      "O podrías definir esto como P(h0, h1, h2, h3, h4 | x1, x2, x3, x4), y puedes imaginar que si he aprendido la probabilidad conjunta, puedo responder a esa pregunta."
+    ],
+    "fr": [
+      "Ou vous pouvez définir cela comme P(h0, h1, h2, h3, h4 | x1, x2, x3, x4), et vous pouvez imaginer que si j'ai appris la probabilité conjointe, je peux répondre à cette question."
+    ],
+    "de": [
+      "Oder man könnte dies als P(h0, h1, h2, h3, h4 | x1, x2, x3, x4) definieren, und man kann sich vorstellen, dass ich diese Frage beantworten kann, wenn ich die gemeinsame Wahrscheinlichkeitsverteilung gelernt habe."
+    ]
+  },
+  "0:44:58.632": {
+    "ja": [
+      "それは典型的な問いです。でも、マルチモーダルなデータを持っていたらどうでしょうか？"
+    ],
+    "zh": [
+      "这是你通常会做的一个典型查询。但如果我有多模态数据呢？"
+    ],
+    "th": [
+      "นี่เป็นคำถามทั่วไปที่คุณมักจะถาม แต่ถ้าฉันมีข้อมูลหลายรูปแบบล่ะ?"
+    ],
+    "id": [
+      "Itu pertanyaan khas yang sering Anda ajukan. Tapi bagaimana jika saya memiliki data multimodal?"
+    ],
+    "es": [
+      "Es una consulta típica que uno hace. Pero, ¿qué pasa si tengo datos multimodales?"
+    ],
+    "fr": [
+      "C'est une requête typique que l'on effectue. Mais que faire si j'ai des données multimodales ?"
+    ],
+    "de": [
+      "Das ist eine typische Abfrage, die man stellt. Aber was, wenn ich multimodale Daten habe?"
+    ]
+  },
+  "0:45:04.012": {
+    "ja": [
+      "複数のデータストリームがあるとどうなるか？"
+    ],
+    "zh": [
+      "如果我有多个数据流怎么办？"
+    ],
+    "th": [
+      "ถ้าฉันมีหลายแหล่งข้อมูลล่ะ?"
+    ],
+    "id": [
+      "Bagaimana jika saya memiliki beberapa aliran data?"
+    ],
+    "es": [
+      "¿Qué pasa si tengo múltiples flujos de datos?"
+    ],
+    "fr": [
+      "Et si j'ai plusieurs flux de données ?"
+    ],
+    "de": [
+      "Was ist, wenn ich mehrere Datenströme habe?"
+    ]
+  },
+  "0:45:08.892": {
+    "ja": [
+      "それでは、これを因数分解するためのいくつかの戦略をお伝えしましょう。"
+    ],
+    "zh": [
+      "让我给你们介绍一些进行这种分解的策略。"
+    ],
+    "th": [
+      "และขอแบ่งปันกลยุทธ์บางอย่างในการแยกปัจจัยนี้ให้คุณ"
+    ],
+    "id": [
+      "Dan izinkan saya berbagi dengan Anda beberapa strategi untuk memfaktorkan ini."
+    ],
+    "es": [
+      "Permítanme compartir con ustedes algunas estrategias para factorizar esto."
+    ],
+    "fr": [
+      "Et laissez-moi vous présenter quelques stratégies pour factoriser cela."
+    ],
+    "de": [
+      "Und lassen Sie mich Ihnen einige Strategien zeigen, wie man das faktorisieren kann."
+    ]
+  },
+  "0:45:11.492": {
+    "ja": [
+      "実は、最初のものはファクトリアルHMMと呼ばれます。"
+    ],
+    "zh": [
+      "事实上，第一个叫做阶乘隐马尔可夫模型。"
+    ],
+    "th": [
+      "และจริงๆ แล้ว ตัวแรกเรียกว่า แฟคทอเรียล HMM"
+    ],
+    "id": [
+      "Dan sebenarnya, yang pertama disebut HMM faktorial."
+    ],
+    "es": [
+      "Y de hecho, el primero se llama HMM factorial."
+    ],
+    "fr": [
+      "Et en fait, le premier s'appelle le modèle de Markov caché factoriel."
+    ],
+    "de": [
+      "Und tatsächlich wird das erste als faktorielles HMM bezeichnet."
+    ]
+  },
+  "0:45:17.832": {
+    "ja": [
+      "これはそれ自体はマルチモーダルではないが、興味深い見方だ。"
+    ],
+    "zh": [
+      "这个本身并不是多模态的，但这是一个有趣的观点。"
+    ],
+    "th": [
+      "อันนี้ไม่ใช่มัลติโมดัลในตัวมันเอง แต่เป็นมุมมองที่น่าสนใจ"
+    ],
+    "id": [
+      "Yang ini bukan multimodal pada dirinya sendiri, tetapi ini merupakan pandangan yang menarik."
+    ],
+    "es": [
+      "Este no es multimodal por sí mismo, pero es una perspectiva interesante."
+    ],
+    "fr": [
+      "Ce n'est pas, en soi, un modèle multimodal, mais c'est une perspective intéressante."
+    ],
+    "de": [
+      "Das hier ist an sich nicht multimodal, aber eine interessante Sichtweise."
+    ]
+  },
+  "0:45:23.292": {
+    "ja": [
+      "ここでは観測ストリームが1つしかないと言っていますが、実際にはこの情報のストリームを生成しているプロセスが複数、すなわち複数の因子が存在します。"
+    ],
+    "zh": [
+      "这里上面写着我只有一条观测流，但实际上产生这条信息流的有多个过程、多个因素。"
+    ],
+    "th": [
+      "และตรงนี้มันบอกว่าฉันมีเพียงสตรีมการสังเกตเดียว แต่จริงๆ แล้วสตรีมข้อมูลนี้ถูกสร้างขึ้นโดยมากกว่าหนึ่งกระบวนการหรือหลายปัจจัย"
+    ],
+    "id": [
+      "Dan di sini tertulis saya hanya mempunyai satu aliran observasi, tetapi sebenarnya aliran informasi ini dihasilkan oleh lebih dari satu proses, lebih dari satu faktor."
+    ],
+    "es": [
+      "Y aquí dice que solo tengo un flujo de observaciones, pero, de hecho, para generar este flujo de información tengo más de un proceso, más de un factor, que lo están generando."
+    ],
+    "fr": [
+      "Et ici, on dit que je n'ai qu'un seul flux d'observations, mais en réalité, ce flux d'informations est généré par plusieurs processus, par plusieurs facteurs."
+    ],
+    "de": [
+      "Und hier steht, dass ich nur einen Beobachtungsstrom habe, aber tatsächlich erzeugen mehrere Prozesse beziehungsweise Faktoren diesen Informationsstrom."
+    ]
+  },
+  "0:45:41.792": {
+    "ja": [
+      "それは興味深い拡張です。さらに踏み込んでよりマルチモーダルな観点で見ると、例えば一方の観測として唇の動きを見（映像）、もう一方として音声がある、と考えることができます。"
+    ],
+    "zh": [
+      "所以这是一个有趣的扩展。现在更有趣的是可以更进一步、从更具多模态的角度来看，比如我现在可以把它看成有一组观测——比如你看我的嘴唇的视觉观测——然后还有音频。"
+    ],
+    "th": [
+      "นั่นเป็นการขยายที่น่าสนใจ ตอนนี้สิ่งที่น่าสนใจก็คือการไปให้ไกลกว่านั้นและมองในเชิงมัลติโมดัลมากขึ้น — เช่น ตอนนี้ผมอาจมองว่ามีชุดการสังเกตชุดหนึ่ง เช่น คุณดูริมฝีปากของผม แล้วอีกชุดก็คือข้อมูลเสียง"
+    ],
+    "id": [
+      "Jadi itu adalah perpanjangan yang menarik. Yang menarik sekarang adalah melangkah lebih jauh lagi dan melihatnya dalam pengertian yang lebih multimodal — misalnya saya bisa menganggap bahwa saya memiliki satu set pengamatan, seperti Anda melihat bibir saya, dan selain itu ada juga audio."
+    ],
+    "es": [
+      "Así que esa es una extensión interesante. Ahora, lo que resulta interesante es ir aún más allá y verlo en un sentido más multimodal: ahora también podría considerar que tengo un conjunto de observaciones —por ejemplo, que miras mis labios— y además tienes el audio."
+    ],
+    "fr": [
+      "C'est donc une extension intéressante. Ce qui est intéressant maintenant, c'est d'aller encore plus loin et de l'envisager de façon plus multimodale : par exemple, je pourrais considérer que j'ai un ensemble d'observations — vous regardez mes lèvres — et qu'il y a aussi l'audio."
+    ],
+    "de": [
+      "Das ist also eine interessante Erweiterung. Noch interessanter ist es, noch weiterzugehen und das in einem stärker multimodalen Sinn zu betrachten: Ich könnte jetzt zum Beispiel eine Beobachtungsreihe haben — man schaut auf meine Lippen — und zusätzlich das Audiosignal."
+    ]
+  },
+  "0:45:57.892": {
+    "ja": [
+      "というわけで、私の唇を見て音声を見ているとき、これを生成しているのは何でしょうか？"
+    ],
+    "zh": [
+      "所以啊，你看我的嘴唇、听音频，那么这些是由什么生成的？"
+    ],
+    "th": [
+      "เอาล่ะ ดูที่ริมฝีปากของฉัน ดูที่เสียง แล้วอะไรเป็นตัวสร้างสิ่งนี้?"
+    ],
+    "id": [
+      "Jadi ya, lihat bibir saya, lihat audionya, dan apa yang menghasilkan ini?"
+    ],
+    "es": [
+      "Así que sí: miras mis labios, miras el audio, ¿y qué genera esto?"
+    ],
+    "fr": [
+      "Donc oui, vous regardez mes lèvres, vous regardez l'audio, et qu'est-ce qui génère ça ?"
+    ],
+    "de": [
+      "Also ja, du schaust auf meine Lippen, du hörst das Audio, und was erzeugt das?"
+    ]
+  },
+  "0:46:06.172": {
+    "ja": [
+      "それで、音声を生成している何らかの潜在表現があるのが分かります。おそらく何らかの音素状態があり、ビセム（視覚的な音素）の状態もあるかもしれません。そして設計上の判断として「音素が実際にビセムを生成している」と考えることもできます。音素のようなものを発音したいとすると、その発音をするために口の形をある特定の形に整える必要があり、この場合はこの方向の依存関係があります。これがボルツマン・ジッパーです。"
+    ],
+    "zh": [
+      "所以你可以看到，音频是由某种潜在表示在生成的，可能是一种音素状态。也可能存在一些唇形（viseme）状态，你也许会说——这是一个设计决策，你可以认为是音素在真正地生成唇形。我想发出一个音素，为了发出它，我需要以某种方式来塑造我的嘴，因此在这种情况下，这里存在这样的依赖关系。所以这就是所谓的玻尔兹曼拉链。"
+    ],
+    "th": [
+      "คุณจะเห็นว่าเสียงถูกสร้างขึ้นโดยตัวแทนแฝงบางอย่าง อาจเป็นสถานะโฟนีมชนิดหนึ่ง และอาจมีสถานะวิซีมด้วย และนี่เป็นการตัดสินใจเชิงออกแบบว่าจริงๆ แล้วโฟนีมเป็นตัวที่สร้างวิซีม หากต้องการออกเสียงโฟนีม เราต้องปรับรูปร่างปากในลักษณะหนึ่ง ดังนั้นในกรณีนี้จึงมีความขึ้นต่อกันแบบนี้ นี่คือ Boltzmann zipper"
+    ],
+    "id": [
+      "Jadi, Anda lihat audio dihasilkan oleh ada representasi laten yang menghasilkan audio, mungkin semacam keadaan fonem. Dan mungkin ada beberapa keadaan visem, dan mungkin Anda mengatakan—dan itu keputusan desain—bahwa fonemlah yang sebenarnya menghasilkan visem. Saya ingin mengucapkan sesuatu seperti fonem, jadi untuk mengucapkannya saya perlu membentuk mulut saya dengan cara tertentu, dan dalam kasus ini saya memiliki ketergantungan seperti ini. Jadi inilah Boltzmann zipper."
+    ],
+    "es": [
+      "Como pueden ver, el audio está siendo generado: hay alguna representación latente que genera el audio, quizá algún tipo de estado de fonema. Y quizá haya algunos estados de visema, y quizá uno diga —y eso es una decisión de diseño— que el fonema es en realidad el que genera la visema. Quiero pronunciar algo como un fonema, y para hacerlo necesito dar a mi boca una forma determinada, así que en este caso existe una dependencia en esa dirección. Así que esto es el cierre de Boltzmann."
+    ],
+    "fr": [
+      "Et donc vous voyez que l'audio est généré — euh — par une représentation latente qui génère l'audio, peut-être une sorte d'état de phonème. Et peut-être qu'il y a des états de visème, et vous pouvez dire — et c'est un choix de conception — que le phonème est vraiment celui qui génère le visème. Je veux, je veux prononcer quelque chose comme un phonème, et donc, pour le prononcer, je dois façonner ma bouche d'une certaine manière, et donc, dans ce cas, j'ai une dépendance dans ce sens. Donc c'est le Boltzmann zipper."
+    ],
+    "de": [
+      "Und man sieht also, dass das Audio erzeugt wird — es gibt eine latente Repräsentation, die das Audio erzeugt, vielleicht eine Art Phonemzustand. Und vielleicht gibt es Visem‑Zustände, und man könnte — das ist eine Designentscheidung — sagen, dass das Phonem wirklich dasjenige ist, das das Visem erzeugt. Ich möchte etwas wie ein Phonem aussprechen, und um es auszusprechen, muss ich meinen Mund auf eine bestimmte Weise formen. In diesem Fall besteht also eine Abhängigkeit in diese Richtung. Das ist der Boltzmann‑Zipper."
+    ]
+  },
+  "0:46:47.208": {
+    "ja": [
+      "ボルツマンマシンについては少し後でお話ししますが、これはボルツマン・ジッパーです。"
+    ],
+    "zh": [
+      "我们稍后会谈到玻尔兹曼机，但这是玻尔兹曼拉链。"
+    ],
+    "th": [
+      "เราจะพูดถึงโบลตซ์มันน์แมชชีนอีกสักครู่ แต่สิ่งนี้คือโบลตซ์มันน์ ซิปเปอร์"
+    ],
+    "id": [
+      "Kita akan membahas mesin Boltzmann sebentar lagi, tetapi ini adalah Boltzmann zipper."
+    ],
+    "es": [
+      "Hablaremos de las máquinas de Boltzmann en un momento, pero esto es el \"Boltzmann zipper\"."
+    ],
+    "fr": [
+      "Nous parlerons des machines de Boltzmann dans un instant, mais voici le Boltzmann zipper."
+    ],
+    "de": [
+      "Wir werden gleich noch über Boltzmann-Maschinen sprechen, aber das hier ist der Boltzmann-Zipper."
+    ]
+  },
+  "0:46:51.028": {
+    "ja": [
+      "ボルツマンマシンがあって、その拡張がボルツマン・ジッパーだったからです。"
+    ],
+    "zh": [
+      "因为有玻尔兹曼机，而对它的扩展就是玻尔兹曼拉链。"
+    ],
+    "th": [
+      "เพราะว่า Boltzmann machine และการขยายต่อมาของมันคือ Boltzmann zipper"
+    ],
+    "id": [
+      "Ini karena Boltzmann machine, dan ekstensi darinya adalah Boltzmann zipper."
+    ],
+    "es": [
+      "Primero fue la máquina de Boltzmann y luego su extensión fue el Boltzmann zipper."
+    ],
+    "fr": [
+      "Parce qu'il y avait la machine de Boltzmann, puis son extension, le Boltzmann Zipper."
+    ],
+    "de": [
+      "Das liegt daran, dass die Boltzmann-Maschine und deren Erweiterung der Boltzmann-Zipper war."
+    ]
+  },
+  "0:46:55.848": {
+    "ja": [
+      "そして今では、いわゆる「結合HMN」もあります。"
+    ],
+    "zh": [
+      "现在你还有一个所谓的耦合 HMN。"
+    ],
+    "th": [
+      "และตอนนี้คุณก็มีสิ่งที่เรียกว่า coupled HMN ด้วย"
+    ],
+    "id": [
+      "Dan sekarang Anda juga memiliki apa yang disebut HMN terkopel."
+    ],
+    "es": [
+      "Y ahora también tienes lo que se llama el HMN acoplado."
+    ],
+    "fr": [
+      "Et maintenant, vous avez aussi ce qu'on appelle le HMN couplé."
+    ],
+    "de": [
+      "Und jetzt gibt es auch das sogenannte gekoppelte HMM."
+    ]
+  }
+}
