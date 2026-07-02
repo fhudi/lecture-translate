@@ -1,0 +1,1106 @@
+{
+  "0:00:15.644": {
+    "ja": [
+      "今日は、ニューロンの等価回路モデルであるホジキン＝ハクスリー・モデルの開発を続けます。"
+    ],
+    "zh": [
+      "今天我们将继续构建我们的等效电路模型，即神经元的霍奇金—赫胥黎模型。"
+    ],
+    "th": [
+      "วันนี้เราจะมาพัฒนาต่อแบบจำลองวงจรเทียบเท่า แบบจำลองฮอดจ์กิน-ฮักซ์ลีย์ของเซลล์ประสาท"
+    ],
+    "id": [
+      "Hari ini kita akan melanjutkan pengembangan model rangkaian ekuivalen kita, yaitu model Hodgkin–Huxley untuk sebuah sel saraf."
+    ],
+    "es": [
+      "Hoy vamos a continuar desarrollando nuestro modelo de circuito equivalente, el modelo de Hodgkin-Huxley de una neurona."
+    ],
+    "fr": [
+      "Aujourd'hui, nous allons continuer à développer notre modèle de circuit équivalent, le modèle de Hodgkin-Huxley d'un neurone."
+    ],
+    "de": [
+      "Heute werden wir unser äquivalentes Schaltkreismodell, das Hodgkin-Huxley-Modell einer Nervenzelle, weiterentwickeln."
+    ]
+  },
+  "0:00:21.124": {
+    "ja": [
+      "そして私たちは今もスパイクを生成するメカニズムに焦点を当てています。"
+    ],
+    "zh": [
+      "我们仍然在关注产生尖峰（动作电位）的机制。"
+    ],
+    "th": [
+      "และเรายังคงมุ่งเน้นที่กลไกที่ก่อให้เกิดสไปก์"
+    ],
+    "id": [
+      "Dan kita masih berfokus pada mekanisme yang menghasilkan potensial aksi."
+    ],
+    "es": [
+      "Y seguimos centrándonos en el mecanismo que genera los potenciales de acción."
+    ],
+    "fr": [
+      "Et nous nous concentrons toujours sur le mécanisme qui génère les potentiels d'action."
+    ],
+    "de": [
+      "Und wir konzentrieren uns weiterhin auf den Mechanismus, der Aktionspotenziale erzeugt."
+    ]
+  },
+  "0:00:26.704": {
+    "ja": [
+      "ご存じのように、活動電位の発生をもたらすイオンコンダクタンスは2つあります。"
+    ],
+    "zh": [
+      "如你所记，有两种离子电导会导致动作电位的产生。"
+    ],
+    "th": [
+      "อย่างที่คุณจำได้ มีความนำไฟฟ้าของไอออนสองชนิดที่นำไปสู่การเกิดศักย์การกระตุ้น"
+    ],
+    "id": [
+      "Seperti yang Anda ingat, terdapat dua konduktansi ion yang menyebabkan pembangkitan potensial aksi."
+    ],
+    "es": [
+      "Como recordarán, hay dos conductancias iónicas que conducen a la generación del potencial de acción."
+    ],
+    "fr": [
+      "Comme vous vous en souvenez, il existe deux conductances ioniques qui conduisent à la génération du potentiel d'action."
+    ],
+    "de": [
+      "Wie Sie sich erinnern, gibt es zwei Ionenleitfähigkeiten, die zur Erzeugung eines Aktionspotenzials führen."
+    ]
+  },
+  "0:00:33.484": {
+    "ja": [
+      "高い平衡電位を持つナトリウム電池に接続されたナトリウム伝導度がある。"
+    ],
+    "zh": [
+      "有一个钠离子电导连接到一个具有较高平衡电位的钠电池。"
+    ],
+    "th": [
+      "มีความนำของไอออนโซเดียมที่เชื่อมต่อกับแหล่งแรงดันของโซเดียมซึ่งมีศักย์สมดุลสูง"
+    ],
+    "id": [
+      "Ada konduktansi natrium yang terhubung ke sumber tegangan natrium dengan potensial keseimbangan yang tinggi."
+    ],
+    "es": [
+      "Hay una conductancia de sodio conectada a una batería de sodio que tiene un alto potencial de equilibrio."
+    ],
+    "fr": [
+      "Il y a une conductance sodique connectée à une batterie sodique ayant un potentiel d'équilibre élevé."
+    ],
+    "de": [
+      "Es gibt eine Natriumleitfähigkeit, die an eine Natriumbatterie mit hohem Gleichgewichtspotential angeschlossen ist."
+    ]
+  },
+  "0:00:42.560": {
+    "ja": [
+      "負の平衡電位を有するカリウム電池に接続されたカリウムコンダクタンスがある。"
+    ],
+    "zh": [
+      "有一个钾电导连接到一个具有负平衡电位的钾电位源。"
+    ],
+    "th": [
+      "มีความนำของโพแทสเซียมที่เชื่อมต่อกับแบตเตอรี่ของโพแทสเซียมซึ่งมีศักย์สมดุลเป็นลบ"
+    ],
+    "id": [
+      "Ada sebuah konduktansi kalium yang terhubung ke baterai kalium yang memiliki potensial kesetimbangan negatif."
+    ],
+    "es": [
+      "Hay una conductancia de potasio conectada a una batería de potasio que tiene un potencial de equilibrio negativo."
+    ],
+    "fr": [
+      "Il y a une conductance potassique connectée à une batterie potassique dont le potentiel d'équilibre est négatif."
+    ],
+    "de": [
+      "Es gibt eine Kaliumleitfähigkeit, die mit einer Kaliumbatterie verbunden ist, welche ein negatives Gleichgewichtspotenzial besitzt."
+    ]
+  },
+  "0:00:52.600": {
+    "ja": [
+      "そしてその二つのコンダクタンスは電圧および時間に依存しており、まず正向き（脱分極）の変動を生じさせ、その後負向き（再分極・過分極）の変動を引き起こすことで、活動電位が生成される。"
+    ],
+    "zh": [
+      "这两种电导共同具有对电压和时间的依赖性，导致电压产生先向正方向随后向负方向的波动，这就是动作电位。"
+    ],
+    "th": [
+      "และความนำทั้งสองนี้มีความขึ้นกับแรงดันและเวลา ซึ่งนำไปสู่การเกิดการผันผวนของแรงดันที่ขึ้นไปทางบวกแล้วตามด้วยลงทางลบ นั่นคือศักย์กระตุ้น"
+    ],
+    "id": [
+      "Dan kedua konduktansi tersebut memiliki ketergantungan pada tegangan dan waktu yang menyebabkan timbulnya fluktuasi tegangan yang positif diikuti oleh fluktuasi yang negatif — yaitu potensial aksi."
+    ],
+    "es": [
+      "Y esas dos conductancias, en conjunto, presentan dependencia del voltaje y del tiempo que conduce a la generación de una fluctuación del voltaje que va primero hacia valores positivos y luego hacia valores negativos, es decir, el potencial de acción."
+    ],
+    "fr": [
+      "Et ces deux conductances, par leur dépendance à la tension et au temps, entraînent la génération d’une fluctuation de la tension d’abord positive puis négative, qui constitue le potentiel d’action."
+    ],
+    "de": [
+      "Und diese beiden Leitfähigkeiten zusammen sind spannungs- und zeitabhängig, was zur Erzeugung einer zunächst positiven und anschließend negativen Spannungsschwankung führt, die das Aktionspotenzial darstellt."
+    ]
+  },
+  "0:01:01.080": {
+    "ja": [
+      "ご記憶のとおり、その仕組みはこれらのコンダクタンスが時間依存的であるためで、ナトリウムのコンダクタンスがオンになるとこの抵抗は非常に小さくなり、ほとんど細胞内をあの正の電池に接続してしまいます。"
+    ],
+    "zh": [
+      "正如你还记得的，之所以会这样，是因为这些电导具有时间依赖性，所以当钠电导被开启时，这个电阻会变得非常小，基本上把细胞内部连到那个正电位。"
+    ],
+    "th": [
+      "และตามที่คุณจำได้ วิธีที่มันเกิดขึ้นก็คือความนำไฟฟ้าเหล่านี้ขึ้นกับเวลา ดังนั้นเมื่อความนำของโซเดียมเปิดขึ้น ความต้านทานนี้จะลดลงอย่างมากและโดยพื้นฐานเชื่อมส่วนภายในของเซลล์เข้ากับแบตเตอรี่ขั้วบวกนั้น"
+    ],
+    "id": [
+      "Dan seperti yang Anda ingat, caranya terjadi karena konduktansi-konduktansi ini bergantung pada waktu, sehingga ketika konduktansi natrium aktif, resistor ini menjadi sangat kecil dan pada dasarnya menghubungkan bagian dalam sel ke baterai positif itu."
+    ],
+    "es": [
+      "Y como recordarán, la forma en que eso ocurre es que estas conductancias dependen del tiempo, de modo que cuando se activa la conductancia de sodio, esta resistencia se vuelve muy baja y básicamente conecta el interior de la célula con esa batería positiva."
+    ],
+    "fr": [
+      "Et comme vous vous en souvenez, la façon dont cela se produit est que ces conductances dépendent du temps, de sorte que lorsque la conductance sodique s'active, cette résistance devient très faible et relie essentiellement l'intérieur de la cellule à cette source de tension positive."
+    ],
+    "de": [
+      "Und wie Sie sich erinnern, funktioniert das so: Diese Leitfähigkeiten sind zeitabhängig, sodass, wenn die Natriumleitfähigkeit sich einschaltet, dieser Widerstand sehr klein wird und im Grunde das Innere der Zelle mit der positiven Batterie verbindet."
+    ]
+  },
+  "0:01:17.200": {
+    "ja": [
+      "ナトリウムのコンダクタンスがオフになりカリウムのコンダクタンスがオンになると、ナトリウム電池を切り離して負の電圧を持つカリウム電池を接続することになります。"
+    ],
+    "zh": [
+      "当钠电导关闭而钾电导打开时，我们断开钠电池并接通钾电池，后者具有负电压。"
+    ],
+    "th": [
+      "เมื่อความนำของโซเดียมปิดลงและความนำของโพแทสเซียมเปิดขึ้น เราก็กำลังตัดการเชื่อมต่อแบตเตอรี่โซเดียมและเชื่อมต่อแบตเตอรี่โพแทสเซียม ซึ่งมีแรงดันเป็นลบ"
+    ],
+    "id": [
+      "Ketika konduktansi natrium dimatikan dan konduktansi kalium diaktifkan, kita memutus sambungan baterai natrium dan menyambungkan baterai kalium yang memiliki tegangan negatif."
+    ],
+    "es": [
+      "Cuando la conductancia de sodio se apaga y la conductancia de potasio se enciende, estamos desconectando la batería de sodio y conectando la batería de potasio, que tiene un voltaje negativo."
+    ],
+    "fr": [
+      "Lorsque la conductance sodique se désactive et que la conductance potassique s'active, on déconnecte la pile sodique et on connecte la pile potassique, qui présente une tension négative."
+    ],
+    "de": [
+      "Wenn die Natriumleitfähigkeit erlischt und die Kaliumleitfähigkeit aktiviert wird, trennen wir die Natriumbatterie und schließen die Kaliumbatterie an, die eine negative Spannung hat."
+    ]
+  },
+  "0:01:29.080": {
+    "ja": [
+      "すると、細胞の電位は負のカリウム平衡電位の方へと駆動されます。"
+    ],
+    "zh": [
+      "于是细胞的电位被驱动朝向钾的负平衡电位。"
+    ],
+    "th": [
+      "และแรงดันของเซลล์จึงถูกดันไปสู่ศักย์สมดุลของโพแทสเซียมที่มีค่าติดลบ"
+    ],
+    "id": [
+      "Dan tegangan sel itu kemudian terdorong ke arah potensial kesetimbangan kalium yang negatif."
+    ],
+    "es": [
+      "Y el voltaje de la célula, entonces, se dirige hacia el potencial de equilibrio negativo del potasio."
+    ],
+    "fr": [
+      "Et le potentiel membranaire de la cellule est alors ramené vers le potentiel d'équilibre du potassium, qui est négatif."
+    ],
+    "de": [
+      "Und das Membranpotenzial der Zelle wird dann in Richtung des negativen Kalium-Gleichgewichtspotenzials getrieben."
+    ]
+  },
+  "0:01:37.596": {
+    "ja": [
+      "前回はカリウムコンダクタンスの電圧および時間依存性を導出しました。"
+    ],
+    "zh": [
+      "上次我们推导出了钾电导对电压和时间的依赖关系。"
+    ],
+    "th": [
+      "ครั้งที่แล้ว เราหาความสัมพันธ์ระหว่างความนำของโพแทสเซียมกับแรงดันและเวลา"
+    ],
+    "id": [
+      "Jadi, pada pertemuan terakhir kita menentukan bagaimana konduktansi kalium bergantung pada tegangan dan waktu."
+    ],
+    "es": [
+      "La última vez, determinamos la dependencia en voltaje y en el tiempo de la conductancia de potasio."
+    ],
+    "fr": [
+      "La dernière fois, nous avons déterminé la dépendance en tension et dans le temps de la conductance potassique."
+    ],
+    "de": [
+      "Beim letzten Mal haben wir die Spannungs- und Zeitabhängigkeit der Kaliumleitfähigkeit erarbeitet."
+    ]
+  },
+  "0:01:44.186": {
+    "ja": [
+      "今日はここでナトリウムコンダクタンスに焦点を当て、ナトリウムコンダクタンスの電圧依存性や時間依存性のさまざまな側面を説明します。そしてそれが終わったら、講義の後半ではナトリウムチャネルの欠陥に関連する、非常に美しく単純な疾患モデルに移ります。"
+    ],
+    "zh": [
+      "今天我们要在这里重点讲解钠电导，并解释钠电导在电压和时间上的各种依赖性。然后，在讲座的下半部分，我们将转向一个与钠通道缺陷相关疾病的非常优美且简单的模型。"
+    ],
+    "th": [
+      "วันนี้เราจะมุ่งเน้นที่ความนำไฟฟ้าของโซเดียมและอธิบายแง่มุมต่าง ๆ เกี่ยวกับการพึ่งพาแรงดันและเวลา (voltage- และ time-dependence) ของความนำไฟฟ้าของโซเดียม แล้วเมื่อทำสิ่งนั้นเสร็จ ในครึ่งหลังของการบรรยายเราจะหันไปดูแบบจำลองที่เรียบง่ายแต่สวยงามของโรคที่เกี่ยวข้องกับความผิดปกติของช่องโซเดียม"
+    ],
+    "id": [
+      "Hari ini kita akan fokus pada konduktansi natrium dan menjelaskan berbagai aspek ketergantungan konduktansi natrium terhadap tegangan dan waktu. Setelah itu, pada paruh kedua kuliah kita akan beralih ke sebuah model yang sangat indah dan sederhana dari suatu penyakit yang terkait dengan kelainan pada saluran natrium."
+    ],
+    "es": [
+      "Hoy nos vamos a centrar aquí en la conductancia de sodio y explicar varios aspectos de la dependencia en voltaje y en el tiempo de la conductancia de sodio. Y luego, una vez hecho eso, dedicaremos la segunda mitad de la clase a un modelo realmente bonito y sencillo de una enfermedad relacionada con un defecto en el canal de sodio."
+    ],
+    "fr": [
+      "Aujourd'hui, nous allons nous concentrer ici sur la conductance sodique et expliquer divers aspects de sa dépendance à la tension et au temps. Ensuite, une fois cela fait, nous consacrerons la seconde moitié du cours à un modèle vraiment simple et élégant d'une maladie liée à un défaut du canal sodique."
+    ],
+    "de": [
+      "Heute werden wir uns auf die Natriumleitfähigkeit konzentrieren und verschiedene Aspekte ihrer Spannungs- und Zeitabhängigkeit erklären. Und nachdem wir das getan haben, wenden wir uns in der zweiten Hälfte der Vorlesung einem wirklich schönen, einfachen Modell einer Erkrankung zu, die mit einem Defekt im Natriumkanal zusammenhängt."
+    ]
+  },
+  "0:02:13.616": {
+    "ja": [
+      "これは、回路やイオンチャネルの欠陥が動物全体で非常に複雑な表現型をもたらす仕組みについての仮説を、モデリングを用いて検証・発展させる方法の一例です。"
+    ],
+    "zh": [
+      "这就是一个示例，展示了我们如何利用建模来检验并展开关于电路或离子通道缺陷如何在整个动物体中引发非常复杂表型的假设。"
+    ],
+    "th": [
+      "และนี่เป็นตัวอย่างว่าเราสามารถใช้การสร้างแบบจำลองเพื่อทดสอบและขยายความสมมติฐานเกี่ยวกับวิธีที่ความบกพร่องในวงจรหรือในช่องไอออนสามารถนำไปสู่ลักษณะปรากฏที่ซับซ้อนมากในสัตว์ทั้งตัว"
+    ],
+    "id": [
+      "Dan ini adalah contoh bagaimana kita dapat menggunakan pemodelan untuk menguji dan mengembangkan hipotesis tentang bagaimana cacat pada sirkuit atau saluran ion dapat menyebabkan fenotipe yang sangat kompleks pada organisme secara keseluruhan."
+    ],
+    "es": [
+      "Y es un ejemplo de cómo podemos usar la modelización para poner a prueba y elaborar hipótesis sobre cómo los defectos en un circuito o en un canal iónico pueden dar lugar a fenotipos muy complejos en un animal entero."
+    ],
+    "fr": [
+      "Et c’est un exemple de la manière dont nous pouvons utiliser la modélisation pour tester et approfondir des hypothèses sur la façon dont des défauts dans un circuit ou dans un canal ionique peuvent conduire à des phénotypes très complexes chez un animal tout entier."
+    ],
+    "de": [
+      "Und es ist ein Beispiel dafür, wie wir Modellierung nutzen können, um Hypothesen zu testen und weiter auszuarbeiten, wie Defekte in einem Schaltkreis oder in einem Ionenkanal zu sehr komplexen Phänotypen im ganzen Tier führen können."
+    ]
+  },
+  "0:02:32.284": {
+    "ja": [
+      "では、覚えているように、私たちのホジキン＝ハクスリー・モデルには3つのコンダクタンスと、膜の静電容量を表すコンデンサ（キャパシタンス）が備わっています。"
+    ],
+    "zh": [
+      "好，正如你还记得的，我们的霍奇金—赫胥黎模型有三种电导和一个电容器，代表细胞膜的电容。"
+    ],
+    "th": [
+      "โอเค ดังที่คุณจำได้ โมเดล Hodgkin–Huxley ของเรามีความนำสามค่าและความจุ ซึ่งเป็นตัวแทนของตัวเก็บประจุที่แสดงความจุของเยื่อหุ้มเซลล์"
+    ],
+    "id": [
+      "Oke, jadi seperti yang Anda ingat, model Hodgkin-Huxley kita memiliki tiga konduktansi dan sebuah kapasitansi yang merupakan sebuah kapasitor yang mewakili kapasitansi membran."
+    ],
+    "es": [
+      "OK, como recordarán, nuestro modelo de Hodgkin-Huxley tiene tres conductancias y una capacitancia que representa un condensador, es decir, la capacitancia de la membrana."
+    ],
+    "fr": [
+      "OK, donc, comme vous vous en souvenez, notre modèle de Hodgkin-Huxley comporte trois conductances et une capacité qui représente un condensateur, c’est‑à‑dire la capacité de la membrane."
+    ],
+    "de": [
+      "Okay, wie Sie sich erinnern, hat unser Hodgkin‑Huxley‑Modell drei Leitwerte und eine Kapazität, also einen Kondensator, der die Kapazität der Membran darstellt."
+    ]
+  },
+  "0:02:41.904": {
+    "ja": [
+      "膜全体のイオン電流は、ナトリウム電流、カリウム電流、そしてこの電圧非依存かつ時間不変の固定漏れ電流の和にすぎません。"
+    ],
+    "zh": [
+      "总膜离子电流只是钠电流、钾电流和这个电压无关、时间无关的固定漏电流的总和。"
+    ],
+    "th": [
+      "กระแสไอออนรวมของเยื่อหุ้มเซลล์เป็นเพียงผลรวมของกระแสโซเดียม กระแสโพแทสเซียม และกระแสรั่วคงที่ซึ่งไม่ขึ้นกับแรงดันหรือเวลา"
+    ],
+    "id": [
+      "Arus ion total pada membran hanyalah penjumlahan dari arus natrium, arus kalium, dan arus kebocoran tetap yang tidak bergantung pada tegangan maupun waktu."
+    ],
+    "es": [
+      "La corriente iónica total de la membrana es simplemente la suma de la corriente de sodio, la corriente de potasio y la corriente de fuga fija, independiente del voltaje y del tiempo."
+    ],
+    "fr": [
+      "Le courant ionique total de la membrane est simplement la somme du courant sodique, du courant potassique et de ce courant de fuite fixe, indépendant de la tension et du temps."
+    ],
+    "de": [
+      "Der gesamte membranäre Ionenstrom ist einfach die Summe aus dem Natriumstrom, dem Kaliumstrom und diesem spannungs- und zeitunabhängigen konstanten Leckstrom."
+    ]
+  },
+  "0:02:54.716": {
+    "ja": [
+      "つまり、ホジキン＝ハクスリー（Hodgkin–Huxley）モデルにおける膜電位の方程式、すなわち膜電位の微分方程式は、膜電流と膜電位を結びつける単純な一次線形微分方程式に過ぎません。"
+    ],
+    "zh": [
+      "好，那么在霍奇金—赫胥黎模型中，膜电位的方程，也就是膜电位的微分方程，仅仅是一个简单的一阶线性微分方程，用来将膜电流和膜电位联系起来。"
+    ],
+    "th": [
+      "เอาล่ะ สมการของศักย์เยื่อหุ้ม หรือกล่าวคือ สมการเชิงอนุพันธ์ของศักย์เยื่อหุ้ม ในแบบจำลองฮอดจ์กิน-ฮักซ์ลีย์ เป็นเพียงสมการเชิงอนุพันธ์เชิงเส้นอันดับหนึ่งที่เรียบง่ายซึ่งเชื่อมความสัมพันธ์ระหว่างกระแสเยื่อหุ้มกับศักย์เยื่อหุ้ม"
+    ],
+    "id": [
+      "Oke, jadi persamaan untuk potensial membran, persamaan diferensial untuk potensial membran, dalam model Hodgkin–Huxley hanyalah persamaan diferensial linier orde pertama yang sederhana yang menghubungkan arus membran dengan potensial membran."
+    ],
+    "es": [
+      "De acuerdo, la ecuación del potencial de membrana —la ecuación diferencial del potencial de membrana— en el modelo de Hodgkin-Huxley es simplemente una ecuación diferencial lineal de primer orden que relaciona la corriente de membrana con el potencial de membrana."
+    ],
+    "fr": [
+      "D'accord, donc l'équation du potentiel de membrane, l'équation différentielle du potentiel de membrane, dans le modèle de Hodgkin-Huxley n'est qu'une simple équation différentielle linéaire du premier ordre qui relie le courant membranaire et le potentiel de membrane."
+    ],
+    "de": [
+      "Okay, die Gleichung für das Membranpotenzial, die Differentialgleichung für das Membranpotenzial im Hodgkin‑Huxley‑Modell, ist im Grunde eine einfache lineare Differentialgleichung erster Ordnung, die den Membranstrom und das Membranpotenzial miteinander verknüpft."
+    ]
+  },
+  "0:03:11.548": {
+    "ja": [
+      "前回は、ホジキンとハクスリーがイカの巨大軸索でこれらのコンダクタンスの電圧および時間依存性を調べるために行った一連の実験について説明しました。"
+    ],
+    "zh": [
+      "上次我们描述了一组由霍奇金和赫胥黎进行的实验，旨在研究鱿鱼巨轴突中这些电导的电压和时间依赖性。"
+    ],
+    "th": [
+      "ครั้งก่อนเราได้อธิบายชุดการทดลองที่ Hodgkin และ Huxley ดำเนินการเพื่อศึกษาการขึ้นกับแรงดันและเวลาของความนำเหล่านี้ในแกนประสาทยักษ์ของปลาหมึก"
+    ],
+    "id": [
+      "Jadi pada pertemuan terakhir, kita menjelaskan serangkaian percobaan yang dilakukan oleh Hodgkin dan Huxley untuk mempelajari ketergantungan tegangan dan waktu dari konduktansi-konduktansi ini pada akson raksasa cumi-cumi."
+    ],
+    "es": [
+      "La última vez describimos una serie de experimentos realizados por Hodgkin y Huxley para estudiar la dependencia en voltaje y en el tiempo de estas conductancias en el axón gigante del calamar."
+    ],
+    "fr": [
+      "La dernière fois, nous avons décrit une série d'expériences réalisées par Hodgkin et Huxley pour étudier la dépendance à la tension et au temps de ces conductances dans l'axone géant du calmar."
+    ],
+    "de": [
+      "Beim letzten Mal haben wir eine Reihe von Experimenten beschrieben, die Hodgkin und Huxley durchgeführt haben, um die Spannungs- und Zeitabhängigkeit dieser Leitfähigkeiten im Riesenaxon des Tintenfischs zu untersuchen."
+    ]
+  },
+  "0:03:25.064": {
+    "ja": [
+      "ご記憶のとおり、この軸索は非常に大きく、直径は1ミリメートルあります。そのため電極を差し込んで電圧を変えたり電流を測定したりするのがとても簡単です。彼らが行ったのは電圧クランプ実験で、細胞を過分極させたり脱分極させたりすることができます。"
+    ],
+    "zh": [
+      "正如你们所记得，这个轴突非常大，直径约有1毫米，这使得把电线插入其中、改变电压并测量电流等操作非常容易。好了，他们做的是电压钳实验，在这种实验中可以使细胞超极化或去极化。"
+    ],
+    "th": [
+      "และตามที่คุณจำได้ แอกซอนนี้มีขนาดใหญ่มาก เส้นผ่านศูนย์กลางประมาณ 1 มิลลิเมตร ซึ่งทำให้สามารถใส่สายไฟเข้าไปได้ง่าย และสามารถเปลี่ยนแรงดันไฟฟ้าและวัดกระแสได้สะดวก เป็นต้น โอเค การทดลองที่พวกเขาทำคือการทดลองแบบ voltage‑clamp (การหนีบแรงดัน) ซึ่งทำให้เราสามารถทำให้เซลล์ไฮเปอร์โพลาราไรซ์ (ทำให้ความต่างศักย์เป็นลบมากขึ้น) และเดโพลาราไรซ์ (ทำให้ความต่างศักย์เป็นบวก) ได้"
+    ],
+    "id": [
+      "Dan seperti yang Anda ingat, akson ini sangat besar. Diameternya 1 milimeter, sehingga sangat mudah memasukkan kawat ke dalamnya untuk mengubah tegangan dan mengukur arus, dan sebagainya. Baiklah, eksperimen yang mereka lakukan adalah eksperimen penjepit tegangan (voltage-clamp) di mana Anda dapat menghiperpolarisasi dan mendepolarisasi sel."
+    ],
+    "es": [
+      "Y, como recuerdan, este axón es muy grande. Tiene 1 milímetro de diámetro, lo que facilita mucho introducir electrodos en él, cambiar el voltaje y medir las corrientes, etc. Bien, el experimento que realizaron fue un experimento de control de voltaje (voltage clamp) en el que se puede hiperpolarizar y despolarizar la célula."
+    ],
+    "fr": [
+      "Et comme vous vous en souvenez, cet axone est très gros. Il a un diamètre d'un millimètre, ce qui rend très facile d'y introduire des électrodes, de modifier la tension et de mesurer les courants, etc. Donc, l'expérience qu'ils ont réalisée était une expérience de clamp de tension où l'on peut hyperpolariser et dépolariser la cellule."
+    ],
+    "de": [
+      "Und wie Sie sich erinnern, ist dieses Axon sehr groß. Es hat einen Durchmesser von 1 Millimeter, was es sehr einfach macht, Drähte hineinzuführen, die Spannung zu verändern und die Ströme usw. zu messen. Also führten sie ein Voltage‑Clamp‑Experiment durch, bei dem man die Zelle hyperpolarisieren und depolarisieren kann."
+    ]
+  },
+  "0:03:42.808": {
+    "ja": [
+      "コマンド電圧を設定できる非常に高速なフィードバックシステムがある。"
+    ],
+    "zh": [
+      "有一个非常快速的反馈系统，可以让你设定一个指令电压。"
+    ],
+    "th": [
+      "มีระบบป้อนกลับที่รวดเร็วมากซึ่งทำให้คุณสามารถตั้งค่าแรงดันคำสั่งได้"
+    ],
+    "id": [
+      "Ada sistem umpan balik yang sangat cepat yang memungkinkan Anda mengatur tegangan perintah."
+    ],
+    "es": [
+      "Hay un sistema de retroalimentación muy rápido que permite establecer un voltaje de comando."
+    ],
+    "fr": [
+      "Il existe un système de rétroaction très rapide qui vous permet de fixer une tension de consigne."
+    ],
+    "de": [
+      "Es gibt ein sehr schnelles Rückkopplungssystem, das es Ihnen ermöglicht, eine Vorgabespannung einzustellen."
+    ]
+  },
+  "0:03:47.628": {
+    "ja": [
+      "このオペアンプは、あなたが指示する任意の膜電位に細胞を保つために必要なだけの電流を注入します。"
+    ],
+    "zh": [
+      "这个运算放大器会注入足够的电流，以将细胞维持在你设定的任何膜电位上。"
+    ],
+    "th": [
+      "และโอเปอเรชันแอมพลิฟายเออร์ตัวนี้จะจ่ายกระแสเท่าที่จำเป็นเพื่อให้เซลล์อยู่ที่ศักย์เยื่อใดๆ ที่คุณกำหนด"
+    ],
+    "id": [
+      "Dan penguat operasional ini menyuntikkan sebanyak arus yang diperlukan untuk menjaga sel pada potensial membran apa pun yang Anda tetapkan."
+    ],
+    "es": [
+      "Y este amplificador operacional inyecta la corriente necesaria para mantener la célula en el potencial de membrana que usted indique."
+    ],
+    "fr": [
+      "Et cet amplificateur opérationnel injecte autant de courant qu'il faut pour maintenir la cellule au potentiel de membrane que vous imposez."
+    ],
+    "de": [
+      "Und dieser Operationsverstärker liefert so viel Strom, wie nötig ist, um die Zelle auf dem von Ihnen gewünschten Membranpotenzial zu halten."
+    ]
+  },
+  "0:03:54.348": {
+    "ja": [
+      "典型的な実験では、細胞を一定の膜電位まで過分極させるか脱分極させ、その指令電圧の一時的変化の間およびその後に膜を通過する電流がどれだけ流れるかを測定した。"
+    ],
+    "zh": [
+      "他们典型的实验是将细胞超极化或去极化到固定的膜电位，并测量在该指令电压的瞬时变化期间及之后流经细胞膜的电流量。"
+    ],
+    "th": [
+      "และการทดลองทั่วไปที่พวกเขาทำคือการทำให้เซลล์ไฮเปอร์โพลาไรซ์หรือดีโพลาไรซ์ไปยังค่าศักย์เยื่อคงที่ แล้ววัดว่ามีกระแสไฟฟ้าเท่าใดไหลผ่านเยื่อหุ้มเซลล์ในระหว่างและหลังการเปลี่ยนแปลงชั่วคราวของแรงดันควบคุมนั้น"
+    ],
+    "id": [
+      "Dan eksperimen khas yang mereka lakukan adalah menghiperpolarisasi atau mendepolarisasi sel ke potensial membran tetap dan mengukur berapa besar arus yang mengalir melalui membran selama dan setelah perubahan transien pada tegangan perintah tersebut."
+    ],
+    "es": [
+      "El experimento típico que realizaban consistía en hiperpolarizar o despolarizar la célula a potenciales de membrana fijos y medir cuánta corriente atraviesa la membrana durante y después de ese cambio transitorio en el voltaje de comando."
+    ],
+    "fr": [
+      "Et l'expérience typique qu'ils réalisaient consistait à hyperpolariser ou dépolariser la cellule à des potentiels membranaires fixés et à mesurer l'intensité du courant traversant la membrane pendant et après ce changement transitoire de la tension de commande."
+    ],
+    "de": [
+      "Und das typische Experiment, das sie durchführten, bestand darin, die Zelle auf festgelegte Membranpotenziale zu hyperpolarisieren oder zu depolarisieren und zu messen, wie viel Strom während und nach dieser vorübergehenden Änderung der angelegten Spannung durch die Membran fließt."
+    ]
+  },
+  "0:04:12.148": {
+    "ja": [
+      "つまり、イカの巨大軸索を使って最初に−65ミリボルトから始めて細胞を過分極させても、ほとんど何も起こりません。"
+    ],
+    "zh": [
+      "所以，如果你取一根鱿鱼巨轴突，膜电位从−65毫伏开始，让细胞超极化，几乎不会发生什么变化。"
+    ],
+    "th": [
+      "ดังนั้น หากคุณใช้แอกซอนยักษ์ของปลาหมึก เริ่มที่ −65 มิลลิโวลต์ แล้วทำให้เซลล์ไฮเปอร์โพลาไรซ์ ก็แทบไม่เกิดอะไรขึ้น"
+    ],
+    "id": [
+      "Jadi, jika Anda mengambil akson raksasa cumi, Anda mulai pada -65 milivolt, dan jika Anda menghiperpolarisasi selnya, tidak banyak yang terjadi."
+    ],
+    "es": [
+      "Así que, si tomas un axón gigante de calamar, partes de −65 milivoltios y hiperpolarizas la célula, no pasa mucho."
+    ],
+    "fr": [
+      "Donc, si vous prenez l'axone géant du calmar, que vous êtes à −65 millivolts et que vous hyperpolarisez la cellule, il ne se passe pas grand-chose."
+    ],
+    "de": [
+      "Also, wenn man ein Riesenaxon des Tintenfischs nimmt, beginnt man bei minus 65 Millivolt, und wenn man die Zelle hyperpolarisiert, passiert kaum etwas."
+    ]
+  },
+  "0:04:20.668": {
+    "ja": [
+      "それは、細胞が−65 mVのように過分極している、つまり低い電圧のときには、それらの電流はすべて既にオフになっているからです。"
+    ],
+    "zh": [
+      "这是因为当细胞超极化到 −65 mV 或处于低电压时，所有这些电流都已经关闭了。"
+    ],
+    "th": [
+      "และนั่นเป็นเพราะกระแสทั้งหมดเหล่านั้นถูกปิดอยู่แล้วเมื่อเซลล์อยู่ในภาวะไฮเปอร์โพลาไรซ์ที่ −65 มิลลิโวลต์ หรือที่แรงดันต่ำ"
+    ],
+    "id": [
+      "Dan itu karena semua arus tersebut sudah tidak aktif ketika sel terhiperpolarisasi pada -65 mV atau pada tegangan rendah."
+    ],
+    "es": [
+      "Y eso es porque todas esas corrientes ya están inactivas cuando la célula está hiperpolarizada a −65 mV o a voltajes bajos."
+    ],
+    "fr": [
+      "Et c'est parce que tous ces courants sont déjà inactifs lorsque la cellule est hyperpolarisée à −65 mV ou à de faibles potentiels."
+    ],
+    "de": [
+      "Und das liegt daran, dass all diese Ströme bereits ausgeschaltet sind, wenn die Zelle bei −65 mV hyperpolarisiert ist oder bei niedrigen Spannungen."
+    ]
+  },
+  "0:04:26.928": {
+    "ja": [
+      "一方で、もし−65ミリボルトから始めて細胞を0ミリボルトまで脱分極させると、突然非常に大きな過渡電流が現れ、まず負の方向に流れます。これは正電荷が細胞内に入ることに対応し、その後に正の電流が続き、これは正電荷が細胞外へ出ることに伴うものです。前回は、この電流の負相と正相という二つの位相を、別々のイオンコンダクタンス（導電性）に分けて解析できると話しました。彼らはその実験で、軸索が浸されている細胞外溶液中のナトリウムを、ナトリウムを含まない溶液に置き換えました。"
+    ],
+    "zh": [
+      "另一方面，如果你从 -65 毫伏开始，将细胞去极化到 0 毫伏，突然会看到一个很大的瞬时电流，先呈负向，这对应于正电荷进入细胞，随后出现的正向电流则与正电荷离开细胞有关。好了，上次我们讨论了如何把电流的这两个相位——这个负相和这个正相——分解为两种不同的离子电导。他们做这个实验的方法是把轴突所处的细胞外溶液中的钠替换成不含钠的溶液。"
+    ],
+    "th": [
+      "ในทางตรงกันข้าม ถ้าคุณเริ่มที่ −65 มิลลิโวลต์แล้วดีโพลาไรซ์เซลล์ขึ้นไปจนถึง 0 มิลลิโวลต์ ทันใดนั้นคุณจะเห็นกระแสชั่วคราวขนาดใหญ่มากที่เริ่มเป็นลบ ซึ่งสอดคล้องกับประจุบวกไหลเข้าสู่เซลล์ ตามด้วยกระแสเป็นบวกที่เกี่ยวข้องกับประจุบวกไหลออกจากเซลล์ และครั้งที่แล้วเราพูดถึงวิธีที่จะแยกสองเฟสของกระแสนี้ — เฟสที่เป็นลบและเฟสที่เป็นบวก — ออกเป็นความนำไฟฟ้าไอออนสองชนิด พวกเขาทำการทดลองนั้นโดยแทนที่โซเดียมในสารละลายภายนอกที่แอกซอนอยู่ด้วยสารละลายที่ไม่มีโซเดียม"
+    ],
+    "id": [
+      "Di sisi lain, jika kita mulai pada −65 milivolt dan mendepolarisasi sel hingga 0 milivolt, tiba‑tiba kita melihat arus transien yang sangat besar yang pertama‑tama menjadi negatif, yang sesuai dengan muatan positif masuk ke dalam sel, diikuti oleh arus positif yang terkait dengan muatan positif keluar dari sel. Oke, dan terakhir kali kita membahas bagaimana kita dapat menguraikan kedua fase arus ini — fase negatif dan fase positif — menjadi dua konduktansi ionik yang berbeda; mereka melakukan percobaan itu dengan mengganti natrium dalam larutan ekstraseluler tempat akson berada dengan larutan yang tidak mengandung natrium."
+    ],
+    "es": [
+      "Por otro lado, si partes de −65 milivoltios y despolarizas la célula hasta 0 mV, de repente observas una corriente transitoria muy grande que primero se vuelve negativa —lo que corresponde a cargas positivas entrando en la célula— seguida de una corriente positiva asociada a cargas positivas saliendo de la célula. Bien, y la última vez hablamos de cómo podemos descomponer estas dos fases de la corriente, esta fase negativa y esta fase positiva, en dos conductancias iónicas diferentes; ellos hicieron ese experimento reemplazando el sodio en la solución extracelular en la que estaba el axón por una solución sin sodio."
+    ],
+    "fr": [
+      "En revanche, si vous partez de −65 millivolts et dépolarisez la cellule jusqu'à 0 millivolt, vous observez soudainement un courant transitoire très important qui devient d'abord négatif — ce qui correspond à des charges positives entrant dans la cellule — puis un courant positif associé à des charges positives quittant la cellule. La dernière fois, nous avons expliqué comment on peut dissocier ces deux phases du courant, la phase négative et la phase positive, en deux conductances ioniques distinctes : ils ont réalisé cette expérience en remplaçant le sodium de la solution extracellulaire dans laquelle se trouvait l'axone par une solution dépourvue de sodium."
+    ],
+    "de": [
+      "Wenn man hingegen bei −65 Millivolt beginnt und die Zelle bis auf 0 Millivolt depolarisiert, sieht man plötzlich einen sehr großen transienten Strom, der zunächst negativ wird — was dem Einstrom positiver Ladungen in die Zelle entspricht — und danach einen positiven Strom, der mit dem Austreten positiver Ladungen aus der Zelle verbunden ist. Okay, und beim letzten Mal haben wir darüber gesprochen, wie man diese beiden Phasen des Stroms, die negative und die positive Phase, in zwei verschiedene ionische Leitfähigkeiten zerlegen kann; dieses Experiment führten sie durch, indem sie das Natrium in der extrazellulären Lösung, in der das Axon lag, durch eine natriumfreie Lösung ersetzten."
+    ]
+  },
+  "0:05:15.164": {
+    "ja": [
+      "それをコリン塩化物に置き換えました。つまりコリンは陽イオンで正の電荷を持ち、塩化物はもちろん負の電荷を持っています。"
+    ],
+    "zh": [
+      "他们用氯化胆碱替代了它。所以胆碱是带正电的阳离子，具有正电荷，而氯离子当然带负电荷。"
+    ],
+    "th": [
+      "พวกเขาแทนที่ด้วยโคลีนคลอไรด์ ดังนั้นโคลีนเป็นไอออนประจุบวก ส่วนคลอไรด์แน่นอนว่ามีประจุลบ"
+    ],
+    "id": [
+      "Mereka menggantinya dengan kolin klorida. Jadi kolin adalah ion bermuatan positif, sedangkan klorida tentu saja bermuatan negatif."
+    ],
+    "es": [
+      "Lo reemplazaron por cloruro de colina. La colina es un ión positivo, tiene carga positiva, y el cloruro, por supuesto, tiene carga negativa."
+    ],
+    "fr": [
+      "Ils l'ont remplacé par du chlorure de choline. La choline est un ion positif, elle porte une charge positive, et le chlorure, bien sûr, porte une charge négative."
+    ],
+    "de": [
+      "Sie ersetzten das durch Cholinchlorid. Cholin ist also ein positiv geladenes Ion, und Chlorid hat natürlich eine negative Ladung."
+    ]
+  },
+  "0:05:26.564": {
+    "ja": [
+      "それで、塩化ナトリウムを塩化コリンに置き換えることができます。すると、細胞を脱分極させたときに、その負の部分がなくなっているのが見えます。"
+    ],
+    "zh": [
+      "所以，你可以用氯化胆碱代替氯化钠。现在，当你使细胞去极化时，你可以看到那一段负的部分已经消失。"
+    ],
+    "th": [
+      "ดังนั้น คุณสามารถแทนโซเดียมคลอไรด์ด้วยโคลีนคลอไรด์ได้ และเมื่อคุณดีโพลไรซ์เซลล์ คุณจะเห็นว่าส่วนที่เป็นค่าลบหายไป"
+    ],
+    "id": [
+      "Jadi, Anda bisa mengganti natrium klorida dengan kolin klorida. Dan sekarang, ketika Anda mendepolarisasi sel Anda, Anda dapat melihat bahwa bagian negatif itu hilang."
+    ],
+    "es": [
+      "Y así, puedes reemplazar el cloruro de sodio por cloruro de colina. Y ahora, cuando despolarizas tu célula, puedes ver que esa parte negativa ha desaparecido."
+    ],
+    "fr": [
+      "Ainsi, vous pouvez remplacer le chlorure de sodium par le chlorure de choline. Et maintenant, lorsque vous dépolarisez votre cellule, vous pouvez voir que la partie négative a disparu."
+    ],
+    "de": [
+      "Und so kann man Natriumchlorid durch Cholinchlorid ersetzen. Wenn man die Zelle jetzt depolarisiert, sieht man, dass der negative Anteil verschwunden ist."
+    ]
+  },
+  "0:05:35.044": {
+    "ja": [
+      "そして見えるのは、このゆっくり立ち上がる正の電流だけです。"
+    ],
+    "zh": [
+      "你看到的唯一电流就是这种缓慢上升的正电流。"
+    ],
+    "th": [
+      "และกระแสเดียวที่คุณเห็นก็คือกระแสบวกนี้ ซึ่งค่อยๆ ไต่ขึ้นมา"
+    ],
+    "id": [
+      "Dan satu-satunya arus yang terlihat adalah arus positif ini, yang perlahan-lahan meningkat."
+    ],
+    "es": [
+      "Y la única corriente que se observa es esta corriente positiva, que aumenta lentamente."
+    ],
+    "fr": [
+      "Et le seul courant qu'on voit est ce courant positif, ce genre de courant positif qui augmente lentement."
+    ],
+    "de": [
+      "Und der einzige Strom, den man sieht, ist dieser positive, sozusagen langsam ansteigende Strom."
+    ]
+  },
+  "0:05:40.584": {
+    "ja": [
+      "そして、それがカリウムイオンによるものだと彼らは特定した。"
+    ],
+    "zh": [
+      "他们确定这是由钾离子引起的。"
+    ],
+    "th": [
+      "และพวกเขาระบุว่าสิ่งนั้นเกิดจากไอออนโพแทสเซียม"
+    ],
+    "id": [
+      "Dan mereka mengidentifikasi bahwa hal itu disebabkan oleh ion kalium."
+    ],
+    "es": [
+      "Y determinaron que se debía a iones de potasio."
+    ],
+    "fr": [
+      "Et ils ont identifié que c'était dû aux ions potassium."
+    ],
+    "de": [
+      "Und sie identifizierten das als durch Kaliumionen verursacht."
+    ]
+  },
+  "0:05:47.548": {
+    "ja": [
+      "そして、ナトリウムありの電流曲線からナトリウムなしの電流曲線を引けば、その差は明らかにナトリウムによるものです。"
+    ],
+    "zh": [
+      "如果你把没有钠的电流曲线从含钠的电流曲线中减去，得到的差值显然是由钠引起的。"
+    ],
+    "th": [
+      "และถ้าคุณนำเส้นโค้งกระแสที่ไม่มีโซเดียมมาลบออกจากเส้นโค้งกระแสที่มีโซเดียม ความต่างที่ได้ก็ชัดเจนว่าเกิดจากโซเดียม"
+    ],
+    "id": [
+      "Dan jika Anda mengurangkan kurva arus tanpa natrium dari kurva arus dengan natrium, selisihnya jelas disebabkan oleh natrium."
+    ],
+    "es": [
+      "Y si restas la curva de corriente sin sodio de la curva de corriente con sodio, la diferencia se debe obviamente al sodio."
+    ],
+    "fr": [
+      "Et si l'on soustrait la courbe de courant obtenue sans sodium de celle obtenue avec sodium, la différence est évidemment due au sodium."
+    ],
+    "de": [
+      "Wenn man die Stromkurve ohne Natrium von der Stromkurve mit Natrium subtrahiert, ist die Differenz offensichtlich auf Natrium zurückzuführen."
+    ]
+  },
+  "0:05:53.088": {
+    "ja": [
+      "したがって、それら二つの曲線の差をプロットすると、ナトリウム電流は非常に速く立ち上がり、その後非常に速く減衰することが分かります。"
+    ],
+    "zh": [
+      "因此，如果把那两条曲线的差值画出来，你会看到钠电流打开得非常快，然后也非常迅速地衰减。"
+    ],
+    "th": [
+      "ดังนั้น หากคุณวาดกราฟความต่างระหว่างเส้นโค้งทั้งสอง จะเห็นได้ว่ากระแสโซเดียมเปิดขึ้นอย่างรวดเร็ว แล้วก็ลดลงอย่างรวดเร็ว"
+    ],
+    "id": [
+      "Jadi, jika Anda memplot perbedaan antara kedua kurva itu, Anda bisa melihat bahwa arus natrium aktif sangat cepat dan kemudian mereda sangat cepat."
+    ],
+    "es": [
+      "Así que, si trazas la diferencia entre esas dos curvas, puedes ver que la corriente de sodio se activa muy rápidamente y luego decae igual de rápido."
+    ],
+    "fr": [
+      "Ainsi, si l'on trace la différence entre ces deux courbes, on voit que le courant sodique s'active très rapidement puis décroît très rapidement."
+    ],
+    "de": [
+      "Und wenn man also die Differenz zwischen diesen beiden Kurven aufträgt, sieht man, dass der Natriumstrom sehr schnell einschaltet und dann sehr schnell wieder abklingt."
+    ]
+  },
+  "0:06:08.796": {
+    "ja": [
+      "その一過性のナトリウム電流は非常に速く起こり、ほとんどカリウム電流が始まる前に発生します。そして（追記：重要）、その速いナトリウム電流に続いて遅いカリウム電流が現れるというのが、ここに示したまさにそのプロファイルであり、膜電位が脱分極した後に過分極へと変化し、活動電位のような波形を生み出すのです。"
+    ],
+    "zh": [
+      "那个瞬时的钠电流发生得非常快，几乎在钾电流开始之前。我们也讨论过，那种（已添加（关键））快速的钠电流随后是较慢的钾电流，正是我们在这里展示的波形：先引起电压去极化的变化，随后出现像动作电位一样的电压超极化变化。"
+    ],
+    "th": [
+      "กระแสโซเดียมชั่วคราวนั้นเกิดขึ้นอย่างรวดเร็วมาก แทบจะเกิดขึ้นก่อนที่กระแสโพแทสเซียมจะเริ่มทำงานด้วยซ้ำ และเราได้พูดกันว่ากระแสโซเดียมที่รวดเร็วนี้ตามด้วยกระแสโพแทสเซียมที่ช้ากว่านั้น เป็นรูปแบบที่เราแสดงไว้ที่นี่ ซึ่งทำให้เกิดการเปลี่ยนแปลงแรงดันไฟฟ้าในทิศทางดีโพลาไรเซชัน ตามด้วยการเปลี่ยนแปลงแรงดันไฟฟ้าในทิศทางไฮเปอร์โพลาไรเซชัน ซึ่งมีลักษณะคล้ายศักย์การกระตุ้น"
+    ],
+    "id": [
+      "Arus natrium transien itu terjadi sangat cepat, hampir sebelum arus kalium bahkan mulai. Dan kita membicarakan bagaimana arus natrium cepat itu [DITAMBAHKAN (KRIT)], yang diikuti oleh arus kalium yang lebih lambat, tepat merupakan profil yang kita tunjukkan di sini yang menghasilkan perubahan depolarisasi tegangan, diikuti oleh perubahan hiperpolarisasi tegangan yang menyerupai potensial aksi."
+    ],
+    "es": [
+      "Esa corriente transitoria de sodio ocurre muy rápidamente, casi antes de que la corriente de potasio siquiera comience. Y hablamos de cómo esa corriente rápida de sodio, seguida por una corriente de potasio más lenta, es exactamente el perfil que mostramos aquí y que genera un cambio despolarizante en el voltaje seguido de un cambio hiperpolarizante en el voltaje que se parece a un potencial de acción."
+    ],
+    "fr": [
+      "Ce courant sodique transitoire survient très rapidement, presque avant même que le courant potassique ne démarre. Et nous avons expliqué comment ce courant sodique rapide [AJOUTÉ (CRIT)], suivi d’un courant potassique plus lent, correspond exactement au profil que nous avons montré ici et qui engendre une dépolarisation du potentiel suivie d’une hyperpolarisation du potentiel ressemblant à un potentiel d’action."
+    ],
+    "de": [
+      "Dieser transiente Natriumstrom tritt sehr schnell auf, fast bevor der Kaliumstrom überhaupt einsetzt. Und wir haben darüber gesprochen, wie dieser [HINZUGEFÜGT (KRITISCH)] schnelle Natriumstrom, gefolgt von einem langsameren Kaliumstrom, genau jenes Profil ist, das wir hier gezeigt haben und das eine depolarisierende Spannungsänderung erzeugt, gefolgt von einer hyperpolarisierenden Spannungsänderung, die wie ein Aktionspotenzial aussieht."
+    ]
+  },
+  "0:06:40.156": {
+    "ja": [
+      "では、これらの電流曲線をどのように得て、そこからナトリウムとカリウムのイオンチャネルの伝導度を電圧と時間の関数として抽出したかを手短に復習しましょう。やったことは、電圧クランプ実験を異なる電圧で行う場合を調べることです。まず過分極状態から始め、−40 mVにステップしてこのカリウム電流を測定します。次に0 mVにステップすると、より大きなカリウム電流が見られます。もし−40 mVから40 mVにステップすると、さらに大きなカリウム電流が観察され、これらのピーク電流や定常電流を電圧の関数としてプロットできます。"
+    ],
+    "zh": [
+      "好，现在我们快速回顾一下我们是如何得到这些电流曲线的，并从中提取出钠通道和钾通道的电导，作为电压和时间的函数。我们进行的是对不同电压的电压钳实验：从超极化状态开始，将膜电位阶跃到 −40 mV 并测量此时的钾电流；将膜电位阶跃到 0 mV，你会看到更大的钾电流；如果从 −40 mV 阶跃到 +40 mV，则会看到更大的钾电流。你可以将该峰值电流或稳态电流绘制为电压的函数。"
+    ],
+    "th": [
+      "เอาล่ะ ตอนนี้เรามาทบทวนอย่างรวดเร็วว่าเราเอาเส้นโค้งกระแสเหล่านี้มาได้อย่างไร และจากนั้นสกัดค่าการนำของช่องไอออนโซเดียมและโพแทสเซียมในรูปฟังก์ชันของแรงดันและเวลา สิ่งที่เราทำก็คือ เราดูกรณีที่ทำการทดลอง voltage clamp ที่แรงดันต่าง ๆ โดยเริ่มจากภาวะ hyperpolarized แล้วเรากระโดดขึ้นไปที่ −40 มิลลิโวลต์และวัดกระแสโพแทสเซียมนี้ ต่อมากระโดดไปที่ 0 มิลลิโวลต์และจะเห็นกระแสโพแทสเซียมที่มากขึ้น หากกระโดดจาก −40 เป็น 40 มิลลิโวลต์ ก็จะเห็นกระแสโพแทสเซียมที่มากขึ้นอีก และเราสามารถพล็อตกระแสจุดสูงสุดหรือกระแสสถานะคงที่นี้เป็นฟังก์ชันของแรงดันได้"
+    ],
+    "id": [
+      "Baiklah, sekarang mari kita tinjau singkat bagaimana kita mengambil kurva-kurva arus ini, dan dari situ mengekstrak konduktansi saluran ion natrium dan kalium sebagai fungsi tegangan dan waktu. Jadi, yang kami lakukan adalah melihat kasus di mana kami melakukan percobaan penjepit tegangan pada berbagai tegangan; kami mulai dalam keadaan hiperpolarisasi. Kami melangkah ke −40 mV dan mengukur arus kalium ini. Kami melangkah ke 0 mV, dan Anda melihat arus kalium yang lebih besar. Jika Anda melangkah dari −40 mV ke 40 mV, Anda melihat arus kalium yang bahkan lebih besar, dan Anda dapat memplot arus puncak ini, atau arus keadaan tunak, sebagai fungsi tegangan."
+    ],
+    "es": [
+      "Bien, ahora repasemos rápidamente cómo obtuvimos estas curvas de corriente y, a partir de ellas, extraímos la conductancia de los canales iónicos de sodio y potasio en función del voltaje y del tiempo. Lo que hicimos fue observar el caso en el que realizamos nuestro experimento de voltage clamp a diferentes voltajes: empezamos hiperpolarizados, subimos a −40 mV y medimos esta corriente de potasio. Subimos a 0 mV y ves una corriente de potasio mayor. Si pasas de −40 a 40 mV ves una corriente de potasio aún mayor, y puedes graficar esta corriente pico, o la corriente en estado estacionario, en función del voltaje."
+    ],
+    "fr": [
+      "OK, passons rapidement en revue comment nous avons obtenu ces courbes de courant et, à partir d'elles, extrait la conductance des canaux sodiques et potassiques en fonction de la tension et du temps. Nous avons réalisé des expériences de clamp de tension à différentes valeurs : on part d'un état hyperpolarisé, on effectue un saut à −40 mV et on mesure ce courant potassique. On effectue ensuite un saut à 0 mV et l'on observe un courant potassique plus important. Si l'on passe de −40 mV à +40 mV, le courant potassique est encore plus grand, et l'on peut tracer ce courant maximal, ou le courant à l'état stationnaire, en fonction de la tension."
+    ],
+    "de": [
+      "Okay, schauen wir uns nun kurz an, wie wir diese Stromkurven aufgenommen und daraus die Leitfähigkeit der Natrium‑ und Kalium‑Ionenkanäle als Funktion von Spannung und Zeit bestimmt haben. Dazu haben wir uns den Fall angesehen, in dem wir das Spannungsklemmexperiment bei verschiedenen Spannungen durchführen: Wir beginnen hyperpolarisiert, fahren dann auf −40 mV hoch und messen diesen Kaliumstrom. Gehen wir auf 0 mV, sieht man einen größeren Kaliumstrom; steigert man von −40 mV auf +40 mV, sieht man einen noch größeren Kaliumstrom. Diesen Spitzenstrom oder den stationären Strom kann man als Funktion der Spannung auftragen."
+    ]
+  },
+  "0:07:22.924": {
+    "ja": [
+      "それで I–V 曲線が得られます。これについてはすぐに見ていきます。"
+    ],
+    "zh": [
+      "那会给你一条电流-电压（I–V）曲线，我们一会儿来看看。"
+    ],
+    "th": [
+      "นั่นจะให้กราฟ I–V แก่คุณ และเราจะมาดูมันในอีกสักครู่"
+    ],
+    "id": [
+      "Itu menghasilkan kurva I–V, dan kita akan melihatnya sebentar lagi."
+    ],
+    "es": [
+      "Eso te da una curva I‑V, y la veremos en un momento."
+    ],
+    "fr": [
+      "Cela vous donne une courbe I-V, et nous l'examinerons dans un instant."
+    ],
+    "de": [
+      "Das ergibt eine I‑V‑Kurve, und die sehen wir uns gleich an."
+    ]
+  },
+  "0:07:26.924": {
+    "ja": [
+      "ナトリウム電流について同じことを行うと、最初は非常に混乱するような異なる挙動が見られます。−80 mVから−40 mVへステップすると小さなナトリウム電流が観測されます。もしより大きく電圧を上げて0 mVにステップすると、より大きなナトリウム電流が現れます。"
+    ],
+    "zh": [
+      "如果你对钠电流做同样的操作，你会看到不同的情况——这起初会让人很困惑。如果你把电位从 −80 mV 步进到 −40 mV，你会看到一个很小的钠电流。如果你把电压步进得更大到 0 mV，你会看到这个更大的钠电流。"
+    ],
+    "th": [
+      "ถ้าคุณทำแบบเดียวกันกับกระแสโซเดียม คุณจะเห็นสิ่งที่ต่างออกไป ซึ่งในตอนแรกค่อนข้างสับสน ถ้าคุณยกระดับแรงดันจาก −80 เป็น −40 คุณจะเห็นกระแสโซเดียมขนาดเล็ก แต่ถ้าคุณเพิ่มขนาดการก้าวของแรงดันให้มากขึ้นจนถึง 0 จะเห็นกระแสโซเดียมที่ใหญ่กว่า"
+    ],
+    "id": [
+      "Jika Anda melakukan hal yang sama pada arus natrium, Anda akan melihat sesuatu yang berbeda, yang pada awalnya sangat membingungkan. Jika Anda mengubah tegangan dari minus 80 ke minus 40 Anda akan melihat arus natrium kecil. Jika Anda membuat loncatan tegangan yang lebih besar sampai nol, Anda akan melihat arus natrium yang lebih besar ini."
+    ],
+    "es": [
+      "Si haces lo mismo con las corrientes de sodio, ves algo diferente, lo cual al principio es muy confuso. Si aplicas un escalón de −80 a −40 mV ves una pequeña corriente de sodio. Si realizas un escalón de voltaje mayor hasta 0 mV, ves una corriente de sodio más grande."
+    ],
+    "fr": [
+      "Si vous faites la même chose pour les courants de sodium, vous observez quelque chose de différent, ce qui est au départ très déroutant. Si vous passez de −80 mV à −40 mV, vous voyez un petit courant de sodium. Si vous effectuez un saut de tension plus important jusqu'à 0 mV, vous observez ce courant de sodium plus important."
+    ],
+    "de": [
+      "Wenn man dasselbe für die Natriumströme macht, sieht man etwas anderes, das anfangs sehr verwirrend ist. Wenn man die Spannung von −80 mV auf −40 mV erhöht, sieht man einen kleinen Natriumstrom. Erhöht man die Spannung stärker bis auf 0 mV, sieht man diesen größeren Natriumstrom."
+    ]
+  },
+  "0:07:45.680": {
+    "ja": [
+      "でも、−80ミリボルトから40ミリボルトにステップアップすると、ナトリウム電流はごくわずかしか見られません。なぜそうなるか覚えている人はいますか？なぜ40ミリボルトにするとナトリウム電流が非常に小さいだけになるのでしょうか？ナトリウムの平衡電位はいくらですか？"
+    ],
+    "zh": [
+      "但是，如果你把电位从 −80 毫伏升到 +40 毫伏，现在你会看到只有很微小的钠电流。有人记得这是为什么吗？为什么当你把电位升到 +40 毫伏时只会看到极小的钠电流？钠的平衡电位是多少？"
+    ],
+    "th": [
+      "แต่ถ้าคุณยกระดับจาก −80 มิลลิโวลต์ขึ้นไปเป็น 40 มิลลิโวลต์ ตอนนี้คุณจะเห็นว่ามีกระแสโซเดียมเพียงเล็กน้อย มีใครยังจำได้ไหมว่าทำไมถึงเป็นอย่างนั้น? ทำไมคุณจึงเห็นเพียงกระแสโซเดียมจิ๋วๆ เมื่อยกระดับไปที่ 40 มิลลิโวลต์? ศักย์สมดุลของโซเดียมคือเท่าไหร่?"
+    ],
+    "id": [
+      "Tapi kemudian, jika Anda menaikkan dari minus 80 millivolt ke 40 millivolt, sekarang Anda melihat hanya ada arus natrium yang sangat kecil. Ada yang ingat kenapa itu terjadi? Mengapa Anda hanya melihat arus natrium yang sangat kecil jika Anda menaikkan ke 40 millivolt? Berapa potensial keseimbangan untuk natrium?"
+    ],
+    "es": [
+      "Pero entonces, si subes de -80 milivoltios a 40 milivoltios, ahora ves que solo tienes una corriente de sodio muy pequeña. ¿Alguien recuerda por qué sería eso? ¿Por qué verías únicamente una corriente de sodio muy pequeña si subes a 40 milivoltios? ¿Cuál es el potencial de equilibrio para el sodio?"
+    ],
+    "fr": [
+      "« Mais ensuite, si vous passez de −80 millivolts à 40 millivolts, vous voyez maintenant que vous n'avez qu'un tout petit courant sodique. Quelqu'un se souvient pourquoi ? Pourquoi ne verriez‑vous qu'un courant sodique très faible si vous montez à 40 millivolts ? Quel est le potentiel d'équilibre pour le sodium ? »"
+    ],
+    "de": [
+      "Aber wenn man dann von −80 Millivolt auf +40 Millivolt hochgeht, sieht man jetzt, dass man nur einen winzig kleinen Natriumstrom hat. Weiß noch jemand, warum das so ist? Warum sieht man nur einen sehr winzigen Natriumstrom, wenn man auf +40 Millivolt hochgeht? Was ist das Gleichgewichtspotenzial für Natrium?"
+    ]
+  },
+  "0:08:17.596": {
+    "ja": [
+      "いい、いい。では、この電圧をちょうど50ミリボルトにステップしたとしたら、ナトリウム電流はどうなりますか？"
+    ],
+    "zh": [
+      "好，好。那么，如果我把这个电压恰好升到50毫伏，钠电流会是多少？"
+    ],
+    "th": [
+      "ดี ดี แล้วกระแสโซเดียมจะเป็นเท่าไหร่ถ้าผมเพิ่มแรงดันนี้ขึ้นมาเป็น 50 มิลลิโวลต์พอดี?"
+    ],
+    "id": [
+      "Baik, baik. Jadi, berapa besar arus natrium jika saya menaikkan tegangan ini tepat menjadi 50 milivolt?"
+    ],
+    "es": [
+      "Bien, bien. Entonces, ¿cuál sería la corriente de sodio si hubiera subido este voltaje exactamente a 50 milivoltios?"
+    ],
+    "fr": [
+      "Bien, bien. Alors, quel serait le courant sodique si j'avais porté cette tension exactement à 50 millivolts ?"
+    ],
+    "de": [
+      "Gut, gut. Also, wie groß wäre der Natriumstrom, wenn ich diese Spannung genau auf 50 Millivolt erhöht hätte?"
+    ]
+  },
+  "0:08:26.496": {
+    "ja": [
+      "ゼロになります。つまり、これはほぼ50ミリボルトに近いため、ナトリウム電流は実際にはかなり小さいのです。"
+    ],
+    "zh": [
+      "它会是零。所以这相当接近50毫伏，这就是钠电流实际上很小的原因。"
+    ],
+    "th": [
+      "มันจะเป็นศูนย์ ดังนั้นค่านี้จึงค่อนข้างใกล้เคียงกับ 50 มิลลิโวลต์ ซึ่งเป็นเหตุผลที่ทำให้กระแสโซเดียมค่อนข้างเล็ก"
+    ],
+    "id": [
+      "Itu akan bernilai nol. Jadi ini cukup dekat dengan 50 millivolt, itulah sebabnya arus natrium sebenarnya cukup kecil."
+    ],
+    "es": [
+      "Sería cero. Así que esto está bastante cerca de 50 milivoltios, lo que explica por qué la corriente de sodio es en realidad bastante pequeña."
+    ],
+    "fr": [
+      "Ce serait zéro. Donc c'est assez proche de 50 millivolts, ce qui explique pourquoi le courant sodique est en fait assez faible."
+    ],
+    "de": [
+      "Es wäre null. Das ist also ziemlich nahe an 50 Millivolt, weshalb der Natriumstrom tatsächlich ziemlich klein ist."
+    ]
+  },
+  "0:08:34.748": {
+    "ja": [
+      "さて、ではカリウムのピーク電流を電圧の関数としてプロットし、ここではナトリウムのピーク電流も電圧の関数としてプロットしましょう。"
+    ],
+    "zh": [
+      "好，现在我们把钾的峰值电流作为电压的函数画出来，同时把这里的钠的峰值电流也作为电压的函数画出来。"
+    ],
+    "th": [
+      "เอาล่ะ ตอนนี้มาวาดกราฟกระแสสูงสุดเป็นฟังก์ชันของแรงดันสำหรับโพแทสเซียม และกระแสสูงสุดตรงนี้เป็นฟังก์ชันของแรงดันสำหรับโซเดียม"
+    ],
+    "id": [
+      "Baiklah, sekarang mari kita plot arus puncak sebagai fungsi tegangan untuk kalium, dan arus puncak ini sebagai fungsi tegangan untuk natrium."
+    ],
+    "es": [
+      "Muy bien, ahora tracemos la corriente máxima en función del voltaje para el potasio, y la corriente máxima aquí en función del voltaje para el sodio."
+    ],
+    "fr": [
+      "Très bien, maintenant traçons le courant maximal en fonction de la tension pour le potassium, et ici le courant maximal en fonction de la tension pour le sodium."
+    ],
+    "de": [
+      "Also, jetzt tragen wir den Spitzenstrom als Funktion der Spannung für Kalium auf und hier den Spitzenstrom als Funktion der Spannung für Natrium."
+    ]
+  },
+  "0:08:46.684": {
+    "ja": [
+      "こんな感じです。ここ下に示した電圧ではカリウム電流がゼロで、その後増大していくことが分かります。"
+    ],
+    "zh": [
+      "这就是它的样子。所以你可以看到，对于下面这些电压，钾电流为零，随后开始增大。"
+    ],
+    "th": [
+      "นั่นแหละคือรูปร่างที่เห็น ดังนั้นจะเห็นได้ว่ากระแสโพแทสเซียมเป็นศูนย์ที่แรงดันเหล่านี้ด้านล่าง แล้วค่อยๆ เพิ่มขึ้น"
+    ],
+    "id": [
+      "Begitulah tampilannya. Jadi, Anda dapat melihat bahwa arus kalium bernilai nol pada tegangan‑tegangan di bawah ini dan kemudian meningkat."
+    ],
+    "es": [
+      "Así es como se ve. Como pueden ver, la corriente de potasio es cero para estos voltajes aquí abajo y aumenta."
+    ],
+    "fr": [
+      "Voilà à quoi cela ressemble. Vous pouvez donc voir que le courant potassique est nul pour ces tensions en bas et qu'il augmente."
+    ],
+    "de": [
+      "So sieht das aus. Sie können sehen, dass der Kaliumstrom bei den hier unten dargestellten Spannungen null ist und dann zunimmt."
+    ]
+  },
+  "0:08:52.184": {
+    "ja": [
+      "実際には、さらに負の電圧でも0のままです。"
+    ],
+    "zh": [
+      "实际上在更负的电压下它仍然保持为零。"
+    ],
+    "th": [
+      "จริงๆ แล้วมันยังคงเป็นศูนย์สำหรับแรงดันที่เป็นลบมากขึ้น"
+    ],
+    "id": [
+      "Sebenarnya tetap nol untuk tegangan yang lebih negatif lagi."
+    ],
+    "es": [
+      "En realidad se mantiene en 0 para voltajes aún más negativos."
+    ],
+    "fr": [
+      "En fait, il reste à zéro pour des tensions encore plus négatives."
+    ],
+    "de": [
+      "Es bleibt tatsächlich bei 0, selbst bei noch negativeren Spannungen."
+    ]
+  },
+  "0:08:58.972": {
+    "ja": [
+      "一方、ナトリウム電流はかなり変わった形をしている。高い電圧、つまりナトリウムの平衡（逆転）電位付近ではこの上の部分は直線的になっている。"
+    ],
+    "zh": [
+      "另一方面，钠电流呈现出一种有点奇怪的形状。在高电压区域——也就是靠近钠的平衡电位或反转电位时，它在这里是线性的。"
+    ],
+    "th": [
+      "กระแสโซเดียม ในทางกลับกัน มีรูปร่างที่ค่อนข้างแปลกๆ แบบนี้ — มันเป็นเส้นตรงบริเวณแรงดันสูง ใกล้ศักย์สมดุลหรือศักย์กลับของโซเดียม"
+    ],
+    "id": [
+      "Sebaliknya, arus natrium memiliki bentuk yang agak aneh seperti ini. Di sini ia bersifat linear pada tegangan tinggi, sekitar potensial kesetimbangan atau potensial pembalikan natrium."
+    ],
+    "es": [
+      "La corriente de sodio, por otro lado, tiene esta forma un tanto peculiar. Aquí arriba es lineal a voltajes altos, alrededor del potencial de equilibrio o de inversión del sodio."
+    ],
+    "fr": [
+      "Le courant sodique, en revanche, a ce genre de forme un peu étrange. Il est linéaire ici en haut, autour des potentiels élevés, c’est‑à‑dire autour du potentiel d’équilibre ou de renversement du sodium."
+    ],
+    "de": [
+      "Der Natriumstrom hingegen hat diese ziemlich seltsame Form. Bei hohen Spannungen, also hier oben in der Nähe des Natrium‑Gleichgewichtspotentials bzw. des Umkehrpotentials, ist er linear."
+    ]
+  },
+  "0:09:13.180": {
+    "ja": [
+      "そしてそれはゼロまで下がり、ナトリウム電流は0 mVまたは負の電圧でゼロのままになります。"
+    ],
+    "zh": [
+      "然后它降到零，钠电流在零或负电压下保持为零。"
+    ],
+    "th": [
+      "และจากนั้นมันจะลดลงเป็นศูนย์ โดยกระแสโซเดียมจะอยู่ที่ศูนย์หรือเป็นค่าลบเมื่อแรงดันเป็นค่าลบ"
+    ],
+    "id": [
+      "Dan kemudian turun menjadi nol; arus natrium tetap nol pada tegangan nol atau negatif."
+    ],
+    "es": [
+      "Y luego cae a cero; la corriente de sodio se mantiene en cero para voltajes iguales o menores que cero."
+    ],
+    "fr": [
+      "Et ensuite, il tombe à zéro : le courant sodique reste nul à des potentiels nuls ou négatifs."
+    ],
+    "de": [
+      "Und dann fällt er auf null; der Natriumstrom bleibt bei 0 mV oder bei negativen Spannungen null."
+    ]
+  },
+  "0:09:21.244": {
+    "ja": [
+      "そして、これを使ってコンダクタンスがどのようであるべきかを考えることを思い出してください。"
+    ],
+    "zh": [
+      "你们还记得我们用它来推断电导应该是多少。"
+    ],
+    "th": [
+      "และคุณคงจำได้ว่าเราใช้สิ่งนี้ในการพิจารณาว่าค่าความนำไฟฟ้าต้องเป็นเท่าไร"
+    ],
+    "id": [
+      "Dan Anda ingat bahwa kita menggunakan ini untuk memikirkan berapa besar konduktansi yang harus ada."
+    ],
+    "es": [
+      "Y recuerden que usamos esto para pensar en cuál debe ser la conductancia."
+    ],
+    "fr": [
+      "Et vous vous souvenez que nous utilisons cela pour déterminer quelle doit être la conductance."
+    ],
+    "de": [
+      "Und Sie erinnern sich, dass wir dies nutzen, um zu überlegen, wie die Leitfähigkeit sein muss."
+    ]
+  },
+  "0:09:24.504": {
+    "ja": [
+      "では、その論理をもう一度順を追って説明させてください。"
+    ],
+    "zh": [
+      "那么，让我再把那个逻辑给你们讲一遍。"
+    ],
+    "th": [
+      "เอาล่ะ เดี๋ยวผมจะพาคุณทบทวนตรรกะนั้นอีกครั้ง"
+    ],
+    "id": [
+      "Jadi, izinkan saya menjelaskan kembali logika itu."
+    ],
+    "es": [
+      "Entonces, permítanme repasar de nuevo esa lógica."
+    ],
+    "fr": [
+      "Alors, laissez‑moi juste vous réexpliquer cette logique."
+    ],
+    "de": [
+      "Also, lassen Sie mich Ihnen diese Logik noch einmal durchgehen."
+    ]
+  },
+  "0:09:29.308": {
+    "ja": [
+      "つまり、電流は単にコンダクタンス（導電率）と駆動電位の積であることを覚えておいてください。"
+    ],
+    "zh": [
+      "所以，记住电流只是电导乘以驱动电位。"
+    ],
+    "th": [
+      "ดังนั้น จงจำไว้ว่า กระแสเป็นเพียงความนำไฟฟ้าคูณด้วยแรงขับ"
+    ],
+    "id": [
+      "Jadi, ingat bahwa arus hanyalah konduktansi dikalikan dengan potensial penggerak."
+    ],
+    "es": [
+      "Entonces, recuerden que la corriente es simplemente la conductancia multiplicada por la fuerza impulsora."
+    ],
+    "fr": [
+      "Donc, souvenez-vous que le courant n'est que la conductance multipliée par le potentiel de conduite."
+    ],
+    "de": [
+      "Also, denkt daran, dass der Strom einfach die Leitfähigkeit multipliziert mit dem treibenden Potenzial ist."
+    ]
+  },
+  "0:09:36.604": {
+    "ja": [
+      "駆動電位は平衡電位より高いときは正で、低いときは負です。"
+    ],
+    "zh": [
+      "当你高于平衡电位时，驱动电位为正；当你低于平衡电位时，则为负。"
+    ],
+    "th": [
+      "แรงขับจะเป็นบวกเมื่อคุณอยู่เหนือศักย์สมดุล และจะเป็นลบเมื่อคุณอยู่ต่ำกว่า"
+    ],
+    "id": [
+      "Potensial penggerak bernilai positif ketika Anda berada di atas potensial keseimbangan, dan bernilai negatif ketika Anda berada di bawahnya."
+    ],
+    "es": [
+      "El potencial impulsor es positivo cuando estás por encima del potencial de equilibrio, y es negativo cuando estás por debajo."
+    ],
+    "fr": [
+      "Le potentiel moteur est positif lorsque vous êtes au‑dessus du potentiel d'équilibre, et il est négatif lorsque vous êtes en dessous."
+    ],
+    "de": [
+      "Die treibende Kraft ist positiv, wenn man über dem Gleichgewichtspotential liegt, und negativ, wenn man darunter liegt."
+    ]
+  },
+  "0:09:42.076": {
+    "ja": [
+      "つまり、この項は直線です。"
+    ],
+    "zh": [
+      "所以，这一项是一条直线。"
+    ],
+    "th": [
+      "ดังนั้น พจน์นี้เป็นเส้นตรง"
+    ],
+    "id": [
+      "Jadi, istilah ini adalah garis lurus."
+    ],
+    "es": [
+      "Entonces, este término aquí es una línea recta."
+    ],
+    "fr": [
+      "Donc, ce terme ici est une droite."
+    ],
+    "de": [
+      "Also, dieser Term hier ist eine Gerade."
+    ]
+  },
+  "0:09:46.108": {
+    "ja": [
+      "電圧に関して線形で、v が Ek に等しいときに値は 0 になります。"
+    ],
+    "zh": [
+      "它随电压呈线性关系，并且当 v 等于 Ek 时其值为零。"
+    ],
+    "th": [
+      "มันเป็นเชิงเส้นตามแรงดัน และจะมีค่าเป็นศูนย์เมื่อ v เท่ากับ Ek"
+    ],
+    "id": [
+      "Ini linear terhadap tegangan, dan bernilai nol ketika v sama dengan Ek."
+    ],
+    "es": [
+      "Es lineal en voltaje, y pasa por cero cuando v es igual a Ek."
+    ],
+    "fr": [
+      "C'est linéaire par rapport à la tension, et elle s'annule lorsque v est égal à Ek."
+    ],
+    "de": [
+      "Es ist linear in der Spannung und geht durch Null, wenn v = Ek."
+    ]
+  },
+  "0:09:52.188": {
+    "ja": [
+      "というわけで、電圧の関数としてのカリウムの駆動力があります。"
+    ],
+    "zh": [
+      "所以，这是钾离子的驱动电位作为电压的函数。"
+    ],
+    "th": [
+      "ดังนั้น นี่คือแรงขับเคลื่อนของโพแทสเซียมเมื่อพิจารณาเป็นฟังก์ชันของแรงดันไฟฟ้า"
+    ],
+    "id": [
+      "Jadi, ini adalah potensial penggerak bagi ion kalium sebagai fungsi tegangan."
+    ],
+    "es": [
+      "Entonces, este es el potencial impulsor del potasio en función del voltaje."
+    ],
+    "fr": [
+      "Donc, voici la force motrice pour le potassium en fonction de la tension."
+    ],
+    "de": [
+      "Also, hier ist das treibende Potenzial für Kalium als Funktion der Spannung."
+    ]
+  }
+}
