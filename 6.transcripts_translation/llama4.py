@@ -13,6 +13,7 @@ from constants import (
     USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
 )
 from llama32 import Llama32Model
+from transformers.models.llama4.modeling_llama4 import Llama4VisionRotaryEmbedding
 
 
 class Llama4Model(Llama32Model):
@@ -69,6 +70,10 @@ class Llama4Model(Llama32Model):
         )
         self.processor = AutoProcessor.from_pretrained(self.model_id)
         self.device = self.model.device
+
+        for m in self.model.modules():
+            if isinstance(m, Llama4VisionRotaryEmbedding) and m.freqs_ci.is_meta:
+                m.freqs_ci = Llama4VisionRotaryEmbedding(self.model.config.vision_config).freqs_ci
 
         return self.model
 
