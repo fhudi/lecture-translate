@@ -147,8 +147,11 @@ def get_scores(golds, preds, compute_comet=False, batch_size=128, task="transcri
                     continue
                 match task:
                     case "transcripts":
-                        src, gold, pred, gold_tokenized, pred_tokenized = \
-                            _get_triplets_transcript_(gold_all_langs['en'], gold, preds[sbj_lecid_pair][instance_id], lang)
+                        try:
+                            src, gold, pred, gold_tokenized, pred_tokenized = \
+                                _get_triplets_transcript_(gold_all_langs['en'], gold, preds[sbj_lecid_pair][instance_id], lang)
+                        except KeyError as e:
+                            raise KeyError(f"{e}: ({sbj_lecid_pair}, {instance_id}, {lang}, )")
                     case "slides":
                         src, gold, pred, gold_tokenized, pred_tokenized = \
                             _get_triplets_slide_(gold_all_langs['en'], gold_all_langs[lang], preds[sbj_lecid_pair][instance_id][lang], lang)
@@ -255,7 +258,7 @@ for _, fd_preds in enumerate(tqdm(fd_preds_list)):
                  and fp.name.startswith(f"{sbj}_"))
             )
             if matching_file:
-                assert k not in preds
+                assert k not in preds, f"{fd_preds}: {k} not found"
                 with open(fp, 'r', encoding="utf8") as f:
                     preds[k] = json.load(f)
 
