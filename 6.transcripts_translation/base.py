@@ -19,12 +19,12 @@ def _get_basedir_path():
 
 
 fp_test_transl_slide = (
-    _get_basedir_path()
-    / "25.11.slides_annot/slide_translation_annot_by_sbj_all_text.json"
+        _get_basedir_path()
+        / "25.11.slides_annot/slide_translation_annot_by_sbj_all_text.json"
 )
 fp_test_transl_transcript = (
-    _get_basedir_path()
-    / "25.11.transcript_translate/transcript_translate_annotated_by_sbj_all_text.json"
+        _get_basedir_path()
+        / "25.11.transcript_translate/transcript_translate_annotated_by_sbj_all_text.json"
 )
 fp_test_asr_transcript, lang_asr = (
     _get_basedir_path()
@@ -33,7 +33,7 @@ fp_test_asr_transcript, lang_asr = (
 )
 fp_test_transcript_slide_align = (
     # _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.json"
-    _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.sliding_windows.json"
+        _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.sliding_windows.json"
 )
 fd_basedir_slides = _get_basedir_path() / "25.11.slides_annot/slide_translation_251214"
 fd_basedir_vqa = _get_basedir_path() / "26.07.vqa_outputs"
@@ -43,6 +43,8 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         self.model = None
         self.model_id = None
+        print("HF_TOKEN_PATH:", os.environ["HF_TOKEN_PATH"])
+        print("HF_HUB_CACHE:", os.environ["HF_HUB_CACHE"])
 
     def load_model(self, *args, **kwargs):
         raise NotImplementedError
@@ -60,13 +62,13 @@ class BaseModel:
         raise NotImplementedError
 
     def eval_instance_slide_translate(
-        self,
-        lang_src,
-        lang_tgt,
-        input_src,
-        output_template,
-        context_img=None,
-        is_check_input_only=False,
+            self,
+            lang_src,
+            lang_tgt,
+            input_src,
+            output_template,
+            context_img=None,
+            is_check_input_only=False,
     ):
         raise NotImplementedError
 
@@ -181,9 +183,9 @@ class BaseModel:
                 if dummy:
                     break
             with open(
-                outdir / f"{sbj}_{lec_id}.{_lang_src}2any.{output_suffix}.json",
-                "w",
-                encoding="utf8",
+                    outdir / f"{sbj}_{lec_id}.{_lang_src}2any.{output_suffix}.json",
+                    "w",
+                    encoding="utf8",
             ) as f:
                 json.dump(preds_one_lecture, f, ensure_ascii=False, indent=2)
             if dummy:
@@ -192,7 +194,7 @@ class BaseModel:
         # print(kwargs)
 
     def evaluate_slide_translate(
-        self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None
+            self, output_suffix=None, context=None, lang_src="en", dummy=False, rg_idx=None
     ):
         with open(fp_test_transl_slide, "r") as f:
             datas_slide_text = json.load(f)
@@ -262,18 +264,18 @@ class BaseModel:
 
                 preds_one_lecture[scene_id] = cur_preds
                 with open(
-                    outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.jsonl",
-                    "a",
-                    encoding="utf8",
+                        outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.jsonl",
+                        "a",
+                        encoding="utf8",
                 ) as f:
                     json.dump((scene_id, cur_preds), f, ensure_ascii=False)
                     f.write("\n")
                 if dummy:
                     break
             with open(
-                outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.json",
-                "w",
-                encoding="utf8",
+                    outdir / f"{sbj}_{lec_id}.{lang_src}2any.{output_suffix}.json",
+                    "w",
+                    encoding="utf8",
             ) as f:
                 json.dump(preds_one_lecture, f, ensure_ascii=False, indent=2)
             if dummy:
