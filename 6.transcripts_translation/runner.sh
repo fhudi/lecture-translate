@@ -185,4 +185,34 @@ elif [ "$SLURM_ARRAY_TASK_ID" -eq 113 ]; then
     python runner.py --model "gemma3it12b" --context "slideimg" --task "slide"
 
 
+
+
+
+#####################################
+#  VQA
+#####################################
+
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 520 ]; then
+    python runner.py --model "llama4scout" --context "vqa"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 521 ]; then
+    python runner.py --model "llama4scout" --context "vqa"  --range 11 99
+
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 530 ]; then
+    python runner.py --model "qwen35_9b" --context "vqa"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 531 ]; then
+    python runner.py --model "qwen35_9b" --context "vqa"  --range 11 99
+
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 550 ]; then
+    python runner.py --model "glm46v_flash" --context "vqa"
+
+elif [ "$SLURM_ARRAY_TASK_ID" -eq 551 ]; then
+    python runner.py --model "glm46v_flash" --context "vqa"  --range 11 99
+
+
+
 fi

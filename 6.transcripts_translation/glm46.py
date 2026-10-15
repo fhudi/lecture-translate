@@ -4,6 +4,7 @@ from constants import (
     SYS_PROMPT,
     SYS_PROMPT_SLIDE_TXT,
     SYS_PROMPT_SLIDE_IMG,
+    SYS_PROMPT_VQA,
     USER_PROMPT,
     SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
     SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
@@ -21,6 +22,7 @@ class GLM46Model(BaseModel):
             "base": SYS_PROMPT,
             "slide_txt": SYS_PROMPT_SLIDE_TXT,
             "slide_img": SYS_PROMPT_SLIDE_IMG,
+            "vqa": SYS_PROMPT_VQA,
         }
         self.user_prompt = USER_PROMPT
         self.model = None
@@ -61,6 +63,7 @@ class GLM46Model(BaseModel):
         transcript_src,
         context_img=None,  # transcript translation context
         context_text=None,  # transcript translation context
+        context_vqa=None,
         is_check_input_only=False,
     ):
         _device = self.model.device if self.model else self.device
@@ -96,6 +99,22 @@ class GLM46Model(BaseModel):
                             "type": "text",
                             "text": self.sys_prompt["slide_txt"].format(
                                 slide_txt=context_text
+                            ),
+                        },
+                        _user_prompt,
+                    ],
+                },
+            ]
+
+        elif context_vqa is not None:
+            messages = [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": self.sys_prompt["vqa"].format(
+                                vqa_text=context_vqa
                             ),
                         },
                         _user_prompt,

@@ -46,6 +46,19 @@ This context is provided to supplement semantic understanding and disambiguate t
 
 """
 
+SYS_PROMPT_VQA = """\
+You are a translation system for lecture video transcripts.
+Translate the spoken transcript into the specified target language.
+
+In addition to the transcript, you are given auxiliary textual context generated from the corresponding presentation slides.
+The context consists of question-answer pairs describing the slides.
+This context is provided to supplement semantic understanding and disambiguate technical terms, but it is not part of the content to be translated.
+
+The context is as follows:
+
+{vqa_text}
+"""
+
 USER_PROMPT = """\
 Translate the following from {lang_src} to {lang_tgt}.
 Please return only the translation.

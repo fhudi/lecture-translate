@@ -36,6 +36,7 @@ fp_test_transcript_slide_align = (
     _get_basedir_path() / "25.11.transcript_translate/transcript_slide_alignment.sliding_windows.json"
 )
 fd_basedir_slides = _get_basedir_path() / "25.11.slides_annot/slide_translation_251214"
+fd_basedir_vqa = _get_basedir_path() / "26.07.vqa_outputs"
 
 
 class BaseModel:
@@ -47,13 +48,14 @@ class BaseModel:
         raise NotImplementedError
 
     def eval_instance(
-        self,
-        lang_src,
-        lang_tgt,
-        transcript_src,
-        context_img=None,
-        context_text=None,
-        is_check_input_only=False,
+            self,
+            lang_src,
+            lang_tgt,
+            transcript_src,
+            context_img=None,
+            context_text=None,
+            context_vqa=None,
+            is_check_input_only=False,
     ):
         raise NotImplementedError
 
@@ -120,7 +122,7 @@ class BaseModel:
             }
 
             if (
-                context == "slidetxt"
+                    context == "slidetxt"
             ):  # [transcript translate]  Preparing text from slide text
                 context_text = []
                 for slide_idx, slide_bbs in enumerate(datas_slide_text[k].values()):
@@ -135,13 +137,37 @@ class BaseModel:
             preds_one_lecture = {}
             for ts, texts in tqdm(v.items(), desc=f"{sbj}/{lec_id}"):
                 if (
-                    context == "slideimg"
+                        context == "slideimg"
                 ):  # [transcript translate]  Preparing text from slide text
                     kwargs["context_img"] = [
                         fd_basedir_slides / sbj / lec_id / f"{fn}.jpg"
                         # for fn in datas_alignment[k][ts]["slides"]  # depre, non-sliding windows
                         for fn in datas_alignment[k][ts]
                     ]
+
+                if context == "vqa":
+                    vqa_texts = []
+
+                    if (k, ts) == ('ml-1/L1TiP9P55-8', '0:38:11.200'):
+                        continue
+                    elif (k, ts) in [
+                        ('ml-1/L1TiP9P55-8', '0:42:51.500'),
+                        ('psy-1/j2-9yymHfeU', '0:06:26.320')
+                    ]:
+                        ts = ""
+
+                    for fn in datas_alignment[k][ts]:
+                        vqa_path = (
+                                fd_basedir_vqa
+                                / lec_id
+                                / f"{fn}_quant8.json"
+                        )
+
+                        with open(vqa_path, "r", encoding="utf8") as f:
+                            vqa_texts.append(f.read())
+
+                    kwargs["context_vqa"] = "\n\n\n".join(vqa_texts)
+
                 cur_preds = {}
                 for lang_tgt, lang_target in target_languages.items():
                     if use_non_corrected_asr_output:

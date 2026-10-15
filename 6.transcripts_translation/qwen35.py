@@ -4,6 +4,7 @@ from constants import (
     SYS_PROMPT,
     SYS_PROMPT_SLIDE_TXT,
     SYS_PROMPT_SLIDE_IMG,
+    SYS_PROMPT_VQA,
     USER_PROMPT,
     SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
     SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
@@ -21,6 +22,7 @@ class Qwen35Model(BaseModel):
             "base": SYS_PROMPT,
             "slide_txt": SYS_PROMPT_SLIDE_TXT,
             "slide_img": SYS_PROMPT_SLIDE_IMG,
+            "vqa": SYS_PROMPT_VQA,
         }
         self.user_prompt = USER_PROMPT
         self.model = None
@@ -53,13 +55,14 @@ class Qwen35Model(BaseModel):
         return self.model
 
     def eval_instance(
-        self,
-        lang_src,
-        lang_tgt,
-        transcript_src,
-        context_img=None,  # transcript translation context
-        context_text=None,  # transcript translation context
-        is_check_input_only=False,
+            self,
+            lang_src,
+            lang_tgt,
+            transcript_src,
+            context_img=None,  # transcript translation context
+            context_text=None,  # transcript translation context
+            context_vqa=None,
+            is_check_input_only=False,
     ):
         _device = self.model.device if self.model else self.device
         _user_prompt = {
@@ -101,6 +104,22 @@ class Qwen35Model(BaseModel):
                 },
             ]
 
+        elif context_vqa is not None:
+            messages = [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": self.sys_prompt["vqa"].format(
+                                vqa_text=context_vqa
+                            ),
+                        },
+                        _user_prompt,
+                    ],
+                },
+            ]
+
         else:
             messages = [
                 {
@@ -118,7 +137,7 @@ class Qwen35Model(BaseModel):
             tokenize=True,
             return_dict=True,
             return_tensors="pt",
-            enable_thinking=False,   # instruction (non-thinking) mode
+            enable_thinking=False,  # instruction (non-thinking) mode
         ).to(_device)
         if images is not None:
             for i in images:
@@ -129,7 +148,7 @@ class Qwen35Model(BaseModel):
             return self.processor.decode(_i, skip_special_tokens=False)
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
-        _o = outputs[:, inputs["input_ids"].shape[-1] :].squeeze()
+        _o = outputs[:, inputs["input_ids"].shape[-1]:].squeeze()
         outputs_decoded = self.processor.decode(
             _o, skip_special_tokens=True
         )
@@ -137,13 +156,13 @@ class Qwen35Model(BaseModel):
         return outputs_decoded
 
     def eval_instance_slide_translate(
-        self,
-        lang_src,
-        lang_tgt,
-        input_src,
-        output_template,
-        slide_img_paths=None,  # should only be a single image
-        is_check_input_only=False,
+            self,
+            lang_src,
+            lang_tgt,
+            input_src,
+            output_template,
+            slide_img_paths=None,  # should only be a single image
+            is_check_input_only=False,
     ):
         _device = self.model.device if self.model else self.device
         _user_prompt = {
@@ -201,7 +220,7 @@ class Qwen35Model(BaseModel):
 
         outputs = self.model.generate(**inputs, max_new_tokens=2048)
         outputs_decoded = self.processor.decode(
-            outputs[:, inputs["input_ids"].shape[-1] :].squeeze(), skip_special_tokens=True
+            outputs[:, inputs["input_ids"].shape[-1]:].squeeze(), skip_special_tokens=True
         )
 
         return outputs_decoded

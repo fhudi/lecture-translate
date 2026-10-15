@@ -26,6 +26,7 @@ class Context(StrEnum):
     Vanilla = ""
     SlideText = "slidetxt"
     SlideImage = "slideimg"
+    VQA = "vqa"
 
 
 class Task(StrEnum):

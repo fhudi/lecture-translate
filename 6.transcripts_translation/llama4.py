@@ -4,7 +4,11 @@ from constants import (
     SYS_PROMPT,
     SYS_PROMPT_SLIDE_TXT,
     SYS_PROMPT_SLIDE_IMG,
+    SYS_PROMPT_VQA,
     USER_PROMPT,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
+    SYS_PROMPT_TRANSL_SLIDE_TXT_W_IMG,
+    USER_PROMPT_TRANSL_SLIDE_TXT_PER_BB,
     SYS_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
     USER_PROMPT_TRANSL_SLIDE_TXT_ALL_BB_STRUCTURED_OUTPUT,
 )
@@ -24,6 +28,7 @@ class Llama4Model(Llama32Model):
             "base": SYS_PROMPT,
             "slide_txt": SYS_PROMPT_SLIDE_TXT,
             "slide_img": SYS_PROMPT_SLIDE_IMG,
+            "vqa": SYS_PROMPT_VQA,
         }
         self.user_prompt = USER_PROMPT
         self.model = None
