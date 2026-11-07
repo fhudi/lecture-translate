@@ -15,15 +15,6 @@ Create and activate the conda environment:
 conda env create -f env-conda.*.yml
 conda activate *
 ```
- 
-## Usage
-
-> [!NOTE]
-> This section is under construction.
- 
-```bash
-./6.transcripts_translation/runner.sh
-```
 
  
  
@@ -35,8 +26,13 @@ conda activate *
 ```
 lectrans/
 ├── env-conda.*.yml   # Conda environments
-├── 6.transcripts_translation/              # evaluating translation tasks
-└── README.md
+├── 1.ytdlp_and_dataset_split/     # Data sourcing and splits (§3.1, §3.3.1, §3.5 of the manuscript).
+├── 2.pyscenedetect_stats/         # Scene detection (§3.3.2, Appendix E)
+├── 3.transcripts_extraction/      # Transcript ASR (§3.3.1, §3.3.4, §3.4.1)
+├── 4.slides_extraction/           # Slide OCR (§3.3.2, §3.4.2, Appendix J)
+├── 5.lectrans-testset/            # The benchmark test dataset (§3.3.3, §3.3.3, §3.4, §3.5, Appendix G, Appendix H)
+├── 6.translation_evaluation/      # Experiments (§4–6)
+└── README.md    # This file
 ```
  
 ## License

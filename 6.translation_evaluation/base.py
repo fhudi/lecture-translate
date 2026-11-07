@@ -9,10 +9,10 @@ from constants import LANGUAGES
 def _get_basedir_path():
     match os.uname()[1]:
         case "lectrans":
-            return Path("/large/datas/frederikus-h/lectrans-testset")
+            return Path("/large/datas/frederikus-h/5.lectrans-testset")
         case u if u.startswith("elm") or u.startswith("pine"):
             return Path(
-                "~/_self_research/24.10.lecture_translate/lectrans-testset"
+                "~/_self_research/24.10.lecture_translate/5.lectrans-testset"
             ).expanduser()
         case _:
             raise NotImplementedError
